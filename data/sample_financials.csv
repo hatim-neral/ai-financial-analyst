@@ -1,0 +1,712 @@
+date,type,category,amount,description
+2025-01-01,revenue,Subscriptions,75897.51,Monthly subscription - account 1007
+2025-01-03,expense,Marketing,56929.82,Digital ads batch 2
+2025-01-03,expense,Salaries,135000.00,Payroll - Operations
+2025-01-04,expense,Salaries,405000.00,Payroll - Engineering
+2025-01-06,expense,Travel,14091.31,Client visit trip 1
+2025-01-06,revenue,Enterprise Licenses,268465.02,Annual licence deal #3
+2025-01-07,revenue,Subscriptions,66687.55,Monthly subscription - account 1021
+2025-01-08,expense,Marketing,40313.44,Digital ads batch 4
+2025-01-08,expense,Travel,13341.40,Client visit trip 2
+2025-01-08,revenue,Subscriptions,75106.43,Monthly subscription - account 1063
+2025-01-09,expense,Software Tools,15280.65,SaaS tools invoice 2
+2025-01-09,revenue,Professional Services,62730.81,Implementation engagement E
+2025-01-10,expense,Cloud Infrastructure,105000.00,Cloud compute
+2025-01-10,expense,Marketing,52495.06,Digital ads batch 1
+2025-01-12,revenue,Professional Services,57838.14,Implementation engagement A
+2025-01-12,revenue,Professional Services,81119.41,Implementation engagement C
+2025-01-13,expense,Salaries,225000.00,Payroll - Sales
+2025-01-14,revenue,Subscriptions,66118.38,Monthly subscription - account 1056
+2025-01-18,expense,Salaries,135000.00,Payroll - G&A
+2025-01-18,revenue,Subscriptions,69083.41,Monthly subscription - account 1014
+2025-01-18,revenue,Subscriptions,62113.99,Monthly subscription - account 1049
+2025-01-18,revenue,Training,33675.71,Training workshop 1
+2025-01-20,revenue,Professional Services,49416.76,Implementation engagement D
+2025-01-20,revenue,Subscriptions,108020.50,Monthly subscription - account 1000
+2025-01-21,revenue,Subscriptions,95331.68,Monthly subscription - account 1035
+2025-01-22,expense,Software Tools,11980.37,SaaS tools invoice 1
+2025-01-22,expense,Software Tools,11129.58,SaaS tools invoice 4
+2025-01-23,expense,Software Tools,9459.81,SaaS tools invoice 3
+2025-01-23,revenue,Subscriptions,107963.41,Monthly subscription - account 1028
+2025-01-23,revenue,Subscriptions,98250.34,Monthly subscription - account 1042
+2025-01-25,revenue,Enterprise Licenses,247460.45,Annual licence deal #1
+2025-01-26,revenue,Enterprise Licenses,238909.54,Annual licence deal #2
+2025-01-27,expense,Cloud Infrastructure,45000.00,Cloud storage and backups
+2025-01-28,expense,Marketing,33966.51,Digital ads batch 3
+2025-01-28,expense,Office Rent,120000.00,Office lease
+2025-01-28,revenue,Professional Services,54839.06,Implementation engagement B
+2025-02-01,expense,Cloud Infrastructure,109200.00,Cloud compute
+2025-02-01,expense,Marketing,41177.91,Digital ads batch 3
+2025-02-01,expense,Travel,17224.34,Client visit trip 3
+2025-02-05,revenue,Subscriptions,76067.18,Monthly subscription - account 1057
+2025-02-05,revenue,Subscriptions,43647.81,Monthly subscription - account 1071
+2025-02-06,expense,Marketing,43996.98,Digital ads batch 1
+2025-02-06,revenue,Professional Services,67143.76,Implementation engagement B
+2025-02-07,revenue,Subscriptions,70938.59,Monthly subscription - account 1015
+2025-02-08,revenue,Subscriptions,80809.94,Monthly subscription - account 1078
+2025-02-09,expense,Office Rent,120000.00,Office lease
+2025-02-09,expense,Salaries,228375.00,Payroll - Sales
+2025-02-09,revenue,Subscriptions,58345.80,Monthly subscription - account 1064
+2025-02-11,revenue,Subscriptions,81347.66,Monthly subscription - account 1008
+2025-02-12,revenue,Enterprise Licenses,256771.59,Annual licence deal #13
+2025-02-13,revenue,Enterprise Licenses,240518.45,Annual licence deal #12
+2025-02-13,revenue,Subscriptions,74455.46,Monthly subscription - account 1036
+2025-02-13,revenue,Training,31542.54,Training workshop 1
+2025-02-15,expense,Marketing,40747.95,Digital ads batch 2
+2025-02-15,revenue,Subscriptions,76802.43,Monthly subscription - account 1050
+2025-02-15,revenue,Training,28105.91,Training workshop 2
+2025-02-16,revenue,Subscriptions,54972.39,Monthly subscription - account 1029
+2025-02-17,expense,Salaries,411075.00,Payroll - Engineering
+2025-02-17,expense,Software Tools,21968.90,SaaS tools invoice 3
+2025-02-18,expense,Salaries,137025.00,Payroll - Operations
+2025-02-19,revenue,Enterprise Licenses,255599.09,Annual licence deal #11
+2025-02-21,expense,Software Tools,14632.75,SaaS tools invoice 2
+2025-02-21,revenue,Professional Services,94714.17,Implementation engagement A
+2025-02-21,revenue,Subscriptions,50379.82,Monthly subscription - account 1022
+2025-02-21,revenue,Subscriptions,43198.03,Monthly subscription - account 1043
+2025-02-22,expense,Cloud Infrastructure,46800.00,Cloud storage and backups
+2025-02-22,revenue,Professional Services,68377.97,Implementation engagement D
+2025-02-23,revenue,Subscriptions,52588.30,Monthly subscription - account 1001
+2025-02-24,expense,Marketing,30783.21,Digital ads batch 4
+2025-02-24,expense,Marketing,29650.74,Digital ads batch 5
+2025-02-24,revenue,Subscriptions,65630.18,Monthly subscription - account 1085
+2025-02-25,expense,Travel,9528.39,Client visit trip 1
+2025-02-25,expense,Travel,9615.49,Client visit trip 2
+2025-02-26,revenue,Professional Services,64259.52,Implementation engagement C
+2025-02-27,expense,Software Tools,20305.99,SaaS tools invoice 1
+2025-02-28,expense,Salaries,137025.00,Payroll - G&A
+2025-03-01,revenue,Professional Services,55976.42,Implementation engagement A
+2025-03-02,expense,Software Tools,8846.63,SaaS tools invoice 3
+2025-03-02,revenue,Professional Services,60131.29,Implementation engagement E
+2025-03-03,expense,Salaries,231800.62,Payroll - Sales
+2025-03-03,revenue,Professional Services,47719.00,Implementation engagement B
+2025-03-04,expense,Marketing,33377.70,Digital ads batch 4
+2025-03-04,expense,Marketing,40808.33,Digital ads batch 5
+2025-03-04,expense,Software Tools,16135.22,SaaS tools invoice 2
+2025-03-04,expense,Travel,16005.93,Client visit trip 1
+2025-03-05,expense,Travel,13362.86,Client visit trip 3
+2025-03-05,revenue,Subscriptions,42958.11,Monthly subscription - account 1002
+2025-03-06,revenue,Subscriptions,56009.70,Monthly subscription - account 1030
+2025-03-07,expense,Marketing,35720.93,Digital ads batch 3
+2025-03-07,expense,Travel,10486.56,Client visit trip 2
+2025-03-07,revenue,Subscriptions,45211.74,Monthly subscription - account 1072
+2025-03-08,expense,Salaries,139080.37,Payroll - G&A
+2025-03-08,revenue,Professional Services,61531.41,Implementation engagement F
+2025-03-09,expense,Cloud Infrastructure,113568.00,Cloud compute
+2025-03-09,expense,Travel,12218.82,Client visit trip 4
+2025-03-09,revenue,Subscriptions,44700.29,Monthly subscription - account 1037
+2025-03-11,expense,Salaries,417241.12,Payroll - Engineering
+2025-03-12,revenue,Enterprise Licenses,245421.59,Annual licence deal #23
+2025-03-13,expense,Software Tools,14241.37,SaaS tools invoice 4
+2025-03-14,expense,Marketing,44402.66,Digital ads batch 2
+2025-03-14,revenue,Subscriptions,64096.85,Monthly subscription - account 1065
+2025-03-16,revenue,Subscriptions,81892.36,Monthly subscription - account 1016
+2025-03-17,expense,Salaries,139080.37,Payroll - Operations
+2025-03-17,revenue,Subscriptions,81860.08,Monthly subscription - account 1044
+2025-03-18,revenue,Subscriptions,79760.13,Monthly subscription - account 1023
+2025-03-18,revenue,Subscriptions,76540.10,Monthly subscription - account 1079
+2025-03-20,revenue,Subscriptions,45956.72,Monthly subscription - account 1058
+2025-03-21,expense,Software Tools,12059.71,SaaS tools invoice 1
+2025-03-21,revenue,Enterprise Licenses,239782.21,Annual licence deal #22
+2025-03-21,revenue,Professional Services,38516.89,Implementation engagement D
+2025-03-22,expense,Cloud Infrastructure,48672.00,Cloud storage and backups
+2025-03-22,expense,Office Rent,120000.00,Office lease
+2025-03-22,revenue,Enterprise Licenses,266752.63,Annual licence deal #21
+2025-03-22,revenue,Subscriptions,84175.03,Monthly subscription - account 1009
+2025-03-23,revenue,Professional Services,40260.67,Implementation engagement C
+2025-03-25,revenue,Subscriptions,76777.18,Monthly subscription - account 1086
+2025-03-26,expense,Marketing,25270.32,Digital ads batch 1
+2025-03-28,revenue,Subscriptions,84983.89,Monthly subscription - account 1051
+2025-03-28,revenue,Training,36486.72,Training workshop 1
+2025-04-01,expense,Travel,17357.34,Client visit trip 2
+2025-04-01,revenue,Subscriptions,98330.37,Monthly subscription - account 1059
+2025-04-02,expense,Marketing,53404.57,Digital ads batch 3
+2025-04-02,revenue,Professional Services,65129.84,Implementation engagement A
+2025-04-02,revenue,Professional Services,46940.72,Implementation engagement D
+2025-04-02,revenue,Professional Services,40420.64,Implementation engagement E
+2025-04-02,revenue,Subscriptions,97629.48,Monthly subscription - account 1038
+2025-04-02,revenue,Training,30498.02,Training workshop 2
+2025-04-03,expense,Cloud Infrastructure,118110.72,Cloud compute
+2025-04-03,expense,Salaries,235277.63,Payroll - Sales
+2025-04-03,expense,Travel,17960.96,Client visit trip 4
+2025-04-05,expense,Software Tools,9294.28,SaaS tools invoice 2
+2025-04-06,expense,Salaries,141166.58,Payroll - G&A
+2025-04-06,revenue,Subscriptions,104986.20,Monthly subscription - account 1045
+2025-04-07,revenue,Subscriptions,81822.51,Monthly subscription - account 1017
+2025-04-11,revenue,Professional Services,45802.17,Implementation engagement C
+2025-04-13,expense,Software Tools,15287.21,SaaS tools invoice 1
+2025-04-13,revenue,Subscriptions,106661.84,Monthly subscription - account 1031
+2025-04-13,revenue,Subscriptions,102627.66,Monthly subscription - account 1052
+2025-04-13,revenue,Subscriptions,60576.27,Monthly subscription - account 1066
+2025-04-14,revenue,Enterprise Licenses,245479.67,Annual licence deal #31
+2025-04-16,revenue,Subscriptions,75891.79,Monthly subscription - account 1003
+2025-04-16,revenue,Subscriptions,99030.44,Monthly subscription - account 1010
+2025-04-17,expense,Salaries,423499.74,Payroll - Engineering
+2025-04-19,expense,Marketing,47491.12,Digital ads batch 1
+2025-04-19,expense,Travel,12582.86,Client visit trip 3
+2025-04-19,revenue,Professional Services,68154.69,Implementation engagement F
+2025-04-20,expense,Cloud Infrastructure,50618.88,Cloud storage and backups
+2025-04-20,expense,Marketing,66661.58,Digital ads batch 2
+2025-04-20,expense,Office Rent,120000.00,Office lease
+2025-04-21,expense,Software Tools,9576.73,SaaS tools invoice 4
+2025-04-22,expense,Software Tools,13494.41,SaaS tools invoice 3
+2025-04-23,revenue,Enterprise Licenses,272209.16,Annual licence deal #32
+2025-04-24,revenue,Enterprise Licenses,255257.50,Annual licence deal #33
+2025-04-24,revenue,Professional Services,57955.27,Implementation engagement B
+2025-04-25,expense,Travel,12572.25,Client visit trip 1
+2025-04-28,expense,Salaries,141166.58,Payroll - Operations
+2025-04-28,revenue,Subscriptions,54173.70,Monthly subscription - account 1024
+2025-04-28,revenue,Training,30045.61,Training workshop 1
+2025-05-01,expense,Salaries,143284.08,Payroll - G&A
+2025-05-02,expense,Marketing,37119.34,Digital ads batch 2
+2025-05-03,expense,Cloud Infrastructure,52643.64,Cloud storage and backups
+2025-05-04,expense,Cloud Infrastructure,122835.15,Cloud compute
+2025-05-04,revenue,Subscriptions,78864.58,Monthly subscription - account 1011
+2025-05-04,revenue,Subscriptions,54985.66,Monthly subscription - account 1032
+2025-05-04,revenue,Subscriptions,46014.94,Monthly subscription - account 1039
+2025-05-05,expense,Marketing,46142.29,Digital ads batch 1
+2025-05-05,revenue,Professional Services,97380.76,Implementation engagement B
+2025-05-05,revenue,Subscriptions,76645.19,Monthly subscription - account 1018
+2025-05-05,revenue,Subscriptions,65242.83,Monthly subscription - account 1060
+2025-05-07,revenue,Subscriptions,73944.41,Monthly subscription - account 1088
+2025-05-08,expense,Travel,17257.64,Client visit trip 1
+2025-05-09,revenue,Enterprise Licenses,278513.13,Annual licence deal #43
+2025-05-09,revenue,Professional Services,67130.47,Implementation engagement D
+2025-05-09,revenue,Subscriptions,76577.68,Monthly subscription - account 1025
+2025-05-09,revenue,Subscriptions,81150.83,Monthly subscription - account 1067
+2025-05-10,expense,Marketing,44396.47,Digital ads batch 3
+2025-05-10,revenue,Subscriptions,67034.54,Monthly subscription - account 1074
+2025-05-12,expense,Marketing,38048.97,Digital ads batch 4
+2025-05-14,expense,Salaries,238806.80,Payroll - Sales
+2025-05-14,expense,Software Tools,10999.83,SaaS tools invoice 2
+2025-05-14,expense,Travel,16107.72,Client visit trip 3
+2025-05-16,revenue,Enterprise Licenses,269906.52,Annual licence deal #42
+2025-05-17,revenue,Enterprise Licenses,251976.03,Annual licence deal #41
+2025-05-18,expense,Salaries,143284.08,Payroll - Operations
+2025-05-18,revenue,Subscriptions,69133.98,Monthly subscription - account 1053
+2025-05-18,revenue,Training,33859.69,Training workshop 1
+2025-05-20,expense,Software Tools,9629.76,SaaS tools invoice 3
+2025-05-20,revenue,Subscriptions,39664.38,Monthly subscription - account 1081
+2025-05-21,revenue,Professional Services,86801.44,Implementation engagement C
+2025-05-22,revenue,Subscriptions,50566.53,Monthly subscription - account 1004
+2025-05-23,expense,Salaries,429852.24,Payroll - Engineering
+2025-05-23,revenue,Subscriptions,52014.29,Monthly subscription - account 1095
+2025-05-24,expense,Software Tools,15953.87,SaaS tools invoice 4
+2025-05-24,revenue,Subscriptions,74649.29,Monthly subscription - account 1046
+2025-05-25,revenue,Professional Services,73522.38,Implementation engagement A
+2025-05-26,expense,Marketing,27110.40,Digital ads batch 5
+2025-05-26,expense,Travel,16646.06,Client visit trip 2
+2025-05-28,expense,Office Rent,120000.00,Office lease
+2025-05-28,expense,Software Tools,10631.45,SaaS tools invoice 1
+2025-06-01,expense,Cloud Infrastructure,54749.38,Cloud storage and backups
+2025-06-01,revenue,Subscriptions,70772.89,Monthly subscription - account 1054
+2025-06-02,expense,Salaries,145433.34,Payroll - Operations
+2025-06-02,revenue,Professional Services,45549.48,Implementation engagement A
+2025-06-04,revenue,Professional Services,34573.63,Implementation engagement B
+2025-06-05,expense,Software Tools,12980.31,SaaS tools invoice 2
+2025-06-06,expense,Travel,14773.18,Client visit trip 1
+2025-06-07,expense,Salaries,436300.02,Payroll - Engineering
+2025-06-07,expense,Software Tools,10208.38,SaaS tools invoice 3
+2025-06-07,revenue,Subscriptions,75531.07,Monthly subscription - account 1068
+2025-06-08,revenue,Subscriptions,58716.96,Monthly subscription - account 1040
+2025-06-08,revenue,Subscriptions,87978.05,Monthly subscription - account 1047
+2025-06-09,expense,Salaries,242388.90,Payroll - Sales
+2025-06-10,expense,Travel,14155.15,Client visit trip 2
+2025-06-10,expense,Travel,8004.06,Client visit trip 4
+2025-06-10,revenue,Subscriptions,72347.55,Monthly subscription - account 1012
+2025-06-11,expense,Marketing,44197.38,Digital ads batch 2
+2025-06-11,expense,Marketing,26620.26,Digital ads batch 4
+2025-06-11,revenue,Subscriptions,99700.91,Monthly subscription - account 1082
+2025-06-12,revenue,Enterprise Licenses,251117.99,Annual licence deal #51
+2025-06-12,revenue,Professional Services,54568.82,Implementation engagement E
+2025-06-12,revenue,Subscriptions,92356.21,Monthly subscription - account 1005
+2025-06-13,revenue,Subscriptions,60896.37,Monthly subscription - account 1075
+2025-06-14,expense,Cloud Infrastructure,127748.55,Cloud compute
+2025-06-14,expense,Software Tools,13226.95,SaaS tools invoice 4
+2025-06-14,revenue,Professional Services,43020.76,Implementation engagement D
+2025-06-17,revenue,Enterprise Licenses,277115.96,Annual licence deal #53
+2025-06-17,revenue,Training,28982.30,Training workshop 1
+2025-06-18,expense,Software Tools,11680.46,SaaS tools invoice 1
+2025-06-19,revenue,Training,23850.33,Training workshop 2
+2025-06-20,expense,Marketing,39391.16,Digital ads batch 3
+2025-06-20,revenue,Professional Services,65287.93,Implementation engagement C
+2025-06-21,revenue,Enterprise Licenses,240125.36,Annual licence deal #52
+2025-06-22,expense,Marketing,38204.41,Digital ads batch 1
+2025-06-22,expense,Marketing,32160.50,Digital ads batch 5
+2025-06-22,revenue,Subscriptions,52213.91,Monthly subscription - account 1061
+2025-06-23,expense,Salaries,145433.34,Payroll - G&A
+2025-06-24,revenue,Professional Services,69139.22,Implementation engagement F
+2025-06-26,expense,Travel,10101.83,Client visit trip 5
+2025-06-26,revenue,Subscriptions,89801.43,Monthly subscription - account 1026
+2025-06-27,expense,Travel,12060.75,Client visit trip 3
+2025-06-27,revenue,Subscriptions,86284.66,Monthly subscription - account 1019
+2025-06-28,expense,Office Rent,120000.00,Office lease
+2025-06-28,revenue,Subscriptions,63519.46,Monthly subscription - account 1033
+2025-07-01,revenue,Subscriptions,81079.32,Monthly subscription - account 1062
+2025-07-02,expense,Salaries,147614.84,Payroll - Operations
+2025-07-02,revenue,Subscriptions,87676.11,Monthly subscription - account 1069
+2025-07-04,revenue,Professional Services,56163.19,Implementation engagement B
+2025-07-05,revenue,Subscriptions,56898.73,Monthly subscription - account 1055
+2025-07-07,revenue,Enterprise Licenses,263013.71,Annual licence deal #63
+2025-07-07,revenue,Subscriptions,61665.48,Monthly subscription - account 1048
+2025-07-08,expense,Cloud Infrastructure,132858.50,Cloud compute
+2025-07-08,expense,Travel,12845.97,Client visit trip 3
+2025-07-08,revenue,Professional Services,80446.56,Implementation engagement E
+2025-07-08,revenue,Subscriptions,76964.09,Monthly subscription - account 1013
+2025-07-08,revenue,Subscriptions,102737.30,Monthly subscription - account 1034
+2025-07-08,revenue,Subscriptions,70957.83,Monthly subscription - account 1076
+2025-07-09,expense,Software Tools,14417.21,SaaS tools invoice 3
+2025-07-09,expense,Travel,16398.63,Client visit trip 1
+2025-07-10,revenue,Subscriptions,78706.17,Monthly subscription - account 1027
+2025-07-11,expense,Marketing,51482.28,Digital ads batch 2
+2025-07-14,revenue,Professional Services,44742.39,Implementation engagement D
+2025-07-15,expense,Office Rent,120000.00,Office lease
+2025-07-15,expense,Salaries,246024.73,Payroll - Sales
+2025-07-15,expense,Software Tools,11658.69,SaaS tools invoice 2
+2025-07-16,expense,Software Tools,13891.00,SaaS tools invoice 1
+2025-07-16,revenue,Subscriptions,98090.63,Monthly subscription - account 1083
+2025-07-17,expense,Salaries,442844.52,Payroll - Engineering
+2025-07-17,expense,Travel,15658.14,Client visit trip 2
+2025-07-18,expense,Salaries,147614.84,Payroll - G&A
+2025-07-19,revenue,Enterprise Licenses,279630.38,Annual licence deal #62
+2025-07-20,expense,Marketing,55799.12,Digital ads batch 1
+2025-07-21,revenue,Enterprise Licenses,271286.02,Annual licence deal #61
+2025-07-22,revenue,Subscriptions,64136.56,Monthly subscription - account 1020
+2025-07-23,revenue,Training,34865.76,Training workshop 1
+2025-07-25,expense,Marketing,61813.73,Digital ads batch 3
+2025-07-25,expense,Software Tools,13204.68,SaaS tools invoice 4
+2025-07-25,revenue,Professional Services,68156.53,Implementation engagement A
+2025-07-25,revenue,Professional Services,75900.73,Implementation engagement C
+2025-07-25,revenue,Subscriptions,78245.87,Monthly subscription - account 1006
+2025-07-26,revenue,Subscriptions,96832.97,Monthly subscription - account 1041
+2025-07-28,expense,Cloud Infrastructure,56939.36,Cloud storage and backups
+2025-08-02,revenue,Subscriptions,75806.40,Monthly subscription - account 1035
+2025-08-03,expense,Software Tools,21146.41,SaaS tools invoice 1
+2025-08-05,expense,Office Rent,120000.00,Office lease
+2025-08-06,expense,Marketing,37400.75,Digital ads batch 2
+2025-08-06,expense,Travel,16668.51,Client visit trip 1
+2025-08-07,revenue,Subscriptions,81083.75,Monthly subscription - account 1042
+2025-08-08,expense,Cloud Infrastructure,138172.84,Cloud compute
+2025-08-10,revenue,Professional Services,56924.49,Implementation engagement A
+2025-08-11,revenue,Subscriptions,123354.35,Monthly subscription - account 1007
+2025-08-13,expense,Travel,8502.85,Client visit trip 2
+2025-08-13,revenue,Enterprise Licenses,287157.09,Annual licence deal #73
+2025-08-13,revenue,Subscriptions,85825.43,Monthly subscription - account 1063
+2025-08-14,expense,Software Tools,18336.15,SaaS tools invoice 3
+2025-08-14,revenue,Subscriptions,136836.88,Monthly subscription - account 1028
+2025-08-14,revenue,Subscriptions,81232.08,Monthly subscription - account 1056
+2025-08-15,expense,Marketing,49020.01,Digital ads batch 4
+2025-08-15,expense,Travel,11273.53,Client visit trip 3
+2025-08-15,revenue,Subscriptions,94982.05,Monthly subscription - account 1021
+2025-08-16,expense,Cloud Infrastructure,59216.93,Cloud storage and backups
+2025-08-18,expense,Salaries,249715.11,Payroll - Sales
+2025-08-18,revenue,Subscriptions,87368.43,Monthly subscription - account 1014
+2025-08-19,revenue,Enterprise Licenses,278515.19,Annual licence deal #72
+2025-08-20,expense,Salaries,149829.06,Payroll - G&A
+2025-08-21,expense,Software Tools,17516.95,SaaS tools invoice 2
+2025-08-24,expense,Marketing,40148.39,Digital ads batch 1
+2025-08-24,expense,Salaries,449487.19,Payroll - Engineering
+2025-08-24,revenue,Training,28704.34,Training workshop 2
+2025-08-25,revenue,Enterprise Licenses,272541.06,Annual licence deal #71
+2025-08-25,revenue,Professional Services,68568.54,Implementation engagement B
+2025-08-25,revenue,Subscriptions,100917.99,Monthly subscription - account 1070
+2025-08-26,expense,Salaries,149829.06,Payroll - Operations
+2025-08-27,expense,Marketing,45350.19,Digital ads batch 3
+2025-08-27,revenue,Subscriptions,98526.76,Monthly subscription - account 1049
+2025-08-27,revenue,Training,35655.17,Training workshop 1
+2025-09-01,revenue,Subscriptions,96655.84,Monthly subscription - account 1029
+2025-09-03,expense,Marketing,39882.10,Digital ads batch 4
+2025-09-04,expense,Salaries,152076.50,Payroll - G&A
+2025-09-04,revenue,Subscriptions,103363.15,Monthly subscription - account 1078
+2025-09-05,expense,Software Tools,12623.72,SaaS tools invoice 4
+2025-09-05,revenue,Subscriptions,91948.42,Monthly subscription - account 1043
+2025-09-05,revenue,Subscriptions,103069.05,Monthly subscription - account 1057
+2025-09-07,revenue,Subscriptions,103029.83,Monthly subscription - account 1015
+2025-09-07,revenue,Subscriptions,52595.41,Monthly subscription - account 1092
+2025-09-08,expense,Salaries,152076.50,Payroll - Operations
+2025-09-08,revenue,Subscriptions,66145.81,Monthly subscription - account 1008
+2025-09-08,revenue,Subscriptions,53749.46,Monthly subscription - account 1050
+2025-09-09,expense,Travel,17654.74,Client visit trip 2
+2025-09-12,expense,Marketing,44571.57,Digital ads batch 3
+2025-09-13,revenue,Professional Services,67149.38,Implementation engagement B
+2025-09-13,revenue,Professional Services,61810.68,Implementation engagement C
+2025-09-14,expense,Marketing,35635.12,Digital ads batch 1
+2025-09-15,expense,Software Tools,8345.91,SaaS tools invoice 2
+2025-09-15,expense,Travel,15746.41,Client visit trip 4
+2025-09-16,revenue,Subscriptions,63184.21,Monthly subscription - account 1064
+2025-09-17,expense,Marketing,29733.75,Digital ads batch 5
+2025-09-17,expense,Travel,9761.37,Client visit trip 1
+2025-09-18,expense,Travel,14159.12,Client visit trip 3
+2025-09-19,revenue,Subscriptions,53101.20,Monthly subscription - account 1085
+2025-09-20,revenue,Enterprise Licenses,268821.02,Annual licence deal #81
+2025-09-20,revenue,Enterprise Licenses,257516.52,Annual licence deal #82
+2025-09-20,revenue,Subscriptions,76672.02,Monthly subscription - account 1036
+2025-09-21,expense,Office Rent,120000.00,Office lease
+2025-09-21,expense,Salaries,253460.83,Payroll - Sales
+2025-09-22,expense,Marketing,24463.04,Digital ads batch 2
+2025-09-22,revenue,Professional Services,122636.31,Implementation engagement A
+2025-09-22,revenue,Subscriptions,54655.62,Monthly subscription - account 1071
+2025-09-23,expense,Cloud Infrastructure,143699.75,Cloud compute
+2025-09-23,expense,Software Tools,15248.30,SaaS tools invoice 3
+2025-09-23,revenue,Professional Services,80354.13,Implementation engagement D
+2025-09-23,revenue,Training,23215.94,Training workshop 1
+2025-09-24,expense,Travel,12355.74,Client visit trip 5
+2025-09-24,revenue,Enterprise Licenses,263615.79,Annual licence deal #83
+2025-09-25,expense,Cloud Infrastructure,61585.61,Cloud storage and backups
+2025-09-27,expense,Salaries,456229.50,Payroll - Engineering
+2025-09-27,expense,Software Tools,14130.87,SaaS tools invoice 1
+2025-09-27,revenue,Subscriptions,74000.49,Monthly subscription - account 1022
+2025-10-01,revenue,Subscriptions,58689.59,Monthly subscription - account 1065
+2025-10-02,expense,Travel,8455.16,Client visit trip 1
+2025-10-03,revenue,Subscriptions,69934.91,Monthly subscription - account 1086
+2025-10-04,expense,Salaries,154357.65,Payroll - G&A
+2025-10-05,expense,Software Tools,18732.30,SaaS tools invoice 3
+2025-10-07,expense,Cloud Infrastructure,64049.03,Cloud storage and backups
+2025-10-07,revenue,Subscriptions,68078.48,Monthly subscription - account 1079
+2025-10-08,expense,Salaries,154357.65,Payroll - Operations
+2025-10-08,revenue,Enterprise Licenses,259277.56,Annual licence deal #91
+2025-10-09,expense,Salaries,257262.74,Payroll - Sales
+2025-10-09,revenue,Subscriptions,107861.50,Monthly subscription - account 1016
+2025-10-09,revenue,Subscriptions,110982.15,Monthly subscription - account 1030
+2025-10-09,revenue,Subscriptions,94348.99,Monthly subscription - account 1051
+2025-10-09,revenue,Training,33245.68,Training workshop 3
+2025-10-10,expense,Office Rent,120000.00,Office lease
+2025-10-10,expense,Salaries,463072.94,Payroll - Engineering
+2025-10-11,revenue,Subscriptions,62243.25,Monthly subscription - account 1023
+2025-10-12,revenue,Professional Services,67280.82,Implementation engagement C
+2025-10-12,revenue,Training,30806.22,Training workshop 2
+2025-10-16,expense,Travel,16684.61,Client visit trip 4
+2025-10-16,revenue,Enterprise Licenses,276438.59,Annual licence deal #93
+2025-10-16,revenue,Professional Services,73342.31,Implementation engagement D
+2025-10-17,expense,Marketing,29298.41,Digital ads batch 4
+2025-10-17,revenue,Subscriptions,109101.29,Monthly subscription - account 1072
+2025-10-18,expense,Software Tools,19624.35,SaaS tools invoice 2
+2025-10-18,revenue,Professional Services,64478.55,Implementation engagement E
+2025-10-18,revenue,Subscriptions,80165.56,Monthly subscription - account 1058
+2025-10-19,expense,Marketing,43265.08,Digital ads batch 2
+2025-10-19,revenue,Professional Services,52040.26,Implementation engagement B
+2025-10-20,expense,Marketing,36151.54,Digital ads batch 5
+2025-10-20,revenue,Subscriptions,71881.09,Monthly subscription - account 1037
+2025-10-21,expense,Travel,17440.90,Client visit trip 3
+2025-10-22,revenue,Professional Services,75750.80,Implementation engagement A
+2025-10-23,expense,Software Tools,18640.66,SaaS tools invoice 1
+2025-10-23,expense,Travel,13533.59,Client visit trip 2
+2025-10-23,revenue,Enterprise Licenses,268304.41,Annual licence deal #92
+2025-10-23,revenue,Subscriptions,85420.94,Monthly subscription - account 1044
+2025-10-24,expense,Cloud Infrastructure,149447.74,Cloud compute
+2025-10-24,expense,Marketing,37473.61,Digital ads batch 1
+2025-10-24,revenue,Training,27500.12,Training workshop 1
+2025-10-25,expense,Marketing,28499.14,Digital ads batch 3
+2025-10-26,revenue,Subscriptions,109147.90,Monthly subscription - account 1009
+2025-11-02,expense,Marketing,51524.46,Digital ads batch 1
+2025-11-02,revenue,Professional Services,60709.34,Implementation engagement B
+2025-11-02,revenue,Subscriptions,103067.35,Monthly subscription - account 1024
+2025-11-03,expense,Salaries,261121.69,Payroll - Sales
+2025-11-03,expense,Travel,16266.31,Client visit trip 3
+2025-11-03,revenue,Subscriptions,100073.94,Monthly subscription - account 1066
+2025-11-04,revenue,Professional Services,54629.04,Implementation engagement E
+2025-11-05,revenue,Subscriptions,83786.63,Monthly subscription - account 1031
+2025-11-05,revenue,Subscriptions,73774.79,Monthly subscription - account 1038
+2025-11-06,expense,Cloud Infrastructure,155425.65,Cloud compute
+2025-11-06,expense,Salaries,156673.01,Payroll - Operations
+2025-11-07,expense,Software Tools,18338.31,SaaS tools invoice 4
+2025-11-08,expense,Marketing,62347.10,Digital ads batch 2
+2025-11-08,expense,Salaries,156673.01,Payroll - G&A
+2025-11-08,expense,Travel,9147.76,Client visit trip 1
+2025-11-08,revenue,Enterprise Licenses,282027.57,Annual licence deal #103
+2025-11-08,revenue,Subscriptions,75484.16,Monthly subscription - account 1073
+2025-11-09,expense,Travel,14476.35,Client visit trip 2
+2025-11-09,revenue,Training,32008.24,Training workshop 1
+2025-11-10,expense,Marketing,53890.31,Digital ads batch 3
+2025-11-10,expense,Office Rent,120000.00,Office lease
+2025-11-10,revenue,Subscriptions,131799.40,Monthly subscription - account 1059
+2025-11-18,expense,Cloud Infrastructure,66610.99,Cloud storage and backups
+2025-11-19,expense,Software Tools,10660.27,SaaS tools invoice 1
+2025-11-19,revenue,Subscriptions,105872.48,Monthly subscription - account 1052
+2025-11-20,revenue,Enterprise Licenses,290761.04,Annual licence deal #102
+2025-11-20,revenue,Professional Services,61054.37,Implementation engagement A
+2025-11-20,revenue,Professional Services,79190.34,Implementation engagement C
+2025-11-21,revenue,Subscriptions,113125.00,Monthly subscription - account 1010
+2025-11-22,expense,Salaries,470019.03,Payroll - Engineering
+2025-11-22,expense,Software Tools,12390.27,SaaS tools invoice 2
+2025-11-22,revenue,Subscriptions,105245.19,Monthly subscription - account 1017
+2025-11-23,expense,Marketing,265000.00,Year-end brand campaign
+2025-11-24,expense,Travel,11076.12,Client visit trip 5
+2025-11-24,revenue,Professional Services,84939.66,Implementation engagement D
+2025-11-26,expense,Software Tools,12722.22,SaaS tools invoice 3
+2025-11-26,expense,Travel,8596.38,Client visit trip 4
+2025-11-26,revenue,Enterprise Licenses,255082.19,Annual licence deal #101
+2025-11-26,revenue,Subscriptions,140754.32,Monthly subscription - account 1045
+2025-12-01,revenue,Subscriptions,88328.35,Monthly subscription - account 1053
+2025-12-02,expense,Marketing,25031.86,Digital ads batch 3
+2025-12-02,expense,Salaries,477069.32,Payroll - Engineering
+2025-12-03,expense,Salaries,159023.11,Payroll - Operations
+2025-12-04,revenue,Professional Services,49180.96,Implementation engagement A
+2025-12-06,revenue,Professional Services,68398.75,Implementation engagement C
+2025-12-07,expense,Marketing,48407.73,Digital ads batch 4
+2025-12-08,expense,Travel,14088.72,Client visit trip 2
+2025-12-08,revenue,Subscriptions,88418.50,Monthly subscription - account 1011
+2025-12-09,expense,Cloud Infrastructure,161642.68,Cloud compute
+2025-12-09,revenue,Enterprise Licenses,277271.52,Annual licence deal #113
+2025-12-09,revenue,Subscriptions,99056.73,Monthly subscription - account 1081
+2025-12-10,expense,Software Tools,13425.65,SaaS tools invoice 1
+2025-12-11,expense,Cloud Infrastructure,69275.43,Cloud storage and backups
+2025-12-11,expense,Salaries,159023.11,Payroll - G&A
+2025-12-11,revenue,Professional Services,50410.99,Implementation engagement D
+2025-12-13,revenue,Training,26611.48,Training workshop 1
+2025-12-14,expense,Marketing,47211.22,Digital ads batch 2
+2025-12-14,revenue,Professional Services,48188.41,Implementation engagement E
+2025-12-15,expense,Marketing,48287.73,Digital ads batch 1
+2025-12-15,expense,Salaries,265038.51,Payroll - Sales
+2025-12-15,expense,Software Tools,14588.38,SaaS tools invoice 2
+2025-12-15,revenue,Enterprise Licenses,293212.64,Annual licence deal #112
+2025-12-16,expense,Software Tools,12767.42,SaaS tools invoice 4
+2025-12-17,expense,Office Rent,120000.00,Office lease
+2025-12-18,revenue,Training,35017.06,Training workshop 2
+2025-12-19,revenue,Subscriptions,77628.55,Monthly subscription - account 1039
+2025-12-19,revenue,Subscriptions,94936.68,Monthly subscription - account 1046
+2025-12-19,revenue,Subscriptions,61700.88,Monthly subscription - account 1088
+2025-12-21,expense,Travel,8288.69,Client visit trip 1
+2025-12-21,revenue,Enterprise Licenses,253269.64,Annual licence deal #111
+2025-12-22,revenue,Subscriptions,90328.45,Monthly subscription - account 1018
+2025-12-22,revenue,Subscriptions,117526.80,Monthly subscription - account 1067
+2025-12-23,expense,Software Tools,9781.06,SaaS tools invoice 3
+2025-12-23,revenue,Professional Services,45042.11,Implementation engagement F
+2025-12-25,revenue,Subscriptions,98689.73,Monthly subscription - account 1060
+2025-12-27,revenue,Subscriptions,79687.21,Monthly subscription - account 1025
+2025-12-27,revenue,Subscriptions,107513.79,Monthly subscription - account 1074
+2025-12-28,revenue,Professional Services,62818.71,Implementation engagement B
+2025-12-28,revenue,Subscriptions,86049.54,Monthly subscription - account 1032
+2026-01-04,expense,Software Tools,17684.70,SaaS tools invoice 1
+2026-01-05,expense,Travel,8153.48,Client visit trip 2
+2026-01-05,revenue,Professional Services,35829.27,Implementation engagement B
+2026-01-05,revenue,Subscriptions,65897.06,Monthly subscription - account 1054
+2026-01-07,expense,Salaries,269014.09,Payroll - Sales
+2026-01-07,revenue,Subscriptions,89893.15,Monthly subscription - account 1068
+2026-01-08,expense,Salaries,161408.45,Payroll - G&A
+2026-01-08,revenue,Subscriptions,121006.13,Monthly subscription - account 1033
+2026-01-11,revenue,Training,28035.36,Training workshop 2
+2026-01-12,revenue,Professional Services,61124.47,Implementation engagement F
+2026-01-13,expense,Cloud Infrastructure,72046.45,Cloud storage and backups
+2026-01-13,expense,Marketing,27833.78,Digital ads batch 1
+2026-01-13,revenue,Subscriptions,110919.46,Monthly subscription - account 1061
+2026-01-14,revenue,Enterprise Licenses,269099.76,Annual licence deal #123
+2026-01-15,expense,Software Tools,11773.95,SaaS tools invoice 4
+2026-01-15,expense,Travel,13259.51,Client visit trip 1
+2026-01-15,revenue,Professional Services,63668.33,Implementation engagement C
+2026-01-15,revenue,Subscriptions,116008.76,Monthly subscription - account 1040
+2026-01-16,revenue,Professional Services,58045.48,Implementation engagement E
+2026-01-16,revenue,Subscriptions,93287.16,Monthly subscription - account 1019
+2026-01-16,revenue,Subscriptions,64368.95,Monthly subscription - account 1026
+2026-01-17,revenue,Subscriptions,90554.39,Monthly subscription - account 1082
+2026-01-18,revenue,Professional Services,67955.86,Implementation engagement D
+2026-01-18,revenue,Subscriptions,87566.82,Monthly subscription - account 1047
+2026-01-18,revenue,Training,30830.68,Training workshop 1
+2026-01-19,expense,Cloud Infrastructure,168108.38,Cloud compute
+2026-01-20,revenue,Subscriptions,103640.81,Monthly subscription - account 1075
+2026-01-21,expense,Office Rent,120000.00,Office lease
+2026-01-22,expense,Marketing,47904.45,Digital ads batch 2
+2026-01-23,expense,Salaries,161408.45,Payroll - Operations
+2026-01-24,revenue,Subscriptions,75721.98,Monthly subscription - account 1089
+2026-01-26,expense,Marketing,46774.25,Digital ads batch 3
+2026-01-26,revenue,Enterprise Licenses,303077.97,Annual licence deal #121
+2026-01-27,expense,Marketing,49814.12,Digital ads batch 4
+2026-01-27,revenue,Subscriptions,93198.18,Monthly subscription - account 1012
+2026-01-28,expense,Salaries,484225.36,Payroll - Engineering
+2026-01-28,expense,Software Tools,9852.21,SaaS tools invoice 2
+2026-01-28,expense,Software Tools,17689.65,SaaS tools invoice 3
+2026-01-28,revenue,Enterprise Licenses,302215.99,Annual licence deal #122
+2026-01-28,revenue,Professional Services,46011.12,Implementation engagement A
+2026-02-02,revenue,Professional Services,97440.10,Implementation engagement B
+2026-02-02,revenue,Subscriptions,96022.08,Monthly subscription - account 1041
+2026-02-03,expense,Cloud Infrastructure,74928.31,Cloud storage and backups
+2026-02-03,revenue,Subscriptions,91031.62,Monthly subscription - account 1055
+2026-02-04,revenue,Enterprise Licenses,312829.18,Annual licence deal #131
+2026-02-06,expense,Cloud Infrastructure,174832.72,Cloud compute
+2026-02-06,expense,Salaries,163829.58,Payroll - Operations
+2026-02-06,expense,Salaries,163829.58,Payroll - G&A
+2026-02-07,expense,Travel,16453.04,Client visit trip 2
+2026-02-08,expense,Travel,12832.08,Client visit trip 4
+2026-02-08,revenue,Subscriptions,116071.05,Monthly subscription - account 1062
+2026-02-08,revenue,Training,28890.99,Training workshop 1
+2026-02-09,expense,Marketing,59895.63,Digital ads batch 3
+2026-02-09,expense,Office Rent,120000.00,Office lease
+2026-02-10,expense,Software Tools,9907.96,SaaS tools invoice 3
+2026-02-10,revenue,Professional Services,110016.54,Implementation engagement C
+2026-02-10,revenue,Subscriptions,112627.26,Monthly subscription - account 1083
+2026-02-12,expense,Software Tools,16685.34,SaaS tools invoice 1
+2026-02-12,expense,Travel,11813.64,Client visit trip 5
+2026-02-12,revenue,Professional Services,58525.24,Implementation engagement D
+2026-02-15,expense,Marketing,50361.30,Digital ads batch 1
+2026-02-15,expense,Marketing,34859.06,Digital ads batch 4
+2026-02-15,expense,Travel,14903.14,Client visit trip 1
+2026-02-16,revenue,Subscriptions,123831.27,Monthly subscription - account 1020
+2026-02-18,revenue,Subscriptions,112370.94,Monthly subscription - account 1034
+2026-02-19,expense,Software Tools,14646.39,SaaS tools invoice 2
+2026-02-19,revenue,Training,30498.66,Training workshop 2
+2026-02-20,revenue,Subscriptions,73055.36,Monthly subscription - account 1048
+2026-02-21,expense,Marketing,38037.37,Digital ads batch 2
+2026-02-21,expense,Software Tools,12495.45,SaaS tools invoice 4
+2026-02-21,revenue,Enterprise Licenses,280765.99,Annual licence deal #133
+2026-02-21,revenue,Subscriptions,105880.16,Monthly subscription - account 1069
+2026-02-22,expense,Salaries,491488.74,Payroll - Engineering
+2026-02-22,revenue,Subscriptions,136330.59,Monthly subscription - account 1076
+2026-02-25,revenue,Enterprise Licenses,298565.48,Annual licence deal #132
+2026-02-25,revenue,Subscriptions,72658.03,Monthly subscription - account 1013
+2026-02-26,expense,Salaries,273049.30,Payroll - Sales
+2026-02-26,revenue,Professional Services,82407.51,Implementation engagement A
+2026-02-28,expense,Travel,17993.74,Client visit trip 3
+2026-02-28,revenue,Subscriptions,86430.37,Monthly subscription - account 1027
+2026-03-02,revenue,Professional Services,103495.69,Implementation engagement B
+2026-03-04,expense,Marketing,33930.28,Digital ads batch 4
+2026-03-05,revenue,Training,24810.24,Training workshop 3
+2026-03-07,revenue,Subscriptions,115233.53,Monthly subscription - account 1056
+2026-03-08,revenue,Subscriptions,57581.87,Monthly subscription - account 1014
+2026-03-08,revenue,Subscriptions,108658.47,Monthly subscription - account 1042
+2026-03-09,expense,Cloud Infrastructure,77925.44,Cloud storage and backups
+2026-03-09,revenue,Subscriptions,101395.23,Monthly subscription - account 1070
+2026-03-10,revenue,Training,24102.59,Training workshop 1
+2026-03-11,expense,Marketing,51926.61,Digital ads batch 2
+2026-03-12,expense,Salaries,166287.02,Payroll - Operations
+2026-03-12,expense,Travel,9235.89,Client visit trip 3
+2026-03-12,revenue,Professional Services,69911.63,Implementation engagement D
+2026-03-12,revenue,Subscriptions,56743.34,Monthly subscription - account 1035
+2026-03-13,expense,Software Tools,14762.93,SaaS tools invoice 2
+2026-03-13,expense,Travel,8903.03,Client visit trip 1
+2026-03-14,revenue,Training,27227.51,Training workshop 2
+2026-03-15,expense,Office Rent,120000.00,Office lease
+2026-03-15,revenue,Professional Services,87951.04,Implementation engagement A
+2026-03-17,expense,Cloud Infrastructure,181826.03,Cloud compute
+2026-03-17,expense,Salaries,166287.02,Payroll - G&A
+2026-03-18,expense,Salaries,277145.04,Payroll - Sales
+2026-03-18,expense,Travel,8139.19,Client visit trip 2
+2026-03-19,revenue,Professional Services,88973.16,Implementation engagement C
+2026-03-20,revenue,Subscriptions,106536.36,Monthly subscription - account 1021
+2026-03-20,revenue,Subscriptions,111417.86,Monthly subscription - account 1063
+2026-03-21,revenue,Subscriptions,103402.81,Monthly subscription - account 1049
+2026-03-22,expense,Software Tools,21523.32,SaaS tools invoice 1
+2026-03-22,expense,Travel,14728.28,Client visit trip 4
+2026-03-22,revenue,Subscriptions,106706.07,Monthly subscription - account 1077
+2026-03-24,revenue,Subscriptions,103247.07,Monthly subscription - account 1091
+2026-03-25,revenue,Enterprise Licenses,140000.00,Annual licence deal #141
+2026-03-25,revenue,Subscriptions,110952.48,Monthly subscription - account 1084
+2026-03-26,expense,Marketing,52569.78,Digital ads batch 3
+2026-03-26,expense,Salaries,498861.07,Payroll - Engineering
+2026-03-26,revenue,Subscriptions,80230.64,Monthly subscription - account 1028
+2026-03-28,expense,Marketing,51090.94,Digital ads batch 1
+2026-03-28,expense,Software Tools,20527.84,SaaS tools invoice 3
+2026-04-02,revenue,Professional Services,84260.19,Implementation engagement B
+2026-04-02,revenue,Subscriptions,72413.55,Monthly subscription - account 1036
+2026-04-02,revenue,Subscriptions,59406.12,Monthly subscription - account 1043
+2026-04-03,expense,Marketing,38745.31,Digital ads batch 2
+2026-04-04,expense,Salaries,168781.33,Payroll - Operations
+2026-04-04,revenue,Subscriptions,116424.47,Monthly subscription - account 1022
+2026-04-04,revenue,Subscriptions,114864.80,Monthly subscription - account 1064
+2026-04-04,revenue,Subscriptions,71637.66,Monthly subscription - account 1071
+2026-04-05,revenue,Subscriptions,64596.79,Monthly subscription - account 1029
+2026-04-05,revenue,Subscriptions,114499.23,Monthly subscription - account 1092
+2026-04-07,expense,Marketing,30685.58,Digital ads batch 4
+2026-04-07,expense,Software Tools,24441.16,SaaS tools invoice 3
+2026-04-07,expense,Travel,10071.57,Client visit trip 2
+2026-04-08,revenue,Subscriptions,61785.39,Monthly subscription - account 1078
+2026-04-08,revenue,Training,29094.13,Training workshop 1
+2026-04-09,revenue,Professional Services,96525.03,Implementation engagement A
+2026-04-10,revenue,Subscriptions,112932.29,Monthly subscription - account 1050
+2026-04-12,expense,Cloud Infrastructure,189099.07,Cloud compute
+2026-04-12,expense,Salaries,281302.21,Payroll - Sales
+2026-04-12,revenue,Professional Services,82170.58,Implementation engagement D
+2026-04-13,revenue,Subscriptions,76672.68,Monthly subscription - account 1099
+2026-04-14,revenue,Enterprise Licenses,300138.70,Annual licence deal #152
+2026-04-14,revenue,Subscriptions,109081.24,Monthly subscription - account 1015
+2026-04-15,expense,Marketing,37592.75,Digital ads batch 1
+2026-04-16,revenue,Subscriptions,92821.12,Monthly subscription - account 1057
+2026-04-18,expense,Cloud Infrastructure,81042.46,Cloud storage and backups
+2026-04-18,expense,Travel,16298.18,Client visit trip 1
+2026-04-18,revenue,Enterprise Licenses,287551.33,Annual licence deal #151
+2026-04-18,revenue,Subscriptions,109170.83,Monthly subscription - account 1085
+2026-04-19,expense,Software Tools,16087.85,SaaS tools invoice 2
+2026-04-19,revenue,Enterprise Licenses,304356.15,Annual licence deal #153
+2026-04-21,expense,Marketing,51884.01,Digital ads batch 5
+2026-04-21,expense,Office Rent,129600.00,Office lease
+2026-04-22,expense,Marketing,32661.20,Digital ads batch 3
+2026-04-22,expense,Salaries,168781.33,Payroll - G&A
+2026-04-23,revenue,Professional Services,93772.89,Implementation engagement C
+2026-04-26,expense,Software Tools,12481.31,SaaS tools invoice 1
+2026-04-28,expense,Salaries,506343.99,Payroll - Engineering
+2026-05-01,revenue,Professional Services,73081.28,Implementation engagement F
+2026-05-01,revenue,Subscriptions,111964.67,Monthly subscription - account 1016
+2026-05-01,revenue,Subscriptions,105026.14,Monthly subscription - account 1065
+2026-05-02,revenue,Subscriptions,84998.05,Monthly subscription - account 1086
+2026-05-03,revenue,Enterprise Licenses,271261.91,Annual licence deal #161
+2026-05-04,expense,Salaries,171313.05,Payroll - G&A
+2026-05-04,expense,Software Tools,14692.22,SaaS tools invoice 2
+2026-05-05,expense,Marketing,84366.36,Digital ads batch 1
+2026-05-06,revenue,Subscriptions,98243.31,Monthly subscription - account 1072
+2026-05-08,revenue,Subscriptions,159154.74,Monthly subscription - account 1044
+2026-05-09,expense,Marketing,57726.99,Digital ads batch 2
+2026-05-09,revenue,Subscriptions,141578.17,Monthly subscription - account 1079
+2026-05-10,revenue,Professional Services,45747.16,Implementation engagement C
+2026-05-11,revenue,Subscriptions,94279.53,Monthly subscription - account 1058
+2026-05-12,revenue,Subscriptions,95843.67,Monthly subscription - account 1023
+2026-05-13,expense,Salaries,513939.15,Payroll - Engineering
+2026-05-14,expense,Salaries,285521.75,Payroll - Sales
+2026-05-14,expense,Software Tools,12607.85,SaaS tools invoice 1
+2026-05-15,revenue,Enterprise Licenses,270493.33,Annual licence deal #163
+2026-05-15,revenue,Professional Services,61401.27,Implementation engagement D
+2026-05-16,expense,Cloud Infrastructure,196663.03,Cloud compute
+2026-05-16,revenue,Enterprise Licenses,288510.66,Annual licence deal #162
+2026-05-17,revenue,Professional Services,54913.76,Implementation engagement B
+2026-05-18,expense,Travel,16777.06,Client visit trip 2
+2026-05-19,revenue,Subscriptions,95588.40,Monthly subscription - account 1051
+2026-05-20,expense,Marketing,49706.03,Digital ads batch 3
+2026-05-21,expense,Office Rent,129600.00,Office lease
+2026-05-21,expense,Travel,16527.93,Client visit trip 1
+2026-05-21,revenue,Professional Services,65861.59,Implementation engagement E
+2026-05-22,expense,Salaries,171313.05,Payroll - Operations
+2026-05-22,revenue,Professional Services,60548.44,Implementation engagement A
+2026-05-23,expense,Cloud Infrastructure,84284.16,Cloud storage and backups
+2026-05-23,expense,Software Tools,13807.96,SaaS tools invoice 4
+2026-05-26,expense,Software Tools,11779.76,SaaS tools invoice 3
+2026-05-26,revenue,Subscriptions,162906.54,Monthly subscription - account 1030
+2026-05-26,revenue,Subscriptions,82954.50,Monthly subscription - account 1037
+2026-05-28,revenue,Training,37977.39,Training workshop 1
+2026-06-01,expense,Marketing,45677.36,Digital ads batch 3
+2026-06-01,expense,Software Tools,11685.69,SaaS tools invoice 2
+2026-06-01,expense,Travel,14331.72,Client visit trip 3
+2026-06-03,revenue,Subscriptions,139244.09,Monthly subscription - account 1024
+2026-06-03,revenue,Subscriptions,102891.53,Monthly subscription - account 1031
+2026-06-03,revenue,Subscriptions,101735.42,Monthly subscription - account 1045
+2026-06-03,revenue,Subscriptions,127096.98,Monthly subscription - account 1052
+2026-06-04,expense,Salaries,173882.74,Payroll - G&A
+2026-06-04,revenue,Professional Services,74496.57,Implementation engagement E
+2026-06-04,revenue,Subscriptions,95127.83,Monthly subscription - account 1066
+2026-06-05,revenue,Training,30118.60,Training workshop 1
+2026-06-06,expense,Software Tools,16441.66,SaaS tools invoice 3
+2026-06-08,revenue,Training,32507.78,Training workshop 2
+2026-06-09,expense,Cloud Infrastructure,87655.52,Cloud storage and backups
+2026-06-10,revenue,Professional Services,57902.15,Implementation engagement A
+2026-06-10,revenue,Professional Services,75816.30,Implementation engagement C
+2026-06-11,revenue,Enterprise Licenses,301196.16,Annual licence deal #173
+2026-06-12,expense,Salaries,173882.74,Payroll - Operations
+2026-06-12,expense,Software Tools,9310.16,SaaS tools invoice 1
+2026-06-12,revenue,Professional Services,81136.45,Implementation engagement D
+2026-06-12,revenue,Subscriptions,123817.10,Monthly subscription - account 1087
+2026-06-12,revenue,Training,35556.40,Training workshop 3
+2026-06-13,expense,Travel,13663.21,Client visit trip 1
+2026-06-14,revenue,Subscriptions,95129.72,Monthly subscription - account 1059
+2026-06-16,revenue,Subscriptions,104137.56,Monthly subscription - account 1017
+2026-06-18,expense,Marketing,49759.30,Digital ads batch 2
+2026-06-18,expense,Salaries,289804.57,Payroll - Sales
+2026-06-18,revenue,Enterprise Licenses,314537.60,Annual licence deal #171
+2026-06-18,revenue,Enterprise Licenses,299414.11,Annual licence deal #172
+2026-06-20,expense,Marketing,40321.22,Digital ads batch 4
+2026-06-20,revenue,Professional Services,71980.28,Implementation engagement B
+2026-06-21,expense,Marketing,46376.20,Digital ads batch 1
+2026-06-22,expense,Office Rent,129600.00,Office lease
+2026-06-24,expense,Travel,8695.85,Client visit trip 2
+2026-06-24,revenue,Subscriptions,90710.29,Monthly subscription - account 1073
+2026-06-24,revenue,Subscriptions,144264.67,Monthly subscription - account 1080
+2026-06-25,expense,Cloud Infrastructure,204529.55,Cloud compute
+2026-06-27,revenue,Subscriptions,134593.70,Monthly subscription - account 1038
+2026-06-28,expense,Salaries,521648.23,Payroll - Engineering
+2026-06-28,expense,Software Tools,17988.88,SaaS tools invoice 4

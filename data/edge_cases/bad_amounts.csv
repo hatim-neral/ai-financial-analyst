@@ -1,0 +1,9 @@
+date,type,category,amount,description
+2026-01-05,revenue,Subscriptions,"₹1,200.50",currency symbol and comma
+2026-01-06,revenue,Subscriptions,"12,34,567",Indian digit grouping
+2026-01-07,expense,Marketing,(500),accounting negative = refund
+2026-01-08,expense,Marketing,abc,text
+2026-01-09,expense,Travel,,blank
+2026-01-10,revenue,Training,1.5e3,scientific notation
+2026-01-11,expense,Travel,9000,ok
+2026-01-12,revenue,Training,inf,infinity

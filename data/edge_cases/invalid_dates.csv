@@ -1,0 +1,11 @@
+date,type,category,amount,description
+2026-01-05,revenue,Subscriptions,50000,ok
+2026-01-12,expense,Marketing,12000,ok
+2026-02-30,revenue,Subscriptions,51000,impossible date
+not a date,expense,Travel,8000,garbage date
+,revenue,Training,20000,blank date
+05/02/2026,revenue,Subscriptions,52000,day-first date (5 Feb 2026)
+2026-02-14,expense,Marketing,15000,ok
+2026-02-20,revenue,Enterprise Licenses,200000,ok
+2026-13-01,expense,Travel,9000,month 13
+2026-02-25,expense,Office Rent,120000,ok

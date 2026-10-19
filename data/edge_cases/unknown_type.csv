@@ -1,0 +1,5 @@
+date,type,category,amount,description
+2026-01-05,Income,Subscriptions,50000,alias of revenue
+2026-01-06,EXPENSE,Marketing,12000,upper case
+2026-01-07,transfer,Bank,100000,not revenue or expense
+2026-01-08,revenue,Training,20000,ok

@@ -1,0 +1,5 @@
+date,type,category,amount,description
+2026-01-05,revenue,Subscriptions,50000,ok
+2026-01-06,expense,Marketing,12000,too,many,fields
+2026-01-07,expense,Travel
+2026-02-05,revenue,Subscriptions,52000,ok
