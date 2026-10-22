@@ -6,7 +6,7 @@ never does arithmetic: it chooses which calculation to run, Python computes the 
 and every figure in the answer is checked against that result before it is shown, with
 the formula and source rows one click away.
 
-- **Live demo:** `https://YOUR-APP.streamlit.app` *(add after deploying)*
+- **Live demo:** https://aifinancialanalysthatim.streamlit.app (free hosting sleeps when idle; opening the link wakes it in under a minute)
 - **Walkthrough video:** `YOUR-VIDEO-LINK` *(add after recording)*
 - **Docs:** [Architecture](docs/ARCHITECTURE.md) · [Testing & evaluation](docs/TESTING.md)
 
