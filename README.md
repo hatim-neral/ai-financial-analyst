@@ -48,7 +48,7 @@ the formula and source rows one click away.
 Requires Python 3.11+.
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/ai-financial-analyst.git
+git clone https://github.com/hatim-neral/ai-financial-analyst.git
 cd ai-financial-analyst
 python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
