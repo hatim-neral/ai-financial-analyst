@@ -75,3 +75,19 @@ def test_report_download_is_offered():
     at = _app()
     assert not at.exception
     assert any(getattr(el, "proto", None) is not None and "Download report" in str(el.proto) for el in at.get("download_button"))
+
+
+def test_keys_added_to_a_running_app_take_effect(monkeypatch):
+    # Regression: the AI client was cached for the life of the server, so keys added after start-up
+    # (as on Streamlit Cloud, where secrets are saved while the app runs) were never picked up.
+    for var in ("GROQ_API_KEY", "GEMINI_API_KEY", "ANTHROPIC_API_KEY", "CEREBRAS_API_KEY", "MISTRAL_API_KEY",
+                "NVIDIA_API_KEY", "HF_TOKEN", "OPENROUTER_API_KEY"):
+        monkeypatch.delenv(var, raising=False)
+    at = AppTest.from_file(APP, default_timeout=60)
+    at.secrets["GROQ_API_KEY"] = ""
+    at.run()
+    status = lambda: " ".join(e.body for e in at.get("html") if "ai-status" in e.body)
+    assert "AI not configured" in status()
+    monkeypatch.setenv("GROQ_API_KEY", "gsk_test_key_added_later")
+    at.run()
+    assert "AI connected" in status()

@@ -58,7 +58,7 @@ cp .streamlit/secrets.toml.example .streamlit/secrets.toml
 # edit .streamlit/secrets.toml and paste your free Groq key (https://console.groq.com/keys)
 
 streamlit run app.py               # opens http://localhost:8501
-pytest                             # 228 tests, no API key needed
+pytest                             # 229 tests, no API key needed
 python -m evals.run_eval           # live evaluation against the LLM (needs the key)
 ```
 
@@ -206,7 +206,7 @@ order, and a rate-limited or busy one is skipped automatically:
 | Part | Status |
 |---|---|
 | CSV upload, validation, all calculations, dashboard, Plan page | Done; covered by automated tests |
-| AI answers with the number guard (Groq) | Done; 228 automated tests, and the live evaluation passes 28/28 (`evals/results.md`) |
+| AI answers with the number guard (Groq) | Done; 229 automated tests, and the live evaluation passes 28/28 (`evals/results.md`) |
 | Gemini fallback | Done; used live during development |
 | **Claude provider** | **Implemented but not run against the live API.** It is unit-tested with a fake SDK; no Anthropic key was used during development. Optional |
 | Cerebras, Mistral, NVIDIA, Hugging Face, OpenRouter backups | **Configured and unit-tested, not run live** (no keys during development). Optional |

@@ -68,9 +68,29 @@ def _secrets_source():
     return {}
 
 
+def _keys_fingerprint() -> str:
+    """Which provider keys and model settings are set right now (hashed, never the keys themselves). The
+    client cache is keyed on it, so adding or changing keys on a running app takes effect at once; a
+    cache without this kept serving a client built before the keys existed."""
+    source = _secrets_source()
+    names = [v for name in llm.PROVIDERS for v in (llm.PROVIDERS[name][2], llm.PROVIDERS[name][3])] + ["LLM_PROVIDER"]
+    parts = []
+    for n in names:
+        try:
+            value = os.environ.get(n) or (source.get(n) if source else None)
+        except Exception:
+            value = None
+        parts.append(f"{n}={value or ''}")
+    return hashlib.sha256("|".join(parts).encode()).hexdigest()[:16]
+
+
 @st.cache_resource(show_spinner=False)
-def get_client() -> llm.ChatClient:
+def _client_for(fingerprint: str) -> llm.ChatClient:
     return llm.ChatClient(llm.load_providers(os.environ, _secrets_source()))
+
+
+def get_client() -> llm.ChatClient:
+    return _client_for(_keys_fingerprint())
 
 
 @st.cache_data(show_spinner=False)

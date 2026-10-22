@@ -2,7 +2,7 @@
 
 Three levels of evidence:
 
-1. **Automated tests** (`pytest`, 228 tests, no API key needed). Every calculation, validation rule and
+1. **Automated tests** (`pytest`, 229 tests, no API key needed). Every calculation, validation rule and
    guard rule, plus the full AI loop with a scripted fake LLM and UI smoke tests.
 2. **Edge-case files** (`data/edge_cases/`). 13 files covering empty, malformed and hostile inputs.
 3. **Live evaluation** (`python -m evals.run_eval`). 28 questions against the real LLM, scored automatically.
@@ -23,7 +23,7 @@ pytest
 | `test_llm.py` | 23 | Provider order and configuration, response parsing, rotation and cooldowns on 429 (including hour-long waits), busy servers skipped, bad keys set aside, retry on 400, timeouts, Gemini thought signatures, Mistral tool-call ids, the plain "busy" message, keys never in error messages |
 | `test_claude_provider.py` | 11 | Claude via a fake Anthropic SDK: request shape (no sampling parameters, caching, server-side fallback), format translation, thinking blocks replayed unchanged, error mapping onto failover, refusal handling. No network |
 | `test_sample_data.py` | 4 | The planted stories in the sample data, and that the generator reproduces the file exactly |
-| `test_app_smoke.py` | 30 | Streamlit `AppTest`: opens on the default account with the right totals, account switching, period presets, every page for every account, bad uploads |
+| `test_app_smoke.py` | 31 | Streamlit `AppTest`: opens on the default account with the right totals, account switching, period presets, every page for every account, bad uploads |
 | `test_advanced_metrics.py` | 23 | Comparisons, growth, category trends, anomalies, quarters, expense ratios, what-ifs and projections (hand-checked and against the planted stories) |
 | `test_business_samples.py` | 13 | The five extra sample businesses load cleanly, keep their planted stories and regenerate deterministically |
 | `test_planning_and_ui.py` | 23 | Budgets, cash runway, context tools, agent progress events, follow-up suggestions, report escaping, light/dark CSS, the money river and bridge |
@@ -104,6 +104,7 @@ Testing found and fixed these:
 
 | Problem | How it was found | Fix |
 |---|---|---|
+| On Streamlit Cloud the app kept saying "AI not configured" after the keys were saved: the AI client was cached for the life of the server, so a client built before the keys existed was served forever | Deploying: secrets are added while the app is already running | The cache is keyed on a hash of which keys are set, so new or changed keys take effect on the next page load. Regression test `test_keys_added_to_a_running_app_take_effect` fails on the old code |
 | The guard rejected a correct "5.1 percentage‑point" (for 5.12) because the model wrote the unit with a non-breaking hyphen (U+2011), so the number was read as money | Testing backup models on a what-if question: every model's what-if answer fell back | The unit pattern accepts hyphenated forms (any Unicode hyphen) and `ppt`; truncation such as "23.9%" for 23.96% is still rejected. 6 new tests |
 | Uploading a second file in the same session crashed with a `KeyError` (the account picker's label for an upload contains the file name; when it changed, Streamlit returned the label instead of the key) | Recording the demo walkthrough with a real browser: Streamlit's `AppTest` can't drive a real file upload, so the unit tests never uploaded twice | The account switch now acts only on sample keys; verified in the browser with five uploads in a row (good, empty, missing column, invalid dates, good) followed by an account switch |
 | Guard accepted "30%" for an actual 28.76%: the trailing-zero rounding rule widened the tolerance for percentages too | `test_invented_or_wrong_figures_fail` | Trailing-zero widening now applies only to money; percentages must be within normal rounding |
