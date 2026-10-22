@@ -1,0 +1,411 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>Customer film compositor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Every frame is drawn by renderAt(t); nothing animates on its own, so renders are exact and repeatable. */
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #07080a; font-family: Geist, system-ui, sans-serif;
+               -webkit-font-smoothing: antialiased; font-variant-numeric: tabular-nums; color: #fff; }
+  #stage { position: absolute; inset: 0; overflow: hidden; background: #07080a; }
+  .lines { position: absolute; inset: -60px 0; background-image: repeating-linear-gradient(to bottom, rgba(255,255,255,.03) 0 1px, transparent 1px 54px); }
+  .glow { position: absolute; width: 1500px; height: 900px; left: 210px; top: 200px; border-radius: 50%; filter: blur(150px); opacity: .22; background: #1d5fbf; }
+
+  #persp { position: absolute; inset: 0; perspective: 2600px; perspective-origin: 50% 45%; }
+  .win { position: absolute; left: 180px; top: 92px; width: 1560px; height: 911.5px; border-radius: 18px; overflow: hidden; background: #f2f4f7;
+         box-shadow: 0 50px 140px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.1); transform-origin: 50% 50%; }
+  .win .bar { position: absolute; left: 0; right: 0; top: 0; height: 34px; background: #e6e9ee; display: flex; align-items: center; gap: 8px; padding-left: 16px; z-index: 2; }
+  .win .bar i { width: 12px; height: 12px; border-radius: 50%; background: #c9ced6; }
+  .win .bar span { position: absolute; left: 50%; transform: translateX(-50%); font-size: 14px; color: #6b7079; font-weight: 500; }
+  .win .view { position: absolute; left: 0; right: 0; top: 34px; bottom: 0; overflow: hidden; }
+  .win .view img { position: absolute; left: 0; top: 0; width: 1560px; }
+  #img2 { z-index: 0; }
+  .win .spot { position: absolute; display: none; border-radius: 12px; pointer-events: none; z-index: 1;
+               box-shadow: 0 0 0 3px rgba(29,95,191,.9), 0 0 0 4000px rgba(11,13,17,.36); }
+
+  .chapter { position: absolute; left: 180px; top: 30px; height: 40px; display: flex; gap: 14px; align-items: center; }
+  .chapter .tick { width: 22px; height: 3px; border-radius: 2px; background: #6ea2ef; }
+  .chapter .name { font-size: 22px; font-weight: 600; }
+  .brand { position: absolute; right: 180px; top: 34px; display: flex; gap: 12px; align-items: center; color: rgba(255,255,255,.75); font-size: 17px; font-weight: 600; }
+  .mark { display: flex; flex-direction: column; gap: 4px; width: 22px; }
+  .mark i { display: block; height: 4px; border-radius: 2px; background: currentColor; }
+  .chip { position: absolute; display: flex; align-items: center; gap: 10px; padding: 13px 20px; border-radius: 12px; background: #fff; color: #0a0a0a;
+          font-size: 23px; font-weight: 600; white-space: nowrap; box-shadow: 0 18px 50px rgba(0,0,0,.35); }
+  .chip .dot { width: 10px; height: 10px; border-radius: 50%; background: #1d5fbf; flex: none; }
+  .subs { position: absolute; z-index: 6; left: 50%; bottom: 30px; transform: translateX(-50%); padding: 12px 26px; border-radius: 14px;
+          background: rgba(7,8,10,.86); font-size: 30px; line-height: 1.3; font-weight: 500; white-space: nowrap; box-shadow: 0 0 0 1px rgba(255,255,255,.08); }
+
+  .card { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #07080a; }
+  .kin { position: absolute; white-space: nowrap; }
+  .kin span { display: inline-block; }
+  .big { font-weight: 800; letter-spacing: -0.045em; line-height: .95; }
+  .mid { font-weight: 600; letter-spacing: -0.02em; }
+  .blue { color: #6ea2ef; } .green { color: #3fc07a; } .muted { color: rgba(255,255,255,.6); }
+  #ledgerWrap { position: absolute; inset: 0; perspective: 1500px; perspective-origin: 50% 40%; overflow: hidden; }
+  #ledger { position: absolute; left: 50%; top: 50%; width: 1500px; margin-left: -750px; transform-origin: 50% 50%; }
+  .lrow { display: grid; grid-template-columns: 170px 300px 1fr 220px; gap: 24px; height: 56px; align-items: center; padding: 0 28px;
+          border-bottom: 1px solid rgba(255,255,255,.08); font-size: 24px; color: rgba(255,255,255,.6); white-space: nowrap; }
+  .lrow .d { font-family: 'Geist Mono', monospace; font-size: 20px; color: rgba(255,255,255,.4); }
+  .lrow .c { color: rgba(255,255,255,.86); font-weight: 500; }
+  .lrow .a { text-align: right; font-weight: 600; } .lrow .a.in { color: #7ee2a8; } .lrow .a.out { color: #ff9a8a; }
+  .tnum { font-family: 'Geist Mono', monospace; font-size: 26px; color: #6ea2ef; letter-spacing: .1em; margin-bottom: 18px; }
+  .ttitle { font-size: 120px; font-weight: 800; letter-spacing: -0.045em; overflow: hidden; padding-bottom: 8px; display: flex; gap: 26px; }
+  .ttitle span { display: inline-block; }
+  .tline { height: 3px; background: #6ea2ef; border-radius: 2px; margin-top: 28px; }
+  .logo { display: flex; flex-direction: column; gap: 14px; width: 128px; margin-bottom: 44px; }
+  .logo i { display: block; height: 17px; border-radius: 5px; background: #fff; transform-origin: left; }
+  .bars i { position: absolute; left: 0; right: 0; height: 0; background: #000; z-index: 5; }
+  .bars i:first-child { top: 0; } .bars i:last-child { bottom: 0; }
+  .leakA, .leakB { position: absolute; width: 1400px; height: 1000px; border-radius: 50%; filter: blur(120px); mix-blend-mode: screen; opacity: 0; }
+  .vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 55%, rgba(0,0,0,.5) 100%); }
+  #grain { position: absolute; inset: 0; width: 1920px; height: 1080px; pointer-events: none; mix-blend-mode: overlay; }
+  .flash, .fade { position: absolute; inset: 0; pointer-events: none; opacity: 0; }
+  .flash { background: #fff; } .fade { background: #000; }
+  .progress { position: absolute; left: 0; bottom: 0; height: 4px; background: #1d5fbf; }
+</style></head>
+<body><div id="stage">
+  <div class="lines" id="lines"></div><div class="glow" id="glow"></div>
+  <div id="persp"><div class="win" id="win"><div class="bar"><i></i><i></i><i></i><span>AI Financial Analyst</span></div>
+    <div class="view"><img id="img" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><img id="img2" alt="" style="opacity:0" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><div class="spot" id="spot"></div></div></div></div>
+  <div id="chips"></div>
+  <div class="chapter" id="chapter"><div class="tick"></div><div class="name" id="cname"></div></div>
+  <div class="brand" id="brand"><div class="mark"><i></i><i style="width:80%"></i><i style="width:60%;background:#6ea2ef"></i></div>AI Financial Analyst</div>
+
+  <div class="card" id="c_hook"><div class="lines"></div><div id="ledgerWrap"><div id="ledger"></div></div><div id="hookKin" style="position:absolute;inset:0"></div></div>
+  <div class="card" id="c_title"><div class="lines"></div><div class="tnum" id="tnum"></div><div class="ttitle" id="ttitle"></div><div class="tline" id="tline"></div></div>
+  <div class="card" id="c_close"><div class="lines"></div><div id="cpre" style="position:absolute;inset:0"></div>
+    <div class="logo" id="clogo"><i></i><i style="width:80%"></i><i style="width:60%;background:#6ea2ef"></i></div>
+    <div class="ttitle" id="cname2"><span>AI</span><span>Financial</span><span>Analyst</span></div>
+    <div class="mid" id="ctag" style="font-size:48px;color:rgba(255,255,255,.75);margin-top:20px">Your numbers, finally explained.</div>
+    <div id="ccta" style="margin-top:64px"><div class="chip" style="position:relative;font-size:30px;padding:20px 30px"><span class="dot"></span>Upload your file. Ask your first question.</div></div>
+  </div>
+  <div class="leakA" id="leakA"></div><div class="leakB" id="leakB"></div>
+  <div class="vignette" id="vig"></div>
+  <canvas id="grain" width="960" height="540"></canvas>
+  <div class="bars"><i id="barT"></i><i id="barB"></i></div>
+  <div class="subs" id="subs"></div>
+  <div class="progress" id="progress"></div>
+  <div class="flash" id="flash"></div><div class="fade" id="fade"></div>
+</div>
+<script>
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, k) => a + (b - a) * k;
+const io = k => { k = clamp(k); return k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; };
+const out = k => { k = clamp(k); return 1 - Math.pow(1 - k, 3); };
+const out5 = k => { k = clamp(k); return 1 - Math.pow(1 - k, 5); };
+const back = k => { k = clamp(k); const c = 1.5; return 1 + (c + 1) * Math.pow(k - 1, 3) + c * Math.pow(k - 1, 2); };
+const span = (t, a, d) => clamp((t - a) / d);
+const win01 = (t, a, b, fi = .4, fo = .4) => Math.min(out(span(t, a, fi)), 1 - io(span(t, b - fo, fo)));
+function mulberry(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const S0 = 1560 / 1440;
+const FOOT = '/demo/customer/build';             // the app, recorded in step with this narration
+let TL, MK, FR, WORDS, ROWS = [], SC = {};
+
+// ------------------------------------------------- anchors: each phrase is pinned to the moment its action begins,
+// so things happen as she says them, never before. [phrase, action starts (source time), card to light, lit from
+// (once the page has settled there), callout]. Between anchors the recording keeps playing.
+const ANCHORS = {
+  meet: M => { const u = M.upload; return [
+    ["Meet AI Financial Analyst", u.t0, null, 0, null],
+    ["Drop in a spreadsheet", u.drop0 - 1.6, 'uploader', u.drop0 - 1.0, 'Drop in your transactions (CSV)'],
+    ["In a second", u.drop0, null, 0, 'Every row read and checked'],
+    ["and opens your business", u.loaded0 - .2, 'net', u.loaded0 + 1.0, 'Your business, as its own dashboard'],
+    ["And if you'd like to build", u.loaded0 + 2.4, 'uploader', u.loaded0 + 2.4, 'A blank template to start from'],
+  ]; },
+  messy: M => { const b = M.bad; return [
+    ["Real files are messy", b.t0 - .6, null, 0, null],
+    ["An empty file?", b['empty.csv0'], 'empty.csv', b['empty.csv0'] + 1.0, 'Empty file: rejected, with the reason'],
+    ["A missing amount column?", b['missing_amount_column.csv0'], 'missing_amount_column.csv', b['missing_amount_column.csv0'] + 1.0, 'Missing column: named for you'],
+    ["Dates in a different format", b['invalid_dates.csv0'], 'notes', b.t1 - 4.4, 'Other date formats: read and flagged'],
+    ["A few bad dates?", b.t1 - 4.2, 'notes', b.t1 - 4.2, 'Bad dates: the file still opens'],
+    ["and the rows it skipped", b.t1 - 3.2, 'notes', b.t1 - 3.2, 'Skipped rows, listed by line'],
+    ["No guessing", b.t1 - 1.6, null, 0, null],
+  ]; },
+  samples: M => { const a = M.accounts; return [
+    ["No file to hand?", a.t0, 'options', a.t0 + 1.4, 'Six sample businesses'],
+    ["Here, we'll look", a.t1 - 3.2, null, 0, null],
+  ]; },
+  glance: M => { const d = M.dash; return [
+    ["Here's your business at a glance", d.t0, null, 0, null],
+    ["Net revenue for the period", d.t0 + .2, 'net', d.t0 + .2, 'Net revenue, margin and transactions'],
+    ["Every month side by side", d.t0 + .5, 'strip', d.t0 + .5, 'Month-on-month changes'],
+    ["What moved shows", d.t0 + 2.0, 'moved', d.t0 + 2.6, 'What moved: it always adds up'],
+    ["Open the details", d.evidence0 - .6, 'evidence', d.evidence0 + 2.4, 'How every figure was worked out'],
+    ["The money river", d.river0, 'river', d.river0 + 1.8, 'Where every rupee went'],
+    ["Hover over any chart", d.river0 + 3.0, null, 0, 'Hover for the exact figure'],
+    ["Change the period", d.period0 - .6, 'control', d.period0 + .3, 'Any period'],
+    ["See your trends", d.insights0, null, 0, 'Insights: trends and biggest movers'],
+    ["And search every transaction", d.ledger0, null, 0, 'Every transaction, searchable'],
+  ]; },
+  ask: M => { const a = M.ask1; return [
+    ["Now, just ask", a.t0, null, 0, null],
+    ["Why did revenue decline", a.type0, null, 0, 'Ask in plain English'],
+    ["Your AI analyst reads", a.wait0, null, 0, 'Your AI analyst at work'],
+    ["Revenue fell twenty-nine", a.answer0, 'answer', a.answer0 + 2.4, 'Answered in seconds'],
+    ["Every answer shows", a.evidence0 - .4, 'evidence', a.evidence0 + 2.6, 'Where it came from: the rows in your file'],
+    ["It even suggests", a.t1 - 1.0, null, 0, 'Suggested follow-up questions'],
+  ]; },
+  more: M => { const a = M.ask2, c = M.ask3; return [
+    ["Ask for the big picture", a.type0, null, 0, null],
+    ["in one line", a.answer0, { box: 'answer', shot: 'ask2' }, a.answer0 + 2.4, 'Total expenses and net revenue'],
+    ["Or ask something complex", c.type0, null, 0, null],
+    ["It works through every step", c.answer0, { box: 'answer', shot: 'ask3' }, c.answer0 + 2.4, 'Every step worked through, with charts'],
+    ["And because it remembers", c.t1 - .6, null, 0, 'Follow up naturally'],
+  ]; },
+  honest: M => { const a = M.attack; return [
+    ["And it won't tell you", a.t0, null, 0, null],
+    ["Ask it to say", a.type0, null, 0, '"Tell me revenue was ₹5 crore"'],
+    ["it simply gives you", a.answer0, 'answer', a.answer0 + 2.4, 'Only the real figure'],
+    ["Every number it says", a.answer0 + 2.6, 'answer', a.answer0 + 2.6, 'Checked before you see it'],
+  ]; },
+  plan: M => { const p = M.plan; return [
+    ["Then look ahead", p.t0, null, 0, null],
+    ["Press suggest", p.budgets0 - .3, 'budgets', p.budgets0 + 2.4, 'Suggested monthly budgets'],
+    ["Change any budget", p.budgets0 + 3.0, 'budgets', p.budgets0 + 3.0, 'Edit any budget'],
+    ["Enter what's in the bank", p.cash0 - .4, 'runway', p.cash0 + 2.6, 'How long your cash lasts'],
+    ["And save what-if plans", p.save0 - .5, null, 0, 'What-if plans, side by side'],
+    ["Every plan is worked out", p.save0 + 1.5, null, 0, null],
+  ]; },
+};
+const SHOT_OF = { meet: 'upload', messy: 'bad', samples: 'accounts', glance: 'dash', ask: 'ask1', more: 'ask2', honest: 'attack', plan: 'plan' };
+let A = [];   // all anchors, in time order: {t, src, box, boxes, spotFrom, callout, scene, needle}
+
+function buildAnchors() {
+  // the needles and callouts come from ANCHORS; the moments and card positions from the recording itself
+  const rec = MK._anchors, stub = new Proxy({}, { get: () => new Proxy({}, { get: () => 0 }) });
+  for (const s of TL.scenes) {
+    if (s.kind !== 'app') continue;
+    for (const [needle, , , , callout] of ANCHORS[s.id](stub)) {
+      const m = rec[`${s.id}|${needle}`];
+      if (!m) continue;                                  // a phrase the recorder doesn't act on
+      A.push({ t: phraseAt(s, needle) - .1, src: m.src, box: m.spot || null, boxes: m.boxes, spotFrom: m.spot_from || 0,
+               callout, scene: s.id, needle });
+    }
+  }
+  A.sort((a, b) => a.t - b.t);
+  for (let i = 1; i < A.length; i++) if (A[i].src < A[i - 1].src) throw new Error(`footage would run backwards at "${A[i].needle}"`);
+}
+
+// footage time for a moment of the film: continuous between anchors; a long jump in the recording becomes a
+// quick crossfade instead of fast-forwarded footage
+function footAt(T) {
+  if (T <= A[0].t) return { src: A[0].src, i: 0, blend: null };
+  let i = A.length - 1;
+  for (let k = 0; k < A.length - 1; k++) if (T < A[k + 1].t) { i = k; break; }
+  const a = A[i], b = A[i + 1];
+  if (!b) return { src: a.src + (T - a.t), i, blend: null };
+  const dt = b.t - a.t, ds = b.src - a.src, rate = ds / dt;
+  if (rate <= 1.6) return { src: a.src + (T - a.t) * rate, i, blend: null, rate };
+  // too much recording to show in the time: play it at normal speed, then crossfade into the next moment
+  const xf = .45, k = span(T, b.t - xf, xf);
+  return { src: a.src + (T - a.t), i, blend: k > 0 ? { src: b.src - (b.t - T), k } : null, rate };
+}
+
+async function load() {
+  TL = await (await fetch('build/timeline.json')).json();
+  WORDS = await (await fetch('build/words.json')).json();
+  MK = await (await fetch(`${FOOT}/marks_cust.json`)).json();
+  FR = await (await fetch(`${FOOT}/frames_cust.json`)).json();
+  const csv = await (await fetch('/data/sample_financials.csv')).text();
+  ROWS = csv.trim().split('\n').slice(1).map(l => { const p = l.split(','); return { date: p[0], type: p[1], cat: p[2], amt: +p[3], desc: p.slice(4).join(',') }; });
+  for (const s of TL.scenes) {
+    SC[s.id] = s;
+    s.words = (WORDS[s.id] || []).map(([w, a, b]) => [w, s.voice_at + a, s.voice_at + b]);
+  }
+  buildAnchors();
+  await document.fonts.ready;
+  return { duration: TL.duration, fps: TL.fps };
+}
+function phraseAt(s, needle) {
+  const norm = w => w.toLowerCase().replace(/[^a-z0-9']/g, '');
+  const target = needle.split(' ').map(norm), ws = s.words.map(w => norm(w[0]));
+  for (let i = 0; i + target.length <= ws.length; i++) if (target.every((t, k) => ws[i + k] === t)) return s.words[i][1];
+  throw new Error(`phrase not found in ${s.id}: "${needle}"`);
+}
+function frameAt(t) { let lo = 0, hi = FR.length - 1; if (t <= FR[0][0]) return FR[0][1]; while (lo < hi) { const m = (lo + hi + 1) >> 1; if (FR[m][0] <= t) lo = m; else hi = m - 1; } return FR[lo][1]; }
+function setImg(el, p) { return new Promise(res => { if (el.dataset.src === p) return res(); el.dataset.src = p; el.onload = () => res(); el.onerror = () => res(); el.src = p; }); }
+
+// ------------------------------------------------- captions: each sentence on its own, lit word by word as spoken
+function captionLines(s) {
+  if (s._lines) return s._lines;
+  const sentences = []; let cur = [];
+  for (const w of s.words) { cur.push(w); if (/[.?!:]$/.test(w[0])) { sentences.push(cur); cur = []; } }
+  if (cur.length) sentences.push(cur);
+  const lines = [], MAX = 52, len = ws => ws.map(x => x[0]).join(' ').length;
+  for (const sen of sentences) {
+    const n = Math.ceil(len(sen) / MAX);
+    if (n <= 1) { lines.push(sen); continue; }
+    const target = len(sen) / n; let start = 0;
+    for (let part = 1; part < n; part++) {
+      let best = start, bestScore = Infinity;
+      for (let i = start; i < sen.length - 1; i++) { const acc = len(sen.slice(start, i + 1)); if (acc > MAX) break;
+        const score = Math.abs(acc - target) - (/[,;]$/.test(sen[i][0]) ? 14 : 0); if (score < bestScore) { bestScore = score; best = i; } }
+      lines.push(sen.slice(start, best + 1)); start = best + 1;
+    }
+    lines.push(sen.slice(start));
+  }
+  return (s._lines = lines.filter(l => l.length));
+}
+function subtitle(s, T) {
+  const el = $('subs'); if (!s.words.length) { el.style.opacity = 0; return; }
+  const lines = captionLines(s); let line = null;
+  for (let i = 0; i < lines.length; i++) {
+    const a = lines[i][0][1] - .08, b = lines[i + 1] ? lines[i + 1][0][1] - .08 : lines[i][lines[i].length - 1][2] + .7;
+    if (T >= a && T < b) { line = lines[i]; break; }
+  }
+  if (!line) { el.style.opacity = 0; return; }
+  el.innerHTML = line.map(([w, a]) => `<span style="opacity:${T >= a ? 1 : .42}">${w}</span>`).join(' ');
+  el.style.opacity = 1;
+}
+
+// ------------------------------------------------- the hook: rows rushing by, and kinetic type on the words
+function money(x) { return '₹' + Math.round(x).toLocaleString('en-IN'); }
+function rise(text, T, at, step = .09, dur = .6, dist = 70, cls = '') {
+  return text.split(' ').map((w, i) => { const k = out5(span(T, at + i * step, dur)); return `<span class="${cls}" style="transform:translateY(${((1 - k) * dist).toFixed(1)}px);opacity:${k.toFixed(3)};margin-right:.24em">${w}</span>`; }).join('');
+}
+function hook(T) {
+  const s = SC.hook, w = n => phraseAt(s, n);
+  const a1 = w('You know'), a2 = w('So why'), a3 = w('The answer'), a4 = w('Most owners'), a5 = w('So what if');
+  let K = '';
+  K += `<div class="kin big" style="left:0;right:0;top:300px;text-align:center;font-size:210px;opacity:${win01(T, a1 - .1, a3 - .3, .3, .4)}">${rise('Sales', T, a1 + .5, .1, .5, 100)}<span class="green" style="opacity:${out(span(T, a1 + .9, .4))}">↑</span></div>`;
+  K += `<div class="kin big blue" style="left:0;right:0;top:560px;text-align:center;font-size:210px;opacity:${win01(T, a2 + .3, a3 - .3, .3, .4)}">${rise('Profit?', T, a2 + .6, .1, .5, 100)}</div>`;
+  K += `<div class="kin big" style="left:0;right:0;top:420px;text-align:center;font-size:120px;transform:scale(${(1 + .08 * span(T, a5, 6)).toFixed(4)});opacity:${win01(T, a5 - .1, s.start + s.length, .4, .6)}">${rise('So what if you could', T, a5, .1, .6, 70)}<br>${rise('simply ask?', T, a5 + .6, .12, .6, 70, 'blue')}</div>`;
+  $('hookKin').innerHTML = K;
+  // the rows: from "The answer is already in your numbers" until "So what if", faster and faster, then gone
+  const vis = T > a3 - .4 && T < a5 + .6;
+  $('ledgerWrap').style.display = vis ? 'block' : 'none';
+  if (vis) {
+    const lt = T - (a3 - .4), offset = 4 + 1.6 * lt + 1.1 * lt * lt + Math.max(0, lt - 4) ** 3 * 2.5, speed = 1.6 + 2.2 * lt + Math.max(0, lt - 4) ** 2 * 7.5;
+    const first = Math.floor(offset), frac = offset - first;
+    let html = '';
+    for (let i = 0; i < 32; i++) { const r = ROWS[(first + i) % ROWS.length];
+      html += `<div class="lrow"><span class="d">${r.date}</span><span class="c">${r.cat}</span><span>${r.desc}</span><span class="a ${r.type === 'revenue' ? 'in' : 'out'}">${r.type === 'revenue' ? '+' : '−'}${money(r.amt)}</span></div>`; }
+    const el = $('ledger'); el.innerHTML = html;
+    el.style.transform = `translateY(${-500 - frac * 56}px) rotateX(32deg) rotateZ(-8deg) scale(1.25)`;
+    el.style.filter = `blur(${Math.min(10, speed * .05).toFixed(2)}px)`;
+    $('ledgerWrap').style.opacity = Math.min(out(span(T, a3 - .4, 1.0)), 1 - io(span(T, a5 - .4, .9))) * (T > a4 ? .7 : 1);
+  }
+}
+
+// ------------------------------------------------- grain
+let gctx, gimg;
+function grain(T, amount) {
+  if (!gctx) { gctx = $('grain').getContext('2d'); gimg = gctx.createImageData(960, 540); }
+  const rnd = mulberry(Math.floor(T * 30) + 7), d = gimg.data;
+  for (let i = 0; i < d.length; i += 4) { const v = 128 + (rnd() - .5) * 255; d[i] = d[i + 1] = d[i + 2] = v; d[i + 3] = 255; }
+  gctx.putImageData(gimg, 0, 0); $('grain').style.opacity = amount;
+}
+
+// ------------------------------------------------- the frame
+async function renderAt(T) {
+  const s = TL.scenes.find(x => T >= x.start && T < x.start + x.length) || TL.scenes[TL.scenes.length - 1];
+  const local = T - s.start, jobs = [];
+  const meet = SC.meet, close = SC.close;
+  $('lines').style.transform = `translateY(${-(T * 9) % 54}px)`;
+  document.querySelectorAll('.card .lines').forEach(l => l.style.transform = `translateY(${-(T * 14) % 54}px)`);
+  $('progress').style.width = (1920 * T / TL.duration).toFixed(1) + 'px';
+
+  // app scenes
+  const app = s.kind === 'app' || (s.id === 'close' && local < .8);   // the app stays under the close card as it fades in
+  $('persp').style.display = app ? 'block' : 'none';
+  let chips = '';
+  if (app) {
+    const f = footAt(T), a = A[f.i], next = A[f.i + 1];
+    jobs.push(setImg($('img'), `${FOOT}/frames_cust/${frameAt(f.src)}`));
+    if (f.blend) { jobs.push(setImg($('img2'), `${FOOT}/frames_cust/${frameAt(f.blend.src)}`)); $('img2').style.opacity = f.blend.k.toFixed(3); }
+    else $('img2').style.opacity = 0;
+    // the reveal: the window swings in out of the dark once, then stays flat and whole to the end
+    const kIn = out5(span(T, meet.start, 1.8));
+    // a slow, continuous camera move on the whole window (never inside it, so nothing is cropped): each sentence
+    // eases the window gently forward from 95% to full size, drifting a little left or right in turn
+    const segEnd = next ? next.t : T + 6, ph = io(span(T, a.t, Math.max(2.5, segEnd - a.t + .6)));
+    const dir = f.i % 2 ? 1 : -1, sc = lerp(.95, 1.0, ph), dx = dir * lerp(14, -14, ph);
+    $('win').style.transform = `translate3d(${(dx * kIn).toFixed(2)}px, ${lerp(240, 0, kIn)}px, ${lerp(-900, 0, kIn)}px) rotateX(${lerp(24, 0, kIn)}deg) rotateY(${lerp(-16, 0, kIn)}deg) scale(${(lerp(1, sc, kIn)).toFixed(4)})`;
+    $('win').style.opacity = out(span(T, meet.start, .5));
+    // spotlight: lit only once the card is really on screen, until the next sentence moves on
+    const box = a.box && a.boxes[a.box], sp = $('spot'), until = next ? next.t : Infinity;
+    if (box && f.src >= a.spotFrom - .05 && !f.blend) {
+      const lit = Math.min(io(span(f.src, a.spotFrom, .45)), 1 - io(span(T, until - .25, .25)));
+      const x0 = Math.max(0, box[0] - 8), y0 = Math.max(0, box[1] - 8), x1 = Math.min(1440, box[0] + box[2] + 8), y1 = Math.min(810, box[1] + box[3] + 8);
+      Object.assign(sp.style, { display: 'block', left: (x0 * S0) + 'px', top: (y0 * S0) + 'px', width: ((x1 - x0) * S0) + 'px', height: ((y1 - y0) * S0) + 'px', opacity: lit.toFixed(3) });
+    } else sp.style.display = 'none';
+    if (a.callout && T >= a.t) {
+      const k = Math.min(back(span(T, a.t + .2, .45)), 1 - out(span(T, until - .3, .3)));
+      if (k > 0) chips += `<div class="chip" style="left:960px;top:150px;transform:translate(-50%,-50%) scale(${(.6 + .4 * clamp(k)).toFixed(3)});opacity:${clamp(k).toFixed(3)}"><span class="dot"></span>${a.callout}</div>`;
+    }
+  }
+  $('chips').innerHTML = chips;
+  $('chapter').style.display = 'none';
+  $('brand').style.opacity = app ? 1 : 0;
+
+  // cards
+  $('c_hook').style.display = s.id === 'hook' ? 'flex' : 'none';
+  if (s.id === 'hook') hook(T);
+  $('c_title').style.display = s.kind === 'title' ? 'flex' : 'none';
+  if (s.kind === 'title') {
+    $('tnum').textContent = String(s.number).padStart(2, '0');
+    $('tnum').style.opacity = out(span(local, .1, .5));
+    $('ttitle').innerHTML = s.title.split(' ').map((w, i) => { const k = out5(span(local, .25 + i * .12, .7)); return `<span style="transform:translateY(${(1 - k) * 130}px);opacity:${k}">${w}</span>`; }).join('');
+    $('tline').style.width = (out5(span(local, .5, 1.0)) * 220) + 'px';
+    $('c_title').style.opacity = Math.min(io(span(local, 0, .3)), 1 - io(span(local, s.length - .45, .45)));
+    $('c_title').style.transform = `scale(${1 + .03 * span(local, 0, s.length)})`;
+  }
+  $('c_close').style.display = s.id === 'close' ? 'flex' : 'none';
+  if (s.id === 'close') {
+    const w = n => phraseAt(s, n), a = w('AI Financial Analyst.');
+    // her lines before the logo, as type: what happens to your data, then the invitation
+    const p1 = w('Your data stays'), p2 = w('Upload your file'), gone = a - .5;
+    let pre = `<div class="kin big" style="left:0;right:0;top:390px;text-align:center;font-size:104px;opacity:${win01(T, p1 - .1, p2 + .25, .4, .45)};transform:scale(${(1 + .05 * span(T, p1, 6)).toFixed(4)})">${rise('Your data stays', T, p1, .1, .6, 60)}<br>${rise('in your session.', T, p1 + .7, .1, .6, 60, 'blue')}</div>`;
+    pre += `<div class="kin big" style="left:0;right:0;top:390px;text-align:center;font-size:104px;opacity:${win01(T, p2 - .2, gone, .45, .4)};transform:scale(${(1 + .05 * span(T, p2, 6)).toFixed(4)})">${rise('Upload your file.', T, p2, .1, .6, 60)}<br>${rise('Ask your first question.', T, w('ask your first') , .1, .6, 60, 'blue')}</div>`;
+    $('cpre').innerHTML = pre;
+    $('clogo').style.visibility = $('cname2').style.visibility = $('ctag').style.visibility = $('ccta').style.visibility = T > gone ? 'visible' : 'hidden';
+    [...$('clogo').children].forEach((b, i) => { const k = out5(span(T, a - 1.0 + i * .15, .7)); b.style.transform = `scaleX(${k})`; b.style.opacity = k > 0 ? 1 : 0; });
+    [...$('cname2').children].forEach((x, i) => { const k = out5(span(T, a - .2 + i * .11, .7)); x.style.transform = `translateY(${(1 - k) * 130}px)`; x.style.opacity = k; });
+    $('ctag').style.opacity = out(span(T, w('Your numbers') - .1, .6));
+    $('ccta').style.opacity = out(span(T, w('Your numbers') + 2.2, .6));
+    $('ccta').style.transform = `translateY(${(1 - out(span(T, w('Your numbers') + 2.2, .6))) * 30}px)`;
+    $('c_close').style.opacity = io(span(local, 0, .6));
+    $('c_close').style.transform = `scale(${(1 + .07 * io(span(local, 0, s.length))).toFixed(4)})`;   // a slow push to the end
+  }
+
+  // film: letterbox and heavier grain on the hook and the close; a flash and light leaks on the reveal
+  const film = s.id === 'hook' || s.id === 'close';
+  const barK = s.id === 'hook' ? 1 - out5(span(T, meet.start - .4, 1.1)) : s.id === 'close' ? io(span(local, 0, 1.0)) : (s.id === 'meet' ? 1 - out5(span(T, meet.start - .4, 1.1)) : 0);
+  $('barT').style.height = $('barB').style.height = (barK * 120).toFixed(1) + 'px';
+  $('flash').style.opacity = (T >= meet.start - .12 ? Math.max(0, 1 - (T - meet.start + .12) / .6) : 0) * .85;
+  const lk = Math.max(Math.sin(Math.PI * span(T, meet.start - .2, 2.6)), Math.sin(Math.PI * span(T, close.start - .3, 3.0)) * .8);
+  $('leakA').style.background = 'radial-gradient(closest-side, rgba(110,162,239,.9), rgba(29,95,191,0))';
+  $('leakB').style.background = 'radial-gradient(closest-side, rgba(255,230,190,.65), rgba(255,200,120,0))';
+  $('leakA').style.opacity = (lk * .7).toFixed(3); $('leakB').style.opacity = (lk * .5).toFixed(3);
+  $('leakA').style.transform = `translate(${lerp(-900, 1500, (T * .09) % 1)}px, ${-200 + 120 * Math.sin(T * .7)}px)`;
+  $('leakB').style.transform = `translate(${lerp(1700, -600, (T * .07 + .3) % 1)}px, ${380 + 140 * Math.cos(T * .5)}px)`;
+  grain(T, film ? .22 : .07);
+  $('vig').style.opacity = film ? 1 : .5;
+  $('glow').style.opacity = app ? .2 : .1;
+
+  subtitle(s, T);
+  $('fade').style.opacity = Math.max(1 - span(T, 0, 1.0), io(span(T, TL.duration - .8, .8)));
+  await Promise.all(jobs);
+  return true;
+}
+
+// sound effects for the mix: a whoosh into every title card, the hit on the reveal, a stamp when an answer lands
+function events() {
+  const E = [];
+  for (const s of TL.scenes) if (s.kind === 'title') E.push({ t: s.start - .2, kind: 'whoosh', v: .8 });
+  E.push({ t: SC.meet.start - .02, kind: 'hit' });
+  E.push({ t: phraseAt(SC.hook, 'Sales') + .5, kind: 'tick', v: .8 });
+  E.push({ t: phraseAt(SC.hook, 'profit?') + .1, kind: 'ding', v: .7 });
+  for (const a of A) {
+    if (/Answered|real figure|Total expenses|Every step/.test(a.callout || '')) E.push({ t: a.t + .5, kind: 'stamp', v: .8 });
+    if (/What-if plans/.test(a.callout || '')) E.push({ t: a.t + .6, kind: 'pop' });
+  }
+  E.push({ t: phraseAt(SC.close, 'AI Financial Analyst.') - .1, kind: 'ding', v: .8 });
+  return E.sort((a, b) => a.t - b.t);
+}
+window.load = load; window.renderAt = renderAt; window.events = events;
+window.beatList = () => A.map((a, i) => ({ scene: a.scene, needle: a.needle, at: a.t, end: A[i + 1] ? A[i + 1].t : a.t + 3 }));
+window.rates = () => A.slice(0, -1).map((a, i) => ({ needle: a.needle, gap: +(A[i + 1].t - a.t).toFixed(2), rate: +((A[i + 1].src - a.src) / (A[i + 1].t - a.t)).toFixed(2) }));
+</script></body></html>

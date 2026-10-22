@@ -1,0 +1,410 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>Walkthrough compositor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Every frame is drawn by renderAt(t); nothing animates on its own, so renders are exact. */
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #0b0d11; font-family: Geist, system-ui, sans-serif;
+               -webkit-font-smoothing: antialiased; font-variant-numeric: tabular-nums; color: #fff; }
+  #stage { position: absolute; inset: 0; overflow: hidden; background: #0b0d11; }
+  .lines { position: absolute; inset: -60px 0; background-image: repeating-linear-gradient(to bottom, rgba(255,255,255,.035) 0 1px, transparent 1px 54px); }
+  .win { position: absolute; left: 180px; top: 92px; width: 1560px; height: 911.5px; border-radius: 18px; overflow: hidden; background: #f2f4f7;
+         box-shadow: 0 40px 120px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.09); }
+  .win .bar { position: absolute; left: 0; right: 0; top: 0; height: 34px; background: #e6e9ee; display: flex; align-items: center; gap: 8px; padding-left: 16px; z-index: 2; }
+  .win .bar i { width: 12px; height: 12px; border-radius: 50%; background: #c9ced6; }
+  .win .bar span { position: absolute; left: 50%; transform: translateX(-50%); font-size: 14px; color: #6b7079; font-weight: 500; }
+  .win .view { position: absolute; left: 0; right: 0; top: 34px; bottom: 0; overflow: hidden; }
+  .win .view img { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+
+  .chapter { position: absolute; left: 180px; top: 30px; height: 40px; display: flex; gap: 14px; align-items: center; }
+  .chapter .tick { width: 22px; height: 3px; border-radius: 2px; background: #6ea2ef; }
+  .chapter .name { font-size: 22px; font-weight: 600; }
+  .brand { position: absolute; right: 180px; top: 34px; display: flex; gap: 12px; align-items: center; color: rgba(255,255,255,.75); font-size: 17px; font-weight: 600; }
+  .mark { display: flex; flex-direction: column; gap: 4px; width: 22px; }
+  .mark i { display: block; height: 4px; border-radius: 2px; background: currentColor; }
+  .subs { position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%); max-width: 1500px; padding: 12px 24px; border-radius: 14px;
+          background: rgba(11,13,17,.86); font-size: 29px; line-height: 1.3; font-weight: 500; text-align: center; white-space: nowrap;
+          box-shadow: 0 0 0 1px rgba(255,255,255,.08); }
+  .chip { position: absolute; display: flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 12px; background: #fff; color: #0a0a0a;
+          font-size: 22px; font-weight: 600; white-space: nowrap; box-shadow: 0 18px 50px rgba(0,0,0,.35); }
+  .chip.dark { background: #0a0a0a; color: #fff; box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 18px 50px rgba(0,0,0,.35); }
+  .chip .dot { width: 10px; height: 10px; border-radius: 50%; background: #1d5fbf; flex: none; }
+  svg.lead { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: visible; }
+  .progress { position: absolute; left: 0; bottom: 0; height: 4px; background: #1d5fbf; }
+
+  .card { position: absolute; inset: 0; background: #0b0d11; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .big-mark { display: flex; flex-direction: column; gap: 14px; width: 120px; margin-bottom: 40px; }
+  .big-mark i { display: block; height: 16px; border-radius: 5px; background: #fff; transform-origin: left; }
+  .t-title { font-size: 104px; font-weight: 700; letter-spacing: -0.035em; display: flex; gap: 26px; overflow: hidden; padding-bottom: 8px; }
+  .t-sub { font-size: 40px; font-weight: 500; color: rgba(255,255,255,.72); margin-top: 22px; }
+  .facts { display: flex; gap: 18px; margin-top: 56px; }
+  .fact { padding: 16px 24px; border-radius: 14px; background: rgba(255,255,255,.07); box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); font-size: 24px; font-weight: 500; }
+  .fact b { color: #6ea2ef; font-weight: 700; margin-right: 8px; }
+  .t-title span, .t-sub span { display: inline-block; }
+
+  /* architecture */
+  .arch { position: relative; width: 1640px; height: 640px; }
+  .node { position: absolute; width: 270px; padding: 20px 22px; border-radius: 16px; background: #14171d; box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); }
+  .node .k { font-family: 'Geist Mono', monospace; font-size: 18px; color: #6ea2ef; }
+  .node .h { font-size: 27px; font-weight: 700; margin-top: 6px; }
+  .node .d { font-size: 18px; color: rgba(255,255,255,.62); margin-top: 8px; line-height: 1.35; }
+  .node.llm { background: #1b2230; box-shadow: inset 0 0 0 1px rgba(110,162,239,.5); }
+  .node.guard { background: #1d2618; box-shadow: inset 0 0 0 1px rgba(63,192,122,.55); }
+  .node.guard .k { color: #3fc07a; }
+  .arch svg { position: absolute; inset: 0; overflow: visible; }
+  .arch-title { font-size: 46px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 40px; }
+
+  /* tests */
+  .tests { display: grid; grid-template-columns: 760px 760px; gap: 40px; }
+  .term { border-radius: 16px; background: #0f1115; box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); padding: 26px 30px; font-family: 'Geist Mono', monospace; font-size: 23px; line-height: 1.6; min-height: 420px; }
+  .term .p { color: #6ea2ef; } .term .ok { color: #3fc07a; } .term .dim { color: rgba(255,255,255,.5); }
+  .tbl { border-radius: 16px; background: #14171d; box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); padding: 22px 30px; }
+  .tbl h3 { font-size: 26px; font-weight: 700; margin-bottom: 12px; }
+  .tbl .r { display: flex; justify-content: space-between; padding: 12px 0; border-top: 1px solid rgba(255,255,255,.08); font-size: 23px; }
+  .tbl .r b { font-weight: 700; } .tbl .r .g { color: #3fc07a; }
+  .fade { position: absolute; inset: 0; background: #000; pointer-events: none; }
+</style></head>
+<body><div id="stage">
+  <div class="lines" id="lines"></div>
+  <div class="win" id="win"><div class="bar"><i></i><i></i><i></i><span>localhost:8501 · AI Financial Analyst</span></div>
+    <div class="view"><img id="img" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></div></div>
+  <div id="spotclip" style="position:absolute;left:180px;top:126px;width:1560px;height:877.5px;overflow:hidden;border-radius:0 0 18px 18px;pointer-events:none">
+    <div id="spot" style="position:absolute;display:none;border-radius:12px;box-shadow:0 0 0 3px rgba(29,95,191,.9), 0 0 0 4000px rgba(11,13,17,.38);margin-left:-180px;margin-top:-126px"></div></div>
+  <svg class="lead" id="lead"></svg>
+  <div id="chips"></div>
+  <div class="chapter" id="chapter"><div class="tick"></div><div class="name" id="cname"></div></div>
+  <div class="brand" id="brand"><div class="mark"><i></i><i style="width:80%"></i><i style="width:60%;background:#6ea2ef"></i></div>AI Financial Analyst</div>
+
+  <div class="card" id="c_intro"><div class="lines"></div>
+    <div class="big-mark" id="imark"><i></i><i style="width:80%"></i><i style="width:60%;background:#6ea2ef"></i></div>
+    <div class="t-title" id="ititle"><span>AI</span><span>Financial</span><span>Analyst</span></div>
+    <div class="t-sub" id="isub">Upload transactions. See the dashboard. Ask in plain English.</div>
+    <div class="facts" id="ifacts"><div class="fact"><b>Python</b>does every calculation</div><div class="fact"><b>Every</b>figure checked before you see it</div><div class="fact"><b>$0</b>to run, on free tiers</div></div>
+  </div>
+
+  <div class="card" id="c_arch"><div class="lines"></div>
+    <div class="arch-title" id="atitle">How an answer is made</div>
+    <div class="arch" id="arch"><svg id="asvg" width="1640" height="640"></svg></div>
+  </div>
+
+  <div class="card" id="c_tests"><div class="lines"></div>
+    <div class="arch-title" id="ttitle">Evidence of testing</div>
+    <div class="tests"><div class="term" id="term"></div><div class="tbl" id="tbl"></div></div>
+  </div>
+
+  <div class="card" id="c_outro"><div class="lines"></div>
+    <div class="big-mark" id="omark"><i></i><i style="width:80%"></i><i style="width:60%;background:#6ea2ef"></i></div>
+    <div class="t-title" id="otitle"><span>AI</span><span>Financial</span><span>Analyst</span></div>
+    <div class="t-sub" id="osub">README · Architecture · Testing · Limitations: all in the repository</div>
+  </div>
+  <div class="subs" id="subs"></div>
+  <div class="progress" id="progress"></div>
+  <div class="fade" id="fade"></div>
+</div>
+<script>
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, k) => a + (b - a) * k;
+const io = k => { k = clamp(k); return k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; };
+const out = k => { k = clamp(k); return 1 - Math.pow(1 - k, 3); };
+const back = k => { k = clamp(k); const c = 1.5; return 1 + (c + 1) * Math.pow(k - 1, 3) + c * Math.pow(k - 1, 2); };
+const span = (t, a, d) => clamp((t - a) / d);
+const win01 = (t, a, b, fi = .35, fo = .35) => Math.min(out(span(t, a, fi)), 1 - io(span(t, b - fo, fo)));
+const WIN = { x: 180, y: 92, w: 1560, h: 911.5 }, VIEW_H = 877.5, S0 = 1560 / 1440;
+let TL, MK, FR, EV, WORDS, SC = {}, KF = [], CH = [];
+
+// ------------------------------------------------- beats: each phrase of the narration shows the moment it describes
+// [phrase that starts the beat, source moment to show, view, callout]. view: 'full' or {box, top?}: a box is only
+// zoomed into if the whole box fits with margin; otherwise the full app stays on screen (nothing is cut off).
+// callout: [text, {box, ax, ay} | null] - a box anchor draws a line to it, so small controls are pointed at, not cropped.
+const BEATS = {
+  // views: 'full' (the whole app, nothing highlighted) or {spot: box}: the whole app stays on screen and that
+  // card is lit. Source moments are taken after the page has settled, where the recorded box positions hold.
+  upload: m => [
+    ["Let's start with a file", m.t0, 'full', null],
+    ["I'll upload a CSV", m.drop0 - 1.0, { spot: 'uploader' }, 'Upload a CSV: data/sample_financials.csv'],
+    ["Every row is validated", m.drop0 + .5, 'full', 'Each row checked: date, amount, type, category'],
+    ["The file opens straight", m.loaded0 + 1.0, { spot: 'net' }, 'Opened as its own account'],
+  ],
+  bad: m => [
+    ["Real files are messy", m.t0, 'full', null],
+    ["An empty file", m['empty.csv0'] + 1.0, { spot: 'empty.csv' }, 'empty.csv: rejected, with the reason'],
+    ["A file without an amount column", m['missing_amount_column.csv0'] + 1.0, { spot: 'missing_amount_column.csv' }, 'missing_amount_column.csv: names the missing column'],
+    ["And a file with some invalid dates", m['invalid_dates.csv0'] + .8, 'full', 'invalid_dates.csv: still loads'],
+    ["the bad rows are skipped", m.t1 - 4.4, { spot: 'notes' }, 'Skipped rows, listed by line number'],
+  ],
+  accounts: m => [
+    ["The app also ships", m.t0 + 1.4, { spot: 'options' }, 'Six synthetic sample businesses'],
+    ["I'll switch back", m.t1 - 1.2, 'full', null],
+  ],
+  dash: m => [
+    ["Everything on this screen", m.t0, 'full', 'Deterministic Python: no AI on this page'],
+    ["Net revenue for the period", m.t0 + .3, { spot: 'net' }, null],
+    ["What moved breaks", m.t0 + 3.6, { spot: 'moved' }, 'The rows add up to the exact change'],
+    ["Under every figure", m.evidence0 + 2.4, { spot: 'evidence' }, 'Formula and source rows, with line numbers'],
+    ["The money river", m.river0 + 1.8, { spot: 'river' }, null],
+    ["Change the period", m.period0 + .2, { spot: 'control' }, 'Period: 6M'],
+    ["Insights covers", m.insights0 + 1.2, 'full', null],
+    ["and Transactions is", m.ledger0 + 1.2, 'full', 'Search: "enterprise"'],
+  ],
+  ask1: m => [
+    ["Now the AI.", m.t0, 'full', null],
+    ["The first question from the brief", m.type0, 'full', null],
+    ["The model doesn't see", m.wait0, 'full', 'The AI is choosing and running calculations'],
+    ["Before you see it", m.answer0 + 2.4, { spot: 'answer' }, 'Verified: every figure matches a calculation'],
+    ["And each citation opens", m.evidence0, 'full', null],
+    ["Enterprise licences fell", m.evidence0 + 2.6, { spot: 'evidence' }, 'Enterprise Licenses: 3 deals → 1'],
+  ],
+  ask2: m => [
+    ["The second question", m.type0, 'full', null],
+    ["Again verified", m.answer0 + 2.4, { spot: 'answer' }, null],
+  ],
+  ask3: m => [
+    ["Harder questions chain", m.type0, 'full', null],
+    ["The model runs a growth", m.answer0 + 2.4, { spot: 'answer' }, 'Two calculations: growth and cost ratios'],
+  ],
+  attack: m => [
+    ["So what if", m.t0, 'full', null],
+    ["I'll tell it", m.type0, 'full', null],
+    ["That figure isn't", m.answer0 + 2.4, { spot: 'answer' }, 'Only the real, calculated figure: ₹5 crore never appears'],
+  ],
+  plan: m => [
+    ["Plan turns the numbers", m.t0 + 2.0, 'full', null],
+    ["Suggested budgets", m.budgets0 + 2.4, { spot: 'budgets' }, 'Suggested from the last three months'],
+    ["a cash runway", m.cash0 + 2.6, { spot: 'runway' }, 'Cash in the bank → runway'],
+    ["and what if scenarios", m.save0 + 1.6, 'full', 'Saved what-if scenarios'],
+  ],
+};
+
+async function load() {
+  TL = await (await fetch('build/timeline.json')).json();
+  MK = await (await fetch('build/marks_walk.json')).json();
+  FR = await (await fetch('build/frames_walk.json')).json();
+  EV = await (await fetch('build/evidence.json')).json();
+  WORDS = await (await fetch('build/words.json')).json();
+  for (const s of TL.scenes) {
+    SC[s.id] = s;
+    s.words = WORDS[s.id].map(([w, a, b]) => [w, s.voice_at + a, s.voice_at + b]);   // global seconds
+    if (s.kind !== 'app') continue;
+    const m = MK[s.shot];
+    s.beats = BEATS[s.shot](m).map(([needle, srcT, view, callout], i, all) => {
+      const at = i === 0 ? s.start : phraseAt(s, needle) - .15;
+      return { at, srcT, view, callout, m, needle, scene: s.id };
+    });
+    for (let i = 0; i < s.beats.length; i++) {
+      const b = s.beats[i], next = s.beats[i + 1];
+      b.end = next ? next.at : s.start + s.length;
+      b.srcEnd = next ? next.srcT : m.t1;
+    }
+  }
+  KF.sort((a, b) => a.at - b.at);
+  await document.fonts.ready;
+  return { duration: TL.duration, fps: TL.fps };
+}
+
+// when a phrase starts being spoken (exact, from the word timings)
+function phraseAt(s, needle) {
+  const target = needle.split(' ').map(w => w.toLowerCase().replace(/[^a-z0-9']/g, ''));
+  const ws = s.words.map(w => w[0].toLowerCase().replace(/[^a-z0-9']/g, ''));
+  for (let i = 0; i + target.length <= ws.length; i++)
+    if (target.every((t, k) => ws[i + k] === t)) return s.words[i][1];
+  throw new Error(`phrase not found in ${s.id}: "${needle}"`);
+}
+
+// footage within a beat: plays from the beat's moment at normal speed, waits on the last frame if the voice
+// is still talking, and plays faster (up to 4x, labelled) if the moment runs longer than the words
+function srcAt(s, T) {
+  const b = s.beats.filter(x => T >= x.at).pop() || s.beats[0];
+  const room = b.end - b.at, need = Math.max(0, b.srcEnd - b.srcT);
+  const speed = need > room ? Math.min(4, need / room) : 1;
+  return { t: Math.min(b.srcT + (T - b.at) * speed, b.srcEnd), speed, beat: b };
+}
+function frameAt(t) { let lo = 0, hi = FR.length - 1; if (t <= FR[0][0]) return FR[0][1]; while (lo < hi) { const m = (lo + hi + 1) >> 1; if (FR[m][0] <= t) lo = m; else hi = m - 1; } return FR[lo][1]; }
+
+const FULL = { z: 1, fx: 720, fy: 405 };
+function resolve(view, m) {
+  if (view === 'full' || !m.boxes[view.box]) return FULL;
+  const [x, y, w, h] = m.boxes[view.box], pad = view.pad ?? 30;
+  const fitW = 1440 / (w + 2 * pad), fitH = 810 / (h + 2 * pad);
+  // the whole box must fit: zoom only as far as its width allows, and its height too unless framed from the top
+  const z = Math.min(1.6, fitW, view.top ? Infinity : fitH);
+  if (z < 1.08) return FULL;                                // barely any zoom: keep the full app instead
+  const fy = view.top ? y - pad + 405 / z : y + h / 2;
+  return { z, fx: x + w / 2, fy };
+}
+function camAt(T) {
+  return FULL;   // never zoom: zooming crops neighbouring cards at the edges
+  let prev = null;
+  const ev = (p, t) => { const k = io((t - p.at) / p.dur); return { z: Math.exp(lerp(Math.log(p.from.z), Math.log(p.to.z), k)), fx: lerp(p.from.fx, p.to.fx, k), fy: lerp(p.from.fy, p.to.fy, k) }; };
+  for (const k of KF) { if (T < k.at) break; const from = prev ? ev(prev, k.at) : FULL; prev = { at: k.at, dur: k.dur, from, to: k.to }; }
+  return prev ? ev(prev, T) : FULL;
+}
+function place(c) { const S = S0 * c.z; return { S, left: clamp(780 - c.fx * S, 1560 - 1440 * S, 0), top: clamp(VIEW_H / 2 - c.fy * S, VIEW_H - 810 * S, 0) }; }
+function setImg(el, p) { return new Promise(res => { if (el.dataset.src === p) return res(); el.dataset.src = p; el.onload = () => res(); el.onerror = () => res(); el.src = p; }); }
+
+// captions: the script's words, each lit when it is actually spoken; a line changes when its first word starts
+function captionLines(s) {
+  // each sentence on its own; a long one splits into balanced lines, preferring a comma near each break,
+  // so a line never begins with the tail of the previous sentence
+  if (s._lines) return s._lines;
+  const sentences = []; let cur = [];
+  for (const w of s.words) { cur.push(w); if (/[.?!:]$/.test(w[0])) { sentences.push(cur); cur = []; } }
+  if (cur.length) sentences.push(cur);
+  const lines = [], MAX = 52;
+  for (const sen of sentences) {
+    const len = ws => ws.map(x => x[0]).join(' ').length;
+    const n = Math.ceil(len(sen) / MAX);
+    if (n <= 1) { lines.push(sen); continue; }
+    const target = len(sen) / n; let start = 0;
+    for (let part = 1; part < n; part++) {
+      let best = -1, bestScore = Infinity, acc = 0;
+      for (let i = start; i < sen.length - 1; i++) {
+        acc = len(sen.slice(start, i + 1));
+        if (acc > MAX) break;
+        const score = Math.abs(acc - target) - (/[,;]$/.test(sen[i][0]) ? 14 : 0);
+        if (score < bestScore) { bestScore = score; best = i; }
+      }
+      if (best < start) best = start;
+      lines.push(sen.slice(start, best + 1)); start = best + 1;
+    }
+    lines.push(sen.slice(start));
+  }
+  return (s._lines = lines.filter(l => l.length));
+}
+function subtitle(s, T) {
+  const el = $('subs'), lines = captionLines(s);
+  let line = null;
+  for (let i = 0; i < lines.length; i++) {
+    const start = lines[i][0][1] - .08, end = (lines[i + 1] ? lines[i + 1][0][1] - .08 : lines[i][lines[i].length - 1][2] + .7);
+    if (T >= start && T < end) { line = lines[i]; break; }
+  }
+  if (!line) { el.style.opacity = 0; return; }
+  el.innerHTML = line.map(([w, a]) => `<span style="opacity:${T >= a ? 1 : .45}">${w}</span>`).join(' ');
+  el.style.opacity = 1;
+}
+
+function callouts(T, s, cam) {
+  const so = srcAt(s, T), b = so.beat;
+  let html = '';
+  if (b.callout) {
+    const k = Math.min(back(span(T, b.at + .15, .45)), 1 - out(span(T, b.end - .3, .3)));
+    if (k > 0) html += `<div class="chip" style="left:960px;top:150px;transform:translate(-50%,-50%) scale(${(.6 + .4 * clamp(k)).toFixed(3)});opacity:${clamp(k).toFixed(3)}"><span class="dot"></span>${b.callout}</div>`;
+  }
+  // spotlight: the whole app stays visible; everything but the card in question dims a little
+  const sp = $('spot');
+  const box = b.view && b.view.spot && b.m.boxes[b.view.spot];
+  if (box) {
+    const k = Math.min(io(span(T, b.at + .1, .45)), 1 - io(span(T, b.end - .25, .25)));
+    const x0 = Math.max(0, box[0] - 8), y0 = Math.max(0, box[1] - 8), x1 = Math.min(1440, box[0] + box[2] + 8), y1 = Math.min(810, box[1] + box[3] + 8);
+    Object.assign(sp.style, { display: 'block', left: (WIN.x + x0 * S0) + 'px', top: (WIN.y + 34 + y0 * S0) + 'px',
+      width: ((x1 - x0) * S0) + 'px', height: ((y1 - y0) * S0) + 'px', opacity: k.toFixed(3) });
+  } else sp.style.display = 'none';
+  if (so.speed > 1.05 && /choosing and running/.test(b.callout || ''))
+    html += `<div class="chip dark" style="left:1640px;top:150px;transform:translate(-50%,-50%)"><span class="dot"></span>Sped up ×${so.speed.toFixed(1)}</div>`;
+  $('lead').innerHTML = ''; return html;
+}
+
+// ------------------------------------------------- cards
+function words(el, T, at, step, dur, rise) { [...el.children].forEach((w, i) => { const k = out(span(T, at + i * step, dur)); w.style.transform = `translateY(${(1 - k) * rise}px)`; w.style.opacity = k; }); }
+function bars(el, T, at) { [...el.children].forEach((b, i) => { const k = out(span(T, at + i * .14, .6)); b.style.transform = `scaleX(${k})`; b.style.opacity = k > 0 ? 1 : 0; }); }
+function wordAt(id, needle) { return phraseAt(SC[id], needle); }
+
+const NODES = [
+  { id: 'csv', x: 0, y: 250, k: 'your file', h: 'CSV', d: 'revenue and expense rows' },
+  { id: 'loader', x: 340, y: 250, k: 'loader.py', h: 'Validate', d: 'every row; problems by line number' },
+  { id: 'metrics', x: 680, y: 250, k: 'metrics.py', h: 'Calculate', d: '14 tools; each result keeps its formula and rows' },
+  { id: 'llm', x: 1020, y: 40, k: 'llm.py', h: 'The model', d: 'picks the tools and writes; free tiers, with fallbacks', cls: 'llm' },
+  { id: 'agent', x: 1020, y: 250, k: 'agent.py', h: 'Tool loop', d: 'up to 6 rounds; sees results, never raw rows' },
+  { id: 'guard', x: 1020, y: 460, k: 'guard.py', h: 'Number guard', d: 'every figure must round from a result', cls: 'guard' },
+  { id: 'out', x: 1360, y: 460, k: 'the answer', h: 'Verified', d: 'with [E1] evidence down to the rows' },
+];
+const EDGES = [['csv', 'loader'], ['loader', 'metrics'], ['metrics', 'agent'], ['agent', 'llm'], ['llm', 'agent'], ['agent', 'guard'], ['guard', 'out']];
+function arch(T) {
+  const s = SC.arch, lt = T - s.start;
+  const times = { csv: .6, loader: wordAt('arch', 'loader'), metrics: wordAt('arch', 'metrics'), agent: wordAt('arch', 'agent'),
+                  llm: wordAt('arch', 'agent') + .5, guard: wordAt('arch', 'guard'), out: wordAt('arch', 'guard') + 1.0 };
+  let html = '', svg = '';
+  const pos = Object.fromEntries(NODES.map(n => [n.id, n]));
+  for (const [a, b] of EDGES) {
+    const A = pos[a], B = pos[b], k = out(span(T, times[b] - .3, .6));
+    if (k <= 0) continue;
+    let x1 = A.x + 270, y1 = A.y + 70, x2 = B.x, y2 = B.y + 70;
+    if (a === 'agent' && b === 'llm') { x1 = A.x + 110; y1 = A.y; x2 = B.x + 110; y2 = B.y + 140; }
+    if (a === 'llm' && b === 'agent') { x1 = A.x + 160; y1 = A.y + 140; x2 = B.x + 160; y2 = B.y; }
+    if (a === 'agent' && b === 'guard') { x1 = A.x + 135; y1 = A.y + 140; x2 = B.x + 135; y2 = B.y; }
+    svg += `<line x1="${x1}" y1="${y1}" x2="${lerp(x1, x2, k)}" y2="${lerp(y1, y2, k)}" stroke="rgba(255,255,255,.45)" stroke-width="3" stroke-linecap="round"/>`;
+    if (k >= 1) svg += `<circle cx="${x2}" cy="${y2}" r="5" fill="#fff"/>`;
+  }
+  for (const n of NODES) {
+    const k = back(span(T, times[n.id] - .2, .5));
+    if (k <= 0) continue;
+    html += `<div class="node ${n.cls || ''}" style="left:${n.x}px;top:${n.y}px;opacity:${clamp(k)};transform:translateY(${(1 - clamp(k)) * 30}px) scale(${.9 + .1 * clamp(k)})"><div class="k">${n.k}</div><div class="h">${n.h}</div><div class="d">${n.d}</div></div>`;
+  }
+  // the guard rule, as an example, once it's spoken
+  const g = wordAt('arch', 'A figure passes'), kg = win01(T, g, wordAt('arch', 'Only calculated') + .2, .4, .4);
+  if (kg > 0) html += `<div style="position:absolute;left:1360px;top:250px;width:300px;opacity:${kg};font-size:21px;line-height:1.5">`
+    + `<div><span style="color:#3fc07a;font-weight:700">✓ pass</span> ₹6.98 lakh for ₹6,97,670.83</div><div><span style="color:#e5566f;font-weight:700">✗ fail</span> 30% for 28.76%</div></div>`;
+  const kp = win01(T, wordAt('arch', 'Only calculated'), s.start + s.length, .4, .4);
+  if (kp > 0) html += `<div style="position:absolute;left:0;top:520px;width:960px;opacity:${kp};font-size:22px;color:rgba(255,255,255,.75);line-height:1.5">`
+    + `Sent to the model: calculated results, month and category names.<br>Never sent: raw rows, descriptions, API keys.</div>`;
+  $('arch').innerHTML = `<svg width="1640" height="640">${svg}</svg>` + html;
+  $('atitle').style.opacity = out(span(lt, .1, .6));
+}
+function tests(T) {
+  const s = SC.tests, lt = T - s.start;
+  const cmd = 'pytest -q', n = Math.round(cmd.length * clamp((lt - .5) / .8));
+  const dots = Math.round(64 * clamp((lt - 1.6) / 2.4));
+  let html = `<div><span class="p">$</span> ${cmd.slice(0, n)}${lt < 1.4 && Math.floor(lt * 3) % 2 ? '▍' : ''}</div>`;
+  if (lt > 1.6) html += `<div class="dim" style="word-break:break-all">${'.'.repeat(dots)}</div>`;
+  if (lt > 4.1) html += `<div class="ok">${EV.tests} passed</div><div class="dim">no API key needed</div>`;
+  if (lt > 5.2) html += `<br><div><span class="p">$</span> python -m evals.run_eval</div>`;
+  if (lt > 6.2) html += `<div class="ok">${EV.passed}/${EV.cases} cases passed</div>`;
+  $('term').innerHTML = html;
+  const rows = [['Automated tests', `<b class="g">${EV.tests} passed</b>`], ['Awkward files with checked messages', `<b>${EV.edge_files}</b>`],
+                ['Live eval: cases passed', `<b class="g">${EV.passed} / ${EV.cases}</b>`], ['Figures checked by the guard', `<b>${EV.figures_checked}</b>`],
+                ['Invented figures caught in first drafts', `<b>${EV.caught}</b>`], ['Invented figures shown to users', `<b class="g">${EV.shown}</b>`],
+                ['Median answer time', `<b>${EV.median_s}s</b>`]];
+  $('tbl').innerHTML = '<h3>Results</h3>' + rows.map((r, i) => { const k = out(span(lt, 2.0 + i * .5, .4)); return `<div class="r" style="opacity:${k};transform:translateX(${(1 - k) * 20}px)"><span>${r[0]}</span>${r[1]}</div>`; }).join('');
+  $('ttitle').style.opacity = out(span(lt, .1, .6));
+}
+
+// ------------------------------------------------- the frame
+async function renderAt(T) {
+  const s = TL.scenes.find(x => T >= x.start && T < x.start + x.length) || TL.scenes[TL.scenes.length - 1];
+  const local = T - s.start, jobs = [];
+  $('lines').style.transform = `translateY(${-(T * 9) % 54}px)`;
+  $('progress').style.width = (1920 * T / TL.duration).toFixed(1) + 'px';
+  let chips = '';
+  const cam = camAt(T);
+  if (s.kind === 'app') {
+    const so = srcAt(s, T);
+    jobs.push(setImg($('img'), `build/frames_walk/${frameAt(so.t)}`));
+    const p = place(cam); $('img').style.width = (1440 * p.S) + 'px'; $('img').style.transform = `translate(${p.left}px, ${p.top}px)`;
+    chips = callouts(T, s, cam);
+  } else $('lead').innerHTML = '';
+  $('chips').innerHTML = chips;
+  $('win').style.display = s.kind === 'app' ? 'block' : 'none';
+  $('spotclip').style.display = s.kind === 'app' ? 'block' : 'none';
+  $('chapter').style.opacity = s.chapter ? out(span(T, TL.scenes.find(x => x.chapter === s.chapter).start, .5)) : 0;
+  $('cname').textContent = s.chapter || '';
+  $('brand').style.opacity = s.kind === 'app' ? 1 : 0;
+
+  for (const id of ['intro', 'arch', 'tests', 'outro']) $('c_' + id).style.display = s.id === id ? 'flex' : 'none';
+  if (s.id === 'intro') { bars($('imark'), local, .2); words($('ititle'), local, .5, .12, .7, 110); $('isub').style.opacity = out(span(local, 1.3, .7));
+    [...$('ifacts').children].forEach((c, i) => { const k = back(span(local, wordAt('intro', 'The one design') - s.start + i * .25, .5)); c.style.opacity = clamp(k); c.style.transform = `translateY(${(1 - clamp(k)) * 24}px)`; }); }
+  if (s.id === 'arch') arch(T);
+  if (s.id === 'tests') tests(T);
+  if (s.id === 'outro') { bars($('omark'), local, .1); words($('otitle'), local, .3, .1, .65, 100); $('osub').style.opacity = out(span(local, 1.0, .6)); }
+  // a short dip between scenes
+  const edge = Math.min(local, s.length - local);
+  const cardEdge = TL.scenes.indexOf(s) > 0 && (s.kind === 'card' || TL.scenes[TL.scenes.indexOf(s) - 1].kind === 'card');
+  $('fade').style.opacity = Math.max(cardEdge ? clamp(1 - local / .35) * .9 : 0, 1 - span(T, 0, .6), io(span(T, TL.duration - .6, .6)));
+  subtitle(s, T);
+  await Promise.all(jobs);
+  return true;
+}
+window.load = load; window.renderAt = renderAt;
+window.beatList = () => TL.scenes.filter(s => s.beats).flatMap(s => s.beats.map(b => ({ scene: b.scene, needle: b.needle, at: b.at, end: b.end })));
+</script></body></html>

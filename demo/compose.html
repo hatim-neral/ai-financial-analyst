@@ -1,0 +1,368 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>Demo compositor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Every frame is drawn by renderAt(t); nothing here animates on its own, so renders are exact. */
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #0b0d11; font-family: Geist, system-ui, sans-serif;
+               -webkit-font-smoothing: antialiased; font-variant-numeric: tabular-nums; }
+  #stage { position: absolute; inset: 0; overflow: hidden; background: #0b0d11; }
+  .lines { position: absolute; inset: -60px 0; background-image: repeating-linear-gradient(to bottom, rgba(255,255,255,.035) 0 1px, transparent 1px 54px); }
+  .glow { position: absolute; width: 1500px; height: 900px; left: 210px; top: 180px; border-radius: 50%; filter: blur(140px); opacity: .32; }
+
+  .win { position: absolute; border-radius: 18px; overflow: hidden; background: #f2f4f7;
+         box-shadow: 0 40px 120px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.09); transform-origin: 0 0; }
+  .win .bar { position: absolute; left: 0; right: 0; top: 0; height: 34px; background: #e6e9ee; display: flex; align-items: center; gap: 8px; padding-left: 16px; z-index: 2; }
+  .win .bar i { width: 12px; height: 12px; border-radius: 50%; background: #c9ced6; }
+  .win .bar span { position: absolute; left: 50%; transform: translateX(-50%); font-size: 14px; color: #6b7079; font-weight: 500; }
+  .win .view { position: absolute; left: 0; right: 0; top: 34px; bottom: 0; overflow: hidden; }
+  .win .view img { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  .win.dark { background: #000; } .win.dark .bar { background: #161616; } .win.dark .bar i { background: #333; } .win.dark .bar span { color: #8a8a8a; }
+
+
+  .chapter { position: absolute; left: 180px; top: 30px; height: 40px; overflow: hidden; color: #fff; display: flex; gap: 14px; align-items: center; }
+  .chapter .num { font-size: 16px; font-weight: 600; color: rgba(255,255,255,.5); letter-spacing: .04em; }
+  .chapter .name { font-size: 22px; font-weight: 600; }
+  .chapter .tick { width: 22px; height: 3px; border-radius: 2px; }
+  .brand { position: absolute; right: 180px; top: 34px; display: flex; gap: 12px; align-items: center; color: rgba(255,255,255,.75); font-size: 17px; font-weight: 600; }
+  .mark { display: flex; flex-direction: column; gap: 4px; }
+  .mark i { display: block; height: 4px; border-radius: 2px; background: currentColor; }
+
+  .subs { position: absolute; left: 50%; bottom: 34px; transform: translateX(-50%); max-width: 1320px; padding: 14px 26px;
+          border-radius: 14px; background: rgba(11,13,17,.82); color: #fff; font-size: 31px; line-height: 1.3; font-weight: 500;
+          text-align: center; white-space: nowrap; box-shadow: 0 0 0 1px rgba(255,255,255,.08); }
+  .subs span { transition: none; }
+
+  .chip { position: absolute; display: flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 12px; background: #fff;
+          color: #0a0a0a; font-size: 22px; font-weight: 600; white-space: nowrap; box-shadow: 0 18px 50px rgba(0,0,0,.35); transform-origin: center; }
+  .chip .dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+  .chip.dark { background: #0a0a0a; color: #fff; box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 18px 50px rgba(0,0,0,.35); }
+  svg.lead { position: absolute; inset: 0; width: 1920px; height: 1080px; pointer-events: none; overflow: visible; }
+
+  .progress { position: absolute; left: 0; bottom: 0; height: 4px; }
+
+  .card { position: absolute; inset: 0; background: #0b0d11; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .card .lines { opacity: .8; }
+  .big-mark { display: flex; flex-direction: column; gap: 14px; width: 120px; margin-bottom: 44px; }
+  .big-mark i { display: block; height: 16px; border-radius: 5px; background: #fff; transform-origin: left; }
+  .t-title { font-size: 112px; font-weight: 700; letter-spacing: -0.035em; line-height: 1.02; display: flex; gap: 28px; overflow: hidden; padding-bottom: 8px; }
+  .t-title span, .t-sub span { display: inline-block; }
+  .t-sub { font-size: 44px; font-weight: 500; color: rgba(255,255,255,.72); margin-top: 26px; display: flex; gap: 13px; overflow: hidden; padding-bottom: 6px; }
+  .stats { display: flex; gap: 18px; margin-top: 64px; }
+  .stat { padding: 16px 26px; border-radius: 14px; background: rgba(255,255,255,.07); box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); font-size: 24px; font-weight: 500; color: rgba(255,255,255,.85); }
+  .stat b { color: #fff; font-weight: 700; margin-right: 8px; }
+  .askbox { margin-top: 56px; width: 1240px; padding: 30px 36px; border-radius: 22px; background: #fff; color: #0a0a0a; font-size: 34px; font-weight: 500;
+            box-shadow: 0 30px 90px rgba(0,0,0,.5); display: flex; align-items: center; gap: 20px; min-height: 108px; }
+  .askbox .caret { display: inline-block; width: 3px; height: 40px; background: #0a0a0a; vertical-align: middle; margin-left: 2px; }
+  .askbox .send { margin-left: auto; width: 56px; height: 56px; border-radius: 14px; flex: none; display: grid; place-items: center; color: #fff; font-size: 28px; }
+  .credit { position: absolute; bottom: 70px; font-size: 22px; color: rgba(255,255,255,.55); font-weight: 500; letter-spacing: .01em; }
+  .credit b { color: #fff; font-weight: 600; }
+  .fade { position: absolute; inset: 0; background: #000; pointer-events: none; }
+</style></head>
+<body><div id="stage">
+  <div class="lines" id="lines"></div>
+  <div class="glow" id="glow"></div>
+
+  <div class="win" id="win"><div class="bar"><i></i><i></i><i></i><span>localhost:8501 · AI Financial Analyst</span></div>
+    <div class="view"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" id="img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" id="img2" style="opacity:0"></div></div>
+
+  <svg class="lead" id="lead"></svg>
+  <div id="chips"></div>
+
+  <div class="chapter" id="chapter"><div class="tick" id="tick"></div><div class="num" id="cnum"></div><div class="name" id="cname"></div></div>
+  <div class="brand" id="brand"><div class="mark" style="width:22px"><i></i><i style="width:80%"></i><i id="bm3" style="width:60%"></i></div>AI Financial Analyst</div>
+  <div class="subs" id="subs"></div>
+  <div class="progress" id="progress"></div>
+
+  <div class="card" id="intro">
+    <div class="lines"></div>
+    <div class="big-mark" id="imark"><i></i><i style="width:80%"></i><i style="width:60%"></i></div>
+    <div class="t-title" id="ititle"><span>AI</span><span>Financial</span><span>Analyst</span></div>
+    <div class="t-sub" id="isub"><span>Ask</span><span>your</span><span>books</span><span>anything,</span><span>in</span><span>plain</span><span>English.</span></div>
+    <div class="stats" id="istats"><div class="stat"><b>14</b>analysis tools</div><div class="stat"><b>6</b>sample businesses</div><div class="stat"><b>Every</b>number verified</div></div>
+  </div>
+
+  <div class="card" id="askcard">
+    <div class="lines"></div>
+    <div class="t-title" id="atitle"><span>Then,</span><span>just</span><span>ask.</span></div>
+    <div class="askbox" id="abox"><span id="atext"></span><span class="caret" id="acaret"></span><div class="send" id="asend">↑</div></div>
+  </div>
+
+  <div class="card" id="outro">
+    <div class="lines"></div>
+    <div class="big-mark" id="omark"><i></i><i style="width:80%"></i><i style="width:60%"></i></div>
+    <div class="t-title" id="otitle"><span>AI</span><span>Financial</span><span>Analyst</span></div>
+    <div class="t-sub" id="osub"><span>Your</span><span>numbers,</span><span>explained.</span></div>
+    <div class="credit" id="ocredit">Built with <b>Claude</b> · Python · Streamlit</div>
+  </div>
+  <div class="fade" id="fade" style="opacity:0"></div>
+</div>
+<script>
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, k) => a + (b - a) * k;
+const io = k => { k = clamp(k); return k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; };   // ease in-out
+const out = k => { k = clamp(k); return 1 - Math.pow(1 - k, 3); };
+const back = k => { k = clamp(k); const c = 1.5; return 1 + (c + 1) * Math.pow(k - 1, 3) + c * Math.pow(k - 1, 2); };
+const span = (t, a, d) => clamp((t - a) / d);
+function hex(h) { h = h.replace('#', ''); return [0, 2, 4].map(i => parseInt(h.slice(i, i + 2), 16)); }
+function mix(a, b, k) { const A = hex(a), B = hex(b); return `rgb(${A.map((v, i) => Math.round(lerp(v, B[i], k))).join(',')})`; }
+
+const BLUE = '#1d5fbf', SAFFRON = '#c2570c', BLUE_L = '#6ea2ef', SAFF_L = '#fb923c';
+const WIN = { x: 180, y: 92, w: 1560, h: 911.5 };   // 34px bar + 877.5px view (1440x810 at 1.0833)
+const VIEW_H = WIN.h - 34, S0 = WIN.w / 1440;
+
+let TL, CLIPS = {}, MARKS = {}, KF = [], CHIPS = [], SCENE = {};
+
+// ---------------------------------------------------------------- scene plans (local seconds)
+// cam: [at, target, dur]; target 'full' | {box, z?, pad?, fx?, fy?}
+// chips: [at, until, text, {box, ax, ay, dx, dy} | {x, y}, style]
+const PLAN = {
+  load: { cam: [[0, 'full', .1], [.9, { box: 'sidebar', z: 1.75, fy: 300 }, 1.0], [4.7, 'full', .9]] },
+  hero: { cam: [[0, { box: 'figure', z: 2.0, pad: 60 }, 1.0], [3.4, { box: 'net', pad: 24 }, 1.3]],
+          chips: [[1.3, 3.3, 'Computed in Python, not by the AI', { box: 'figure', ax: 1, ay: .5, dx: 70, dy: -10 }]] },
+  bridge: { cam: [[0, { box: 'moved', pad: 30 }, 1.2]],
+            chips: [[1.6, 6.2, 'Every step adds up to the exact change', { box: 'moved', ax: 0, ay: .86, dx: -470, dy: 0 }]] },
+  river: { cam: [[0, 'full', .8], [1.4, { box: 'hover1', z: 1.7 }, 1.1], [4.4, { box: 'hover2', z: 1.7 }, 1.2], [7.4, 'full', 1.0]],
+           chips: [[2.2, 4.2, 'Ribbon width = the real amount', { box: 'hover1', ax: .3, ay: 0, dx: -60, dy: -70 }]] },
+  evidence: { cam: [[.9, { box: 'evidence', pad: 20, z: 1.3 }, 1.2]],
+              chips: [[2.0, 6.0, 'The formula, and the exact CSV rows', { box: 'evidence', ax: .55, ay: 0, dx: 0, dy: -64 }]] },
+  switch: { cam: [[0, 'full', .8], [2.3, { box: 'net', pad: 30, z: 1.45 }, 1.0]] },
+  period: { cam: [[0, { box: 'control', z: 2.1 }, .9], [1.9, { box: 'net', pad: 40, z: 1.3 }, 1.0]] },
+  insights: { cam: [[0, 'full', .8], [1.0, { fx: 860, fy: 430, z: 1.12 }, 3.6]] },
+  ledger: { cam: [[0, { fx: 860, fy: 300, z: 1.2 }, 1.0]] },
+  ask: { cam: [[0, 'full', .6], [5.6, { fx: 850, fy: 430, z: 1.22 }, 1.4]],
+         chips: [[6.2, 10.6, '✓  Every figure checked against your data', { x: 1290, y: 160 }]],
+         pieces: m => [[m.t0 + .4, m.type0, 1.0], [m.type0, m.wait0, 2.0], [m.wait0, m.answer0, 2.4, 'ff'], [m.answer0, m.t1, 'rest']] },
+  plan: { cam: [[0, 'full', .5], [1.4, { box: 'budgets', pad: 30, z: 1.35 }, 1.1], [4.6, 'full', .9], [6.6, { box: 'scenario', z: 1.5 }, 1.0]],
+          chips: [[1.9, 4.4, 'Suggested from your last 3 months', { box: 'budgets', ax: .5, ay: 0, dx: 0, dy: -60 }]] },
+  anywhere: { cam: [[0, 'full', .4]], pieces: m => [[m.t0 + .5, m.t0 + 3.7, 2.1]] },
+};
+const ACCENT_SWITCH = 'switch';
+
+// ---------------------------------------------------------------- data
+async function load() {
+  TL = await (await fetch('build/timeline.json')).json();
+  for (const c of ['desktop', 'dark']) {
+    CLIPS[c] = await (await fetch(`build/frames_${c}.json`)).json();
+    Object.assign(MARKS, await (await fetch(`build/marks_${c}.json`)).json());
+  }
+  let chapterN = 0, last = '';
+  for (const s of TL.scenes) {
+    SCENE[s.id] = s;
+    if (s.chapter && s.chapter !== last) { chapterN++; last = s.chapter; }
+    s.chapterN = s.chapter ? chapterN : 0;
+    const p = PLAN[s.id], m = MARKS[s.id];
+    if (!p || !m) continue;
+    for (const [at, target, dur] of p.cam || []) KF.push({ at: s.start + at, dur, state: resolve(target, m) });
+    for (const [a, b, text, anchor, style] of p.chips || []) CHIPS.push({ a: s.start + a, b: s.start + b, text, anchor, style, m });
+    // source pieces: [from, to, localDur | 'rest', tag]
+    let pieces = p.pieces ? p.pieces(m) : [[m.t0, m.t1, 'rest']];
+    const fixed = pieces.reduce((n, q) => n + (q[2] === 'rest' ? 0 : q[2]), 0);
+    let t = 0; s.pieces = pieces.map(q => { const d = q[2] === 'rest' ? s.length - fixed : q[2]; const o = { from: q[0], to: q[1], a: t, d, tag: q[3] }; t += d; return o; });
+  }
+  KF.sort((a, b) => a.at - b.at);
+  await document.fonts.ready;
+  return { duration: TL.duration, fps: TL.fps };
+}
+
+function resolve(target, m) {
+  if (target === 'full') return { z: 1, fx: 720, fy: 405 };
+  if (target.box && !m.boxes[target.box]) return { z: 1, fx: 720, fy: 405 };
+  let z = target.z, fx = target.fx, fy = target.fy;
+  if (target.box) {
+    const [x, y, w, h] = m.boxes[target.box], pad = target.pad ?? 30;
+    z = z ?? Math.min(1440 / (w + 2 * pad), 810 / (h + 2 * pad));
+    fx = fx ?? x + w / 2; fy = fy ?? y + h / 2;
+  }
+  return { z: clamp(z ?? 1, 1, 2.3), fx: fx ?? 720, fy: fy ?? 405 };
+}
+
+function camAt(T) {
+  let prev = null, st = { z: 1, fx: 720, fy: 405 };
+  const ev = (p, t) => { const k = io((t - p.at) / p.dur); return { z: Math.exp(lerp(Math.log(p.from.z), Math.log(p.to.z), k)), fx: lerp(p.from.fx, p.to.fx, k), fy: lerp(p.from.fy, p.to.fy, k) }; };
+  for (const k of KF) {
+    if (T < k.at) break;
+    const from = prev ? ev(prev, k.at) : st;
+    prev = { at: k.at, dur: k.dur, from, to: k.state };
+  }
+  return prev ? ev(prev, T) : st;
+}
+
+// camera -> image placement inside the window view (in window px)
+function place(cam) {
+  const S = S0 * cam.z;
+  let left = 1560 / 2 - cam.fx * S, top = VIEW_H / 2 - cam.fy * S;
+  left = clamp(left, 1560 - 1440 * S, 0); top = clamp(top, VIEW_H - 810 * S, 0);
+  return { S, left, top };
+}
+
+function frameAt(clip, t) {
+  const f = CLIPS[clip]; let lo = 0, hi = f.length - 1;
+  if (t <= f[0][0]) return f[0][1];
+  while (lo < hi) { const mid = (lo + hi + 1) >> 1; if (f[mid][0] <= t) lo = mid; else hi = mid - 1; }
+  return f[lo][1];
+}
+
+function sourceTime(s, local) {
+  for (const p of s.pieces) if (local < p.a + p.d || p === s.pieces[s.pieces.length - 1])
+    return { t: lerp(p.from, p.to, clamp((local - p.a) / p.d)), tag: p.tag, speed: (p.to - p.from) / p.d };
+}
+
+function sceneAt(T) { let s = TL.scenes[0]; for (const x of TL.scenes) if (T >= x.start) s = x; return s; }
+
+function setImg(el, src) { return new Promise(res => { if (el.dataset.src === src) return res(); el.dataset.src = src; el.onload = () => res(); el.onerror = () => res(); el.src = src; }); }
+
+// ---------------------------------------------------------------- subtitles: chunks of the line, words light up as spoken
+function subtitle(s, T) {
+  const el = $('subs');
+  if (s.kind !== 'app') { el.style.opacity = 0; return; }
+  const words = s.say.split(' ');
+  const chunks = []; let cur = [];
+  for (const w of words) { cur.push(w); const len = cur.join(' ').length; if (len > 46 || (/[.,:]$/.test(w) && len > 26)) { chunks.push(cur); cur = []; } }
+  if (cur.length) chunks.push(cur);
+  const total = s.say.length, local = T - s.voice_at, rate = s.speech / total;
+  let c0 = 0, idx = 0;
+  for (let i = 0; i < chunks.length; i++) { const len = chunks[i].join(' ').length + 1; if (local < (c0 + len) * rate || i === chunks.length - 1) { idx = i; break; } c0 += len; }
+  let pos = c0;
+  el.innerHTML = chunks[idx].map(w => { const at = (pos += w.length + 1) - w.length; const on = clamp((local - at * rate) / .18); return `<span style="opacity:${(.38 + .62 * on).toFixed(3)}">${w}</span>`; }).join(' ');
+  const shown = clamp(span(T, s.start, .3)) * clamp((s.start + s.length - T) / .25);
+  el.style.opacity = local < -0.2 ? 0 : shown;
+}
+
+// ---------------------------------------------------------------- chips with a leader line to what they explain
+function chips(T, cam, accent) {
+  const lead = $('lead'), box = $('chips'); let svg = '', html = '';
+  const p = place(cam);
+  for (const c of CHIPS) {
+    if (T < c.a - .01 || T > c.b + .4) continue;
+    const kIn = back(span(T, c.a, .45)), kOut = 1 - out(span(T, c.b, .35)), k = Math.min(kIn, kOut);
+    if (k <= 0.001) continue;
+    let ax, ay, x, y;
+    if (c.anchor.box) {
+      const b = c.m.boxes[c.anchor.box]; if (!b) continue;
+      const px = b[0] + b[2] * c.anchor.ax, py = b[1] + b[3] * c.anchor.ay;
+      ax = WIN.x + p.left + px * p.S; ay = WIN.y + 34 + p.top + py * p.S;
+      x = ax + c.anchor.dx; y = ay + c.anchor.dy;
+      const lk = out(span(T, c.a + .1, .4)) * kOut;
+      svg += `<line x1="${ax}" y1="${ay}" x2="${lerp(ax, x, lk)}" y2="${lerp(ay, y, lk)}" stroke="${accent}" stroke-width="3" stroke-linecap="round"/>`
+           + `<circle cx="${ax}" cy="${ay}" r="${9 * k}" fill="${accent}" stroke="#fff" stroke-width="3"/>`
+           + `<circle cx="${ax}" cy="${ay}" r="${9 + 22 * span(T, c.a, .9)}" fill="none" stroke="${accent}" stroke-width="2" opacity="${(1 - span(T, c.a, .9)) * kOut}"/>`;
+    } else { x = c.anchor.x; y = c.anchor.y; }
+    const hw = c.text.length * 6.4 + 40; x = clamp(x, hw + 24, 1920 - hw - 24); y = clamp(y, 40, 1040);
+    html += `<div class="chip ${c.style || ''}" style="left:${x}px;top:${y}px;transform:translate(-50%,-50%) scale(${(.6 + .4 * k).toFixed(3)});opacity:${clamp(k).toFixed(3)}">`
+          + `<span class="dot" style="background:${accent}"></span>${c.text}</div>`;
+  }
+  lead.innerHTML = svg; box.innerHTML = html;
+}
+
+// ---------------------------------------------------------------- cards
+function words(el, T, at, step, dur, rise) {
+  [...el.children].forEach((w, i) => { const k = out(span(T, at + i * step, dur)); w.style.transform = `translateY(${(1 - k) * rise}px)`; w.style.opacity = k; });
+}
+function marks(el, T, at) { [...el.children].forEach((b, i) => { const k = out(span(T, at + i * .14, .6)); b.style.transform = `scaleX(${k})`; b.style.opacity = k > 0 ? 1 : 0; }); }
+
+function cards(T, accent) {
+  const intro = SCENE.intro, ask = SCENE.askcard, outro = SCENE.outro;
+  // intro: shown through its scene, fades over the first .7s of the next
+  let ti = T - intro.start, vis = T < intro.start + intro.length ? 1 : 1 - io(span(T, intro.start + intro.length, .7));
+  $('intro').style.opacity = vis; $('intro').style.display = vis > 0 ? 'flex' : 'none';
+  if (vis > 0) {
+    marks($('imark'), ti, .15); $('imark').children[2].style.background = accent;
+    words($('ititle'), ti, .5, .12, .7, 120); words($('isub'), ti, 1.25, .07, .55, 50);
+    [...$('istats').children].forEach((c, i) => { const k = back(span(ti, 2.3 + i * .16, .55)); c.style.transform = `translateY(${(1 - k) * 30}px) scale(${.92 + .08 * k})`; c.style.opacity = clamp(k); });
+    $('intro').style.transform = `scale(${1 + .04 * io(span(T, intro.start + intro.length - .2, .9))})`;
+  }
+  // ask card: fades in at its start, out over .6s of the ask scene
+  const ta = T - ask.start, av = T < ask.start ? io(span(T, ask.start - .3, .3)) : T < ask.start + ask.length ? 1 : 1 - io(span(T, ask.start + ask.length, .6));
+  $('askcard').style.opacity = av; $('askcard').style.display = av > 0 ? 'flex' : 'none';
+  if (av > 0) {
+    words($('atitle'), ta, .05, .13, .6, 110);
+    const kb = back(span(ta, .5, .6)); $('abox').style.transform = `translateY(${(1 - kb) * 60}px)`; $('abox').style.opacity = clamp(kb);
+    const q = TL.question || 'Which costs are growing faster than revenue?';
+    const n = Math.round(q.length * clamp((ta - .8) / 1.6)); $('atext').textContent = q.slice(0, n);
+    $('acaret').style.opacity = (Math.floor(ta * 2.4) % 2 === 0 || n < q.length) ? 1 : 0; $('asend').style.background = accent;
+    $('asend').style.transform = `scale(${1 + .12 * Math.sin(Math.PI * span(ta, 2.45, .25))})`;
+  }
+  // outro
+  const to = T - outro.start, ov = io(span(T, outro.start - .3, .5));
+  $('outro').style.opacity = ov; $('outro').style.display = ov > 0 ? 'flex' : 'none';
+  if (ov > 0) {
+    marks($('omark'), to, .1); $('omark').children[2].style.background = accent;
+    words($('otitle'), to, .3, .1, .65, 110); words($('osub'), to, .95, .1, .55, 50);
+    $('ocredit').style.opacity = out(span(to, 1.8, .6));
+  }
+  $('fade').style.opacity = io(span(T, TL.duration - .45, .45));
+}
+
+// ---------------------------------------------------------------- the frame
+async function renderAt(T) {
+  const s = sceneAt(T), local = T - s.start;
+  // accent: Cloudnine blue until the switch lands on Masala, then saffron
+  const sw = SCENE[ACCENT_SWITCH], ka = io(span(T, sw.start + 2.0, 1.0));
+  const accent = mix(BLUE, SAFFRON, ka), accentL = mix(BLUE_L, SAFF_L, ka);
+  $('glow').style.background = accent; $('tick').style.background = accent; $('progress').style.background = accent;
+  $('progress').style.width = (1920 * T / TL.duration).toFixed(1) + 'px';
+  $('bm3').style.background = accentL;
+  $('lines').style.transform = `translateY(${-(T * 9) % 54}px)`;
+
+  // window entrance after the intro
+  const enter = io(span(T, SCENE.load.start - .15, 1.0));
+  const cam = camAt(T);
+  let win = { x: WIN.x, y: WIN.y + (1 - enter) * 70, sc: .94 + .06 * enter };
+  const jobs = [];
+  if (s.kind === 'app' && s.pieces) {
+    const src = sourceTime(s, local);
+    const clip = 'desktop';
+    jobs.push(setImg($('img'), `build/frames_${clip}/${frameAt(clip, src.t)}`));
+    s._ff = src.tag === 'ff' ? src.speed : 0;
+  }
+  // closing: the same window cross-fades from light to dark
+  const any = SCENE.anywhere, split = io(span(T, any.start + 2.0, .7));
+  const splitOn = T >= any.start + 2.0;
+  if (splitOn) {
+    const dm = MARKS.dark, lt = T - (any.start + 2.0);
+    jobs.push(setImg($('img2'), `build/frames_dark/${frameAt('dark', dm.t0 + .4 + lt * 1.1)}`));
+  }
+  $('img2').style.opacity = splitOn ? split : 0;
+  $('win').classList.toggle('dark', split > .5);
+  const p = place(cam);
+  for (const id of ['img', 'img2']) { const im = $(id); im.style.width = (1440 * p.S) + 'px'; im.style.transform = `translate(${p.left}px, ${p.top}px)`; }
+  const wsc = 1, wx = win.x, wy = win.y;
+  Object.assign($('win').style, { left: (wx + (1 - win.sc) * WIN.w / 2) + 'px', top: (wy + (1 - win.sc) * WIN.h / 2) + 'px', width: WIN.w + 'px', height: WIN.h + 'px',
+    transform: `scale(${(win.sc * wsc).toFixed(4)})`, opacity: enter });
+
+  // chapter label
+  const ch = s.chapter ? s : null;
+  const chEl = $('chapter');
+  if (ch) {
+    const first = TL.scenes.find(x => x.chapter === ch.chapter);
+    const k = out(span(T, first.start, .6));
+    $('cnum').textContent = String(ch.chapterN).padStart(2, '0'); $('cname').textContent = ch.chapter;
+    chEl.style.opacity = k; chEl.style.transform = `translateY(${(1 - k) * 24}px)`;
+  } else chEl.style.opacity = 0;
+  $('brand').style.opacity = s.kind === 'app' ? 1 : 0;
+
+  subtitle(s, T);
+  // chips, plus the fast-forward note while the agent works and the report note
+  const extra = [];
+  if (s.id === 'ask' && s._ff) extra.push(`<div class="chip dark" style="left:960px;top:150px;transform:translate(-50%,-50%)"><span class="dot" style="background:${accent}"></span>Agent at work: picking tools, checking numbers · sped up ×${Math.round(s._ff)}</div>`);
+  chips(T, cam, accent);
+  if (s.id === 'anywhere' && local > .9 && local < 2.3) {
+    const k = back(span(local, .9, .4)) * (1 - out(span(local, 2.0, .3)));
+    extra.push(`<div class="chip" style="left:960px;top:150px;transform:translate(-50%,-50%) scale(${.7 + .3 * k});opacity:${clamp(k)}"><span class="dot" style="background:${accent}"></span>Report downloaded · one HTML file to share</div>`);
+  }
+  if (s.id === 'anywhere' && splitOn) {
+    const k = back(span(T, any.start + 2.6, .5));
+    extra.push(`<div class="chip" style="left:960px;top:150px;transform:translate(-50%,-50%) scale(${.7 + .3 * k});opacity:${clamp(k)}"><span class="dot" style="background:${accent}"></span>Light or dark, it follows your system</div>`);
+  }
+  $('chips').innerHTML += extra.join('');
+
+  cards(T, accent);
+  await Promise.all(jobs);
+  return true;
+}
+window.load = load; window.renderAt = renderAt;
+</script></body></html>

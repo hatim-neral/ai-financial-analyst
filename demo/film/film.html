@@ -1,0 +1,465 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>Film compositor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Every frame is drawn by renderAt(t). Nothing animates by itself, so a render is exact and repeatable. */
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #07080a; font-family: Geist, system-ui, sans-serif;
+               -webkit-font-smoothing: antialiased; font-variant-numeric: tabular-nums; color: #fff; }
+  #stage { position: absolute; inset: 0; overflow: hidden; background: #07080a; }
+  .layer { position: absolute; inset: 0; }
+
+  .photo { position: absolute; inset: -4%; background-size: cover; background-position: center; will-change: transform, filter; }
+
+  #ledger { position: absolute; left: 50%; top: 50%; width: 1500px; margin-left: -750px; transform-origin: 50% 50%; }
+  #ledgerWrap { position: absolute; inset: 0; perspective: 1500px; perspective-origin: 50% 40%; overflow: hidden; }
+  .lrow { display: grid; grid-template-columns: 170px 300px 1fr 220px; gap: 24px; height: 56px; align-items: center; padding: 0 28px;
+          border-bottom: 1px solid rgba(255,255,255,.08); font-size: 24px; color: rgba(255,255,255,.62); white-space: nowrap; }
+  .lrow .d { font-family: 'Geist Mono', monospace; font-size: 20px; color: rgba(255,255,255,.42); }
+  .lrow .c { color: rgba(255,255,255,.86); font-weight: 500; }
+  .lrow .a { text-align: right; font-weight: 600; }
+  .lrow .a.in { color: #7ee2a8; } .lrow .a.out { color: #ff9a8a; }
+  .lrow.hot { background: rgba(251,146,60,.16); } .lrow.hot .c, .lrow.hot .a { color: #fdba74; }
+
+  #persp { position: absolute; inset: 0; perspective: 2600px; perspective-origin: 50% 45%; }
+  .win { position: absolute; left: 180px; top: 92px; width: 1560px; height: 911.5px; border-radius: 18px; overflow: hidden; background: #f2f4f7;
+         box-shadow: 0 60px 160px rgba(0,0,0,.65), 0 0 0 1px rgba(255,255,255,.1); transform-origin: 50% 50%; }
+  .win .bar { position: absolute; left: 0; right: 0; top: 0; height: 34px; background: #e6e9ee; display: flex; align-items: center; gap: 8px; padding-left: 16px; z-index: 2; }
+  .win .bar i { width: 12px; height: 12px; border-radius: 50%; background: #c9ced6; }
+  .win .bar span { position: absolute; left: 50%; transform: translateX(-50%); font-size: 14px; color: #6b7079; font-weight: 500; }
+  .win .view { position: absolute; left: 0; right: 0; top: 34px; bottom: 0; overflow: hidden; }
+  .win .view img { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  .win .sheen { position: absolute; inset: 0; pointer-events: none; z-index: 3;
+                background: linear-gradient(115deg, rgba(255,255,255,0) 30%, rgba(255,255,255,.10) 45%, rgba(255,255,255,0) 60%); }
+
+  .kin { position: absolute; white-space: nowrap; }
+  .kin span { display: inline-block; }
+  .big { font-weight: 800; letter-spacing: -0.045em; line-height: .95; }
+  .mid { font-weight: 600; letter-spacing: -0.02em; }
+  .saff { color: #fb923c; }
+  .muted { color: rgba(255,255,255,.62); }
+
+  .chip { position: absolute; display: flex; align-items: center; gap: 12px; padding: 14px 22px; border-radius: 14px; background: rgba(10,10,12,.86);
+          color: #fff; font-size: 24px; font-weight: 600; white-space: nowrap; box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 24px 60px rgba(0,0,0,.45);
+          backdrop-filter: blur(8px); }
+  .chip .dot { width: 11px; height: 11px; border-radius: 50%; background: #fb923c; flex: none; }
+  svg.lead { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: visible; }
+
+  .qcard { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #07080a; }
+  .qbox { width: 1360px; padding: 34px 40px; border-radius: 24px; background: #fff; color: #0a0a0a; font-size: 38px; font-weight: 500; line-height: 1.32;
+          box-shadow: 0 40px 120px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.2); display: flex; align-items: flex-end; gap: 22px; min-height: 140px; }
+  .qbox .caret { display: inline-block; width: 3px; height: 44px; background: #0a0a0a; vertical-align: -6px; margin-left: 2px; }
+  .qbox .send { margin-left: auto; width: 64px; height: 64px; border-radius: 16px; flex: none; display: grid; place-items: center; color: #fff; font-size: 32px; background: #c2570c; }
+  .qlabel { font-size: 26px; color: rgba(255,255,255,.6); margin-bottom: 26px; font-weight: 500; letter-spacing: .01em; }
+
+  .endcard { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #07080a; }
+  .mark { display: flex; flex-direction: column; gap: 14px; width: 128px; margin-bottom: 46px; }
+  .mark i { display: block; height: 17px; border-radius: 5px; background: #fff; transform-origin: left; }
+  .title { font-size: 118px; font-weight: 800; letter-spacing: -0.045em; display: flex; gap: 28px; overflow: hidden; padding-bottom: 10px; }
+  .tag { font-size: 46px; font-weight: 500; color: rgba(255,255,255,.72); margin-top: 22px; display: flex; gap: 14px; overflow: hidden; padding-bottom: 6px; }
+  .title span, .tag span { display: inline-block; }
+  .credits { position: absolute; bottom: 44px; left: 0; right: 0; text-align: center; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,.42); }
+  .credits b { color: rgba(255,255,255,.7); font-weight: 600; }
+
+  .bars i { position: absolute; left: 0; right: 0; height: 0; background: #000; }
+  .bars i:first-child { top: 0; } .bars i:last-child { bottom: 0; }
+  .leakA, .leakB { position: absolute; width: 1400px; height: 1000px; border-radius: 50%; filter: blur(120px); mix-blend-mode: screen; opacity: 0; }
+  .vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%); }
+  #grain { position: absolute; inset: 0; width: 1920px; height: 1080px; pointer-events: none; mix-blend-mode: overlay; opacity: .5; image-rendering: pixelated; }
+  .subs { position: absolute; left: 50%; bottom: 44px; transform: translateX(-50%); color: #fff; font-size: 32px; font-weight: 500; white-space: nowrap;
+          text-shadow: 0 2px 18px rgba(0,0,0,.9), 0 0 2px rgba(0,0,0,.8); letter-spacing: .005em; }
+  .flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
+  .fade { position: absolute; inset: 0; background: #000; opacity: 0; pointer-events: none; }
+</style></head>
+<body><div id="stage">
+  <div class="layer" id="photos"><div class="photo" id="ph1"></div><div class="photo" id="ph2"></div></div>
+  <div class="layer" id="ledgerWrap"><div id="ledger"></div></div>
+  <div class="layer" id="persp"><div class="win" id="win"><div class="bar"><i></i><i></i><i></i><span>AI Financial Analyst</span></div>
+    <div class="view"><img id="img" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></div><div class="sheen" id="sheen"></div></div></div>
+  <div class="layer" id="kin"></div>
+  <svg class="lead" id="lead"></svg>
+  <div class="qcard" id="qcard"><div class="qlabel" id="qlabel">Masala Street Cafés · Ask AI</div>
+    <div class="qbox" id="qbox"><div><span id="qtext"></span><span class="caret" id="qcaret"></span></div><div class="send" id="qsend">↑</div></div></div>
+  <div class="endcard" id="endcard">
+    <div class="mark" id="emark"><i></i><i style="width:80%"></i><i style="width:60%;background:#fb923c"></i></div>
+    <div class="title" id="etitle"><span>AI</span><span>Financial</span><span>Analyst</span></div>
+    <div class="tag" id="etag"><span>Your</span><span>numbers,</span><span>explained.</span></div>
+    <div class="credits" id="ecredits"></div>
+  </div>
+  <div class="leakA" id="leakA"></div><div class="leakB" id="leakB"></div>
+  <div class="vignette" id="vig"></div>
+  <canvas id="grain" width="960" height="540"></canvas>
+  <div class="bars" id="bars"><i id="barT"></i><i id="barB"></i></div>
+  <div class="subs" id="subs"></div>
+  <div class="flash" id="flash"></div>
+  <div class="fade" id="fade"></div>
+</div>
+<script>
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, k) => a + (b - a) * k;
+const io = k => { k = clamp(k); return k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; };
+const out = k => { k = clamp(k); return 1 - Math.pow(1 - k, 3); };
+const out5 = k => { k = clamp(k); return 1 - Math.pow(1 - k, 5); };
+const back = k => { k = clamp(k); const c = 1.6; return 1 + (c + 1) * Math.pow(k - 1, 3) + c * Math.pow(k - 1, 2); };
+const span = (t, a, d) => clamp((t - a) / d);
+const win01 = (t, a, b, fi = .4, fo = .4) => Math.min(out(span(t, a, fi)), 1 - io(span(t, b - fo, fo)));
+function mulberry(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+
+const SAFF = '#fb923c', SAFF_D = '#c2570c';
+const WIN = { x: 180, y: 92, w: 1560, h: 911.5 }, VIEW_H = 877.5, S0 = 1560 / 1440;
+let TL, F, MK, FR, ROWS = [], SC = {}, KF = [], CREDITS = [];
+
+// --------------------------------------------------------------- data
+async function load() {
+  TL = await (await fetch('build/timeline.json')).json();
+  F = await (await fetch('build/facts.json')).json();
+  MK = await (await fetch('build/marks_film.json')).json();
+  FR = await (await fetch('build/frames_film.json')).json();
+  CREDITS = await (await fetch('img/credits.json')).json();
+  const csv = await (await fetch('/data/samples/masala_street_cafes.csv')).text();
+  ROWS = csv.trim().split('\n').slice(1).map(l => { const p = l.split(','); return { date: p[0], type: p[1], cat: p[2], amt: +p[3], desc: p.slice(4).join(',') }; });
+  for (const s of TL.scenes) SC[s.id] = s;
+  buildPieces(); buildCamera();
+  $('ph1').style.backgroundImage = "url('img/night-terrace.jpg')";
+  const credit = CREDITS.map(c => c.credit.replace(/^"([^"]+)"/, '<i>$1</i>').replace(/ via Wikimedia Commons/, '')).join(' · ');
+  $('ecredits').innerHTML = `Masala Street Cafés and Priya are a sample business and a fictional owner; every figure comes from the sample data.<br>`
+    + `Photos via Wikimedia Commons: ${credit}<br>Music composed in code · Voice: Google Gemini (Aoede) · Built with <b>Claude</b>`;
+  await document.fonts.ready;
+  return { duration: TL.duration, fps: TL.fps };
+}
+
+// when a word (or phrase) of a scene's line is spoken, estimated from its position in the line
+function wordAt(id, needle) { const s = SC[id]; const i = Math.max(0, s.say.indexOf(needle)); return s.voice_at + s.speech * i / s.say.length; }
+
+// --------------------------------------------------------------- footage: scene -> source time
+function buildPieces() {
+  const r = MK.reveal, v = MK.river, a = MK.ask, p = MK.plan;
+  const P = {
+    reveal: [[r.rolled - 0.15, r.rolled + 5.4, 5.6], [v.t0, v.t0 + 4.3, 'rest']],
+    leak: [[v.t0 + 4.3, v.t1 - 0.2, 5.2], [v.t1 - 0.2, v.t1 - 0.2, 'rest']],
+    answer: [[a.wait0, a.answer0, 1.7, 'ff'], [a.answer0, a.save0, 5.2], [a.save0, a.t1, 'rest']],
+    plan: [[p.t0 + 1.4, p.t0 + 7.6, 4.5], [p.t0 + 9.4, p.t1, 'rest']],
+  };
+  for (const [id, pieces] of Object.entries(P)) {
+    const s = SC[id], fixed = pieces.reduce((n, q) => n + (q[2] === 'rest' ? 0 : q[2]), 0);
+    let t = 0; s.pieces = pieces.map(q => { const d = q[2] === 'rest' ? s.length - fixed : q[2]; const o = { from: q[0], to: q[1], a: t, d, tag: q[3] }; t += d; return o; });
+  }
+}
+function src(s, local) {
+  for (const p of s.pieces) if (local < p.a + p.d || p === s.pieces[s.pieces.length - 1])
+    return { t: lerp(p.from, p.to, clamp((local - p.a) / p.d)), tag: p.tag, speed: (p.to - p.from) / p.d };
+}
+function localOf(s, srcT) { for (const p of s.pieces) if (srcT >= p.from && srcT <= p.to && p.to > p.from) return s.start + p.a + (srcT - p.from) / (p.to - p.from) * p.d; return null; }
+function frameAt(t) { let lo = 0, hi = FR.length - 1; if (t <= FR[0][0]) return FR[0][1]; while (lo < hi) { const m = (lo + hi + 1) >> 1; if (FR[m][0] <= t) lo = m; else hi = m - 1; } return FR[lo][1]; }
+
+// --------------------------------------------------------------- camera inside the window
+function box(shot, name) { return MK[shot].boxes[name]; }
+function fit(b, pad = 30, z) { const zz = z ?? Math.min(1440 / (b[2] + 2 * pad), 810 / (b[3] + 2 * pad)); return { z: clamp(zz, 1, 2.6), fx: b[0] + b[2] / 2, fy: b[1] + b[3] / 2 }; }
+const FULL = { z: 1, fx: 720, fy: 405 };
+function buildCamera() {
+  const R = SC.reveal.start, L = SC.leak.start, A = SC.answer.start, P = SC.plan.start;
+  KF = [
+    { at: R, dur: .01, to: fit(box('reveal', 'figure'), 40, 2.2) },
+    { at: R + 2.2, dur: 1.6, to: fit(box('reveal', 'net'), 20) },
+    { at: R + 5.6, dur: 1.2, to: FULL },
+    { at: L + 1.2, dur: 1.6, to: fit(box('river', 'leak'), 20, 2.0) },
+    { at: L + 5.2, dur: 5.5, to: fit(box('river', 'label'), 40, 2.5) },
+    { at: A, dur: .01, to: FULL },
+    { at: A + 1.7, dur: 1.0, to: fit(box('ask', 'stamp'), 40, 2.3) },
+    { at: A + 3.6, dur: 1.4, to: { z: 1.25, fx: 850, fy: 440 } },
+    { at: A + 6.6, dur: 1.0, to: FULL },
+    { at: P, dur: .01, to: FULL },
+    { at: P + .6, dur: 1.4, to: fit(box('plan', 'scenarios'), 24, 1.55) },
+    { at: P + 4.5, dur: .9, to: fit(box('plan', 'budgets'), 24, 1.35) },
+  ];
+}
+function camAt(T) {
+  let prev = null;
+  const ev = (p, t) => { const k = io((t - p.at) / p.dur); return { z: Math.exp(lerp(Math.log(p.from.z), Math.log(p.to.z), k)), fx: lerp(p.from.fx, p.to.fx, k), fy: lerp(p.from.fy, p.to.fy, k) }; };
+  for (const k of KF) { if (T < k.at) break; const from = prev ? ev(prev, k.at) : FULL; prev = { at: k.at, dur: k.dur, from, to: k.to }; }
+  return prev ? ev(prev, T) : FULL;
+}
+function place(c) { const S = S0 * c.z; let left = 780 - c.fx * S, top = VIEW_H / 2 - c.fy * S;
+  return { S, left: clamp(left, 1560 - 1440 * S, 0), top: clamp(top, VIEW_H - 810 * S, 0) }; }
+
+// --------------------------------------------------------------- the ledger plane
+function money(x) { return '₹' + Math.round(x).toLocaleString('en-IN'); }
+function ledger(T) {
+  const a = SC.rows.start, b = SC.ask_books.start + SC.ask_books.length;
+  const vis = T >= a - .6 && T < b + .1;
+  $('ledgerWrap').style.display = vis ? 'block' : 'none';
+  if (!vis) return;
+  const lt = T - a, total = b - a;
+  // the rows run faster and faster: an accelerating scroll through the whole two years
+  const offset = 6 + 1.4 * lt + 0.9 * lt * lt + Math.max(0, lt - 9) ** 3 * 2.2;
+  const speed = 1.4 + 1.8 * lt + Math.max(0, lt - 9) ** 2 * 6.6;
+  const first = Math.floor(offset), frac = offset - first;
+  let html = '';
+  for (let i = 0; i < 34; i++) {
+    const r = ROWS[(first + i) % ROWS.length];
+    const hot = r.cat === 'Delivery commissions';
+    html += `<div class="lrow${hot ? ' hot' : ''}"><span class="d">${r.date}</span><span class="c">${r.cat}</span><span>${r.desc}</span>`
+          + `<span class="a ${r.type === 'revenue' ? 'in' : 'out'}">${r.type === 'revenue' ? '+' : '−'}${money(r.amt)}</span></div>`;
+  }
+  const el = $('ledger'); el.innerHTML = html;
+  const collapse = io(span(T, SC.ask_books.start + 3.6, 3.0));
+  const rx = lerp(30, 52, collapse), rz = lerp(-9, -2, collapse), sc = lerp(1.25, 0.55, collapse);
+  el.style.transform = `translateY(${-560 - frac * 56}px) rotateX(${rx}deg) rotateZ(${rz}deg) scale(${sc}) translateZ(${-collapse * 900}px)`;
+  el.style.filter = `blur(${Math.min(9, speed * 0.05) + collapse * 6}px)`;
+  const inK = out(span(T, a - .6, 1.0)), outK = 1 - io(span(T, b - 1.0, .9));
+  const behindText = s_rowsText(T);
+  $('ledgerWrap').style.opacity = Math.min(inK, outK) * (1 - collapse * .55) * (1 - .45 * behindText);
+}
+
+function s_rowsText(T) { const s = SC.rows; return win01(T, wordAt('rows', 'Where') - .3, s.start + s.length + .1, .5, .5); }
+
+// --------------------------------------------------------------- grain
+let grainCtx, grainImg;
+function grain(T, amount) {
+  if (!grainCtx) { grainCtx = $('grain').getContext('2d'); grainImg = grainCtx.createImageData(960, 540); }
+  const rnd = mulberry(Math.floor(T * 30) + 11), d = grainImg.data;
+  for (let i = 0; i < d.length; i += 4) { const v = 128 + (rnd() - .5) * 255; d[i] = d[i + 1] = d[i + 2] = v; d[i + 3] = 255; }
+  grainCtx.putImageData(grainImg, 0, 0);
+  $('grain').style.opacity = amount;
+}
+
+// --------------------------------------------------------------- subtitles
+function subtitle(s, T, show) {
+  const el = $('subs');
+  if (!show) { el.style.opacity = 0; return; }
+  const words = s.say.split(' '); const chunks = []; let cur = [];
+  for (const w of words) { cur.push(w); const len = cur.join(' ').length; if (len > 48 || (/[.,:?]$/.test(w) && len > 22)) { chunks.push(cur); cur = []; } }
+  if (cur.length) chunks.push(cur);
+  const rate = s.speech / s.say.length, local = T - s.voice_at;
+  let c0 = 0, idx = 0;
+  for (let i = 0; i < chunks.length; i++) { const len = chunks[i].join(' ').length + 1; if (local < (c0 + len) * rate || i === chunks.length - 1) { idx = i; break; } c0 += len; }
+  let pos = c0;
+  el.innerHTML = chunks[idx].map(w => { const at = (pos += w.length + 1) - w.length; const on = clamp((local - at * rate) / .2); return `<span style="opacity:${(.42 + .58 * on).toFixed(3)}">${w}</span>`; }).join(' ');
+  el.style.opacity = local < -.15 ? 0 : clamp((s.voice_at + s.speech + .6 - T) / .4) * clamp((local + .15) / .25);
+}
+
+// --------------------------------------------------------------- kinetic type helpers
+function rise(text, T, at, step = .09, dur = .6, dist = 70, cls = '') {
+  return text.split(' ').map((w, i) => { const k = out5(span(T, at + i * step, dur)); return `<span class="${cls}" style="transform:translateY(${((1 - k) * dist).toFixed(1)}px);opacity:${k.toFixed(3)};margin-right:.24em">${w}</span>`; }).join('');
+}
+function kin(html, x, y, size, opacity = 1, extra = '') { return `<div class="kin ${extra}" style="left:${x}px;top:${y}px;font-size:${size}px;opacity:${opacity.toFixed(3)}">${html}</div>`; }
+function count(T, at, dur, to, dec = 0) { const k = out(span(T, at, dur)); return (to * k).toFixed(dec); }
+
+// --------------------------------------------------------------- the frame
+async function renderAt(T) {
+  const s = TL.scenes.find(x => T >= x.start && T < x.start + x.length) || TL.scenes[TL.scenes.length - 1];
+  const local = T - s.start, jobs = [];
+  const drop = SC.reveal.start, qS = SC.question.start, aS = SC.answer.start, mS = SC.morning.start, gS = SC.logo.start;
+
+  // photos: night terrace -> chai -> (ledger) ; morning
+  const ph1 = $('ph1'), ph2 = $('ph2');
+  let p1o = 0, p2o = 0;
+  if (T < SC.rows.start + .8) {
+    const n = SC.night, c = SC.chai;
+    const kn = span(T, 0, n.length + 1.2), kc = span(T, c.start, c.length + 1);
+    ph1.style.backgroundImage = "url('img/night-terrace.jpg')";
+    ph1.style.transform = `scale(${1.06 + .1 * kn}) translate(${-1.2 * kn}%, ${.6 * kn}%)`;
+    ph1.style.filter = 'brightness(.62) contrast(1.12) saturate(.85) sepia(.18)';
+    p1o = out(span(T, .2, 2.2)) * (1 - io(span(T, c.start - .3, 1.1)));
+    ph2.style.backgroundImage = "url('img/chai.jpg')";
+    ph2.style.transform = `scale(${1.12 + .1 * kc}) translate(${1.4 * kc}%, ${-.8 * kc}%)`;
+    ph2.style.filter = 'brightness(.5) contrast(1.15) saturate(.9) sepia(.2)';
+    p2o = io(span(T, c.start - .3, 1.1)) * (1 - io(span(T, SC.rows.start - .4, 1.1)));
+  } else if (T >= mS - .6 && T < gS + .8) {
+    const k = span(T, mS - .6, SC.morning.length + 1.5);
+    ph1.style.backgroundImage = "url('img/morning.jpg')";
+    ph1.style.transform = `scale(${1.04 + .08 * k}) translate(${-.8 * k}%, 0)`;
+    const dimY = io(span(T, SC.yours.start - .3, .8));
+    const dimM = win01(T, SC.morning.voice_at - .3, SC.morning.start + SC.morning.length + .4, .6, .6) * .25;
+    ph1.style.filter = `brightness(${(lerp(.75, .92, k) * (1 - .55 * dimY) * (1 - dimM)).toFixed(3)}) contrast(1.05) saturate(1.05) sepia(.12) blur(${(dimY * 6).toFixed(1)}px)`;
+    p1o = io(span(T, mS - .6, 1.0)) * (1 - io(span(T, gS - .2, .9)));
+  }
+  ph1.style.opacity = p1o; ph2.style.opacity = p2o;
+
+  ledger(T);
+
+  // the app window: in 3D from the drop to the morning, except while the question card is up
+  const winOn = T >= drop - .05 && T < mS + .2 && !(T > qS + .5 && T < aS - .1);
+  $('persp').style.display = winOn ? 'block' : 'none';
+  let dim = 0;
+  if (winOn && s.pieces) {
+    const so = src(s, local);
+    jobs.push(setImg($('img'), `build/frames_film/${frameAt(so.t)}`));
+    s._ff = so.tag === 'ff' ? so.speed : 0;
+  } else if (winOn && T >= qS && T < qS + .6) {
+    jobs.push(setImg($('img'), `build/frames_film/${frameAt(MK.ask.type0 + 1)}`));
+  }
+  if (winOn) {
+    const kIn = out5(span(T, drop, 1.9));
+    // a slow, living tilt; flatter when there is text to read
+    const read = Math.max(win01(T, aS, SC.plan.start + SC.plan.length, .9, .5), 0);
+    const rx = lerp(26, 7, kIn) * (1 - .7 * read) + Math.sin(T * .35) * .6;
+    const ry = lerp(-20, -8, kIn) * (1 - .7 * read) + Math.cos(T * .3) * .8;
+    const tz = lerp(-900, 0, kIn) - 40 * Math.sin(T * .25);
+    const ty = lerp(220, 0, kIn);
+    // the leak: the window pushes back and dims while the figure takes the stage
+    const L = SC.leak, kl = win01(T, wordAt('leak', 'Delivery') - .2, L.start + L.length - .3, .7, .8);
+    dim = kl;
+    const exitK = io(span(T, mS - .5, .8));
+    $('win').style.transform = `translate3d(0, ${ty + exitK * 120}px, ${tz - kl * 380 - exitK * 400}px) rotateX(${rx + kl * 4}deg) rotateY(${ry - kl * 6}deg) translateY(-26px) scale(.94)`;   // clear of the subtitles
+    $('win').style.filter = `blur(${(kl * 7).toFixed(2)}px) brightness(${(1 - kl * .62).toFixed(3)})`;
+    $('win').style.opacity = Math.min(out(span(T, drop - .05, .4)), 1 - exitK);
+    $('sheen').style.transform = `translateX(${lerp(-1600, 1600, span(T, drop + .2, 2.2))}px)`;
+    const p = place(camAt(T));
+    const im = $('img'); im.style.width = (1440 * p.S) + 'px'; im.style.transform = `translate(${p.left}px, ${p.top}px)`;
+    const qOut = T >= qS && T < aS ? io(span(T, qS, .5)) : 0, aIn = T >= aS ? io(span(T, aS - .1, .5)) : 1;
+    $('win').style.opacity = Math.min(+$('win').style.opacity, 1 - qOut, aIn);
+  }
+
+  // kinetic type
+  let K = '', chips = '';
+  if (s.id === 'night') {
+    K += kin(rise('11:47 PM', T, 1.0, .12, .7, 30), 160, 700, 30, win01(T, 1.0, 8.4), 'mid muted');
+    K += kin(rise('Masala Street Cafés', T, 1.3, .1, .7, 30), 160, 744, 46, win01(T, 1.3, 8.4), 'mid');
+  }
+  if (s.id === 'chai') {
+    const a1 = wordAt('chai', 'Priya'), a2 = wordAt('chai', 'nearly');
+    K += kin(rise('Priya · two cafés', T, a1, .1, .7, 40), 160, 330, 44, win01(T, a1, a2 - .1, .6, .5), 'mid muted');
+    const k = win01(T, a2 - .25, s.start + s.length + .3, .5, .6);
+    K += kin(`<span class="muted mid" style="font-size:44px;display:block;margin-bottom:18px">Sales in two years</span><span class="saff">+${count(T, a2 - .2, 1.3, F.revenue_growth_pct, 0)}%</span>`, 152, 410, 230, k, 'big');
+  }
+  if (s.id === 'rows') {
+    const a = wordAt('rows', 'Where');
+    const k = win01(T, a - .1, s.start + s.length + .1, .3, .5);
+    K += `<div class="kin big" style="left:0;right:0;top:400px;text-align:center;font-size:112px;opacity:${k}">${rise('Where is all that money', T, a, .1, .6, 80)}<br>${rise('actually going?', T, a + .7, .12, .6, 80, 'saff')}</div>`;
+  }
+  if (s.id === 'ask_books') {
+    const a = s.voice_at - .1, k = win01(T, a, s.start + s.length - .2, .4, .6);
+    K += `<div class="kin big" style="left:0;right:0;top:330px;text-align:center;font-size:260px;opacity:${k}">${count(T, a, 2.4, F.transactions)}</div>`;
+    K += `<div class="kin mid muted" style="left:0;right:0;top:600px;text-align:center;font-size:46px;opacity:${k}">transactions</div>`;
+    const b = wordAt('ask_books', 'So she');
+    K += `<div class="kin mid" style="left:0;right:0;top:700px;text-align:center;font-size:56px;opacity:${win01(T, b, s.start + s.length - .2, .4, .5)}">${rise('So she asks her books.', T, b, .1, .6, 40)}</div>`;
+  }
+  if (s.id === 'reveal') {
+    const k = win01(T, s.start + 1.1, s.start + 4.6, .5, .5);
+    chips += chip(`${F.net_words} net revenue · every rupee from the data`, 1130, 205, k);
+  }
+  if (s.id === 'leak') {
+    const a = wordAt('leak', 'Delivery'), b = wordAt('leak', 'The apps');
+    const k1 = win01(T, a - .1, b - .1, .5, .4), k2 = win01(T, b - .15, s.start + s.length - .2, .5, .6);
+    K += `<div class="kin" style="left:0;right:0;top:300px;text-align:center;opacity:${k1}"><div class="mid" style="font-size:64px">${rise('Delivery commissions', T, a, .1, .6, 50)}</div>`
+       + `<div class="big saff" style="font-size:300px;margin-top:10px;transform:scale(${(.85 + .15 * back(span(T, a + .4, .7))).toFixed(3)})">+${count(T, a + .3, 1.0, F.commission_growth_pct, 0)}%</div></div>`;
+    K += `<div class="kin" style="left:0;right:0;top:330px;text-align:center;opacity:${k2}">`
+       + `<div class="big" style="font-size:210px">₹${count(T, b + .1, .9, Math.round(F.keep_per_100_after))} <span class="mid muted" style="font-size:84px;letter-spacing:-.02em">of every</span> ₹100</div>`
+       + `<div class="mid muted" style="font-size:42px;margin-top:34px;opacity:${out(span(T, b + 1.2, .6))}">kept by the delivery apps since July 2025, up from ₹${Math.round(F.keep_per_100_before)}</div></div>`;
+  }
+  if (s.id === 'answer' && s._ff) chips += chip(`The agent is running the calculations · sped up ×${Math.round(s._ff)}`, 960, 150, win01(T, s.start, s.start + 1.7, .2, .2));
+  if (s.id === 'answer') {
+    const stampAt = localOf(s, MK.ask.answer0 + .1) ?? s.start + 1.8;
+    chips += chip('Verified: every figure matches a calculation', 960, 150, win01(T, stampAt + .3, stampAt + 3.4, .3, .4));
+  }
+  if (s.id === 'plan') {
+    const k = win01(T, s.start + 1.0, s.start + 4.6, .5, .5);
+    K += `<div class="kin" style="left:240px;top:780px;opacity:${k}"><div class="chip" style="position:relative;font-size:34px;padding:20px 30px;gap:16px">`
+       + `<span class="dot"></span>Net margin ${F.margin_before}% <span class="saff">→ ${F.margin_after}%</span><span class="muted" style="font-size:24px;font-weight:500">if a fifth of delivery dines in</span></div></div>`;
+  }
+  if (s.id === 'morning') {
+    const a = s.voice_at - .1;
+    K += `<div class="kin big" style="left:0;right:0;top:430px;text-align:center;font-size:104px;opacity:${win01(T, a, s.start + s.length + .3, .5, .6)}">${rise('Tomorrow, she opens', T, a, .1, .7, 60)}<br>${rise('with a plan.', T, a + .5, .12, .7, 60, 'saff')}</div>`;
+  }
+  if (s.id === 'yours') {
+    const a = s.voice_at - .1, b = wordAt('yours', 'Upload');
+    K += `<div class="kin mid muted" style="left:0;right:0;top:330px;text-align:center;font-size:54px;opacity:${win01(T, a, s.start + s.length + .2, .5, .6)}">${rise("This was Priya's story.", T, a, .09, .6, 40)}</div>`;
+    K += `<div class="kin big" style="left:0;right:0;top:420px;text-align:center;font-size:170px;opacity:${win01(T, b - .1, s.start + s.length + .2, .5, .6)}">${rise('Now see', T, b, .12, .7, 80)}${rise('yours.', T, b + .35, .12, .7, 80, 'saff')}</div>`;
+    const kp = back(span(T, b + 1.0, .6)) * (1 - io(span(T, s.start + s.length - .4, .6)));
+    K += `<div class="kin" style="left:0;right:0;top:680px;display:flex;justify-content:center;opacity:${clamp(kp).toFixed(3)}"><div class="chip" style="position:relative;font-size:30px;padding:18px 28px;transform:scale(${(.8 + .2 * clamp(kp)).toFixed(3)})">`
+       + `<span style="font-size:30px">⇪</span>Upload a CSV<span class="muted" style="font-weight:500;font-size:24px">or start with one of six sample businesses</span></div></div>`;
+  }
+  // a soft dark scrim under big type that sits over a busy picture
+  const scrim = Math.max(s.id === 'rows' ? win01(T, wordAt('rows', 'Where') - .3, s.start + s.length + .1, .5, .5) : 0,
+                         s.id === 'morning' ? win01(T, s.voice_at - .3, s.start + s.length + .4, .6, .6) : 0,
+                         s.id === 'chai' ? win01(T, wordAt('chai', 'Priya') - .3, s.start + s.length + .2, .6, .6) * .7 : 0);
+  if (scrim > 0) K = `<div style="position:absolute;inset:0;opacity:${scrim.toFixed(3)};background:radial-gradient(ellipse 60% 45% at ${s.id === 'chai' ? '28%' : '50%'} 50%, rgba(0,0,0,.72), rgba(0,0,0,0))"></div>` + K;
+  $('kin').innerHTML = K + chips;
+  $('lead').innerHTML = '';
+
+  // the question card
+  const qOn = T >= qS && T < aS + .5;
+  $('qcard').style.display = qOn ? 'flex' : 'none';
+  if (qOn) {
+    const lt = T - qS, q = TL.question;
+    const typeA = .5, typeD = Math.max(2.4, SC.question.length - 2.0);
+    const n = Math.round(q.length * clamp((lt - typeA) / typeD));
+    $('qtext').textContent = q.slice(0, n);
+    $('qcaret').style.opacity = (n < q.length || Math.floor(lt * 2.4) % 2 === 0) ? 1 : 0;
+    const kb = back(span(lt, .05, .6));
+    $('qbox').style.transform = `translateY(${(1 - kb) * 80}px) scale(${.96 + .04 * kb})`;
+    $('qlabel').style.opacity = out(span(lt, .1, .5));
+    $('qsend').style.transform = `scale(${1 + .16 * Math.sin(Math.PI * span(lt, typeA + typeD + .15, .3))})`;
+    $('qcard').style.opacity = Math.min(io(span(T, qS - .05, .4)), 1 - io(span(T, aS - .15, .5)));
+    $('qcard').style.background = `radial-gradient(ellipse at 50% 60%, rgba(194,87,12,${(.22 * out(span(lt, 0, 1.5))).toFixed(3)}) 0%, #07080a 62%)`;
+  }
+
+  // the end card
+  const eOn = T >= gS - .4;
+  $('endcard').style.display = eOn ? 'flex' : 'none';
+  if (eOn) {
+    const lt = T - gS;
+    $('endcard').style.opacity = io(span(T, gS - .4, .8));
+    [...$('emark').children].forEach((b, i) => { const k = out5(span(lt, .1 + i * .15, .7)); b.style.transform = `scaleX(${k})`; b.style.opacity = k > 0 ? 1 : 0; });
+    [...$('etitle').children].forEach((w, i) => { const k = out5(span(lt, .45 + i * .11, .7)); w.style.transform = `translateY(${(1 - k) * 130}px)`; w.style.opacity = k; });
+    [...$('etag').children].forEach((w, i) => { const k = out5(span(lt, 1.1 + i * .11, .6)); w.style.transform = `translateY(${(1 - k) * 60}px)`; w.style.opacity = k; });
+    $('ecredits').style.opacity = out(span(lt, 2.4, .8)) * .95;
+    $('endcard').style.transform = `scale(${1 + .02 * span(lt, 0, 10)})`;
+  }
+
+  // letterbox: on for night and morning, opens on the drop
+  const bars = Math.max(1 - out5(span(T, drop - .3, 1.1)), io(span(T, mS - .5, 1.0)) * (1 - io(span(T, gS - .3, .8))));
+  $('barT').style.height = $('barB').style.height = (bars * 138).toFixed(1) + 'px';
+
+  // light: a white flash on the drop, warm leaks on the drop and the morning
+  $('flash').style.opacity = (T >= drop - .12 ? Math.max(0, 1 - (T - drop + .12) / .55) : 0) * .85;
+  const lk = Math.max(Math.sin(Math.PI * span(T, drop - .2, 2.4)), Math.sin(Math.PI * span(T, mS - .6, 2.8)) * .9, Math.sin(Math.PI * span(T, aS - .2, 1.4)) * .5);
+  const la = $('leakA'), lb = $('leakB');
+  la.style.background = 'radial-gradient(closest-side, rgba(251,146,60,.9), rgba(194,87,12,0))';
+  lb.style.background = 'radial-gradient(closest-side, rgba(255,214,150,.75), rgba(255,180,90,0))';
+  la.style.opacity = (lk * .75).toFixed(3); lb.style.opacity = (lk * .55).toFixed(3);
+  la.style.transform = `translate(${lerp(-900, 1500, (T * .09) % 1)}px, ${-200 + 120 * Math.sin(T * .7)}px)`;
+  lb.style.transform = `translate(${lerp(1700, -600, (T * .07 + .3) % 1)}px, ${380 + 140 * Math.cos(T * .5)}px)`;
+
+  // film: grain and vignette, heavier at night
+  const night = T < drop || T >= mS - .5;
+  grain(T, night ? .2 : .1);
+  $('vig').style.opacity = night ? 1 : .55 + dim * .4;
+
+  subtitle(s, T, !(s.id === 'logo'));
+  $('fade').style.opacity = Math.max(1 - span(T, 0, .9), io(span(T, TL.duration - .6, .6)));
+  await Promise.all(jobs);
+  return true;
+}
+
+function chip(text, x, y, k) {
+  if (k <= .001) return '';
+  return `<div class="chip" style="left:${x}px;top:${y}px;transform:translate(-50%,-50%) scale(${(.7 + .3 * back(k)).toFixed(3)});opacity:${clamp(k).toFixed(3)}"><span class="dot"></span>${text}</div>`;
+}
+function setImg(el, srcPath) { return new Promise(res => { if (el.dataset.src === srcPath) return res(); el.dataset.src = srcPath; el.onload = () => res(); el.onerror = () => res(); el.src = srcPath; }); }
+
+// sound effects the mix lays under the picture, read by render_film.py
+function events() {
+  const E = [], q = SC.question, a = SC.answer;
+  for (const id of ['chai', 'rows', 'question', 'answer', 'morning', 'yours', 'logo']) E.push({ t: SC[id].start - .25, kind: 'whoosh' });
+  E.push({ t: wordAt('yours', 'Upload') + .4, kind: 'ding' });
+  E.push({ t: SC.reveal.start - .02, kind: 'hit' });
+  const a2 = wordAt('chai', 'nearly'); E.push({ t: a2, kind: 'ding' });
+  E.push({ t: wordAt('leak', 'Delivery') + .35, kind: 'ding' });
+  E.push({ t: wordAt('leak', 'The apps') + .1, kind: 'tick' });
+  const c0 = SC.ask_books.voice_at - .1;
+  for (let i = 0; i < 18; i++) E.push({ t: c0 + 2.4 * out(i / 18) * .98, kind: 'tick', v: .5 });
+  const typeA = .5, typeD = Math.max(2.4, q.length - 2.0), n = TL.question.length;
+  for (let i = 0; i < n; i += 1) if (TL.question[i] !== ' ' || i % 3 === 0) E.push({ t: q.start + typeA + typeD * i / n, kind: 'key', v: .5 + .5 * mulberry(i)() });
+  E.push({ t: q.start + typeA + typeD + .2, kind: 'send' });
+  const stampAt = localOf(a, MK.ask.answer0 + .12); if (stampAt) E.push({ t: stampAt, kind: 'stamp' });
+  const saveAt = localOf(a, MK.ask.save0 + 1.0); if (saveAt) E.push({ t: saveAt, kind: 'pop' });
+  E.push({ t: SC.plan.start + 1.0, kind: 'ding' });
+  return E.sort((x, y) => x.t - y.t);
+}
+window.load = load; window.renderAt = renderAt; window.events = events;
+</script></body></html>

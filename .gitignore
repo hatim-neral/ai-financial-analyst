@@ -14,3 +14,16 @@ venv/
 .DS_Store
 .idea/
 .vscode/
+
+# design and assistant tooling used during development (not part of the app)
+.claude/
+.taste-skill/
+.impeccable/
+skills-lock.json
+
+# demo videos: share them by link (YouTube, Loom, Drive); the scripts that build them are committed
+demo/**/*.mp4
+demo/voice-samples/
+demo/build/
+demo/film/build/
+demo/film/cands/
