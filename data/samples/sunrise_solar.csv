@@ -1,0 +1,234 @@
+date,category,revenue,expenses
+2024-04-30,Residential installs,3637901.78,
+2024-04-30,Commercial projects,1349932.46,
+2024-04-30,Maintenance contracts,178419.61,
+2024-04-30,Government subsidy receipts,621280.61,
+2024-04-30,Panels & inverters,,2593673.80
+2024-04-30,Installation crew,,548661.77
+2024-04-30,Vehicles & fuel,,149454.71
+2024-04-30,Permits & compliance,,61770.08
+2024-04-30,Salaries,,820000.00
+2024-04-30,Marketing,,152168.43
+2024-05-31,Residential installs,3640348.65,
+2024-05-31,Commercial projects,1364918.16,
+2024-05-31,Maintenance contracts,186118.63,
+2024-05-31,Government subsidy receipts,603179.11,
+2024-05-31,Panels & inverters,,2602738.74
+2024-05-31,Installation crew,,550579.35
+2024-05-31,Vehicles & fuel,,153143.49
+2024-05-31,Permits & compliance,,61331.13
+2024-05-31,Salaries,,826560.00
+2024-05-31,Marketing,,153696.08
+2024-06-30,Residential installs,2742853.24,
+2024-06-30,Commercial projects,942123.86,
+2024-06-30,Maintenance contracts,190513.60,
+2024-06-30,Government subsidy receipts,409468.75,
+2024-06-30,Panels & inverters,,1916188.09
+2024-06-30,Installation crew,,405347.48
+2024-06-30,Vehicles & fuel,,133278.82
+2024-06-30,Permits & compliance,,58682.45
+2024-06-30,Salaries,,833172.48
+2024-06-30,Marketing,,145695.37
+2024-07-31,Residential installs,1512098.75,
+2024-07-31,Commercial projects,508422.37,
+2024-07-31,Maintenance contracts,194662.10,
+2024-07-31,Government subsidy receipts,239247.46,
+2024-07-31,Panels & inverters,,1050670.98
+2024-07-31,Installation crew,,222257.32
+2024-07-31,Vehicles & fuel,,130929.11
+2024-07-31,Permits & compliance,,62947.71
+2024-07-31,Salaries,,839837.86
+2024-07-31,Marketing,,153629.29
+2024-08-31,Residential installs,1470512.06,
+2024-08-31,Commercial projects,509654.45,
+2024-08-31,Maintenance contracts,197349.67,
+2024-08-31,Government subsidy receipts,226654.97,
+2024-08-31,Panels & inverters,,1029686.59
+2024-08-31,Installation crew,,217818.32
+2024-08-31,Vehicles & fuel,,124171.86
+2024-08-31,Permits & compliance,,58111.26
+2024-08-31,Salaries,,846556.56
+2024-08-31,Marketing,,143582.66
+2024-09-30,Residential installs,1537594.47,
+2024-09-30,Commercial projects,519614.36,
+2024-09-30,Maintenance contracts,201152.96,
+2024-09-30,Government subsidy receipts,232870.46,
+2024-09-30,Panels & inverters,,1069748.59
+2024-09-30,Installation crew,,226292.97
+2024-09-30,Vehicles & fuel,,132608.82
+2024-09-30,Permits & compliance,,59415.06
+2024-09-30,Salaries,,853329.02
+2024-09-30,Marketing,,148092.63
+2024-10-31,Residential installs,2624121.77,
+2024-10-31,Commercial projects,870362.34,
+2024-10-31,Maintenance contracts,204149.11,
+2024-10-31,Government subsidy receipts,416593.07,
+2024-10-31,Panels & inverters,,1490048.02
+2024-10-31,Installation crew,,384393.25
+2024-10-31,Vehicles & fuel,,146558.19
+2024-10-31,Permits & compliance,,57061.83
+2024-10-31,Salaries,,860155.65
+2024-10-31,Marketing,,155543.03
+2024-11-30,Residential installs,2874775.80,
+2024-11-30,Commercial projects,911186.62,
+2024-11-30,Maintenance contracts,207754.09,
+2024-11-30,Government subsidy receipts,425864.69,
+2024-11-30,Panels & inverters,,1614334.38
+2024-11-30,Installation crew,,416455.87
+2024-11-30,Vehicles & fuel,,133963.24
+2024-11-30,Permits & compliance,,59357.66
+2024-11-30,Salaries,,867036.89
+2024-11-30,Marketing,,156922.42
+2024-12-31,Residential installs,2817026.79,
+2024-12-31,Commercial projects,865112.86,
+2024-12-31,Maintenance contracts,210457.32,
+2024-12-31,Government subsidy receipts,402452.81,
+2024-12-31,Panels & inverters,,1570064.35
+2024-12-31,Installation crew,,405035.36
+2024-12-31,Vehicles & fuel,,142467.67
+2024-12-31,Permits & compliance,,59034.84
+2024-12-31,Salaries,,873973.19
+2024-12-31,Marketing,,157209.51
+2025-01-31,Residential installs,2966345.05,
+2025-01-31,Commercial projects,904943.54,
+2025-01-31,Maintenance contracts,212023.30,
+2025-01-31,Government subsidy receipts,419941.21,
+2025-01-31,Panels & inverters,,1650717.45
+2025-01-31,Installation crew,,425841.74
+2025-01-31,Vehicles & fuel,,143909.86
+2025-01-31,Permits & compliance,,57712.75
+2025-01-31,Salaries,,880964.97
+2025-01-31,Marketing,,146425.13
+2025-02-28,Residential installs,2838284.11,
+2025-02-28,Commercial projects,4727577.73,
+2025-02-28,Maintenance contracts,216616.53,
+2025-02-28,Government subsidy receipts,410781.62,
+2025-02-28,Panels & inverters,,3226083.49
+2025-02-28,Installation crew,,832244.80
+2025-02-28,Vehicles & fuel,,144754.06
+2025-02-28,Permits & compliance,,58658.72
+2025-02-28,Salaries,,888012.69
+2025-02-28,Marketing,,214686.45
+2025-03-31,Residential installs,4025809.14,
+2025-03-31,Commercial projects,1303173.48,
+2025-03-31,Maintenance contracts,220419.63,
+2025-03-31,Government subsidy receipts,611776.61,
+2025-03-31,Panels & inverters,,2272278.19
+2025-03-31,Installation crew,,586188.09
+2025-03-31,Vehicles & fuel,,147634.07
+2025-03-31,Permits & compliance,,57671.65
+2025-03-31,Salaries,,895116.79
+2025-03-31,Marketing,,218701.04
+2025-04-30,Residential installs,4343138.39,
+2025-04-30,Commercial projects,1307232.53,
+2025-04-30,Maintenance contracts,224231.21,
+2025-04-30,Government subsidy receipts,607897.01,
+2025-04-30,Panels & inverters,,2409318.16
+2025-04-30,Installation crew,,621540.80
+2025-04-30,Vehicles & fuel,,144977.50
+2025-04-30,Permits & compliance,,61916.75
+2025-04-30,Salaries,,902277.73
+2025-04-30,Marketing,,149984.78
+2025-05-31,Residential installs,4132996.84,
+2025-05-31,Commercial projects,1297534.35,
+2025-05-31,Maintenance contracts,236053.29,
+2025-05-31,Government subsidy receipts,634819.96,
+2025-05-31,Panels & inverters,,2315578.50
+2025-05-31,Installation crew,,597358.43
+2025-05-31,Vehicles & fuel,,152664.96
+2025-05-31,Permits & compliance,,60847.46
+2025-05-31,Salaries,,909495.95
+2025-05-31,Marketing,,148130.72
+2025-06-30,Residential installs,3058661.67,
+2025-06-30,Commercial projects,894626.46,
+2025-06-30,Maintenance contracts,241335.70,
+2025-06-30,Panels & inverters,,1685682.06
+2025-06-30,Installation crew,,434861.69
+2025-06-30,Vehicles & fuel,,141789.01
+2025-06-30,Permits & compliance,,57786.90
+2025-06-30,Salaries,,916771.92
+2025-06-30,Marketing,,148310.37
+2025-07-31,Residential installs,1720544.67,
+2025-07-31,Commercial projects,477534.75,
+2025-07-31,Maintenance contracts,243175.03,
+2025-07-31,Panels & inverters,,937261.06
+2025-07-31,Installation crew,,241788.74
+2025-07-31,Vehicles & fuel,,129395.79
+2025-07-31,Permits & compliance,,58081.76
+2025-07-31,Salaries,,924106.09
+2025-07-31,Marketing,,148462.43
+2025-08-31,Residential installs,1623111.19,
+2025-08-31,Commercial projects,472376.26,
+2025-08-31,Maintenance contracts,246744.46,
+2025-08-31,Panels & inverters,,893515.85
+2025-08-31,Installation crew,,230503.62
+2025-08-31,Vehicles & fuel,,121166.24
+2025-08-31,Permits & compliance,,57972.56
+2025-08-31,Salaries,,931498.94
+2025-08-31,Marketing,,150220.85
+2025-09-30,Residential installs,1697589.09,
+2025-09-30,Commercial projects,485650.67,
+2025-09-30,Maintenance contracts,249863.28,
+2025-09-30,Panels & inverters,,930933.43
+2025-09-30,Installation crew,,240156.37
+2025-09-30,Vehicles & fuel,,126168.65
+2025-09-30,Permits & compliance,,62552.36
+2025-09-30,Salaries,,938950.93
+2025-09-30,Marketing,,157296.38
+2025-10-31,Residential installs,2985975.70,
+2025-10-31,Commercial projects,918112.40,
+2025-10-31,Maintenance contracts,261409.56,
+2025-10-31,Panels & inverters,,1664703.17
+2025-10-31,Installation crew,,429449.69
+2025-10-31,Vehicles & fuel,,144961.03
+2025-10-31,Permits & compliance,,61428.61
+2025-10-31,Salaries,,946462.54
+2025-10-31,Marketing,,154028.38
+2025-11-30,Residential installs,3087989.02,
+2025-11-30,Commercial projects,882316.70,
+2025-11-30,Maintenance contracts,258050.68,
+2025-11-30,Panels & inverters,,1692938.36
+2025-11-30,Installation crew,,436733.63
+2025-11-30,Vehicles & fuel,,138608.61
+2025-11-30,Permits & compliance,,62936.57
+2025-11-30,Salaries,,954034.24
+2025-11-30,Marketing,,155715.53
+2025-12-31,Residential installs,3023666.99,
+2025-12-31,Commercial projects,4676727.16,
+2025-12-31,Maintenance contracts,263087.91,
+2025-12-31,Panels & inverters,,3283448.07
+2025-12-31,Installation crew,,847043.36
+2025-12-31,Vehicles & fuel,,140538.70
+2025-12-31,Permits & compliance,,58132.87
+2025-12-31,Salaries,,961666.52
+2025-12-31,Marketing,,145946.11
+2026-01-31,Residential installs,3359187.10,
+2026-01-31,Commercial projects,877120.90,
+2026-01-31,Maintenance contracts,270870.13,
+2026-01-31,Government subsidy receipts,2950000.00,
+2026-01-31,Panels & inverters,,1806361.73
+2026-01-31,Installation crew,,465993.88
+2026-01-31,Vehicles & fuel,,142776.24
+2026-01-31,Permits & compliance,,57672.03
+2026-01-31,Salaries,,969359.85
+2026-01-31,Marketing,,151055.59
+2026-02-28,Residential installs,3370784.22,
+2026-02-28,Commercial projects,901182.82,
+2026-02-28,Maintenance contracts,275562.02,
+2026-02-28,Government subsidy receipts,424212.32,
+2026-02-28,Panels & inverters,,1821566.75
+2026-02-28,Installation crew,,469916.37
+2026-02-28,Vehicles & fuel,,145086.10
+2026-02-28,Permits & compliance,,57415.28
+2026-02-28,Salaries,,977114.73
+2026-02-28,Marketing,,199731.41
+2026-03-31,Residential installs,4859358.96,
+2026-03-31,Commercial projects,1311242.91,
+2026-03-31,Maintenance contracts,283725.58,
+2026-03-31,Government subsidy receipts,587380.28,
+2026-03-31,Panels & inverters,,2631144.64
+2026-03-31,Installation crew,,678766.21
+2026-03-31,Vehicles & fuel,,157548.37
+2026-03-31,Permits & compliance,,60002.28
+2026-03-31,Salaries,,984931.64
+2026-03-31,Marketing,,214597.85

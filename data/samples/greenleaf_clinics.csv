@@ -1,0 +1,841 @@
+date,type,category,amount,description
+2023-07-01,expense,Rent,380000.00,Clinic premises
+2023-07-01,revenue,Consultations,243482.62,OPD collections week 2
+2023-07-03,expense,Equipment lease,120000.00,Equipment leases
+2023-07-04,revenue,Consultations,327269.27,OPD collections week 1
+2023-07-05,revenue,Diagnostics,207250.91,Lab and imaging collections 2
+2023-07-06,expense,Medical supplies,100158.94,Supplies order 3
+2023-07-07,expense,Doctor fees,798000.00,Visiting doctor payouts
+2023-07-07,revenue,Diagnostics,133263.71,Lab and imaging collections 1
+2023-07-07,revenue,Pharmacy,163365.84,Pharmacy sales 4
+2023-07-14,expense,Medical supplies,89667.68,Supplies order 1
+2023-07-16,revenue,Consultations,325226.69,OPD collections week 6
+2023-07-17,expense,Marketing,52508.15,Local outreach
+2023-07-17,revenue,Diagnostics,245038.59,Lab and imaging collections 3
+2023-07-18,revenue,Pharmacy,155491.86,Pharmacy sales 2
+2023-07-19,revenue,Pharmacy,131503.22,Pharmacy sales 3
+2023-07-20,expense,Medical supplies,99191.90,Supplies order 2
+2023-07-21,revenue,Consultations,262256.59,OPD collections week 3
+2023-07-22,revenue,Consultations,367001.51,OPD collections week 4
+2023-07-24,revenue,Diagnostics,207595.65,Lab and imaging collections 4
+2023-07-27,revenue,Consultations,312055.17,OPD collections week 5
+2023-07-27,revenue,Pharmacy,170819.89,Pharmacy sales 1
+2023-07-28,expense,Nursing staff,560000.00,Payroll - nursing
+2023-07-28,expense,Utilities,110414.96,Power and water
+2023-08-01,expense,Medical supplies,83087.16,Supplies order 2
+2023-08-01,expense,Rent,380000.00,Clinic premises
+2023-08-01,revenue,Diagnostics,236086.98,Lab and imaging collections 3
+2023-08-02,revenue,Pharmacy,121845.96,Pharmacy sales 1
+2023-08-03,expense,Equipment lease,120000.00,Equipment leases
+2023-08-03,revenue,Diagnostics,198512.04,Lab and imaging collections 1
+2023-08-07,expense,Doctor fees,805572.06,Visiting doctor payouts
+2023-08-07,revenue,Consultations,387931.40,OPD collections week 1
+2023-08-07,revenue,Consultations,288955.08,OPD collections week 4
+2023-08-08,revenue,Consultations,275612.19,OPD collections week 6
+2023-08-09,revenue,Pharmacy,186435.89,Pharmacy sales 4
+2023-08-14,revenue,Consultations,284208.32,OPD collections week 2
+2023-08-15,expense,Medical supplies,99487.37,Supplies order 1
+2023-08-15,revenue,Consultations,355534.85,OPD collections week 5
+2023-08-15,revenue,Diagnostics,206012.90,Lab and imaging collections 2
+2023-08-16,revenue,Diagnostics,182993.32,Lab and imaging collections 4
+2023-08-18,expense,Marketing,45885.24,Local outreach
+2023-08-19,expense,Utilities,111635.02,Power and water
+2023-08-22,revenue,Pharmacy,159932.95,Pharmacy sales 2
+2023-08-22,revenue,Pharmacy,202971.54,Pharmacy sales 3
+2023-08-23,expense,Medical supplies,120707.32,Supplies order 3
+2023-08-26,revenue,Consultations,368656.56,OPD collections week 3
+2023-08-28,expense,Nursing staff,563360.00,Payroll - nursing
+2023-09-01,expense,Rent,380000.00,Clinic premises
+2023-09-03,expense,Equipment lease,120000.00,Equipment leases
+2023-09-07,expense,Doctor fees,813215.96,Visiting doctor payouts
+2023-09-07,revenue,Consultations,280575.14,OPD collections week 3
+2023-09-09,expense,Utilities,109329.25,Power and water
+2023-09-09,revenue,Consultations,434145.01,OPD collections week 4
+2023-09-15,expense,Marketing,52012.30,Local outreach
+2023-09-15,revenue,Pharmacy,166571.12,Pharmacy sales 1
+2023-09-16,expense,Medical supplies,88828.13,Supplies order 3
+2023-09-16,revenue,Consultations,281615.29,OPD collections week 5
+2023-09-17,expense,Medical supplies,96580.78,Supplies order 1
+2023-09-17,revenue,Diagnostics,168320.42,Lab and imaging collections 2
+2023-09-22,expense,Medical supplies,118762.53,Supplies order 2
+2023-09-22,revenue,Consultations,289834.80,OPD collections week 6
+2023-09-22,revenue,Pharmacy,133079.50,Pharmacy sales 2
+2023-09-22,revenue,Pharmacy,175305.78,Pharmacy sales 3
+2023-09-22,revenue,Pharmacy,199673.18,Pharmacy sales 4
+2023-09-23,revenue,Consultations,275299.86,OPD collections week 2
+2023-09-25,revenue,Consultations,311373.13,OPD collections week 1
+2023-09-25,revenue,Diagnostics,264331.47,Lab and imaging collections 1
+2023-09-25,revenue,Insurance claims,2445762.30,Quarterly insurance settlement
+2023-09-26,revenue,Diagnostics,173607.63,Lab and imaging collections 3
+2023-09-27,revenue,Diagnostics,209948.39,Lab and imaging collections 4
+2023-09-28,expense,Nursing staff,566740.16,Payroll - nursing
+2023-10-01,expense,Rent,380000.00,Clinic premises
+2023-10-01,revenue,Consultations,373641.59,OPD collections week 5
+2023-10-02,revenue,Consultations,231413.82,OPD collections week 2
+2023-10-02,revenue,Diagnostics,210143.92,Lab and imaging collections 3
+2023-10-03,expense,Equipment lease,120000.00,Equipment leases
+2023-10-05,revenue,Diagnostics,149204.97,Lab and imaging collections 4
+2023-10-07,expense,Doctor fees,820932.40,Visiting doctor payouts
+2023-10-07,expense,Medical supplies,98424.39,Supplies order 3
+2023-10-07,revenue,Consultations,229437.47,OPD collections week 6
+2023-10-08,revenue,Pharmacy,199844.27,Pharmacy sales 4
+2023-10-13,expense,Marketing,61854.76,Local outreach
+2023-10-14,revenue,Pharmacy,141980.90,Pharmacy sales 1
+2023-10-15,expense,Medical supplies,96626.88,Supplies order 1
+2023-10-15,expense,Utilities,107587.22,Power and water
+2023-10-16,revenue,Consultations,398985.21,OPD collections week 4
+2023-10-16,revenue,Pharmacy,133986.97,Pharmacy sales 3
+2023-10-17,revenue,Diagnostics,224858.72,Lab and imaging collections 1
+2023-10-19,revenue,Consultations,318534.73,OPD collections week 1
+2023-10-19,revenue,Diagnostics,246221.68,Lab and imaging collections 2
+2023-10-23,expense,Medical supplies,100559.82,Supplies order 2
+2023-10-23,revenue,Consultations,381688.09,OPD collections week 3
+2023-10-24,revenue,Pharmacy,156571.27,Pharmacy sales 2
+2023-10-28,expense,Nursing staff,570140.60,Payroll - nursing
+2023-11-01,expense,Rent,380000.00,Clinic premises
+2023-11-02,revenue,Diagnostics,247556.68,Lab and imaging collections 2
+2023-11-03,expense,Equipment lease,120000.00,Equipment leases
+2023-11-03,revenue,Consultations,269844.00,OPD collections week 1
+2023-11-05,revenue,Diagnostics,193185.57,Lab and imaging collections 4
+2023-11-06,revenue,Pharmacy,162019.95,Pharmacy sales 1
+2023-11-07,expense,Doctor fees,828722.06,Visiting doctor payouts
+2023-11-08,expense,Marketing,57074.73,Local outreach
+2023-11-09,expense,Medical supplies,117486.91,Supplies order 3
+2023-11-14,revenue,Diagnostics,183577.25,Lab and imaging collections 1
+2023-11-14,revenue,Diagnostics,217105.22,Lab and imaging collections 3
+2023-11-14,revenue,Pharmacy,173475.66,Pharmacy sales 4
+2023-11-15,revenue,Consultations,356038.76,OPD collections week 3
+2023-11-16,expense,Utilities,112030.97,Power and water
+2023-11-18,revenue,Consultations,356411.86,OPD collections week 4
+2023-11-19,expense,Medical supplies,89152.61,Supplies order 1
+2023-11-19,revenue,Consultations,352671.77,OPD collections week 5
+2023-11-20,expense,Medical supplies,106364.46,Supplies order 2
+2023-11-22,revenue,Consultations,326079.87,OPD collections week 2
+2023-11-23,revenue,Pharmacy,157231.83,Pharmacy sales 2
+2023-11-24,revenue,Consultations,365762.00,OPD collections week 6
+2023-11-24,revenue,Pharmacy,169034.37,Pharmacy sales 3
+2023-11-28,expense,Nursing staff,573561.44,Payroll - nursing
+2023-12-01,expense,Rent,380000.00,Clinic premises
+2023-12-01,revenue,Consultations,294674.19,OPD collections week 3
+2023-12-03,expense,Equipment lease,120000.00,Equipment leases
+2023-12-05,revenue,Consultations,356239.45,OPD collections week 2
+2023-12-07,expense,Doctor fees,1045732.04,Visiting doctor payouts
+2023-12-08,revenue,Consultations,409950.37,OPD collections week 4
+2023-12-09,revenue,Diagnostics,174628.50,Lab and imaging collections 2
+2023-12-10,revenue,Pharmacy,206319.01,Pharmacy sales 3
+2023-12-11,expense,Utilities,107053.90,Power and water
+2023-12-13,revenue,Diagnostics,195231.45,Lab and imaging collections 1
+2023-12-14,expense,Medical supplies,132639.44,Supplies order 2
+2023-12-16,revenue,Consultations,516695.75,OPD collections week 6
+2023-12-18,expense,Medical supplies,120218.13,Supplies order 1
+2023-12-18,revenue,Pharmacy,224404.81,Pharmacy sales 2
+2023-12-20,revenue,Consultations,361489.48,OPD collections week 5
+2023-12-21,revenue,Diagnostics,238278.02,Lab and imaging collections 3
+2023-12-23,revenue,Pharmacy,132058.55,Pharmacy sales 1
+2023-12-24,revenue,Consultations,531130.19,OPD collections week 1
+2023-12-25,revenue,Insurance claims,2516047.01,Quarterly insurance settlement
+2023-12-26,revenue,Pharmacy,239621.95,Pharmacy sales 4
+2023-12-27,expense,Medical supplies,116596.19,Supplies order 3
+2023-12-27,revenue,Diagnostics,225982.60,Lab and imaging collections 4
+2023-12-28,expense,Marketing,56654.90,Local outreach
+2023-12-28,expense,Nursing staff,577002.81,Payroll - nursing
+2024-01-01,expense,Medical supplies,116712.46,Supplies order 3
+2024-01-01,expense,Rent,380000.00,Clinic premises
+2024-01-03,expense,Equipment lease,120000.00,Equipment leases
+2024-01-04,revenue,Consultations,310942.61,OPD collections week 2
+2024-01-06,revenue,Consultations,449063.19,OPD collections week 5
+2024-01-07,expense,Doctor fees,1055654.77,Visiting doctor payouts
+2024-01-07,expense,Medical supplies,114096.12,Supplies order 1
+2024-01-08,revenue,Consultations,427548.81,OPD collections week 1
+2024-01-11,revenue,Pharmacy,264141.00,Pharmacy sales 1
+2024-01-12,revenue,Diagnostics,253566.35,Lab and imaging collections 3
+2024-01-13,revenue,Consultations,446250.87,OPD collections week 4
+2024-01-16,expense,Utilities,112397.83,Power and water
+2024-01-17,revenue,Diagnostics,257028.22,Lab and imaging collections 4
+2024-01-21,expense,Medical supplies,153223.44,Supplies order 2
+2024-01-21,revenue,Consultations,371006.15,OPD collections week 6
+2024-01-24,revenue,Diagnostics,171903.71,Lab and imaging collections 1
+2024-01-24,revenue,Pharmacy,176353.08,Pharmacy sales 2
+2024-01-24,revenue,Pharmacy,156987.36,Pharmacy sales 3
+2024-01-24,revenue,Pharmacy,204530.75,Pharmacy sales 4
+2024-01-25,revenue,Diagnostics,178516.70,Lab and imaging collections 2
+2024-01-27,expense,Marketing,52297.35,Local outreach
+2024-01-28,expense,Nursing staff,580464.83,Payroll - nursing
+2024-01-28,revenue,Consultations,486069.08,OPD collections week 3
+2024-02-01,expense,Rent,380000.00,Clinic premises
+2024-02-03,expense,Equipment lease,120000.00,Equipment leases
+2024-02-03,expense,Marketing,57557.42,Local outreach
+2024-02-03,revenue,Consultations,469793.09,OPD collections week 4
+2024-02-03,revenue,Pharmacy,200180.31,Pharmacy sales 2
+2024-02-07,expense,Doctor fees,1065671.66,Visiting doctor payouts
+2024-02-07,revenue,Diagnostics,238725.32,Lab and imaging collections 3
+2024-02-10,revenue,Pharmacy,155836.63,Pharmacy sales 4
+2024-02-12,expense,Utilities,106345.48,Power and water
+2024-02-12,revenue,Diagnostics,225140.93,Lab and imaging collections 1
+2024-02-13,revenue,Consultations,389201.38,OPD collections week 5
+2024-02-14,expense,Medical supplies,167152.18,Supplies order 2
+2024-02-16,revenue,Pharmacy,236144.11,Pharmacy sales 1
+2024-02-18,expense,Medical supplies,105641.16,Supplies order 1
+2024-02-18,revenue,Consultations,381775.66,OPD collections week 1
+2024-02-20,revenue,Consultations,459179.40,OPD collections week 3
+2024-02-21,revenue,Consultations,379361.67,OPD collections week 2
+2024-02-21,revenue,Diagnostics,192298.05,Lab and imaging collections 4
+2024-02-25,revenue,Diagnostics,254197.70,Lab and imaging collections 2
+2024-02-25,revenue,Pharmacy,163574.75,Pharmacy sales 3
+2024-02-26,revenue,Consultations,493668.33,OPD collections week 6
+2024-02-28,expense,Medical supplies,94974.42,Supplies order 3
+2024-02-28,expense,Nursing staff,583947.62,Payroll - nursing
+2024-03-01,expense,Rent,380000.00,Clinic premises
+2024-03-02,revenue,Consultations,309244.83,OPD collections week 1
+2024-03-03,expense,Equipment lease,120000.00,Equipment leases
+2024-03-05,revenue,Consultations,309307.99,OPD collections week 3
+2024-03-06,expense,Medical supplies,126267.88,Supplies order 1
+2024-03-06,expense,Utilities,107350.18,Power and water
+2024-03-07,expense,Doctor fees,860626.88,Visiting doctor payouts
+2024-03-07,expense,Marketing,59066.71,Local outreach
+2024-03-08,revenue,Consultations,426901.04,OPD collections week 6
+2024-03-13,revenue,Pharmacy,191643.37,Pharmacy sales 3
+2024-03-15,revenue,Consultations,247970.69,OPD collections week 2
+2024-03-15,revenue,Diagnostics,207280.68,Lab and imaging collections 3
+2024-03-16,expense,Medical supplies,105005.26,Supplies order 2
+2024-03-16,revenue,Diagnostics,201945.59,Lab and imaging collections 2
+2024-03-16,revenue,Pharmacy,155221.77,Pharmacy sales 2
+2024-03-19,revenue,Pharmacy,153028.67,Pharmacy sales 4
+2024-03-20,revenue,Diagnostics,194534.02,Lab and imaging collections 4
+2024-03-21,revenue,Pharmacy,192185.46,Pharmacy sales 1
+2024-03-25,revenue,Consultations,384030.39,OPD collections week 4
+2024-03-25,revenue,Consultations,414343.68,OPD collections week 5
+2024-03-25,revenue,Insurance claims,2588351.52,Quarterly insurance settlement
+2024-03-28,expense,Medical supplies,101998.50,Supplies order 3
+2024-03-28,expense,Nursing staff,587451.30,Payroll - nursing
+2024-03-28,revenue,Diagnostics,273270.91,Lab and imaging collections 1
+2024-04-01,expense,Rent,380000.00,Clinic premises
+2024-04-01,revenue,Consultations,358412.42,OPD collections week 6
+2024-04-02,revenue,Diagnostics,269593.38,Lab and imaging collections 4
+2024-04-03,expense,Equipment lease,120000.00,Equipment leases
+2024-04-04,revenue,Consultations,343101.71,OPD collections week 3
+2024-04-05,expense,Medical supplies,83395.05,Supplies order 3
+2024-04-07,expense,Doctor fees,868793.19,Visiting doctor payouts
+2024-04-07,revenue,Pharmacy,163239.68,Pharmacy sales 2
+2024-04-10,revenue,Consultations,269967.45,OPD collections week 4
+2024-04-11,expense,Marketing,54012.24,Local outreach
+2024-04-11,expense,Medical supplies,109545.57,Supplies order 1
+2024-04-11,revenue,Pharmacy,173269.38,Pharmacy sales 1
+2024-04-14,revenue,Consultations,350254.39,OPD collections week 1
+2024-04-14,revenue,Diagnostics,235038.45,Lab and imaging collections 3
+2024-04-16,expense,Medical supplies,132436.82,Supplies order 2
+2024-04-16,revenue,Consultations,436012.59,OPD collections week 2
+2024-04-16,revenue,Consultations,304135.24,OPD collections week 5
+2024-04-17,revenue,Diagnostics,234203.43,Lab and imaging collections 1
+2024-04-18,revenue,Pharmacy,214353.92,Pharmacy sales 3
+2024-04-20,revenue,Diagnostics,170252.24,Lab and imaging collections 2
+2024-04-22,expense,Utilities,127530.71,Power and water
+2024-04-23,revenue,Pharmacy,144069.40,Pharmacy sales 4
+2024-04-28,expense,Nursing staff,590976.01,Payroll - nursing
+2024-05-01,expense,Rent,380000.00,Clinic premises
+2024-05-03,expense,Equipment lease,120000.00,Equipment leases
+2024-05-03,expense,Medical supplies,92714.43,Supplies order 2
+2024-05-05,revenue,Consultations,359516.96,OPD collections week 3
+2024-05-06,revenue,Consultations,384738.44,OPD collections week 6
+2024-05-06,revenue,Pharmacy,221543.80,Pharmacy sales 3
+2024-05-07,expense,Doctor fees,877036.99,Visiting doctor payouts
+2024-05-08,expense,Medical supplies,108560.68,Supplies order 3
+2024-05-11,expense,Utilities,129024.50,Power and water
+2024-05-16,revenue,Diagnostics,275955.68,Lab and imaging collections 1
+2024-05-16,revenue,Pharmacy,135916.36,Pharmacy sales 2
+2024-05-18,revenue,Consultations,325601.05,OPD collections week 4
+2024-05-18,revenue,Pharmacy,170301.63,Pharmacy sales 4
+2024-05-19,expense,Medical supplies,124501.64,Supplies order 1
+2024-05-20,revenue,Consultations,361765.47,OPD collections week 1
+2024-05-21,revenue,Consultations,325732.40,OPD collections week 2
+2024-05-21,revenue,Consultations,276870.98,OPD collections week 5
+2024-05-23,revenue,Diagnostics,182956.01,Lab and imaging collections 3
+2024-05-24,revenue,Diagnostics,237689.33,Lab and imaging collections 2
+2024-05-24,revenue,Diagnostics,220395.34,Lab and imaging collections 4
+2024-05-27,revenue,Pharmacy,182364.91,Pharmacy sales 1
+2024-05-28,expense,Marketing,45489.15,Local outreach
+2024-05-28,expense,Nursing staff,594521.87,Payroll - nursing
+2024-06-01,expense,Medical supplies,94197.20,Supplies order 2
+2024-06-01,expense,Rent,380000.00,Clinic premises
+2024-06-03,expense,Equipment lease,120000.00,Equipment leases
+2024-06-04,revenue,Consultations,361070.92,OPD collections week 1
+2024-06-07,expense,Doctor fees,885359.01,Visiting doctor payouts
+2024-06-08,expense,Medical supplies,128910.76,Supplies order 1
+2024-06-09,revenue,Diagnostics,190513.19,Lab and imaging collections 4
+2024-06-12,revenue,Pharmacy,214704.22,Pharmacy sales 1
+2024-06-15,revenue,Diagnostics,196909.43,Lab and imaging collections 1
+2024-06-17,expense,Utilities,127117.38,Power and water
+2024-06-17,revenue,Consultations,267856.16,OPD collections week 4
+2024-06-18,expense,Marketing,63437.52,Local outreach
+2024-06-21,revenue,Consultations,390605.01,OPD collections week 2
+2024-06-21,revenue,Diagnostics,211820.77,Lab and imaging collections 2
+2024-06-23,revenue,Pharmacy,144627.93,Pharmacy sales 2
+2024-06-25,revenue,Consultations,315259.57,OPD collections week 5
+2024-06-25,revenue,Consultations,356628.37,OPD collections week 6
+2024-06-25,revenue,Diagnostics,277086.51,Lab and imaging collections 3
+2024-06-25,revenue,Insurance claims,2662733.87,Quarterly insurance settlement
+2024-06-25,revenue,Pharmacy,192997.89,Pharmacy sales 3
+2024-06-27,revenue,Consultations,385879.95,OPD collections week 3
+2024-06-27,revenue,Pharmacy,149544.58,Pharmacy sales 4
+2024-06-28,expense,Medical supplies,96518.65,Supplies order 3
+2024-06-28,expense,Nursing staff,598089.00,Payroll - nursing
+2024-07-01,expense,Rent,380000.00,Clinic premises
+2024-07-03,expense,Equipment lease,120000.00,Equipment leases
+2024-07-03,expense,Medical supplies,97065.69,Supplies order 3
+2024-07-03,revenue,Consultations,423381.07,OPD collections week 1
+2024-07-04,revenue,Diagnostics,253414.04,Lab and imaging collections 3
+2024-07-05,revenue,Consultations,313391.22,OPD collections week 4
+2024-07-07,expense,Doctor fees,893760.00,Visiting doctor payouts
+2024-07-07,revenue,Consultations,378561.99,OPD collections week 6
+2024-07-09,expense,Medical supplies,84946.58,Supplies order 2
+2024-07-11,revenue,Pharmacy,134894.43,Pharmacy sales 3
+2024-07-14,expense,Medical supplies,142136.88,Supplies order 1
+2024-07-14,revenue,Consultations,296606.90,OPD collections week 5
+2024-07-16,revenue,Pharmacy,222463.81,Pharmacy sales 2
+2024-07-17,revenue,Diagnostics,231724.13,Lab and imaging collections 1
+2024-07-23,expense,Utilities,108449.25,Power and water
+2024-07-23,revenue,Consultations,323084.01,OPD collections week 2
+2024-07-23,revenue,Consultations,337456.35,OPD collections week 3
+2024-07-23,revenue,Pharmacy,190838.10,Pharmacy sales 1
+2024-07-25,revenue,Diagnostics,222738.10,Lab and imaging collections 4
+2024-07-27,expense,Marketing,48475.24,Local outreach
+2024-07-27,revenue,Pharmacy,147772.26,Pharmacy sales 4
+2024-07-28,expense,Nursing staff,601677.53,Payroll - nursing
+2024-07-28,revenue,Diagnostics,206224.72,Lab and imaging collections 2
+2024-08-01,expense,Rent,380000.00,Clinic premises
+2024-08-03,expense,Equipment lease,120000.00,Equipment leases
+2024-08-06,expense,Utilities,109513.06,Power and water
+2024-08-06,revenue,Consultations,340379.52,OPD collections week 6
+2024-08-07,expense,Doctor fees,902240.70,Visiting doctor payouts
+2024-08-10,revenue,Consultations,250342.09,OPD collections week 1
+2024-08-11,revenue,Diagnostics,241601.85,Lab and imaging collections 4
+2024-08-12,revenue,Consultations,387350.67,OPD collections week 2
+2024-08-14,expense,Marketing,51473.45,Local outreach
+2024-08-14,revenue,Consultations,392704.23,OPD collections week 4
+2024-08-14,revenue,Pharmacy,161736.52,Pharmacy sales 3
+2024-08-17,revenue,Diagnostics,231986.18,Lab and imaging collections 1
+2024-08-18,revenue,Consultations,328586.10,OPD collections week 3
+2024-08-19,revenue,Consultations,374885.94,OPD collections week 5
+2024-08-21,expense,Medical supplies,92674.03,Supplies order 2
+2024-08-22,revenue,Diagnostics,170904.77,Lab and imaging collections 2
+2024-08-23,revenue,Pharmacy,178827.92,Pharmacy sales 2
+2024-08-26,expense,Medical supplies,120035.99,Supplies order 1
+2024-08-27,revenue,Pharmacy,163405.89,Pharmacy sales 4
+2024-08-28,expense,Medical supplies,119585.06,Supplies order 3
+2024-08-28,expense,Nursing staff,605287.60,Payroll - nursing
+2024-08-28,revenue,Diagnostics,268354.78,Lab and imaging collections 3
+2024-08-28,revenue,Pharmacy,218252.73,Pharmacy sales 1
+2024-09-01,expense,Rent,380000.00,Clinic premises
+2024-09-01,revenue,Diagnostics,236573.37,Lab and imaging collections 2
+2024-09-02,revenue,Diagnostics,257483.82,Lab and imaging collections 3
+2024-09-03,expense,Equipment lease,120000.00,Equipment leases
+2024-09-04,revenue,Consultations,381755.37,OPD collections week 6
+2024-09-04,revenue,Pharmacy,215141.24,Pharmacy sales 2
+2024-09-05,expense,Marketing,65190.07,Local outreach
+2024-09-07,expense,Doctor fees,910801.88,Visiting doctor payouts
+2024-09-08,revenue,Consultations,356006.57,OPD collections week 3
+2024-09-10,expense,Medical supplies,94705.66,Supplies order 3
+2024-09-10,revenue,Diagnostics,177267.03,Lab and imaging collections 1
+2024-09-13,revenue,Consultations,428928.96,OPD collections week 4
+2024-09-13,revenue,Diagnostics,240140.15,Lab and imaging collections 4
+2024-09-14,revenue,Consultations,281562.30,OPD collections week 5
+2024-09-15,revenue,Pharmacy,128244.26,Pharmacy sales 3
+2024-09-15,revenue,Pharmacy,209067.99,Pharmacy sales 4
+2024-09-16,revenue,Consultations,337419.77,OPD collections week 1
+2024-09-18,expense,Utilities,110664.43,Power and water
+2024-09-19,revenue,Consultations,339370.52,OPD collections week 2
+2024-09-23,expense,Medical supplies,120713.13,Supplies order 1
+2024-09-24,expense,Medical supplies,131534.97,Supplies order 2
+2024-09-25,revenue,Insurance claims,2739253.77,Quarterly insurance settlement
+2024-09-25,revenue,Pharmacy,184623.25,Pharmacy sales 1
+2024-09-28,expense,Nursing staff,608919.32,Payroll - nursing
+2024-10-01,expense,Rent,380000.00,Clinic premises
+2024-10-02,revenue,Consultations,407147.12,OPD collections week 4
+2024-10-02,revenue,Consultations,384586.68,OPD collections week 6
+2024-10-02,revenue,Diagnostics,204577.72,Lab and imaging collections 2
+2024-10-03,expense,Equipment lease,120000.00,Equipment leases
+2024-10-04,revenue,Consultations,358415.66,OPD collections week 3
+2024-10-07,expense,Doctor fees,919444.29,Visiting doctor payouts
+2024-10-07,revenue,Consultations,399799.91,OPD collections week 5
+2024-10-07,revenue,Pharmacy,229469.72,Pharmacy sales 3
+2024-10-08,revenue,Diagnostics,257250.23,Lab and imaging collections 4
+2024-10-08,revenue,Pharmacy,184606.73,Pharmacy sales 2
+2024-10-09,revenue,Consultations,326799.88,OPD collections week 2
+2024-10-10,expense,Medical supplies,128732.70,Supplies order 3
+2024-10-10,revenue,Consultations,381854.28,OPD collections week 1
+2024-10-12,revenue,Diagnostics,240517.71,Lab and imaging collections 1
+2024-10-16,expense,Utilities,113453.86,Power and water
+2024-10-17,revenue,Pharmacy,155345.10,Pharmacy sales 1
+2024-10-18,expense,Medical supplies,102422.61,Supplies order 2
+2024-10-23,revenue,Diagnostics,253384.71,Lab and imaging collections 3
+2024-10-24,expense,Marketing,48744.54,Local outreach
+2024-10-24,revenue,Pharmacy,186973.03,Pharmacy sales 4
+2024-10-25,expense,Medical supplies,125381.00,Supplies order 1
+2024-10-28,expense,Nursing staff,612572.84,Payroll - nursing
+2024-11-01,expense,Rent,380000.00,Clinic premises
+2024-11-03,expense,Equipment lease,120000.00,Equipment leases
+2024-11-03,revenue,Pharmacy,206303.42,Pharmacy sales 3
+2024-11-05,revenue,Pharmacy,205293.96,Pharmacy sales 1
+2024-11-06,expense,Marketing,46268.92,Local outreach
+2024-11-07,expense,Doctor fees,928168.71,Visiting doctor payouts
+2024-11-11,revenue,Consultations,295936.15,OPD collections week 5
+2024-11-11,revenue,Diagnostics,234848.03,Lab and imaging collections 2
+2024-11-11,revenue,Pharmacy,144370.37,Pharmacy sales 4
+2024-11-12,expense,Utilities,110224.52,Power and water
+2024-11-14,expense,Medical supplies,146660.33,Supplies order 2
+2024-11-14,revenue,Consultations,399211.54,OPD collections week 6
+2024-11-14,revenue,Diagnostics,228995.55,Lab and imaging collections 4
+2024-11-18,revenue,Consultations,454487.60,OPD collections week 2
+2024-11-21,expense,Medical supplies,111951.70,Supplies order 3
+2024-11-21,revenue,Diagnostics,262681.25,Lab and imaging collections 1
+2024-11-24,revenue,Consultations,482760.89,OPD collections week 1
+2024-11-25,revenue,Pharmacy,191159.62,Pharmacy sales 2
+2024-11-26,expense,Medical supplies,83613.11,Supplies order 1
+2024-11-26,revenue,Consultations,321882.00,OPD collections week 3
+2024-11-27,revenue,Consultations,324116.23,OPD collections week 4
+2024-11-28,expense,Nursing staff,616248.28,Payroll - nursing
+2024-11-28,revenue,Diagnostics,259204.60,Lab and imaging collections 3
+2024-12-01,expense,Rent,380000.00,Clinic premises
+2024-12-02,expense,Utilities,109773.30,Power and water
+2024-12-02,revenue,Consultations,554908.27,OPD collections week 1
+2024-12-02,revenue,Pharmacy,250067.66,Pharmacy sales 2
+2024-12-03,expense,Equipment lease,120000.00,Equipment leases
+2024-12-07,expense,Doctor fees,1171219.88,Visiting doctor payouts
+2024-12-08,revenue,Diagnostics,243211.77,Lab and imaging collections 4
+2024-12-09,expense,Medical supplies,185561.43,Supplies order 1
+2024-12-09,expense,Medical supplies,111105.36,Supplies order 2
+2024-12-10,revenue,Consultations,373515.92,OPD collections week 5
+2024-12-10,revenue,Pharmacy,191409.25,Pharmacy sales 4
+2024-12-11,expense,Marketing,52902.16,Local outreach
+2024-12-12,revenue,Consultations,613235.22,OPD collections week 3
+2024-12-12,revenue,Diagnostics,311866.70,Lab and imaging collections 1
+2024-12-12,revenue,Pharmacy,212866.38,Pharmacy sales 3
+2024-12-15,revenue,Diagnostics,222331.67,Lab and imaging collections 3
+2024-12-16,revenue,Consultations,365036.94,OPD collections week 6
+2024-12-18,revenue,Consultations,385570.50,OPD collections week 2
+2024-12-24,revenue,Pharmacy,230219.10,Pharmacy sales 1
+2024-12-25,expense,Medical supplies,121640.34,Supplies order 3
+2024-12-25,revenue,Insurance claims,2817972.65,Quarterly insurance settlement
+2024-12-26,revenue,Consultations,457338.01,OPD collections week 4
+2024-12-26,revenue,Diagnostics,211504.28,Lab and imaging collections 2
+2024-12-28,expense,Nursing staff,619945.77,Payroll - nursing
+2025-01-01,expense,Rent,380000.00,Clinic premises
+2025-01-02,revenue,Consultations,522387.69,OPD collections week 5
+2025-01-03,expense,Equipment lease,540000.00,Equipment leases incl. MRI
+2025-01-04,expense,Utilities,108873.26,Power and water
+2025-01-05,expense,Medical supplies,151894.33,Supplies order 2
+2025-01-05,revenue,Pharmacy,192146.96,Pharmacy sales 4
+2025-01-06,revenue,Diagnostics,219130.74,Lab and imaging collections 4
+2025-01-07,expense,Doctor fees,1182333.35,Visiting doctor payouts
+2025-01-07,revenue,Consultations,498949.16,OPD collections week 3
+2025-01-08,expense,Medical supplies,134541.92,Supplies order 3
+2025-01-10,expense,Marketing,61476.53,Local outreach
+2025-01-10,revenue,Diagnostics,346173.21,Lab and imaging collections 1
+2025-01-11,revenue,Consultations,472376.47,OPD collections week 4
+2025-01-12,revenue,Consultations,408613.07,OPD collections week 6
+2025-01-12,revenue,Pharmacy,224406.55,Pharmacy sales 3
+2025-01-13,revenue,Pharmacy,193996.96,Pharmacy sales 2
+2025-01-15,expense,Medical supplies,151171.99,Supplies order 1
+2025-01-19,revenue,Pharmacy,248175.75,Pharmacy sales 1
+2025-01-20,revenue,Consultations,445846.97,OPD collections week 2
+2025-01-21,revenue,Consultations,562712.29,OPD collections week 1
+2025-01-24,revenue,Diagnostics,342010.87,Lab and imaging collections 3
+2025-01-26,revenue,Diagnostics,199765.32,Lab and imaging collections 2
+2025-01-28,expense,Nursing staff,623665.44,Payroll - nursing
+2025-02-01,expense,Rent,380000.00,Clinic premises
+2025-02-02,expense,Utilities,111924.29,Power and water
+2025-02-02,revenue,Pharmacy,190645.24,Pharmacy sales 1
+2025-02-03,expense,Equipment lease,540000.00,Equipment leases incl. MRI
+2025-02-07,expense,Doctor fees,1193552.26,Visiting doctor payouts
+2025-02-07,revenue,Consultations,416105.57,OPD collections week 3
+2025-02-08,revenue,Consultations,449007.26,OPD collections week 5
+2025-02-09,expense,Medical supplies,137300.62,Supplies order 3
+2025-02-10,revenue,Pharmacy,165755.88,Pharmacy sales 4
+2025-02-11,expense,Medical supplies,141607.20,Supplies order 1
+2025-02-11,revenue,Consultations,630114.35,OPD collections week 4
+2025-02-13,revenue,Consultations,415583.61,OPD collections week 1
+2025-02-14,revenue,Consultations,391239.14,OPD collections week 6
+2025-02-16,revenue,Diagnostics,325150.48,Lab and imaging collections 2
+2025-02-19,expense,Medical supplies,168741.22,Supplies order 2
+2025-02-21,revenue,Pharmacy,273240.13,Pharmacy sales 2
+2025-02-22,revenue,Diagnostics,318915.74,Lab and imaging collections 3
+2025-02-23,revenue,Diagnostics,236142.80,Lab and imaging collections 4
+2025-02-23,revenue,Pharmacy,234498.02,Pharmacy sales 3
+2025-02-27,expense,Marketing,59292.94,Local outreach
+2025-02-27,revenue,Consultations,516489.48,OPD collections week 2
+2025-02-28,expense,Nursing staff,627407.43,Payroll - nursing
+2025-02-28,revenue,Diagnostics,329180.63,Lab and imaging collections 1
+2025-03-01,expense,Rent,380000.00,Clinic premises
+2025-03-02,revenue,Diagnostics,272070.32,Lab and imaging collections 4
+2025-03-03,expense,Equipment lease,540000.00,Equipment leases incl. MRI
+2025-03-05,expense,Medical supplies,118345.63,Supplies order 3
+2025-03-05,revenue,Diagnostics,252347.35,Lab and imaging collections 2
+2025-03-05,revenue,Pharmacy,190837.60,Pharmacy sales 3
+2025-03-06,revenue,Consultations,377283.97,OPD collections week 2
+2025-03-07,expense,Doctor fees,963902.11,Visiting doctor payouts
+2025-03-08,revenue,Diagnostics,373486.80,Lab and imaging collections 1
+2025-03-11,expense,Utilities,108663.86,Power and water
+2025-03-11,revenue,Consultations,380954.77,OPD collections week 1
+2025-03-13,expense,Medical supplies,139063.45,Supplies order 1
+2025-03-14,expense,Marketing,51199.75,Local outreach
+2025-03-15,revenue,Diagnostics,406968.65,Lab and imaging collections 3
+2025-03-15,revenue,Pharmacy,189229.08,Pharmacy sales 4
+2025-03-16,revenue,Pharmacy,201757.67,Pharmacy sales 1
+2025-03-17,expense,Medical supplies,136279.43,Supplies order 2
+2025-03-19,revenue,Consultations,432381.10,OPD collections week 5
+2025-03-21,revenue,Consultations,330159.17,OPD collections week 4
+2025-03-23,revenue,Consultations,497440.73,OPD collections week 6
+2025-03-25,revenue,Insurance claims,2898953.70,Quarterly insurance settlement
+2025-03-27,revenue,Pharmacy,192267.73,Pharmacy sales 2
+2025-03-28,expense,Nursing staff,631171.88,Payroll - nursing
+2025-03-28,revenue,Consultations,311626.31,OPD collections week 3
+2025-04-01,expense,Rent,406600.00,Clinic premises
+2025-04-02,expense,Utilities,136268.76,Power and water
+2025-04-03,expense,Equipment lease,540000.00,Equipment leases incl. MRI
+2025-04-03,revenue,Diagnostics,278744.03,Lab and imaging collections 4
+2025-04-04,expense,Medical supplies,118266.73,Supplies order 1
+2025-04-04,revenue,Consultations,333299.15,OPD collections week 1
+2025-04-05,revenue,Pharmacy,205497.93,Pharmacy sales 1
+2025-04-07,expense,Doctor fees,973048.37,Visiting doctor payouts
+2025-04-07,expense,Marketing,60430.79,Local outreach
+2025-04-09,revenue,Pharmacy,235635.89,Pharmacy sales 2
+2025-04-10,revenue,Consultations,369220.04,OPD collections week 4
+2025-04-10,revenue,Consultations,297333.74,OPD collections week 5
+2025-04-13,revenue,Diagnostics,396876.06,Lab and imaging collections 1
+2025-04-15,revenue,Consultations,511378.20,OPD collections week 3
+2025-04-18,revenue,Consultations,481860.70,OPD collections week 2
+2025-04-21,revenue,Pharmacy,186799.24,Pharmacy sales 3
+2025-04-22,revenue,Diagnostics,364080.78,Lab and imaging collections 3
+2025-04-23,revenue,Consultations,321252.45,OPD collections week 6
+2025-04-26,expense,Medical supplies,155693.08,Supplies order 2
+2025-04-26,revenue,Diagnostics,403067.87,Lab and imaging collections 2
+2025-04-26,revenue,Pharmacy,167332.84,Pharmacy sales 4
+2025-04-28,expense,Medical supplies,140684.79,Supplies order 3
+2025-04-28,expense,Nursing staff,634958.91,Payroll - nursing
+2025-05-01,expense,Rent,406600.00,Clinic premises
+2025-05-01,revenue,Consultations,437178.78,OPD collections week 1
+2025-05-03,expense,Equipment lease,540000.00,Equipment leases incl. MRI
+2025-05-03,expense,Marketing,62321.28,Local outreach
+2025-05-04,revenue,Consultations,334358.61,OPD collections week 6
+2025-05-05,expense,Medical supplies,134835.29,Supplies order 3
+2025-05-06,revenue,Diagnostics,403407.31,Lab and imaging collections 2
+2025-05-07,expense,Doctor fees,982281.43,Visiting doctor payouts
+2025-05-07,revenue,Consultations,405777.61,OPD collections week 4
+2025-05-07,revenue,Pharmacy,186580.08,Pharmacy sales 3
+2025-05-09,expense,Medical supplies,140406.01,Supplies order 1
+2025-05-09,expense,Medical supplies,151295.02,Supplies order 2
+2025-05-10,revenue,Diagnostics,447666.99,Lab and imaging collections 1
+2025-05-12,revenue,Consultations,486496.15,OPD collections week 5
+2025-05-12,revenue,Diagnostics,273031.21,Lab and imaging collections 3
+2025-05-13,revenue,Consultations,368300.09,OPD collections week 3
+2025-05-17,expense,Utilities,133038.74,Power and water
+2025-05-17,revenue,Diagnostics,396369.01,Lab and imaging collections 4
+2025-05-22,revenue,Consultations,303498.31,OPD collections week 2
+2025-05-24,revenue,Pharmacy,231296.55,Pharmacy sales 1
+2025-05-27,revenue,Pharmacy,189697.86,Pharmacy sales 2
+2025-05-27,revenue,Pharmacy,175274.77,Pharmacy sales 4
+2025-05-28,expense,Nursing staff,638768.66,Payroll - nursing
+2025-06-01,expense,Rent,406600.00,Clinic premises
+2025-06-01,revenue,Diagnostics,388496.36,Lab and imaging collections 1
+2025-06-03,expense,Equipment lease,540000.00,Equipment leases incl. MRI
+2025-06-03,revenue,Diagnostics,385265.15,Lab and imaging collections 4
+2025-06-04,revenue,Consultations,295966.14,OPD collections week 5
+2025-06-05,revenue,Pharmacy,196629.11,Pharmacy sales 3
+2025-06-07,expense,Doctor fees,991602.09,Visiting doctor payouts
+2025-06-10,revenue,Diagnostics,355614.42,Lab and imaging collections 2
+2025-06-12,expense,Marketing,62542.05,Local outreach
+2025-06-12,revenue,Consultations,356872.28,OPD collections week 3
+2025-06-12,revenue,Consultations,446289.21,OPD collections week 6
+2025-06-14,revenue,Pharmacy,217587.34,Pharmacy sales 4
+2025-06-18,expense,Medical supplies,109566.85,Supplies order 1
+2025-06-18,expense,Medical supplies,171949.58,Supplies order 2
+2025-06-18,revenue,Consultations,456977.35,OPD collections week 4
+2025-06-19,revenue,Consultations,413005.57,OPD collections week 1
+2025-06-22,expense,Utilities,131013.52,Power and water
+2025-06-24,revenue,Diagnostics,442036.39,Lab and imaging collections 3
+2025-06-25,revenue,Consultations,330086.16,OPD collections week 2
+2025-06-25,revenue,Insurance claims,2982261.93,Quarterly insurance settlement
+2025-06-25,revenue,Pharmacy,174817.81,Pharmacy sales 2
+2025-06-26,expense,Medical supplies,171754.66,Supplies order 3
+2025-06-26,revenue,Pharmacy,229274.97,Pharmacy sales 1
+2025-06-28,expense,Nursing staff,642601.28,Payroll - nursing
+2025-07-01,expense,Medical supplies,146133.56,Supplies order 2
+2025-07-01,expense,Rent,406600.00,Clinic premises
+2025-07-02,revenue,Consultations,327417.14,OPD collections week 2
+2025-07-03,expense,Equipment lease,540000.00,Equipment leases incl. MRI
+2025-07-04,expense,Utilities,109166.34,Power and water
+2025-07-06,revenue,Consultations,319945.81,OPD collections week 5
+2025-07-07,expense,Doctor fees,1001011.20,Visiting doctor payouts
+2025-07-08,revenue,Consultations,474128.92,OPD collections week 3
+2025-07-09,expense,Medical supplies,160425.39,Supplies order 3
+2025-07-12,revenue,Pharmacy,177049.45,Pharmacy sales 4
+2025-07-14,revenue,Diagnostics,303728.34,Lab and imaging collections 4
+2025-07-15,expense,Marketing,56803.00,Local outreach
+2025-07-16,revenue,Consultations,468750.97,OPD collections week 4
+2025-07-19,revenue,Diagnostics,443824.68,Lab and imaging collections 2
+2025-07-20,revenue,Pharmacy,184103.68,Pharmacy sales 2
+2025-07-22,revenue,Pharmacy,176745.90,Pharmacy sales 1
+2025-07-24,revenue,Diagnostics,355958.77,Lab and imaging collections 1
+2025-07-25,expense,Medical supplies,149352.98,Supplies order 1
+2025-07-26,revenue,Diagnostics,494228.39,Lab and imaging collections 3
+2025-07-26,revenue,Pharmacy,266523.37,Pharmacy sales 3
+2025-07-27,revenue,Consultations,413660.96,OPD collections week 1
+2025-07-27,revenue,Consultations,313153.43,OPD collections week 6
+2025-07-28,expense,Nursing staff,646456.88,Payroll - nursing
+2025-08-01,expense,Marketing,57811.47,Local outreach
+2025-08-01,expense,Rent,406600.00,Clinic premises
+2025-08-01,revenue,Consultations,363575.72,OPD collections week 6
+2025-08-02,revenue,Pharmacy,156196.00,Pharmacy sales 1
+2025-08-02,revenue,Pharmacy,241579.14,Pharmacy sales 3
+2025-08-03,expense,Equipment lease,540000.00,Equipment leases incl. MRI
+2025-08-05,revenue,Consultations,488317.21,OPD collections week 5
+2025-08-06,revenue,Consultations,321586.61,OPD collections week 2
+2025-08-07,expense,Doctor fees,1010509.59,Visiting doctor payouts
+2025-08-07,revenue,Pharmacy,221086.31,Pharmacy sales 2
+2025-08-08,revenue,Diagnostics,408855.97,Lab and imaging collections 3
+2025-08-09,revenue,Diagnostics,331512.13,Lab and imaging collections 2
+2025-08-10,expense,Utilities,111306.10,Power and water
+2025-08-10,revenue,Diagnostics,509641.62,Lab and imaging collections 4
+2025-08-10,revenue,Pharmacy,162660.51,Pharmacy sales 4
+2025-08-15,expense,Medical supplies,136863.78,Supplies order 3
+2025-08-16,revenue,Consultations,517624.78,OPD collections week 3
+2025-08-17,revenue,Diagnostics,459205.64,Lab and imaging collections 1
+2025-08-19,revenue,Consultations,281700.14,OPD collections week 4
+2025-08-24,expense,Medical supplies,159342.21,Supplies order 1
+2025-08-26,expense,Medical supplies,164239.12,Supplies order 2
+2025-08-28,expense,Nursing staff,650335.62,Payroll - nursing
+2025-08-28,revenue,Consultations,371480.40,OPD collections week 1
+2025-09-01,expense,Rent,406600.00,Clinic premises
+2025-09-02,expense,Medical supplies,113094.79,Supplies order 3
+2025-09-02,expense,Utilities,114273.50,Power and water
+2025-09-03,expense,Equipment lease,540000.00,Equipment leases incl. MRI
+2025-09-03,expense,Medical supplies,205207.24,Supplies order 1
+2025-09-03,expense,Medical supplies,139133.20,Supplies order 2
+2025-09-06,revenue,Consultations,357176.53,OPD collections week 1
+2025-09-06,revenue,Diagnostics,392732.25,Lab and imaging collections 2
+2025-09-07,expense,Doctor fees,1020098.10,Visiting doctor payouts
+2025-09-07,revenue,Consultations,423345.62,OPD collections week 5
+2025-09-08,revenue,Pharmacy,210901.02,Pharmacy sales 1
+2025-09-11,revenue,Diagnostics,438774.35,Lab and imaging collections 4
+2025-09-12,revenue,Consultations,447984.16,OPD collections week 6
+2025-09-12,revenue,Pharmacy,201710.86,Pharmacy sales 3
+2025-09-13,revenue,Diagnostics,377142.94,Lab and imaging collections 1
+2025-09-13,revenue,Diagnostics,511844.94,Lab and imaging collections 3
+2025-09-15,revenue,Consultations,374815.12,OPD collections week 2
+2025-09-20,revenue,Pharmacy,191614.23,Pharmacy sales 4
+2025-09-21,revenue,Consultations,489713.67,OPD collections week 4
+2025-09-21,revenue,Pharmacy,212493.27,Pharmacy sales 2
+2025-09-26,revenue,Consultations,354592.02,OPD collections week 3
+2025-09-28,expense,Marketing,45307.28,Local outreach
+2025-09-28,expense,Nursing staff,654237.64,Payroll - nursing
+2025-10-01,expense,Rent,406600.00,Clinic premises
+2025-10-02,revenue,Consultations,546343.79,OPD collections week 2
+2025-10-03,expense,Equipment lease,540000.00,Equipment leases incl. MRI
+2025-10-04,revenue,Diagnostics,397253.34,Lab and imaging collections 1
+2025-10-07,expense,Doctor fees,1029777.60,Visiting doctor payouts
+2025-10-08,expense,Medical supplies,117335.56,Supplies order 2
+2025-10-08,revenue,Pharmacy,235896.00,Pharmacy sales 2
+2025-10-10,expense,Medical supplies,154334.51,Supplies order 1
+2025-10-11,expense,Marketing,55468.30,Local outreach
+2025-10-13,revenue,Pharmacy,207403.23,Pharmacy sales 1
+2025-10-15,revenue,Diagnostics,494953.20,Lab and imaging collections 3
+2025-10-15,revenue,Pharmacy,201296.38,Pharmacy sales 3
+2025-10-16,revenue,Consultations,416354.64,OPD collections week 4
+2025-10-17,revenue,Pharmacy,161752.15,Pharmacy sales 4
+2025-10-18,revenue,Consultations,452817.09,OPD collections week 5
+2025-10-19,revenue,Consultations,310008.19,OPD collections week 6
+2025-10-21,revenue,Consultations,306355.61,OPD collections week 3
+2025-10-22,expense,Medical supplies,189288.41,Supplies order 3
+2025-10-25,expense,Utilities,112811.28,Power and water
+2025-10-25,revenue,Consultations,425265.96,OPD collections week 1
+2025-10-25,revenue,Insurance claims,3097075.50,Delayed Q3 insurance settlement
+2025-10-26,revenue,Diagnostics,458321.63,Lab and imaging collections 2
+2025-10-26,revenue,Diagnostics,334524.51,Lab and imaging collections 4
+2025-10-28,expense,Nursing staff,658163.06,Payroll - nursing
+2025-11-01,expense,Rent,406600.00,Clinic premises
+2025-11-01,revenue,Consultations,376506.81,OPD collections week 3
+2025-11-02,revenue,Diagnostics,351252.32,Lab and imaging collections 2
+2025-11-03,expense,Equipment lease,540000.00,Equipment leases incl. MRI
+2025-11-03,revenue,Diagnostics,481254.45,Lab and imaging collections 4
+2025-11-03,revenue,Pharmacy,224342.93,Pharmacy sales 3
+2025-11-07,expense,Doctor fees,1039548.95,Visiting doctor payouts
+2025-11-07,revenue,Pharmacy,192491.13,Pharmacy sales 1
+2025-11-08,expense,Medical supplies,172741.08,Supplies order 1
+2025-11-11,revenue,Consultations,338421.18,OPD collections week 1
+2025-11-12,expense,Medical supplies,152102.71,Supplies order 3
+2025-11-16,revenue,Pharmacy,248408.32,Pharmacy sales 2
+2025-11-18,revenue,Diagnostics,443307.95,Lab and imaging collections 1
+2025-11-19,revenue,Consultations,530721.60,OPD collections week 5
+2025-11-20,expense,Marketing,52456.06,Local outreach
+2025-11-20,revenue,Consultations,508116.96,OPD collections week 4
+2025-11-20,revenue,Consultations,401001.25,OPD collections week 6
+2025-11-21,expense,Medical supplies,117568.42,Supplies order 2
+2025-11-23,revenue,Pharmacy,184796.52,Pharmacy sales 4
+2025-11-24,revenue,Consultations,377757.69,OPD collections week 2
+2025-11-25,expense,Utilities,108212.09,Power and water
+2025-11-28,expense,Nursing staff,662112.04,Payroll - nursing
+2025-11-28,revenue,Diagnostics,420062.05,Lab and imaging collections 3
+2025-12-01,expense,Rent,406600.00,Clinic premises
+2025-12-02,revenue,Consultations,428086.38,OPD collections week 6
+2025-12-03,expense,Equipment lease,540000.00,Equipment leases incl. MRI
+2025-12-03,revenue,Pharmacy,239788.71,Pharmacy sales 1
+2025-12-05,revenue,Consultations,523279.10,OPD collections week 5
+2025-12-06,expense,Medical supplies,164213.97,Supplies order 1
+2025-12-07,expense,Doctor fees,1311766.27,Visiting doctor payouts
+2025-12-08,expense,Medical supplies,186416.49,Supplies order 3
+2025-12-10,revenue,Pharmacy,240391.71,Pharmacy sales 3
+2025-12-13,revenue,Consultations,652434.51,OPD collections week 2
+2025-12-14,revenue,Pharmacy,268670.64,Pharmacy sales 4
+2025-12-16,expense,Marketing,64875.61,Local outreach
+2025-12-16,expense,Medical supplies,194931.04,Supplies order 2
+2025-12-17,revenue,Diagnostics,453700.85,Lab and imaging collections 2
+2025-12-17,revenue,Diagnostics,449307.87,Lab and imaging collections 4
+2025-12-18,revenue,Pharmacy,212065.35,Pharmacy sales 2
+2025-12-20,expense,Utilities,111581.16,Power and water
+2025-12-20,revenue,Consultations,656466.51,OPD collections week 1
+2025-12-23,revenue,Consultations,422360.04,OPD collections week 3
+2025-12-24,revenue,Diagnostics,332884.21,Lab and imaging collections 1
+2025-12-25,revenue,Consultations,425552.29,OPD collections week 4
+2025-12-25,revenue,Diagnostics,493537.30,Lab and imaging collections 3
+2025-12-25,revenue,Insurance claims,3156129.37,Quarterly insurance settlement
+2025-12-28,expense,Nursing staff,666084.72,Payroll - nursing
+2026-01-01,expense,Marketing,58160.22,Local outreach
+2026-01-01,expense,Rent,406600.00,Clinic premises
+2026-01-03,expense,Equipment lease,540000.00,Equipment leases incl. MRI
+2026-01-07,expense,Doctor fees,1324213.35,Visiting doctor payouts
+2026-01-07,expense,Medical supplies,147505.60,Supplies order 3
+2026-01-11,revenue,Diagnostics,542670.25,Lab and imaging collections 2
+2026-01-12,revenue,Consultations,465916.42,OPD collections week 4
+2026-01-13,revenue,Pharmacy,164470.65,Pharmacy sales 3
+2026-01-15,expense,Medical supplies,191213.38,Supplies order 1
+2026-01-15,revenue,Consultations,578524.38,OPD collections week 2
+2026-01-17,revenue,Consultations,531612.49,OPD collections week 3
+2026-01-18,revenue,Pharmacy,270510.79,Pharmacy sales 2
+2026-01-19,revenue,Pharmacy,249218.18,Pharmacy sales 4
+2026-01-20,revenue,Consultations,489963.73,OPD collections week 6
+2026-01-20,revenue,Diagnostics,351828.46,Lab and imaging collections 3
+2026-01-22,revenue,Consultations,617860.67,OPD collections week 5
+2026-01-25,revenue,Pharmacy,285895.15,Pharmacy sales 1
+2026-01-26,revenue,Consultations,561083.07,OPD collections week 1
+2026-01-26,revenue,Diagnostics,507151.10,Lab and imaging collections 4
+2026-01-27,expense,Medical supplies,181196.69,Supplies order 2
+2026-01-27,expense,Utilities,111266.55,Power and water
+2026-01-27,revenue,Diagnostics,332210.81,Lab and imaging collections 1
+2026-01-28,expense,Nursing staff,670081.22,Payroll - nursing
+2026-02-01,expense,Rent,406600.00,Clinic premises
+2026-02-03,expense,Equipment lease,540000.00,Equipment leases incl. MRI
+2026-02-04,revenue,Consultations,573889.74,OPD collections week 5
+2026-02-04,revenue,Diagnostics,358406.68,Lab and imaging collections 1
+2026-02-05,expense,Utilities,107657.46,Power and water
+2026-02-07,expense,Doctor fees,1336778.53,Visiting doctor payouts
+2026-02-07,revenue,Pharmacy,170368.91,Pharmacy sales 4
+2026-02-08,revenue,Consultations,569795.66,OPD collections week 1
+2026-02-08,revenue,Pharmacy,267270.48,Pharmacy sales 2
+2026-02-11,revenue,Consultations,474129.57,OPD collections week 3
+2026-02-11,revenue,Diagnostics,367554.69,Lab and imaging collections 2
+2026-02-11,revenue,Pharmacy,264822.00,Pharmacy sales 3
+2026-02-14,revenue,Consultations,686159.38,OPD collections week 6
+2026-02-14,revenue,Diagnostics,470741.37,Lab and imaging collections 4
+2026-02-15,revenue,Pharmacy,296131.42,Pharmacy sales 1
+2026-02-16,expense,Marketing,65270.06,Local outreach
+2026-02-17,revenue,Consultations,468007.84,OPD collections week 2
+2026-02-21,expense,Medical supplies,151936.62,Supplies order 2
+2026-02-21,expense,Medical supplies,219075.94,Supplies order 3
+2026-02-23,revenue,Consultations,424090.81,OPD collections week 4
+2026-02-23,revenue,Diagnostics,522707.81,Lab and imaging collections 3
+2026-02-25,expense,Medical supplies,155161.94,Supplies order 1
+2026-02-28,expense,Nursing staff,674101.71,Payroll - nursing
+2026-03-01,expense,Medical supplies,174800.39,Supplies order 3
+2026-03-01,expense,Rent,406600.00,Clinic premises
+2026-03-02,expense,Marketing,60243.44,Local outreach
+2026-03-03,expense,Equipment lease,540000.00,Equipment leases incl. MRI
+2026-03-07,expense,Doctor fees,1079570.36,Visiting doctor payouts
+2026-03-09,expense,Medical supplies,148832.50,Supplies order 1
+2026-03-09,revenue,Pharmacy,195207.19,Pharmacy sales 2
+2026-03-09,revenue,Pharmacy,238189.74,Pharmacy sales 3
+2026-03-10,revenue,Pharmacy,189485.23,Pharmacy sales 1
+2026-03-11,revenue,Consultations,432789.36,OPD collections week 2
+2026-03-11,revenue,Consultations,381111.73,OPD collections week 3
+2026-03-17,revenue,Diagnostics,475618.06,Lab and imaging collections 2
+2026-03-17,revenue,Pharmacy,234800.53,Pharmacy sales 4
+2026-03-18,expense,Medical supplies,140023.28,Supplies order 2
+2026-03-19,revenue,Consultations,418434.12,OPD collections week 1
+2026-03-20,revenue,Consultations,460170.94,OPD collections week 4
+2026-03-24,revenue,Consultations,532328.65,OPD collections week 5
+2026-03-25,expense,Utilities,109424.82,Power and water
+2026-03-25,revenue,Diagnostics,296257.05,Lab and imaging collections 4
+2026-03-25,revenue,Insurance claims,3246828.15,Quarterly insurance settlement
+2026-03-26,revenue,Consultations,435862.28,OPD collections week 6
+2026-03-26,revenue,Diagnostics,483999.47,Lab and imaging collections 3
+2026-03-27,revenue,Diagnostics,483241.20,Lab and imaging collections 1
+2026-03-28,expense,Nursing staff,678146.32,Payroll - nursing
+2026-04-01,expense,Rent,406600.00,Clinic premises
+2026-04-03,expense,Equipment lease,540000.00,Equipment leases incl. MRI
+2026-04-03,revenue,Diagnostics,468275.59,Lab and imaging collections 2
+2026-04-05,expense,Medical supplies,202372.89,Supplies order 3
+2026-04-05,expense,Utilities,137098.46,Power and water
+2026-04-06,revenue,Pharmacy,201501.52,Pharmacy sales 4
+2026-04-07,expense,Doctor fees,1089814.18,Visiting doctor payouts
+2026-04-07,revenue,Consultations,304578.23,OPD collections week 1
+2026-04-07,revenue,Diagnostics,331760.97,Lab and imaging collections 1
+2026-04-09,revenue,Consultations,383283.36,OPD collections week 4
+2026-04-11,revenue,Diagnostics,502443.74,Lab and imaging collections 3
+2026-04-12,revenue,Consultations,451112.11,OPD collections week 3
+2026-04-14,revenue,Pharmacy,210521.14,Pharmacy sales 2
+2026-04-18,revenue,Consultations,508275.68,OPD collections week 5
+2026-04-18,revenue,Diagnostics,438161.43,Lab and imaging collections 4
+2026-04-22,revenue,Consultations,363187.13,OPD collections week 2
+2026-04-23,revenue,Pharmacy,256668.79,Pharmacy sales 1
+2026-04-23,revenue,Pharmacy,202723.92,Pharmacy sales 3
+2026-04-25,expense,Medical supplies,159323.85,Supplies order 2
+2026-04-27,expense,Marketing,53428.99,Local outreach
+2026-04-27,expense,Medical supplies,122442.66,Supplies order 1
+2026-04-28,expense,Nursing staff,682215.20,Payroll - nursing
+2026-04-28,revenue,Consultations,524507.02,OPD collections week 6
+2026-05-01,expense,Rent,406600.00,Clinic premises
+2026-05-01,revenue,Consultations,533569.41,OPD collections week 1
+2026-05-03,expense,Equipment lease,540000.00,Equipment leases incl. MRI
+2026-05-03,expense,Medical supplies,166655.01,Supplies order 1
+2026-05-04,revenue,Consultations,373439.99,OPD collections week 6
+2026-05-05,revenue,Pharmacy,221128.45,Pharmacy sales 3
+2026-05-07,expense,Doctor fees,1100155.20,Visiting doctor payouts
+2026-05-08,revenue,Consultations,486928.19,OPD collections week 3
+2026-05-08,revenue,Diagnostics,539844.40,Lab and imaging collections 3
+2026-05-12,expense,Utilities,133783.27,Power and water
+2026-05-14,revenue,Consultations,291269.27,OPD collections week 5
+2026-05-15,revenue,Consultations,500344.79,OPD collections week 4
+2026-05-16,expense,Marketing,48560.19,Local outreach
+2026-05-17,revenue,Consultations,372881.05,OPD collections week 2
+2026-05-19,revenue,Diagnostics,404799.01,Lab and imaging collections 1
+2026-05-21,revenue,Pharmacy,285631.51,Pharmacy sales 2
+2026-05-22,expense,Medical supplies,147007.30,Supplies order 3
+2026-05-22,revenue,Diagnostics,457356.75,Lab and imaging collections 4
+2026-05-22,revenue,Pharmacy,206308.51,Pharmacy sales 1
+2026-05-23,revenue,Diagnostics,360621.77,Lab and imaging collections 2
+2026-05-23,revenue,Pharmacy,198678.68,Pharmacy sales 4
+2026-05-25,expense,Medical supplies,183133.59,Supplies order 2
+2026-05-28,expense,Nursing staff,686308.49,Payroll - nursing
+2026-06-01,expense,Rent,406600.00,Clinic premises
+2026-06-01,revenue,Consultations,496651.65,OPD collections week 4
+2026-06-01,revenue,Diagnostics,400506.81,Lab and imaging collections 3
+2026-06-03,expense,Equipment lease,540000.00,Equipment leases incl. MRI
+2026-06-03,revenue,Consultations,433409.68,OPD collections week 6
+2026-06-03,revenue,Pharmacy,248326.44,Pharmacy sales 4
+2026-06-04,revenue,Consultations,378021.92,OPD collections week 5
+2026-06-06,revenue,Pharmacy,203307.38,Pharmacy sales 2
+2026-06-07,expense,Doctor fees,1110594.34,Visiting doctor payouts
+2026-06-07,revenue,Consultations,420398.79,OPD collections week 2
+2026-06-10,revenue,Pharmacy,220254.13,Pharmacy sales 1
+2026-06-13,revenue,Diagnostics,446829.36,Lab and imaging collections 2
+2026-06-15,expense,Medical supplies,135541.92,Supplies order 1
+2026-06-15,expense,Medical supplies,143716.50,Supplies order 2
+2026-06-16,revenue,Consultations,442107.32,OPD collections week 1
+2026-06-16,revenue,Diagnostics,392059.58,Lab and imaging collections 1
+2026-06-18,expense,Medical supplies,193694.76,Supplies order 3
+2026-06-20,expense,Utilities,129752.15,Power and water
+2026-06-23,revenue,Consultations,499105.30,OPD collections week 3
+2026-06-25,revenue,Insurance claims,3340133.37,Quarterly insurance settlement
+2026-06-26,expense,Marketing,62500.79,Local outreach
+2026-06-26,revenue,Pharmacy,250966.29,Pharmacy sales 3
+2026-06-28,expense,Nursing staff,690426.34,Payroll - nursing
+2026-06-28,revenue,Diagnostics,523443.06,Lab and imaging collections 4

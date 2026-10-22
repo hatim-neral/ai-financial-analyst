@@ -1,0 +1,651 @@
+date,type,category,amount,description
+2024-07-02,revenue,Marketplace sales,275176.99,Marketplace settlement 1
+2024-07-03,expense,Warehouse,185000.00,3PL warehouse fee
+2024-07-04,expense,Performance marketing,173395.25,Meta and Google ads 2
+2024-07-05,expense,Shipping & logistics,304875.00,Courier invoice
+2024-07-06,expense,Inventory purchases,372073.85,Fabric and production run 1
+2024-07-07,expense,Performance marketing,227601.00,Meta and Google ads 1
+2024-07-07,revenue,Website sales,194102.96,Shopify payout 8
+2024-07-08,expense,Returns & refunds,236250.00,Customer refunds
+2024-07-08,revenue,Marketplace sales,399867.72,Marketplace settlement 3
+2024-07-12,expense,Performance marketing,203028.65,Meta and Google ads 3
+2024-07-13,revenue,Website sales,220807.85,Shopify payout 10
+2024-07-16,revenue,Website sales,292337.38,Shopify payout 1
+2024-07-17,revenue,Marketplace sales,346684.17,Marketplace settlement 2
+2024-07-17,revenue,Website sales,325597.52,Shopify payout 7
+2024-07-20,revenue,Website sales,220248.53,Shopify payout 3
+2024-07-21,expense,Inventory purchases,326498.16,Fabric and production run 3
+2024-07-21,revenue,Website sales,254357.00,Shopify payout 2
+2024-07-21,revenue,Website sales,257311.77,Shopify payout 6
+2024-07-23,expense,Payment gateway fees,55125.00,Gateway fees
+2024-07-25,expense,Inventory purchases,275391.31,Fabric and production run 4
+2024-07-25,revenue,Marketplace sales,398316.10,Marketplace settlement 4
+2024-07-25,revenue,Website sales,297488.66,Shopify payout 4
+2024-07-26,expense,Marketplace commissions,259200.00,Marketplace commission
+2024-07-28,expense,Inventory purchases,460677.33,Fabric and production run 2
+2024-07-28,expense,Salaries,640000.00,Payroll
+2024-07-28,revenue,Website sales,344707.08,Shopify payout 5
+2024-07-28,revenue,Website sales,273456.38,Shopify payout 9
+2024-08-01,revenue,Marketplace sales,227091.76,Marketplace settlement 4
+2024-08-03,expense,Warehouse,185000.00,3PL warehouse fee
+2024-08-05,expense,Performance marketing,135037.70,Meta and Google ads 3
+2024-08-06,expense,Inventory purchases,1010225.39,Fabric and production run 3
+2024-08-06,expense,Returns & refunds,191268.00,Customer refunds
+2024-08-07,revenue,Marketplace sales,250112.06,Marketplace settlement 1
+2024-08-07,revenue,Website sales,175763.45,Shopify payout 2
+2024-08-09,expense,Inventory purchases,864203.93,Fabric and production run 4
+2024-08-10,expense,Inventory purchases,1065902.05,Fabric and production run 1
+2024-08-11,revenue,Marketplace sales,364916.47,Marketplace settlement 3
+2024-08-12,revenue,Website sales,242242.22,Shopify payout 10
+2024-08-12,revenue,Website sales,268031.02,Shopify payout 9
+2024-08-13,revenue,Website sales,189894.45,Shopify payout 4
+2024-08-13,revenue,Website sales,183390.08,Shopify payout 5
+2024-08-17,revenue,Website sales,188107.30,Shopify payout 6
+2024-08-18,expense,Marketplace commissions,218592.00,Marketplace commission
+2024-08-18,expense,Shipping & logistics,250470.00,Courier invoice
+2024-08-19,revenue,Marketplace sales,363474.35,Marketplace settlement 2
+2024-08-19,revenue,Website sales,241855.43,Shopify payout 8
+2024-08-20,revenue,Website sales,200533.98,Shopify payout 1
+2024-08-21,expense,Performance marketing,169521.07,Meta and Google ads 1
+2024-08-21,expense,Performance marketing,195347.73,Meta and Google ads 2
+2024-08-22,expense,Payment gateway fees,44629.20,Gateway fees
+2024-08-24,expense,Inventory purchases,971950.08,Fabric and production run 2
+2024-08-25,revenue,Website sales,203571.87,Shopify payout 7
+2024-08-26,revenue,Website sales,258023.56,Shopify payout 3
+2024-08-28,expense,Salaries,646400.00,Payroll
+2024-09-01,expense,Performance marketing,178291.17,Meta and Google ads 1
+2024-09-01,revenue,Website sales,253223.21,Shopify payout 10
+2024-09-01,revenue,Website sales,262517.09,Shopify payout 2
+2024-09-02,expense,Performance marketing,139787.96,Meta and Google ads 2
+2024-09-02,expense,Shipping & logistics,253475.64,Courier invoice
+2024-09-02,revenue,Marketplace sales,322780.89,Marketplace settlement 1
+2024-09-02,revenue,Website sales,171909.89,Shopify payout 3
+2024-09-03,expense,Inventory purchases,1113418.00,Fabric and production run 3
+2024-09-03,expense,Warehouse,185000.00,3PL warehouse fee
+2024-09-03,revenue,Website sales,167302.97,Shopify payout 7
+2024-09-06,expense,Inventory purchases,1003264.29,Fabric and production run 2
+2024-09-08,expense,Inventory purchases,1177489.90,Fabric and production run 4
+2024-09-09,revenue,Marketplace sales,239478.65,Marketplace settlement 3
+2024-09-11,expense,Payment gateway fees,45164.75,Gateway fees
+2024-09-13,revenue,Website sales,173942.53,Shopify payout 9
+2024-09-14,expense,Performance marketing,171696.76,Meta and Google ads 3
+2024-09-16,revenue,Website sales,214026.11,Shopify payout 8
+2024-09-17,expense,Marketplace commissions,221215.10,Marketplace commission
+2024-09-18,revenue,Marketplace sales,351925.57,Marketplace settlement 2
+2024-09-20,expense,Inventory purchases,778632.66,Fabric and production run 1
+2024-09-21,expense,Returns & refunds,193563.22,Customer refunds
+2024-09-21,revenue,Website sales,206301.49,Shopify payout 1
+2024-09-21,revenue,Website sales,206893.36,Shopify payout 5
+2024-09-25,revenue,Marketplace sales,301718.36,Marketplace settlement 4
+2024-09-26,revenue,Website sales,243047.45,Shopify payout 4
+2024-09-28,expense,Salaries,652864.00,Payroll
+2024-09-28,revenue,Website sales,245821.18,Shopify payout 6
+2024-10-02,expense,Inventory purchases,245330.80,Fabric and production run 3
+2024-10-03,expense,Marketplace commissions,425352.40,Marketplace commission
+2024-10-03,expense,Warehouse,185000.00,3PL warehouse fee
+2024-10-04,revenue,Marketplace sales,653234.35,Marketplace settlement 3
+2024-10-05,expense,Inventory purchases,315589.27,Fabric and production run 2
+2024-10-07,expense,Returns & refunds,411360.55,Customer refunds
+2024-10-08,expense,Payment gateway fees,95984.13,Gateway fees
+2024-10-08,expense,Performance marketing,399711.03,Meta and Google ads 1
+2024-10-13,revenue,Website sales,386917.90,Shopify payout 8
+2024-10-15,expense,Inventory purchases,326903.52,Fabric and production run 1
+2024-10-15,revenue,Website sales,528902.32,Shopify payout 6
+2024-10-16,revenue,Website sales,551859.90,Shopify payout 7
+2024-10-18,revenue,Marketplace sales,622788.49,Marketplace settlement 1
+2024-10-18,revenue,Website sales,562536.11,Shopify payout 1
+2024-10-18,revenue,Website sales,331775.89,Shopify payout 10
+2024-10-18,revenue,Website sales,461425.49,Shopify payout 2
+2024-10-18,revenue,Website sales,408542.73,Shopify payout 5
+2024-10-18,revenue,Website sales,370981.47,Shopify payout 9
+2024-10-19,expense,Inventory purchases,253404.29,Fabric and production run 4
+2024-10-19,expense,Shipping & logistics,520030.62,Courier invoice
+2024-10-20,expense,Performance marketing,440871.61,Meta and Google ads 3
+2024-10-20,revenue,Marketplace sales,572608.52,Marketplace settlement 4
+2024-10-24,expense,Performance marketing,479409.71,Meta and Google ads 2
+2024-10-24,revenue,Website sales,473685.94,Shopify payout 3
+2024-10-25,revenue,Website sales,540701.00,Shopify payout 4
+2024-10-27,revenue,Marketplace sales,442415.17,Marketplace settlement 2
+2024-10-28,expense,Salaries,659392.64,Payroll
+2024-11-01,revenue,Website sales,552626.95,Shopify payout 10
+2024-11-01,revenue,Website sales,518977.24,Shopify payout 9
+2024-11-02,revenue,Marketplace sales,601400.81,Marketplace settlement 2
+2024-11-03,expense,Warehouse,185000.00,3PL warehouse fee
+2024-11-05,revenue,Website sales,381145.93,Shopify payout 4
+2024-11-05,revenue,Website sales,380615.17,Shopify payout 5
+2024-11-06,expense,Inventory purchases,308976.52,Fabric and production run 3
+2024-11-07,revenue,Website sales,379908.82,Shopify payout 3
+2024-11-10,revenue,Website sales,516664.67,Shopify payout 1
+2024-11-11,expense,Inventory purchases,302535.93,Fabric and production run 2
+2024-11-11,revenue,Website sales,502837.00,Shopify payout 2
+2024-11-12,expense,Shipping & logistics,526270.99,Courier invoice
+2024-11-13,revenue,Marketplace sales,655901.07,Marketplace settlement 1
+2024-11-13,revenue,Website sales,521617.10,Shopify payout 8
+2024-11-14,expense,Inventory purchases,311075.70,Fabric and production run 1
+2024-11-15,expense,Returns & refunds,416296.87,Customer refunds
+2024-11-19,revenue,Marketplace sales,565619.47,Marketplace settlement 4
+2024-11-21,expense,Payment gateway fees,97135.94,Gateway fees
+2024-11-22,expense,Performance marketing,484483.40,Meta and Google ads 1
+2024-11-22,revenue,Marketplace sales,480218.29,Marketplace settlement 3
+2024-11-23,expense,Inventory purchases,209677.93,Fabric and production run 4
+2024-11-23,expense,Performance marketing,452222.44,Meta and Google ads 2
+2024-11-24,expense,Marketplace commissions,430456.63,Marketplace commission
+2024-11-24,revenue,Website sales,582224.00,Shopify payout 6
+2024-11-28,expense,Performance marketing,339608.25,Meta and Google ads 3
+2024-11-28,expense,Salaries,665986.57,Payroll
+2024-11-28,revenue,Website sales,449492.14,Shopify payout 7
+2024-12-03,expense,Warehouse,185000.00,3PL warehouse fee
+2024-12-07,revenue,Website sales,185878.16,Shopify payout 7
+2024-12-08,expense,Inventory purchases,424802.49,Fabric and production run 4
+2024-12-08,expense,Marketplace commissions,229274.79,Marketplace commission
+2024-12-08,expense,Performance marketing,171418.93,Meta and Google ads 2
+2024-12-08,revenue,Website sales,253682.64,Shopify payout 4
+2024-12-09,expense,Returns & refunds,200615.45,Customer refunds
+2024-12-09,revenue,Marketplace sales,286253.97,Marketplace settlement 3
+2024-12-10,revenue,Website sales,192996.65,Shopify payout 10
+2024-12-10,revenue,Website sales,215260.39,Shopify payout 6
+2024-12-11,revenue,Website sales,216773.33,Shopify payout 5
+2024-12-12,revenue,Website sales,235749.81,Shopify payout 8
+2024-12-13,revenue,Marketplace sales,298502.18,Marketplace settlement 1
+2024-12-14,expense,Performance marketing,172017.68,Meta and Google ads 3
+2024-12-16,expense,Payment gateway fees,46810.27,Gateway fees
+2024-12-18,revenue,Marketplace sales,295870.89,Marketplace settlement 4
+2024-12-19,expense,Shipping & logistics,262710.70,Courier invoice
+2024-12-19,revenue,Marketplace sales,359187.18,Marketplace settlement 2
+2024-12-20,revenue,Website sales,264237.98,Shopify payout 3
+2024-12-20,revenue,Website sales,216744.51,Shopify payout 9
+2024-12-22,revenue,Website sales,214542.85,Shopify payout 1
+2024-12-23,expense,Inventory purchases,268859.86,Fabric and production run 1
+2024-12-23,revenue,Website sales,186343.67,Shopify payout 2
+2024-12-24,expense,Performance marketing,185150.96,Meta and Google ads 1
+2024-12-27,expense,Inventory purchases,270955.31,Fabric and production run 2
+2024-12-28,expense,Inventory purchases,299857.43,Fabric and production run 3
+2024-12-28,expense,Salaries,672646.43,Payroll
+2025-01-01,expense,Shipping & logistics,327495.16,Courier invoice
+2025-01-01,revenue,Website sales,311684.63,Shopify payout 3
+2025-01-02,revenue,Website sales,261945.28,Shopify payout 9
+2025-01-03,expense,Warehouse,185000.00,3PL warehouse fee
+2025-01-05,expense,Performance marketing,194033.32,Meta and Google ads 3
+2025-01-07,revenue,Marketplace sales,351145.92,Marketplace settlement 1
+2025-01-07,revenue,Website sales,213024.74,Shopify payout 10
+2025-01-08,expense,Inventory purchases,414128.81,Fabric and production run 1
+2025-01-08,revenue,Website sales,240042.99,Shopify payout 8
+2025-01-09,expense,Performance marketing,242341.95,Meta and Google ads 2
+2025-01-09,revenue,Website sales,328810.44,Shopify payout 1
+2025-01-11,expense,Returns & refunds,253778.54,Customer refunds
+2025-01-12,expense,Payment gateway fees,59214.99,Gateway fees
+2025-01-12,revenue,Marketplace sales,370010.02,Marketplace settlement 2
+2025-01-12,revenue,Website sales,305545.73,Shopify payout 5
+2025-01-14,expense,Inventory purchases,292692.98,Fabric and production run 2
+2025-01-16,expense,Inventory purchases,536205.53,Fabric and production run 4
+2025-01-16,expense,Performance marketing,236504.31,Meta and Google ads 1
+2025-01-19,expense,Marketplace commissions,278431.31,Marketplace commission
+2025-01-21,revenue,Marketplace sales,367247.77,Marketplace settlement 3
+2025-01-21,revenue,Marketplace sales,438938.28,Marketplace settlement 4
+2025-01-23,revenue,Website sales,307219.61,Shopify payout 6
+2025-01-24,revenue,Website sales,258523.26,Shopify payout 4
+2025-01-24,revenue,Website sales,289520.44,Shopify payout 7
+2025-01-26,revenue,Website sales,191666.46,Shopify payout 2
+2025-01-27,expense,Inventory purchases,324441.05,Fabric and production run 3
+2025-01-28,expense,Salaries,679372.90,Payroll
+2025-02-01,expense,Inventory purchases,337346.24,Fabric and production run 1
+2025-02-03,expense,Inventory purchases,370381.46,Fabric and production run 3
+2025-02-03,expense,Inventory purchases,364818.47,Fabric and production run 4
+2025-02-03,expense,Returns & refunds,205459.10,Customer refunds
+2025-02-03,expense,Warehouse,185000.00,3PL warehouse fee
+2025-02-05,revenue,Website sales,218729.83,Shopify payout 1
+2025-02-05,revenue,Website sales,232240.10,Shopify payout 5
+2025-02-06,revenue,Marketplace sales,319433.03,Marketplace settlement 2
+2025-02-06,revenue,Marketplace sales,260949.14,Marketplace settlement 3
+2025-02-07,expense,Performance marketing,185379.29,Meta and Google ads 3
+2025-02-08,revenue,Marketplace sales,331002.50,Marketplace settlement 4
+2025-02-09,revenue,Website sales,222412.11,Shopify payout 4
+2025-02-12,revenue,Marketplace sales,377527.66,Marketplace settlement 1
+2025-02-13,revenue,Website sales,162056.67,Shopify payout 2
+2025-02-14,expense,Payment gateway fees,47940.46,Gateway fees
+2025-02-14,expense,Performance marketing,156116.30,Meta and Google ads 1
+2025-02-17,expense,Performance marketing,182247.20,Meta and Google ads 2
+2025-02-17,revenue,Website sales,223458.83,Shopify payout 6
+2025-02-19,expense,Shipping & logistics,269053.59,Courier invoice
+2025-02-25,revenue,Website sales,269950.01,Shopify payout 10
+2025-02-25,revenue,Website sales,162246.86,Shopify payout 3
+2025-02-25,revenue,Website sales,217060.00,Shopify payout 8
+2025-02-27,expense,Inventory purchases,221100.99,Fabric and production run 2
+2025-02-27,revenue,Website sales,284772.93,Shopify payout 7
+2025-02-27,revenue,Website sales,236889.66,Shopify payout 9
+2025-02-28,expense,Marketplace commissions,234810.41,Marketplace commission
+2025-02-28,expense,Salaries,686166.63,Payroll
+2025-03-02,expense,Returns & refunds,207924.61,Customer refunds
+2025-03-03,expense,Inventory purchases,317970.26,Fabric and production run 1
+2025-03-03,expense,Warehouse,185000.00,3PL warehouse fee
+2025-03-06,revenue,Website sales,199355.39,Shopify payout 10
+2025-03-08,expense,Performance marketing,146333.27,Meta and Google ads 2
+2025-03-08,revenue,Website sales,289452.40,Shopify payout 6
+2025-03-10,revenue,Website sales,235340.95,Shopify payout 9
+2025-03-11,revenue,Website sales,175063.66,Shopify payout 1
+2025-03-12,expense,Payment gateway fees,48515.74,Gateway fees
+2025-03-12,revenue,Marketplace sales,244920.81,Marketplace settlement 1
+2025-03-12,revenue,Website sales,250325.79,Shopify payout 8
+2025-03-13,revenue,Website sales,257510.35,Shopify payout 2
+2025-03-15,expense,Inventory purchases,257288.92,Fabric and production run 2
+2025-03-18,expense,Inventory purchases,400847.91,Fabric and production run 4
+2025-03-18,revenue,Website sales,209975.28,Shopify payout 4
+2025-03-19,revenue,Marketplace sales,282264.19,Marketplace settlement 4
+2025-03-19,revenue,Website sales,196064.69,Shopify payout 7
+2025-03-21,revenue,Marketplace sales,425301.68,Marketplace settlement 2
+2025-03-21,revenue,Website sales,209500.11,Shopify payout 5
+2025-03-22,expense,Marketplace commissions,237628.13,Marketplace commission
+2025-03-22,expense,Shipping & logistics,272282.23,Courier invoice
+2025-03-23,revenue,Marketplace sales,354097.00,Marketplace settlement 3
+2025-03-24,expense,Performance marketing,184528.00,Meta and Google ads 1
+2025-03-25,expense,Performance marketing,192290.07,Meta and Google ads 3
+2025-03-26,revenue,Website sales,315117.69,Shopify payout 3
+2025-03-28,expense,Inventory purchases,375068.85,Fabric and production run 3
+2025-03-28,expense,Salaries,693028.29,Payroll
+2025-04-01,revenue,Marketplace sales,376287.40,Marketplace settlement 4
+2025-04-03,expense,Inventory purchases,300681.78,Fabric and production run 2
+2025-04-03,expense,Warehouse,212750.00,3PL warehouse fee
+2025-04-04,revenue,Website sales,169807.03,Shopify payout 1
+2025-04-05,revenue,Website sales,280809.55,Shopify payout 2
+2025-04-06,revenue,Website sales,208798.59,Shopify payout 4
+2025-04-07,expense,Performance marketing,197022.56,Meta and Google ads 2
+2025-04-09,revenue,Website sales,253494.56,Shopify payout 3
+2025-04-10,expense,Inventory purchases,329202.92,Fabric and production run 3
+2025-04-11,revenue,Website sales,237802.33,Shopify payout 9
+2025-04-12,expense,Performance marketing,213738.84,Meta and Google ads 3
+2025-04-12,revenue,Website sales,207476.67,Shopify payout 5
+2025-04-13,expense,Returns & refunds,210419.71,Customer refunds
+2025-04-13,revenue,Website sales,249376.16,Shopify payout 6
+2025-04-13,revenue,Website sales,242461.97,Shopify payout 8
+2025-04-14,revenue,Marketplace sales,374758.64,Marketplace settlement 3
+2025-04-15,revenue,Website sales,226112.72,Shopify payout 7
+2025-04-19,expense,Inventory purchases,338072.71,Fabric and production run 4
+2025-04-19,expense,Payment gateway fees,49097.93,Gateway fees
+2025-04-19,revenue,Website sales,172422.06,Shopify payout 10
+2025-04-21,expense,Marketplace commissions,240479.67,Marketplace commission
+2025-04-21,expense,Performance marketing,122983.93,Meta and Google ads 1
+2025-04-24,revenue,Marketplace sales,252210.79,Marketplace settlement 2
+2025-04-26,expense,Inventory purchases,338122.01,Fabric and production run 1
+2025-04-28,expense,Salaries,699958.57,Payroll
+2025-04-28,expense,Shipping & logistics,275549.62,Courier invoice
+2025-04-28,revenue,Marketplace sales,380409.20,Marketplace settlement 1
+2025-05-02,revenue,Website sales,222421.10,Shopify payout 9
+2025-05-03,expense,Warehouse,212750.00,3PL warehouse fee
+2025-05-06,expense,Payment gateway fees,49687.11,Gateway fees
+2025-05-07,revenue,Website sales,233156.46,Shopify payout 5
+2025-05-09,revenue,Website sales,283626.94,Shopify payout 10
+2025-05-10,revenue,Marketplace sales,302367.82,Marketplace settlement 4
+2025-05-13,revenue,Marketplace sales,389698.09,Marketplace settlement 2
+2025-05-13,revenue,Marketplace sales,362821.47,Marketplace settlement 3
+2025-05-13,revenue,Website sales,204786.79,Shopify payout 4
+2025-05-14,revenue,Website sales,177483.74,Shopify payout 2
+2025-05-15,expense,Marketplace commissions,243365.42,Marketplace commission
+2025-05-15,expense,Returns & refunds,212944.75,Customer refunds
+2025-05-16,revenue,Website sales,185015.78,Shopify payout 3
+2025-05-17,expense,Performance marketing,208962.86,Meta and Google ads 2
+2025-05-17,revenue,Website sales,257755.29,Shopify payout 1
+2025-05-18,expense,Inventory purchases,316386.47,Fabric and production run 3
+2025-05-19,expense,Shipping & logistics,278856.22,Courier invoice
+2025-05-20,expense,Inventory purchases,326075.93,Fabric and production run 1
+2025-05-21,expense,Inventory purchases,312457.95,Fabric and production run 4
+2025-05-23,revenue,Marketplace sales,329949.44,Marketplace settlement 1
+2025-05-24,expense,Performance marketing,193381.90,Meta and Google ads 1
+2025-05-24,revenue,Website sales,261504.34,Shopify payout 7
+2025-05-25,expense,Performance marketing,143589.68,Meta and Google ads 3
+2025-05-26,revenue,Website sales,245559.59,Shopify payout 6
+2025-05-26,revenue,Website sales,242603.10,Shopify payout 8
+2025-05-27,expense,Inventory purchases,339929.43,Fabric and production run 2
+2025-05-28,expense,Salaries,706958.16,Payroll
+2025-06-03,expense,Warehouse,212750.00,3PL warehouse fee
+2025-06-06,expense,Inventory purchases,302680.28,Fabric and production run 3
+2025-06-06,revenue,Website sales,226487.70,Shopify payout 9
+2025-06-07,revenue,Website sales,303390.66,Shopify payout 4
+2025-06-07,revenue,Website sales,214979.10,Shopify payout 6
+2025-06-07,revenue,Website sales,248016.37,Shopify payout 7
+2025-06-08,revenue,Marketplace sales,309065.44,Marketplace settlement 4
+2025-06-08,revenue,Website sales,194955.61,Shopify payout 1
+2025-06-09,revenue,Website sales,251645.37,Shopify payout 2
+2025-06-09,revenue,Website sales,184158.31,Shopify payout 5
+2025-06-10,expense,Inventory purchases,250761.28,Fabric and production run 2
+2025-06-10,expense,Returns & refunds,215500.08,Customer refunds
+2025-06-11,expense,Inventory purchases,425713.65,Fabric and production run 1
+2025-06-12,revenue,Marketplace sales,427818.49,Marketplace settlement 2
+2025-06-12,revenue,Website sales,263081.61,Shopify payout 8
+2025-06-14,revenue,Marketplace sales,360212.27,Marketplace settlement 1
+2025-06-14,revenue,Website sales,226958.99,Shopify payout 10
+2025-06-17,expense,Inventory purchases,405552.69,Fabric and production run 4
+2025-06-19,expense,Marketplace commissions,246285.81,Marketplace commission
+2025-06-20,expense,Payment gateway fees,50283.35,Gateway fees
+2025-06-20,revenue,Website sales,317519.17,Shopify payout 3
+2025-06-21,expense,Performance marketing,197851.61,Meta and Google ads 2
+2025-06-23,expense,Performance marketing,213120.95,Meta and Google ads 3
+2025-06-24,expense,Shipping & logistics,282202.49,Courier invoice
+2025-06-25,expense,Performance marketing,148306.64,Meta and Google ads 1
+2025-06-25,revenue,Marketplace sales,262454.75,Marketplace settlement 3
+2025-06-28,expense,Salaries,714027.74,Payroll
+2025-07-01,expense,Shipping & logistics,351793.62,Courier invoice
+2025-07-02,expense,Returns & refunds,272607.60,Customer refunds
+2025-07-03,expense,Marketplace commissions,299089.49,Marketplace commission
+2025-07-03,expense,Warehouse,212750.00,3PL warehouse fee
+2025-07-03,revenue,Website sales,384642.82,Shopify payout 2
+2025-07-04,expense,Payment gateway fees,63608.44,Gateway fees
+2025-07-06,revenue,Marketplace sales,333560.63,Marketplace settlement 1
+2025-07-09,revenue,Marketplace sales,489162.60,Marketplace settlement 4
+2025-07-10,expense,Inventory purchases,449891.14,Fabric and production run 3
+2025-07-14,revenue,Website sales,362746.73,Shopify payout 1
+2025-07-14,revenue,Website sales,251804.47,Shopify payout 6
+2025-07-15,revenue,Marketplace sales,468337.92,Marketplace settlement 3
+2025-07-16,revenue,Website sales,256407.44,Shopify payout 8
+2025-07-18,expense,Performance marketing,259111.09,Meta and Google ads 3
+2025-07-18,revenue,Website sales,222850.37,Shopify payout 10
+2025-07-18,revenue,Website sales,222816.37,Shopify payout 7
+2025-07-20,revenue,Marketplace sales,423628.44,Marketplace settlement 2
+2025-07-22,expense,Inventory purchases,284146.61,Fabric and production run 1
+2025-07-22,expense,Inventory purchases,492768.86,Fabric and production run 4
+2025-07-22,expense,Performance marketing,224461.38,Meta and Google ads 1
+2025-07-24,revenue,Website sales,384887.05,Shopify payout 3
+2025-07-25,revenue,Website sales,279426.88,Shopify payout 5
+2025-07-26,expense,Inventory purchases,440525.05,Fabric and production run 2
+2025-07-26,expense,Performance marketing,264612.81,Meta and Google ads 2
+2025-07-26,revenue,Website sales,370225.37,Shopify payout 9
+2025-07-28,expense,Salaries,721168.02,Payroll
+2025-07-28,revenue,Website sales,226522.00,Shopify payout 4
+2025-08-02,expense,Marketplace commissions,252232.13,Marketplace commission
+2025-08-03,expense,Warehouse,212750.00,3PL warehouse fee
+2025-08-04,expense,Inventory purchases,987482.10,Fabric and production run 4
+2025-08-07,revenue,Marketplace sales,436357.71,Marketplace settlement 1
+2025-08-07,revenue,Website sales,315550.25,Shopify payout 9
+2025-08-08,expense,Performance marketing,226053.87,Meta and Google ads 1
+2025-08-08,revenue,Website sales,180686.90,Shopify payout 2
+2025-08-08,revenue,Website sales,289808.55,Shopify payout 5
+2025-08-09,expense,Payment gateway fees,51497.39,Gateway fees
+2025-08-12,expense,Inventory purchases,1109644.21,Fabric and production run 1
+2025-08-13,revenue,Marketplace sales,281798.48,Marketplace settlement 4
+2025-08-15,revenue,Website sales,316237.87,Shopify payout 7
+2025-08-16,expense,Performance marketing,180982.87,Meta and Google ads 2
+2025-08-17,expense,Returns & refunds,220703.12,Customer refunds
+2025-08-18,expense,Inventory purchases,1482450.42,Fabric and production run 3
+2025-08-18,expense,Performance marketing,153691.26,Meta and Google ads 3
+2025-08-18,revenue,Website sales,214017.53,Shopify payout 10
+2025-08-21,revenue,Website sales,251384.58,Shopify payout 3
+2025-08-24,revenue,Website sales,195112.38,Shopify payout 1
+2025-08-24,revenue,Website sales,190778.10,Shopify payout 8
+2025-08-25,expense,Shipping & logistics,289015.99,Courier invoice
+2025-08-26,revenue,Website sales,221969.88,Shopify payout 6
+2025-08-28,expense,Inventory purchases,1124985.94,Fabric and production run 2
+2025-08-28,expense,Salaries,728379.70,Payroll
+2025-08-28,revenue,Marketplace sales,297556.08,Marketplace settlement 2
+2025-08-28,revenue,Marketplace sales,436134.24,Marketplace settlement 3
+2025-08-28,revenue,Website sales,301607.42,Shopify payout 4
+2025-09-01,revenue,Website sales,315736.92,Shopify payout 10
+2025-09-02,revenue,Website sales,196658.62,Shopify payout 2
+2025-09-03,expense,Warehouse,212750.00,3PL warehouse fee
+2025-09-04,expense,Returns & refunds,223351.55,Customer refunds
+2025-09-05,expense,Performance marketing,209816.24,Meta and Google ads 3
+2025-09-09,revenue,Marketplace sales,348780.26,Marketplace settlement 2
+2025-09-10,revenue,Marketplace sales,296053.17,Marketplace settlement 3
+2025-09-11,expense,Shipping & logistics,292484.18,Courier invoice
+2025-09-13,revenue,Website sales,238181.35,Shopify payout 1
+2025-09-14,expense,Inventory purchases,1347816.63,Fabric and production run 1
+2025-09-14,revenue,Marketplace sales,479755.53,Marketplace settlement 1
+2025-09-15,expense,Performance marketing,158963.20,Meta and Google ads 1
+2025-09-16,expense,Inventory purchases,1027247.78,Fabric and production run 3
+2025-09-16,revenue,Marketplace sales,346264.82,Marketplace settlement 4
+2025-09-16,revenue,Website sales,208346.33,Shopify payout 3
+2025-09-18,expense,Payment gateway fees,52115.36,Gateway fees
+2025-09-19,expense,Inventory purchases,1238085.70,Fabric and production run 2
+2025-09-20,expense,Performance marketing,212494.14,Meta and Google ads 2
+2025-09-22,revenue,Website sales,254491.00,Shopify payout 6
+2025-09-24,expense,Inventory purchases,1110021.70,Fabric and production run 4
+2025-09-25,revenue,Website sales,327278.40,Shopify payout 5
+2025-09-27,revenue,Website sales,266667.17,Shopify payout 4
+2025-09-27,revenue,Website sales,203771.84,Shopify payout 7
+2025-09-27,revenue,Website sales,193871.07,Shopify payout 9
+2025-09-28,expense,Marketplace commissions,255258.92,Marketplace commission
+2025-09-28,expense,Salaries,735663.50,Payroll
+2025-09-28,revenue,Website sales,332600.89,Shopify payout 8
+2025-10-01,expense,Performance marketing,525421.52,Meta and Google ads 2
+2025-10-01,revenue,Marketplace sales,806130.60,Marketplace settlement 1
+2025-10-02,revenue,Website sales,554740.91,Shopify payout 7
+2025-10-03,expense,Inventory purchases,298662.49,Fabric and production run 2
+2025-10-03,expense,Warehouse,212750.00,3PL warehouse fee
+2025-10-03,revenue,Website sales,512626.36,Shopify payout 3
+2025-10-04,revenue,Marketplace sales,702413.74,Marketplace settlement 4
+2025-10-06,expense,Shipping & logistics,600060.54,Courier invoice
+2025-10-07,revenue,Website sales,586822.84,Shopify payout 10
+2025-10-09,expense,Marketplace commissions,490811.85,Marketplace commission
+2025-10-09,revenue,Website sales,534662.52,Shopify payout 2
+2025-10-09,revenue,Website sales,605875.86,Shopify payout 5
+2025-10-10,expense,Inventory purchases,350305.84,Fabric and production run 1
+2025-10-10,revenue,Website sales,512930.01,Shopify payout 8
+2025-10-14,expense,Inventory purchases,341062.86,Fabric and production run 4
+2025-10-15,revenue,Website sales,391868.71,Shopify payout 4
+2025-10-18,expense,Performance marketing,579146.31,Meta and Google ads 3
+2025-10-19,expense,Inventory purchases,312132.19,Fabric and production run 3
+2025-10-20,revenue,Website sales,603716.27,Shopify payout 1
+2025-10-21,expense,Performance marketing,444876.33,Meta and Google ads 1
+2025-10-21,revenue,Website sales,529542.40,Shopify payout 9
+2025-10-22,revenue,Marketplace sales,731336.52,Marketplace settlement 2
+2025-10-22,revenue,Marketplace sales,586666.93,Marketplace settlement 3
+2025-10-25,expense,Payment gateway fees,110755.57,Gateway fees
+2025-10-25,expense,Returns & refunds,474666.72,Customer refunds
+2025-10-27,revenue,Website sales,603098.36,Shopify payout 6
+2025-10-28,expense,Salaries,743020.13,Payroll
+2025-11-01,revenue,Website sales,496408.50,Shopify payout 8
+2025-11-02,expense,Performance marketing,479038.97,Meta and Google ads 1
+2025-11-03,expense,Warehouse,212750.00,3PL warehouse fee
+2025-11-04,revenue,Website sales,767255.41,Shopify payout 5
+2025-11-07,expense,Inventory purchases,340703.93,Fabric and production run 2
+2025-11-07,revenue,Website sales,446882.28,Shopify payout 6
+2025-11-08,expense,Inventory purchases,443990.27,Fabric and production run 3
+2025-11-09,revenue,Website sales,555248.86,Shopify payout 10
+2025-11-10,expense,Inventory purchases,296407.06,Fabric and production run 1
+2025-11-10,revenue,Marketplace sales,653216.68,Marketplace settlement 1
+2025-11-10,revenue,Marketplace sales,761534.70,Marketplace settlement 4
+2025-11-11,revenue,Website sales,551563.67,Shopify payout 3
+2025-11-13,expense,Performance marketing,420602.26,Meta and Google ads 3
+2025-11-13,expense,Returns & refunds,480362.72,Customer refunds
+2025-11-14,expense,Marketplace commissions,496701.59,Marketplace commission
+2025-11-14,expense,Payment gateway fees,112084.64,Gateway fees
+2025-11-18,expense,Inventory purchases,274190.37,Fabric and production run 4
+2025-11-19,expense,Shipping & logistics,607261.27,Courier invoice
+2025-11-19,revenue,Marketplace sales,633120.29,Marketplace settlement 3
+2025-11-20,revenue,Marketplace sales,725525.48,Marketplace settlement 2
+2025-11-20,revenue,Website sales,485185.20,Shopify payout 9
+2025-11-21,revenue,Website sales,634766.44,Shopify payout 4
+2025-11-22,expense,Performance marketing,564309.75,Meta and Google ads 2
+2025-11-22,revenue,Website sales,453828.44,Shopify payout 2
+2025-11-23,revenue,Website sales,550082.20,Shopify payout 7
+2025-11-26,revenue,Website sales,543288.83,Shopify payout 1
+2025-11-28,expense,Salaries,750450.33,Payroll
+2025-12-01,revenue,Marketplace sales,468003.70,Marketplace settlement 4
+2025-12-01,revenue,Website sales,233737.46,Shopify payout 2
+2025-12-02,expense,Inventory purchases,398911.40,Fabric and production run 3
+2025-12-03,expense,Warehouse,212750.00,3PL warehouse fee
+2025-12-03,revenue,Website sales,295247.19,Shopify payout 9
+2025-12-09,revenue,Marketplace sales,437410.54,Marketplace settlement 2
+2025-12-09,revenue,Marketplace sales,295450.18,Marketplace settlement 3
+2025-12-11,revenue,Website sales,257630.21,Shopify payout 4
+2025-12-12,expense,Inventory purchases,419819.90,Fabric and production run 1
+2025-12-12,expense,Inventory purchases,287407.92,Fabric and production run 2
+2025-12-12,revenue,Website sales,227385.52,Shopify payout 7
+2025-12-13,expense,Performance marketing,150531.67,Meta and Google ads 1
+2025-12-13,revenue,Website sales,294629.25,Shopify payout 8
+2025-12-14,revenue,Website sales,252915.51,Shopify payout 6
+2025-12-18,expense,Marketplace commissions,264558.95,Marketplace commission
+2025-12-18,expense,Performance marketing,235617.99,Meta and Google ads 2
+2025-12-19,revenue,Website sales,189626.05,Shopify payout 10
+2025-12-20,revenue,Marketplace sales,315094.24,Marketplace settlement 1
+2025-12-20,revenue,Website sales,198680.48,Shopify payout 3
+2025-12-23,revenue,Website sales,259647.66,Shopify payout 1
+2025-12-24,expense,Inventory purchases,340410.31,Fabric and production run 4
+2025-12-25,expense,Performance marketing,194906.43,Meta and Google ads 3
+2025-12-26,expense,Payment gateway fees,54014.12,Gateway fees
+2025-12-27,expense,Returns & refunds,231489.08,Customer refunds
+2025-12-28,expense,Salaries,757954.84,Payroll
+2025-12-28,expense,Shipping & logistics,303140.47,Courier invoice
+2025-12-28,revenue,Website sales,308700.77,Shopify payout 5
+2026-01-01,revenue,Marketplace sales,374182.98,Marketplace settlement 2
+2026-01-01,revenue,Website sales,255660.44,Shopify payout 1
+2026-01-03,expense,Warehouse,212750.00,3PL warehouse fee
+2026-01-03,revenue,Website sales,401536.03,Shopify payout 8
+2026-01-07,expense,Performance marketing,270432.18,Meta and Google ads 2
+2026-01-07,revenue,Marketplace sales,515245.79,Marketplace settlement 3
+2026-01-09,expense,Inventory purchases,492930.32,Fabric and production run 2
+2026-01-11,revenue,Marketplace sales,398427.19,Marketplace settlement 4
+2026-01-11,revenue,Website sales,370684.06,Shopify payout 4
+2026-01-12,revenue,Marketplace sales,458647.29,Marketplace settlement 1
+2026-01-12,revenue,Website sales,327669.89,Shopify payout 2
+2026-01-13,expense,Performance marketing,237335.46,Meta and Google ads 1
+2026-01-14,revenue,Website sales,288566.83,Shopify payout 5
+2026-01-15,expense,Marketplace commissions,321280.39,Marketplace commission
+2026-01-15,revenue,Website sales,260551.26,Shopify payout 6
+2026-01-18,expense,Inventory purchases,461455.84,Fabric and production run 3
+2026-01-18,expense,Inventory purchases,413520.66,Fabric and production run 4
+2026-01-18,revenue,Website sales,365115.25,Shopify payout 10
+2026-01-22,expense,Returns & refunds,292833.69,Customer refunds
+2026-01-22,revenue,Website sales,335394.13,Shopify payout 3
+2026-01-23,expense,Shipping & logistics,377894.91,Courier invoice
+2026-01-24,expense,Inventory purchases,403143.05,Fabric and production run 1
+2026-01-26,expense,Performance marketing,251934.09,Meta and Google ads 3
+2026-01-26,revenue,Website sales,326346.34,Shopify payout 7
+2026-01-28,expense,Payment gateway fees,68327.86,Gateway fees
+2026-01-28,expense,Salaries,765534.38,Payroll
+2026-01-28,revenue,Website sales,424160.79,Shopify payout 9
+2026-02-03,expense,Marketplace commissions,270946.46,Marketplace commission
+2026-02-03,expense,Warehouse,212750.00,3PL warehouse fee
+2026-02-03,revenue,Website sales,309498.58,Shopify payout 8
+2026-02-04,revenue,Website sales,331103.96,Shopify payout 10
+2026-02-04,revenue,Website sales,246200.71,Shopify payout 7
+2026-02-05,revenue,Website sales,185531.69,Shopify payout 2
+2026-02-05,revenue,Website sales,208405.01,Shopify payout 4
+2026-02-06,expense,Inventory purchases,417044.43,Fabric and production run 3
+2026-02-06,expense,Performance marketing,262057.10,Meta and Google ads 2
+2026-02-06,expense,Performance marketing,155745.62,Meta and Google ads 3
+2026-02-07,revenue,Marketplace sales,360828.59,Marketplace settlement 4
+2026-02-08,revenue,Marketplace sales,342449.36,Marketplace settlement 2
+2026-02-09,revenue,Marketplace sales,412262.44,Marketplace settlement 3
+2026-02-11,revenue,Marketplace sales,382646.96,Marketplace settlement 1
+2026-02-12,expense,Inventory purchases,348686.49,Fabric and production run 2
+2026-02-12,expense,Payment gateway fees,55318.24,Gateway fees
+2026-02-12,revenue,Website sales,311194.24,Shopify payout 5
+2026-02-13,expense,Returns & refunds,395130.26,Customer refunds
+2026-02-17,revenue,Website sales,304210.03,Shopify payout 9
+2026-02-22,expense,Inventory purchases,465871.75,Fabric and production run 4
+2026-02-22,expense,Performance marketing,202893.22,Meta and Google ads 1
+2026-02-23,revenue,Website sales,257048.91,Shopify payout 1
+2026-02-23,revenue,Website sales,313630.45,Shopify payout 6
+2026-02-24,expense,Inventory purchases,307703.84,Fabric and production run 1
+2026-02-26,expense,Shipping & logistics,310459.49,Courier invoice
+2026-02-28,expense,Salaries,773189.73,Payroll
+2026-02-28,revenue,Website sales,181836.56,Shopify payout 3
+2026-03-01,expense,Performance marketing,196339.37,Meta and Google ads 2
+2026-03-02,expense,Marketplace commissions,274197.82,Marketplace commission
+2026-03-03,expense,Warehouse,212750.00,3PL warehouse fee
+2026-03-05,revenue,Website sales,241675.78,Shopify payout 5
+2026-03-06,revenue,Marketplace sales,400156.64,Marketplace settlement 4
+2026-03-09,expense,Returns & refunds,399871.82,Customer refunds
+2026-03-10,expense,Performance marketing,172265.29,Meta and Google ads 3
+2026-03-10,revenue,Marketplace sales,338848.94,Marketplace settlement 2
+2026-03-10,revenue,Website sales,267893.58,Shopify payout 2
+2026-03-10,revenue,Website sales,271563.11,Shopify payout 7
+2026-03-11,revenue,Marketplace sales,328211.51,Marketplace settlement 3
+2026-03-12,expense,Inventory purchases,356226.08,Fabric and production run 1
+2026-03-12,expense,Inventory purchases,480301.14,Fabric and production run 2
+2026-03-15,revenue,Marketplace sales,414487.69,Marketplace settlement 1
+2026-03-17,expense,Inventory purchases,319507.53,Fabric and production run 3
+2026-03-17,expense,Inventory purchases,384163.87,Fabric and production run 4
+2026-03-17,revenue,Website sales,230134.56,Shopify payout 3
+2026-03-18,revenue,Website sales,268667.58,Shopify payout 8
+2026-03-19,revenue,Website sales,248643.33,Shopify payout 1
+2026-03-20,expense,Payment gateway fees,55982.06,Gateway fees
+2026-03-20,revenue,Website sales,207453.70,Shopify payout 6
+2026-03-21,expense,Shipping & logistics,314185.00,Courier invoice
+2026-03-21,revenue,Website sales,314925.84,Shopify payout 4
+2026-03-21,revenue,Wholesale,1350000.00,Wholesale order - Kora Retail
+2026-03-28,expense,Performance marketing,241042.21,Meta and Google ads 1
+2026-03-28,expense,Salaries,780921.63,Payroll
+2026-03-28,revenue,Website sales,350437.90,Shopify payout 10
+2026-03-28,revenue,Website sales,253097.31,Shopify payout 9
+2026-04-01,revenue,Website sales,318674.51,Shopify payout 2
+2026-04-01,revenue,Website sales,273280.78,Shopify payout 6
+2026-04-03,expense,Inventory purchases,334949.78,Fabric and production run 1
+2026-04-03,expense,Warehouse,212750.00,3PL warehouse fee
+2026-04-03,revenue,Marketplace sales,390665.65,Marketplace settlement 4
+2026-04-04,expense,Performance marketing,212549.98,Meta and Google ads 2
+2026-04-06,revenue,Website sales,208960.73,Shopify payout 9
+2026-04-09,expense,Performance marketing,232638.56,Meta and Google ads 3
+2026-04-12,expense,Shipping & logistics,317955.22,Courier invoice
+2026-04-13,expense,Inventory purchases,394871.79,Fabric and production run 3
+2026-04-13,expense,Marketplace commissions,277488.20,Marketplace commission
+2026-04-13,revenue,Website sales,324948.24,Shopify payout 3
+2026-04-14,expense,Inventory purchases,390095.91,Fabric and production run 4
+2026-04-14,expense,Returns & refunds,404670.29,Customer refunds
+2026-04-17,expense,Payment gateway fees,56653.84,Gateway fees
+2026-04-17,revenue,Marketplace sales,413694.80,Marketplace settlement 3
+2026-04-18,revenue,Website sales,293259.73,Shopify payout 4
+2026-04-19,expense,Performance marketing,188453.42,Meta and Google ads 1
+2026-04-19,revenue,Website sales,252589.98,Shopify payout 5
+2026-04-20,revenue,Marketplace sales,287977.75,Marketplace settlement 2
+2026-04-21,revenue,Marketplace sales,403061.27,Marketplace settlement 1
+2026-04-23,expense,Inventory purchases,366914.48,Fabric and production run 2
+2026-04-25,revenue,Website sales,230255.55,Shopify payout 7
+2026-04-26,revenue,Website sales,238288.36,Shopify payout 1
+2026-04-26,revenue,Website sales,259246.90,Shopify payout 8
+2026-04-28,expense,Salaries,788730.84,Payroll
+2026-04-28,revenue,Website sales,289200.95,Shopify payout 10
+2026-05-01,revenue,Website sales,278296.17,Shopify payout 1
+2026-05-01,revenue,Website sales,288151.88,Shopify payout 5
+2026-05-02,revenue,Marketplace sales,316431.66,Marketplace settlement 1
+2026-05-02,revenue,Marketplace sales,405063.53,Marketplace settlement 3
+2026-05-02,revenue,Website sales,241028.43,Shopify payout 4
+2026-05-03,expense,Performance marketing,239699.90,Meta and Google ads 2
+2026-05-03,expense,Warehouse,212750.00,3PL warehouse fee
+2026-05-03,revenue,Marketplace sales,382671.79,Marketplace settlement 4
+2026-05-04,revenue,Website sales,290488.15,Shopify payout 10
+2026-05-05,revenue,Marketplace sales,507389.98,Marketplace settlement 2
+2026-05-05,revenue,Website sales,223606.21,Shopify payout 3
+2026-05-07,expense,Shipping & logistics,321770.69,Courier invoice
+2026-05-08,expense,Inventory purchases,337211.10,Fabric and production run 1
+2026-05-09,expense,Inventory purchases,423753.27,Fabric and production run 4
+2026-05-11,expense,Inventory purchases,440634.76,Fabric and production run 2
+2026-05-14,revenue,Website sales,199012.75,Shopify payout 9
+2026-05-15,expense,Performance marketing,148676.72,Meta and Google ads 1
+2026-05-17,expense,Performance marketing,212208.16,Meta and Google ads 3
+2026-05-17,revenue,Website sales,310980.26,Shopify payout 2
+2026-05-18,expense,Returns & refunds,409526.33,Customer refunds
+2026-05-21,revenue,Website sales,331946.10,Shopify payout 8
+2026-05-22,expense,Payment gateway fees,57333.69,Gateway fees
+2026-05-25,revenue,Website sales,231362.51,Shopify payout 7
+2026-05-26,revenue,Website sales,263873.88,Shopify payout 6
+2026-05-28,expense,Inventory purchases,398413.02,Fabric and production run 3
+2026-05-28,expense,Marketplace commissions,280818.05,Marketplace commission
+2026-05-28,expense,Salaries,796618.15,Payroll
+2026-06-01,revenue,Website sales,232745.43,Shopify payout 7
+2026-06-03,expense,Inventory purchases,533759.05,Fabric and production run 2
+2026-06-03,expense,Returns & refunds,414440.65,Customer refunds
+2026-06-03,expense,Warehouse,212750.00,3PL warehouse fee
+2026-06-05,revenue,Marketplace sales,348350.30,Marketplace settlement 3
+2026-06-06,expense,Performance marketing,148940.96,Meta and Google ads 1
+2026-06-10,expense,Performance marketing,259187.57,Meta and Google ads 3
+2026-06-12,expense,Payment gateway fees,58021.69,Gateway fees
+2026-06-12,revenue,Website sales,343603.32,Shopify payout 10
+2026-06-12,revenue,Website sales,281938.53,Shopify payout 3
+2026-06-13,expense,Inventory purchases,306577.68,Fabric and production run 1
+2026-06-13,revenue,Marketplace sales,422653.59,Marketplace settlement 2
+2026-06-13,revenue,Website sales,289883.72,Shopify payout 2
+2026-06-15,expense,Shipping & logistics,325631.94,Courier invoice
+2026-06-15,revenue,Marketplace sales,384005.89,Marketplace settlement 1
+2026-06-15,revenue,Website sales,334868.45,Shopify payout 1
+2026-06-16,expense,Inventory purchases,366997.47,Fabric and production run 3
+2026-06-21,revenue,Website sales,296215.31,Shopify payout 8
+2026-06-22,revenue,Website sales,266149.00,Shopify payout 6
+2026-06-24,expense,Inventory purchases,359233.20,Fabric and production run 4
+2026-06-25,expense,Marketplace commissions,284187.87,Marketplace commission
+2026-06-26,revenue,Website sales,293564.68,Shopify payout 4
+2026-06-26,revenue,Website sales,191971.23,Shopify payout 5
+2026-06-27,revenue,Marketplace sales,393980.61,Marketplace settlement 4
+2026-06-27,revenue,Website sales,314214.04,Shopify payout 9
+2026-06-28,expense,Performance marketing,225152.28,Meta and Google ads 2
+2026-06-28,expense,Salaries,804584.33,Payroll
+2026-06-28,revenue,Wholesale,1520000.00,Wholesale order - Kora Retail

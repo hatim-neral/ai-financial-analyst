@@ -1,0 +1,282 @@
+date,type,category,amount,description
+2025-01-01,expense,Office,150000.00,Studio rent and upkeep
+2025-01-02,expense,Software,68000.00,Design software seats
+2025-01-03,expense,Freelancers,47340.24,Freelancer invoice 1
+2025-01-04,expense,Travel,22292.08,Client visit 1
+2025-01-05,revenue,Retainers,260000.00,Monthly retainer - Bluebird Bank
+2025-01-05,revenue,Retainers,180000.00,Monthly retainer - Kite Mobility
+2025-01-05,revenue,Retainers,420000.00,Monthly retainer - Northwind Foods
+2025-01-05,revenue,Retainers,140000.00,Monthly retainer - Tandoor Co
+2025-01-09,expense,Freelancers,58605.62,Freelancer invoice 2
+2025-01-09,revenue,Projects,61705.23,Project milestone 1
+2025-01-15,revenue,Licensing,45000.00,Font and template licensing
+2025-01-16,expense,Equipment,8020.03,Accessories
+2025-01-17,expense,Freelancers,62532.58,Freelancer invoice 3
+2025-01-17,revenue,Projects,95777.84,Project milestone 3
+2025-01-19,revenue,Projects,97937.82,Project milestone 2
+2025-01-23,expense,Travel,21183.38,Client visit 2
+2025-01-28,expense,Salaries,720000.00,Payroll
+2025-02-01,expense,Office,150000.00,Studio rent and upkeep
+2025-02-02,expense,Software,68680.00,Design software seats
+2025-02-05,expense,Freelancers,79068.51,Freelancer invoice 1
+2025-02-05,revenue,Retainers,260780.00,Monthly retainer - Bluebird Bank
+2025-02-05,revenue,Retainers,180540.00,Monthly retainer - Kite Mobility
+2025-02-05,revenue,Retainers,421260.00,Monthly retainer - Northwind Foods
+2025-02-05,revenue,Retainers,140420.00,Monthly retainer - Tandoor Co
+2025-02-06,expense,Freelancers,50893.18,Freelancer invoice 2
+2025-02-07,expense,Freelancers,58361.19,Freelancer invoice 3
+2025-02-15,revenue,Licensing,46350.00,Font and template licensing
+2025-02-21,expense,Equipment,10821.91,Accessories
+2025-02-22,revenue,Projects,324115.67,Project milestone 1
+2025-02-23,expense,Travel,21944.40,Client visit 2
+2025-02-27,expense,Travel,23046.30,Client visit 1
+2025-02-28,expense,Salaries,720000.00,Payroll
+2025-03-01,expense,Office,150000.00,Studio rent and upkeep
+2025-03-01,revenue,Projects,169105.50,Project milestone 1
+2025-03-02,expense,Software,69366.80,Design software seats
+2025-03-03,expense,Freelancers,83350.01,Freelancer invoice 3
+2025-03-04,expense,Equipment,5763.95,Accessories
+2025-03-05,revenue,Retainers,261562.34,Monthly retainer - Bluebird Bank
+2025-03-05,revenue,Retainers,181081.62,Monthly retainer - Kite Mobility
+2025-03-05,revenue,Retainers,422523.78,Monthly retainer - Northwind Foods
+2025-03-05,revenue,Retainers,140841.26,Monthly retainer - Tandoor Co
+2025-03-09,expense,Travel,25965.14,Client visit 1
+2025-03-09,revenue,Projects,171649.07,Project milestone 2
+2025-03-12,expense,Freelancers,76779.91,Freelancer invoice 2
+2025-03-15,revenue,Licensing,47740.50,Font and template licensing
+2025-03-18,expense,Travel,20862.30,Client visit 2
+2025-03-24,expense,Freelancers,92009.49,Freelancer invoice 1
+2025-03-25,revenue,Projects,151131.63,Project milestone 3
+2025-03-28,expense,Salaries,720000.00,Payroll
+2025-04-01,expense,Office,150000.00,Studio rent and upkeep
+2025-04-02,expense,Software,70060.47,Design software seats
+2025-04-02,revenue,Projects,136429.40,Project milestone 3
+2025-04-03,expense,Freelancers,86488.27,Freelancer invoice 3
+2025-04-05,revenue,Retainers,262347.03,Monthly retainer - Bluebird Bank
+2025-04-05,revenue,Retainers,181624.86,Monthly retainer - Kite Mobility
+2025-04-05,revenue,Retainers,423791.35,Monthly retainer - Northwind Foods
+2025-04-05,revenue,Retainers,141263.78,Monthly retainer - Tandoor Co
+2025-04-06,expense,Travel,21490.94,Client visit 1
+2025-04-06,revenue,Projects,171370.27,Project milestone 1
+2025-04-09,expense,Travel,27411.92,Client visit 2
+2025-04-13,revenue,Projects,162865.09,Project milestone 2
+2025-04-15,revenue,Licensing,49172.72,Font and template licensing
+2025-04-21,expense,Freelancers,86476.03,Freelancer invoice 2
+2025-04-22,expense,Equipment,6226.10,Accessories
+2025-04-23,expense,Freelancers,71777.55,Freelancer invoice 1
+2025-04-28,expense,Salaries,720000.00,Payroll
+2025-05-01,expense,Office,150000.00,Studio rent and upkeep
+2025-05-02,expense,Software,70761.07,Design software seats
+2025-05-03,revenue,Projects,89496.31,Project milestone 1
+2025-05-05,expense,Freelancers,58759.30,Freelancer invoice 2
+2025-05-05,expense,Travel,13028.13,Client visit 2
+2025-05-05,revenue,Retainers,263134.07,Monthly retainer - Bluebird Bank
+2025-05-05,revenue,Retainers,182169.74,Monthly retainer - Kite Mobility
+2025-05-05,revenue,Retainers,425062.73,Monthly retainer - Northwind Foods
+2025-05-05,revenue,Retainers,141687.58,Monthly retainer - Tandoor Co
+2025-05-07,revenue,Projects,93693.33,Project milestone 3
+2025-05-09,revenue,Projects,70974.40,Project milestone 2
+2025-05-14,expense,Travel,18372.24,Client visit 1
+2025-05-15,expense,Equipment,6403.92,Accessories
+2025-05-15,revenue,Licensing,50647.90,Font and template licensing
+2025-05-17,expense,Freelancers,64470.00,Freelancer invoice 1
+2025-05-19,expense,Freelancers,38486.83,Freelancer invoice 3
+2025-05-28,expense,Salaries,720000.00,Payroll
+2025-06-01,expense,Office,150000.00,Studio rent and upkeep
+2025-06-02,expense,Software,71468.68,Design software seats
+2025-06-03,expense,Equipment,9338.72,Accessories
+2025-06-05,revenue,Retainers,263923.47,Monthly retainer - Bluebird Bank
+2025-06-05,revenue,Retainers,182716.25,Monthly retainer - Kite Mobility
+2025-06-05,revenue,Retainers,426337.91,Monthly retainer - Northwind Foods
+2025-06-05,revenue,Retainers,142112.64,Monthly retainer - Tandoor Co
+2025-06-07,expense,Freelancers,77325.52,Freelancer invoice 1
+2025-06-14,revenue,Projects,147722.53,Project milestone 3
+2025-06-15,expense,Freelancers,80843.74,Freelancer invoice 2
+2025-06-15,revenue,Licensing,52167.33,Font and template licensing
+2025-06-15,revenue,Projects,135175.43,Project milestone 2
+2025-06-16,expense,Travel,22797.59,Client visit 2
+2025-06-17,expense,Freelancers,63226.45,Freelancer invoice 3
+2025-06-22,revenue,Projects,142433.81,Project milestone 1
+2025-06-28,expense,Salaries,720000.00,Payroll
+2025-06-28,expense,Travel,27535.66,Client visit 1
+2025-07-01,expense,Office,150000.00,Studio rent and upkeep
+2025-07-02,expense,Software,72183.37,Design software seats
+2025-07-05,revenue,Retainers,264715.24,Monthly retainer - Bluebird Bank
+2025-07-05,revenue,Retainers,183264.40,Monthly retainer - Kite Mobility
+2025-07-05,revenue,Retainers,427616.93,Monthly retainer - Northwind Foods
+2025-07-05,revenue,Retainers,142538.98,Monthly retainer - Tandoor Co
+2025-07-08,expense,Freelancers,54616.24,Freelancer invoice 2
+2025-07-11,expense,Equipment,6804.11,Accessories
+2025-07-12,expense,Freelancers,76819.17,Freelancer invoice 3
+2025-07-15,revenue,Licensing,53732.35,Font and template licensing
+2025-07-23,expense,Freelancers,52213.20,Freelancer invoice 1
+2025-07-26,expense,Travel,15530.17,Client visit 2
+2025-07-27,expense,Travel,25267.69,Client visit 1
+2025-07-27,revenue,Projects,315065.80,Project milestone 1
+2025-07-28,expense,Salaries,720000.00,Payroll
+2025-08-01,expense,Office,150000.00,Studio rent and upkeep
+2025-08-02,expense,Software,72905.20,Design software seats
+2025-08-03,expense,Freelancers,69644.67,Freelancer invoice 3
+2025-08-05,revenue,Retainers,265509.39,Monthly retainer - Bluebird Bank
+2025-08-05,revenue,Retainers,183814.19,Monthly retainer - Kite Mobility
+2025-08-05,revenue,Retainers,428899.78,Monthly retainer - Northwind Foods
+2025-08-05,revenue,Retainers,142966.59,Monthly retainer - Tandoor Co
+2025-08-07,expense,Equipment,11664.53,Accessories
+2025-08-09,revenue,Projects,258582.53,Project milestone 2
+2025-08-11,revenue,Projects,252107.43,Project milestone 1
+2025-08-13,expense,Travel,26100.23,Client visit 2
+2025-08-14,expense,Travel,26878.30,Client visit 1
+2025-08-15,revenue,Licensing,55344.32,Font and template licensing
+2025-08-21,expense,Freelancers,122388.37,Freelancer invoice 1
+2025-08-25,expense,Freelancers,69980.10,Freelancer invoice 2
+2025-08-28,expense,Salaries,720000.00,Payroll
+2025-09-01,expense,Office,150000.00,Studio rent and upkeep
+2025-09-02,expense,Software,73634.26,Design software seats
+2025-09-05,revenue,Retainers,266305.91,Monthly retainer - Bluebird Bank
+2025-09-05,revenue,Retainers,184365.63,Monthly retainer - Kite Mobility
+2025-09-05,revenue,Retainers,430186.48,Monthly retainer - Northwind Foods
+2025-09-05,revenue,Retainers,143395.49,Monthly retainer - Tandoor Co
+2025-09-06,expense,Freelancers,107824.87,Freelancer invoice 1
+2025-09-06,revenue,Projects,475834.79,Project milestone 1
+2025-09-12,expense,Travel,21424.09,Client visit 1
+2025-09-14,expense,Equipment,6077.86,Accessories
+2025-09-15,revenue,Licensing,57004.65,Font and template licensing
+2025-09-22,expense,Freelancers,71556.69,Freelancer invoice 2
+2025-09-24,expense,Freelancers,79011.89,Freelancer invoice 3
+2025-09-24,expense,Travel,19683.30,Client visit 2
+2025-09-28,expense,Salaries,720000.00,Payroll
+2025-10-01,expense,Office,150000.00,Studio rent and upkeep
+2025-10-02,expense,Software,74370.60,Design software seats
+2025-10-03,expense,Travel,21286.58,Client visit 2
+2025-10-03,revenue,Projects,249216.31,Project milestone 2
+2025-10-05,revenue,Retainers,267104.83,Monthly retainer - Bluebird Bank
+2025-10-05,revenue,Retainers,184918.73,Monthly retainer - Kite Mobility
+2025-10-05,revenue,Retainers,143825.68,Monthly retainer - Tandoor Co
+2025-10-13,expense,Freelancers,68333.27,Freelancer invoice 2
+2025-10-14,revenue,Projects,219787.75,Project milestone 1
+2025-10-15,revenue,Licensing,58714.79,Font and template licensing
+2025-10-23,expense,Freelancers,89127.44,Freelancer invoice 1
+2025-10-25,expense,Equipment,8672.99,Accessories
+2025-10-25,expense,Freelancers,80635.44,Freelancer invoice 3
+2025-10-27,expense,Travel,22587.10,Client visit 1
+2025-10-28,expense,Salaries,720000.00,Payroll
+2025-11-01,expense,Freelancers,64846.19,Freelancer invoice 2
+2025-11-01,expense,Office,150000.00,Studio rent and upkeep
+2025-11-02,expense,Software,75114.30,Design software seats
+2025-11-04,expense,Travel,22842.19,Client visit 2
+2025-11-05,revenue,Projects,150660.28,Project milestone 2
+2025-11-05,revenue,Retainers,267906.15,Monthly retainer - Bluebird Bank
+2025-11-05,revenue,Retainers,185473.49,Monthly retainer - Kite Mobility
+2025-11-05,revenue,Retainers,144257.16,Monthly retainer - Tandoor Co
+2025-11-06,expense,Travel,34505.87,Client visit 1
+2025-11-08,expense,Freelancers,63994.73,Freelancer invoice 1
+2025-11-15,expense,Equipment,12924.34,Accessories
+2025-11-15,revenue,Licensing,60476.24,Font and template licensing
+2025-11-17,revenue,Projects,176933.88,Project milestone 1
+2025-11-23,expense,Freelancers,68328.79,Freelancer invoice 3
+2025-11-28,expense,Salaries,720000.00,Payroll
+2025-12-01,expense,Office,150000.00,Studio rent and upkeep
+2025-12-02,expense,Software,75865.45,Design software seats
+2025-12-03,expense,Equipment,10986.70,Accessories
+2025-12-03,expense,Travel,18251.74,Client visit 1
+2025-12-05,revenue,Projects,107388.38,Project milestone 3
+2025-12-05,revenue,Retainers,268709.87,Monthly retainer - Bluebird Bank
+2025-12-05,revenue,Retainers,186029.91,Monthly retainer - Kite Mobility
+2025-12-05,revenue,Retainers,144689.93,Monthly retainer - Tandoor Co
+2025-12-09,expense,Freelancers,54587.18,Freelancer invoice 3
+2025-12-09,revenue,Projects,137127.17,Project milestone 1
+2025-12-15,revenue,Licensing,62290.52,Font and template licensing
+2025-12-15,revenue,Projects,101352.06,Project milestone 2
+2025-12-17,expense,Freelancers,70982.12,Freelancer invoice 1
+2025-12-20,expense,Travel,15347.52,Client visit 2
+2025-12-22,expense,Freelancers,66083.87,Freelancer invoice 2
+2025-12-28,expense,Salaries,720000.00,Payroll
+2026-01-01,expense,Office,150000.00,Studio rent and upkeep
+2026-01-02,expense,Software,76624.10,Design software seats
+2026-01-03,expense,Freelancers,94967.84,Freelancer invoice 3
+2026-01-04,expense,Freelancers,94904.45,Freelancer invoice 2
+2026-01-04,revenue,Projects,483706.43,Project milestone 1
+2026-01-05,revenue,Retainers,269515.99,Monthly retainer - Bluebird Bank
+2026-01-05,revenue,Retainers,186588.00,Monthly retainer - Kite Mobility
+2026-01-05,revenue,Retainers,145124.00,Monthly retainer - Tandoor Co
+2026-01-07,expense,Freelancers,69543.58,Freelancer invoice 1
+2026-01-10,expense,Travel,31223.89,Client visit 2
+2026-01-14,expense,Equipment,600000.00,Laptop refresh for the team
+2026-01-15,revenue,Licensing,64159.24,Font and template licensing
+2026-01-19,expense,Travel,25044.14,Client visit 1
+2026-01-28,expense,Salaries,763200.00,Payroll
+2026-02-01,expense,Office,150000.00,Studio rent and upkeep
+2026-02-02,expense,Software,77390.34,Design software seats
+2026-02-05,revenue,Retainers,270324.54,Monthly retainer - Bluebird Bank
+2026-02-05,revenue,Retainers,187147.76,Monthly retainer - Kite Mobility
+2026-02-05,revenue,Retainers,145559.37,Monthly retainer - Tandoor Co
+2026-02-07,expense,Equipment,5911.96,Accessories
+2026-02-12,expense,Freelancers,490391.87,Freelancer invoice 2
+2026-02-12,expense,Travel,18769.80,Client visit 1
+2026-02-12,revenue,Projects,405010.04,Project milestone 1
+2026-02-13,expense,Freelancers,524872.99,Freelancer invoice 1
+2026-02-15,expense,Travel,18469.89,Client visit 2
+2026-02-15,revenue,Licensing,66084.02,Font and template licensing
+2026-02-20,expense,Freelancers,354888.46,Freelancer invoice 3
+2026-02-20,revenue,Projects,2800000.00,Brand identity project - Saffron Air
+2026-02-28,expense,Salaries,763200.00,Payroll
+2026-03-01,expense,Office,150000.00,Studio rent and upkeep
+2026-03-02,expense,Software,78164.25,Design software seats
+2026-03-05,expense,Freelancers,93820.89,Freelancer invoice 3
+2026-03-05,revenue,Retainers,271135.52,Monthly retainer - Bluebird Bank
+2026-03-05,revenue,Retainers,187709.20,Monthly retainer - Kite Mobility
+2026-03-05,revenue,Retainers,145996.05,Monthly retainer - Tandoor Co
+2026-03-10,revenue,Projects,196477.85,Project milestone 3
+2026-03-13,expense,Freelancers,79809.12,Freelancer invoice 1
+2026-03-13,revenue,Projects,150970.47,Project milestone 1
+2026-03-15,revenue,Licensing,68066.54,Font and template licensing
+2026-03-19,revenue,Projects,150043.17,Project milestone 2
+2026-03-21,expense,Freelancers,75761.75,Freelancer invoice 2
+2026-03-26,expense,Travel,29047.92,Client visit 1
+2026-03-27,expense,Travel,16058.55,Client visit 2
+2026-03-28,expense,Equipment,11489.55,Accessories
+2026-03-28,expense,Salaries,763200.00,Payroll
+2026-04-01,expense,Office,150000.00,Studio rent and upkeep
+2026-04-02,expense,Software,78945.89,Design software seats
+2026-04-03,expense,Freelancers,66654.15,Freelancer invoice 2
+2026-04-04,revenue,Projects,148988.92,Project milestone 1
+2026-04-05,revenue,Retainers,271948.92,Monthly retainer - Bluebird Bank
+2026-04-05,revenue,Retainers,188272.33,Monthly retainer - Kite Mobility
+2026-04-05,revenue,Retainers,146434.04,Monthly retainer - Tandoor Co
+2026-04-06,expense,Freelancers,94707.26,Freelancer invoice 3
+2026-04-08,expense,Travel,22881.64,Client visit 1
+2026-04-10,expense,Equipment,6337.47,Accessories
+2026-04-12,expense,Travel,22690.56,Client visit 2
+2026-04-15,revenue,Licensing,70108.53,Font and template licensing
+2026-04-23,revenue,Projects,134733.67,Project milestone 3
+2026-04-24,expense,Freelancers,58879.36,Freelancer invoice 1
+2026-04-25,revenue,Projects,98437.82,Project milestone 2
+2026-04-28,expense,Salaries,763200.00,Payroll
+2026-05-01,expense,Office,150000.00,Studio rent and upkeep
+2026-05-02,expense,Software,79735.35,Design software seats
+2026-05-05,revenue,Retainers,272764.77,Monthly retainer - Bluebird Bank
+2026-05-05,revenue,Retainers,188837.15,Monthly retainer - Kite Mobility
+2026-05-05,revenue,Retainers,146873.34,Monthly retainer - Tandoor Co
+2026-05-09,expense,Freelancers,69594.00,Freelancer invoice 3
+2026-05-13,expense,Travel,28816.28,Client visit 2
+2026-05-15,expense,Freelancers,58050.13,Freelancer invoice 1
+2026-05-15,revenue,Licensing,72211.79,Font and template licensing
+2026-05-17,revenue,Projects,355028.28,Project milestone 1
+2026-05-21,expense,Equipment,4965.34,Accessories
+2026-05-28,expense,Freelancers,75894.48,Freelancer invoice 2
+2026-05-28,expense,Salaries,763200.00,Payroll
+2026-05-28,expense,Travel,18560.81,Client visit 1
+2026-06-01,expense,Office,150000.00,Studio rent and upkeep
+2026-06-02,expense,Freelancers,43543.10,Freelancer invoice 2
+2026-06-02,expense,Software,80532.70,Design software seats
+2026-06-03,expense,Travel,19689.86,Client visit 1
+2026-06-05,revenue,Retainers,273583.06,Monthly retainer - Bluebird Bank
+2026-06-05,revenue,Retainers,189403.66,Monthly retainer - Kite Mobility
+2026-06-05,revenue,Retainers,147313.96,Monthly retainer - Tandoor Co
+2026-06-11,expense,Freelancers,62504.56,Freelancer invoice 3
+2026-06-15,revenue,Licensing,74378.14,Font and template licensing
+2026-06-21,expense,Freelancers,73631.89,Freelancer invoice 1
+2026-06-22,expense,Equipment,5577.89,Accessories
+2026-06-26,revenue,Projects,315952.32,Project milestone 1
+2026-06-27,expense,Travel,19574.22,Client visit 2
+2026-06-28,expense,Salaries,763200.00,Payroll

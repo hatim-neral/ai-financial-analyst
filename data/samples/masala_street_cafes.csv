@@ -1,0 +1,675 @@
+date,type,category,amount,description
+2024-01-01,expense,Ingredients,106917.23,Wholesale market purchase 3
+2024-01-01,expense,Rent,260000.00,Outlet leases
+2024-01-02,expense,Equipment & repairs,26215.82,Kitchen maintenance
+2024-01-03,revenue,Dine-in,151870.54,POS settlement week 6
+2024-01-04,revenue,Catering,78901.23,Catering order 2
+2024-01-05,expense,Delivery commissions,136400.00,Platform commission at 22%
+2024-01-07,expense,Ingredients,107595.97,Wholesale market purchase 6
+2024-01-07,revenue,Catering,59358.34,Catering order 1
+2024-01-07,revenue,Dine-in,229879.43,POS settlement week 3
+2024-01-07,revenue,Dine-in,160007.25,POS settlement week 8
+2024-01-08,revenue,Delivery apps,146710.90,Delivery app payout 1
+2024-01-09,expense,Marketing,37205.86,Social media campaign 1
+2024-01-09,revenue,Dine-in,152659.29,POS settlement week 7
+2024-01-11,revenue,Dine-in,179647.24,POS settlement week 4
+2024-01-12,expense,Utilities,95266.64,"Gas, power and water"
+2024-01-13,revenue,Delivery apps,177754.26,Delivery app payout 4
+2024-01-14,expense,Ingredients,140321.63,Wholesale market purchase 2
+2024-01-15,expense,Ingredients,108856.84,Wholesale market purchase 5
+2024-01-15,revenue,Dine-in,201235.18,POS settlement week 5
+2024-01-19,expense,Marketing,36932.61,Social media campaign 2
+2024-01-20,revenue,Merchandise,39735.97,Sauces and spice-box sales
+2024-01-21,revenue,Delivery apps,155095.19,Delivery app payout 2
+2024-01-22,expense,Ingredients,125416.76,Wholesale market purchase 1
+2024-01-23,revenue,Dine-in,149696.87,POS settlement week 1
+2024-01-26,revenue,Delivery apps,123628.55,Delivery app payout 3
+2024-01-26,revenue,Dine-in,234417.85,POS settlement week 2
+2024-01-28,expense,Ingredients,105865.07,Wholesale market purchase 4
+2024-01-30,expense,Staff wages,520000.00,Payroll - kitchen and floor
+2024-02-01,expense,Rent,260000.00,Outlet leases
+2024-02-03,expense,Equipment & repairs,26283.42,Kitchen maintenance
+2024-02-03,expense,Ingredients,126640.13,Wholesale market purchase 1
+2024-02-03,expense,Ingredients,129323.15,Wholesale market purchase 6
+2024-02-05,expense,Delivery commissions,137218.40,Platform commission at 22%
+2024-02-05,expense,Ingredients,82820.47,Wholesale market purchase 2
+2024-02-05,revenue,Merchandise,41331.47,Sauces and spice-box sales
+2024-02-06,revenue,Dine-in,210327.20,POS settlement week 6
+2024-02-09,expense,Marketing,40205.49,Social media campaign 1
+2024-02-10,expense,Ingredients,127155.54,Wholesale market purchase 3
+2024-02-10,revenue,Dine-in,160195.15,POS settlement week 3
+2024-02-11,expense,Ingredients,103803.73,Wholesale market purchase 4
+2024-02-13,expense,Ingredients,129710.25,Wholesale market purchase 5
+2024-02-15,revenue,Catering,67317.94,Catering order 2
+2024-02-15,revenue,Delivery apps,154165.63,Delivery app payout 2
+2024-02-17,revenue,Dine-in,196787.61,POS settlement week 2
+2024-02-17,revenue,Dine-in,135896.45,POS settlement week 8
+2024-02-18,expense,Utilities,91652.80,"Gas, power and water"
+2024-02-22,expense,Marketing,32443.39,Social media campaign 2
+2024-02-23,revenue,Delivery apps,144537.29,Delivery app payout 1
+2024-02-23,revenue,Dine-in,176954.86,POS settlement week 7
+2024-02-26,revenue,Catering,64933.57,Catering order 1
+2024-02-27,revenue,Delivery apps,147747.65,Delivery app payout 3
+2024-02-27,revenue,Delivery apps,186423.47,Delivery app payout 4
+2024-02-28,expense,Staff wages,522080.00,Payroll - kitchen and floor
+2024-02-28,revenue,Dine-in,147254.80,POS settlement week 1
+2024-02-28,revenue,Dine-in,219958.86,POS settlement week 4
+2024-02-28,revenue,Dine-in,203365.01,POS settlement week 5
+2024-03-01,expense,Ingredients,119978.90,Wholesale market purchase 2
+2024-03-01,expense,Rent,260000.00,Outlet leases
+2024-03-01,revenue,Dine-in,178495.25,POS settlement week 2
+2024-03-01,revenue,Dine-in,173997.98,POS settlement week 3
+2024-03-05,expense,Delivery commissions,138041.71,Platform commission at 22%
+2024-03-05,expense,Marketing,38477.83,Social media campaign 2
+2024-03-06,revenue,Dine-in,144379.34,POS settlement week 1
+2024-03-07,expense,Ingredients,130540.38,Wholesale market purchase 6
+2024-03-07,expense,Marketing,36047.54,Social media campaign 1
+2024-03-07,revenue,Delivery apps,121941.59,Delivery app payout 1
+2024-03-12,expense,Ingredients,105614.45,Wholesale market purchase 1
+2024-03-12,revenue,Catering,65562.53,Catering order 1
+2024-03-13,revenue,Dine-in,215023.18,POS settlement week 5
+2024-03-13,revenue,Merchandise,36453.49,Sauces and spice-box sales
+2024-03-15,expense,Ingredients,106648.95,Wholesale market purchase 3
+2024-03-15,revenue,Dine-in,158213.79,POS settlement week 8
+2024-03-18,expense,Equipment & repairs,21450.75,Kitchen maintenance
+2024-03-18,revenue,Delivery apps,151343.27,Delivery app payout 2
+2024-03-18,revenue,Delivery apps,164913.55,Delivery app payout 4
+2024-03-19,revenue,Delivery apps,197091.63,Delivery app payout 3
+2024-03-20,revenue,Dine-in,154251.23,POS settlement week 7
+2024-03-21,revenue,Dine-in,184865.30,POS settlement week 4
+2024-03-22,expense,Ingredients,111333.12,Wholesale market purchase 5
+2024-03-22,expense,Utilities,96342.93,"Gas, power and water"
+2024-03-22,revenue,Catering,71936.85,Catering order 2
+2024-03-28,expense,Ingredients,113727.49,Wholesale market purchase 4
+2024-03-28,revenue,Dine-in,232412.55,POS settlement week 6
+2024-03-30,expense,Staff wages,524168.32,Payroll - kitchen and floor
+2024-04-01,expense,Rent,260000.00,Outlet leases
+2024-04-01,revenue,Delivery apps,133605.19,Delivery app payout 3
+2024-04-02,revenue,Delivery apps,158827.16,Delivery app payout 2
+2024-04-02,revenue,Dine-in,173644.79,POS settlement week 6
+2024-04-03,expense,Ingredients,94552.47,Wholesale market purchase 5
+2024-04-05,expense,Delivery commissions,138869.96,Platform commission at 22%
+2024-04-05,expense,Ingredients,135199.57,Wholesale market purchase 6
+2024-04-05,revenue,Catering,74066.82,Catering order 1
+2024-04-08,expense,Equipment & repairs,22417.76,Kitchen maintenance
+2024-04-09,revenue,Dine-in,143225.53,POS settlement week 7
+2024-04-11,expense,Ingredients,153718.63,Wholesale market purchase 2
+2024-04-11,revenue,Dine-in,218612.55,POS settlement week 1
+2024-04-14,expense,Utilities,94768.65,"Gas, power and water"
+2024-04-14,revenue,Delivery apps,176049.13,Delivery app payout 4
+2024-04-15,expense,Ingredients,90740.02,Wholesale market purchase 1
+2024-04-15,revenue,Dine-in,166980.32,POS settlement week 3
+2024-04-15,revenue,Dine-in,190045.34,POS settlement week 4
+2024-04-16,revenue,Catering,78216.73,Catering order 2
+2024-04-17,expense,Ingredients,133673.49,Wholesale market purchase 3
+2024-04-18,revenue,Dine-in,144306.20,POS settlement week 8
+2024-04-21,expense,Marketing,28066.31,Social media campaign 1
+2024-04-22,revenue,Dine-in,192391.71,POS settlement week 5
+2024-04-24,expense,Ingredients,97198.88,Wholesale market purchase 4
+2024-04-24,revenue,Dine-in,225597.38,POS settlement week 2
+2024-04-26,expense,Marketing,36454.88,Social media campaign 2
+2024-04-27,revenue,Delivery apps,173369.47,Delivery app payout 1
+2024-04-28,revenue,Merchandise,40817.45,Sauces and spice-box sales
+2024-04-30,expense,Staff wages,526264.99,Payroll - kitchen and floor
+2024-05-01,expense,Rent,260000.00,Outlet leases
+2024-05-04,expense,Ingredients,102039.93,Wholesale market purchase 1
+2024-05-04,revenue,Delivery apps,132536.01,Delivery app payout 4
+2024-05-04,revenue,Dine-in,141797.60,POS settlement week 7
+2024-05-05,expense,Delivery commissions,139703.18,Platform commission at 22%
+2024-05-05,revenue,Delivery apps,171475.20,Delivery app payout 3
+2024-05-06,expense,Ingredients,130995.78,Wholesale market purchase 5
+2024-05-08,expense,Ingredients,90793.55,Wholesale market purchase 4
+2024-05-08,revenue,Dine-in,147772.10,POS settlement week 6
+2024-05-10,expense,Ingredients,135901.05,Wholesale market purchase 2
+2024-05-10,expense,Ingredients,132089.59,Wholesale market purchase 3
+2024-05-16,revenue,Delivery apps,211715.24,Delivery app payout 2
+2024-05-17,revenue,Dine-in,197734.33,POS settlement week 1
+2024-05-17,revenue,Dine-in,207309.37,POS settlement week 5
+2024-05-19,revenue,Dine-in,234106.20,POS settlement week 8
+2024-05-20,revenue,Merchandise,43624.47,Sauces and spice-box sales
+2024-05-21,expense,Equipment & repairs,24751.17,Kitchen maintenance
+2024-05-21,expense,Utilities,97492.16,"Gas, power and water"
+2024-05-22,revenue,Delivery apps,120685.22,Delivery app payout 1
+2024-05-22,revenue,Dine-in,211984.26,POS settlement week 4
+2024-05-23,expense,Marketing,27963.76,Social media campaign 1
+2024-05-23,revenue,Catering,54382.21,Catering order 1
+2024-05-23,revenue,Dine-in,145608.48,POS settlement week 2
+2024-05-24,expense,Ingredients,86929.00,Wholesale market purchase 6
+2024-05-25,expense,Marketing,42853.67,Social media campaign 2
+2024-05-26,revenue,Dine-in,226548.20,POS settlement week 3
+2024-05-28,revenue,Catering,80071.74,Catering order 2
+2024-05-30,expense,Staff wages,528370.05,Payroll - kitchen and floor
+2024-06-01,expense,Rent,260000.00,Outlet leases
+2024-06-01,revenue,Dine-in,201090.46,POS settlement week 4
+2024-06-02,expense,Ingredients,127050.92,Wholesale market purchase 4
+2024-06-02,expense,Utilities,91530.40,"Gas, power and water"
+2024-06-04,expense,Equipment & repairs,320000.00,Walk-in freezer replacement
+2024-06-05,expense,Delivery commissions,140541.40,Platform commission at 22%
+2024-06-07,revenue,Dine-in,147377.82,POS settlement week 1
+2024-06-07,revenue,Dine-in,161974.15,POS settlement week 6
+2024-06-09,revenue,Delivery apps,142706.28,Delivery app payout 1
+2024-06-09,revenue,Dine-in,180868.63,POS settlement week 2
+2024-06-11,revenue,Dine-in,163579.93,POS settlement week 7
+2024-06-12,expense,Ingredients,148338.77,Wholesale market purchase 1
+2024-06-13,expense,Ingredients,126333.53,Wholesale market purchase 6
+2024-06-13,expense,Marketing,31995.02,Social media campaign 1
+2024-06-15,revenue,Merchandise,42571.78,Sauces and spice-box sales
+2024-06-16,expense,Ingredients,139366.64,Wholesale market purchase 2
+2024-06-19,revenue,Delivery apps,138103.55,Delivery app payout 2
+2024-06-22,revenue,Delivery apps,148828.07,Delivery app payout 4
+2024-06-25,revenue,Catering,81055.73,Catering order 1
+2024-06-25,revenue,Dine-in,253742.57,POS settlement week 3
+2024-06-25,revenue,Dine-in,168022.36,POS settlement week 5
+2024-06-25,revenue,Dine-in,197353.63,POS settlement week 8
+2024-06-26,revenue,Catering,68337.17,Catering order 2
+2024-06-27,expense,Marketing,34249.93,Social media campaign 2
+2024-06-27,revenue,Delivery apps,185599.99,Delivery app payout 3
+2024-06-28,expense,Ingredients,84469.71,Wholesale market purchase 3
+2024-06-28,expense,Ingredients,86953.89,Wholesale market purchase 5
+2024-06-30,expense,Staff wages,530483.53,Payroll - kitchen and floor
+2024-07-01,expense,Rent,260000.00,Outlet leases
+2024-07-02,expense,Ingredients,115122.91,Wholesale market purchase 4
+2024-07-04,expense,Ingredients,116948.51,Wholesale market purchase 2
+2024-07-04,revenue,Delivery apps,176896.29,Delivery app payout 2
+2024-07-05,expense,Delivery commissions,169661.58,Platform commission at 22%
+2024-07-05,revenue,Dine-in,163583.35,POS settlement week 4
+2024-07-05,revenue,Merchandise,39405.27,Sauces and spice-box sales
+2024-07-06,revenue,Dine-in,184656.20,POS settlement week 6
+2024-07-08,expense,Marketing,36035.71,Social media campaign 2
+2024-07-10,revenue,Dine-in,116883.15,POS settlement week 1
+2024-07-12,expense,Utilities,93267.13,"Gas, power and water"
+2024-07-12,revenue,Catering,58601.74,Catering order 2
+2024-07-13,revenue,Dine-in,169482.62,POS settlement week 3
+2024-07-15,expense,Ingredients,107804.71,Wholesale market purchase 6
+2024-07-16,expense,Ingredients,99278.37,Wholesale market purchase 1
+2024-07-17,revenue,Delivery apps,232538.99,Delivery app payout 1
+2024-07-17,revenue,Dine-in,163702.16,POS settlement week 7
+2024-07-18,expense,Ingredients,116775.70,Wholesale market purchase 3
+2024-07-21,revenue,Catering,75153.71,Catering order 1
+2024-07-22,expense,Ingredients,93769.76,Wholesale market purchase 5
+2024-07-22,revenue,Dine-in,159903.54,POS settlement week 8
+2024-07-23,revenue,Delivery apps,225766.13,Delivery app payout 3
+2024-07-23,revenue,Delivery apps,135242.76,Delivery app payout 4
+2024-07-25,revenue,Dine-in,124080.23,POS settlement week 5
+2024-07-26,expense,Marketing,38588.28,Social media campaign 1
+2024-07-28,expense,Equipment & repairs,26835.93,Kitchen maintenance
+2024-07-28,revenue,Dine-in,160192.44,POS settlement week 2
+2024-07-30,expense,Staff wages,532605.47,Payroll - kitchen and floor
+2024-08-01,expense,Rent,260000.00,Outlet leases
+2024-08-01,expense,Utilities,92561.64,"Gas, power and water"
+2024-08-01,revenue,Dine-in,179419.34,POS settlement week 2
+2024-08-03,expense,Ingredients,91289.24,Wholesale market purchase 4
+2024-08-04,revenue,Dine-in,158320.18,POS settlement week 1
+2024-08-05,expense,Delivery commissions,170679.55,Platform commission at 22%
+2024-08-06,expense,Ingredients,114799.52,Wholesale market purchase 1
+2024-08-06,revenue,Dine-in,147036.97,POS settlement week 3
+2024-08-06,revenue,Dine-in,143100.46,POS settlement week 7
+2024-08-07,revenue,Catering,79350.65,Catering order 1
+2024-08-08,expense,Marketing,33431.66,Social media campaign 1
+2024-08-08,revenue,Delivery apps,198067.39,Delivery app payout 1
+2024-08-09,expense,Ingredients,134971.10,Wholesale market purchase 6
+2024-08-09,revenue,Dine-in,147158.38,POS settlement week 4
+2024-08-12,expense,Ingredients,101377.15,Wholesale market purchase 2
+2024-08-17,revenue,Dine-in,185804.85,POS settlement week 8
+2024-08-18,revenue,Delivery apps,177837.35,Delivery app payout 2
+2024-08-19,expense,Ingredients,109617.58,Wholesale market purchase 5
+2024-08-19,revenue,Delivery apps,183370.67,Delivery app payout 3
+2024-08-20,revenue,Merchandise,37730.01,Sauces and spice-box sales
+2024-08-21,expense,Marketing,29667.52,Social media campaign 2
+2024-08-23,revenue,Dine-in,172790.31,POS settlement week 6
+2024-08-24,expense,Equipment & repairs,17502.98,Kitchen maintenance
+2024-08-24,revenue,Delivery apps,193343.44,Delivery app payout 4
+2024-08-26,expense,Ingredients,90046.27,Wholesale market purchase 3
+2024-08-27,revenue,Catering,71071.82,Catering order 2
+2024-08-27,revenue,Dine-in,124357.38,POS settlement week 5
+2024-08-30,expense,Staff wages,534735.89,Payroll - kitchen and floor
+2024-09-01,expense,Rent,260000.00,Outlet leases
+2024-09-01,revenue,Delivery apps,194080.08,Delivery app payout 1
+2024-09-04,revenue,Delivery apps,188736.64,Delivery app payout 3
+2024-09-05,expense,Delivery commissions,143086.35,Platform commission at 22%
+2024-09-05,expense,Ingredients,130184.53,Wholesale market purchase 3
+2024-09-06,expense,Ingredients,89589.25,Wholesale market purchase 1
+2024-09-07,expense,Marketing,35096.10,Social media campaign 1
+2024-09-07,revenue,Catering,72430.85,Catering order 2
+2024-09-08,revenue,Dine-in,155063.92,POS settlement week 3
+2024-09-09,revenue,Catering,72922.82,Catering order 1
+2024-09-10,revenue,Dine-in,237703.47,POS settlement week 5
+2024-09-10,revenue,Dine-in,170516.38,POS settlement week 6
+2024-09-10,revenue,Dine-in,239282.62,POS settlement week 7
+2024-09-11,revenue,Dine-in,205015.07,POS settlement week 2
+2024-09-13,revenue,Delivery apps,120007.31,Delivery app payout 2
+2024-09-13,revenue,Dine-in,179037.01,POS settlement week 1
+2024-09-17,expense,Ingredients,143719.14,Wholesale market purchase 4
+2024-09-17,revenue,Delivery apps,170376.29,Delivery app payout 4
+2024-09-17,revenue,Dine-in,229493.20,POS settlement week 8
+2024-09-19,revenue,Dine-in,149206.04,POS settlement week 4
+2024-09-19,revenue,Merchandise,37378.64,Sauces and spice-box sales
+2024-09-20,expense,Ingredients,111456.20,Wholesale market purchase 2
+2024-09-20,expense,Ingredients,144005.92,Wholesale market purchase 5
+2024-09-23,expense,Utilities,94284.10,"Gas, power and water"
+2024-09-24,expense,Ingredients,83035.16,Wholesale market purchase 6
+2024-09-26,expense,Marketing,36518.98,Social media campaign 2
+2024-09-28,expense,Equipment & repairs,27212.60,Kitchen maintenance
+2024-09-30,expense,Staff wages,536874.83,Payroll - kitchen and floor
+2024-10-01,expense,Rent,260000.00,Outlet leases
+2024-10-03,revenue,Delivery apps,177159.23,Delivery app payout 4
+2024-10-03,revenue,Merchandise,32749.06,Sauces and spice-box sales
+2024-10-04,expense,Marketing,72461.92,Social media campaign 2
+2024-10-05,expense,Delivery commissions,143944.87,Platform commission at 22%
+2024-10-05,expense,Equipment & repairs,27074.32,Kitchen maintenance
+2024-10-05,expense,Utilities,92739.71,"Gas, power and water"
+2024-10-05,revenue,Dine-in,186758.23,POS settlement week 6
+2024-10-06,expense,Ingredients,164139.01,Wholesale market purchase 4
+2024-10-07,expense,Ingredients,102648.85,Wholesale market purchase 3
+2024-10-08,revenue,Dine-in,219352.93,POS settlement week 7
+2024-10-09,expense,Ingredients,145636.17,Wholesale market purchase 1
+2024-10-10,revenue,Delivery apps,113815.38,Delivery app payout 1
+2024-10-11,revenue,Delivery apps,198625.29,Delivery app payout 3
+2024-10-12,revenue,Catering,232944.52,Festive catering order 2
+2024-10-15,revenue,Delivery apps,157506.72,Delivery app payout 2
+2024-10-16,revenue,Catering,150327.83,Festive catering order 3
+2024-10-16,revenue,Dine-in,173551.84,POS settlement week 4
+2024-10-17,revenue,Dine-in,232203.60,POS settlement week 3
+2024-10-18,expense,Ingredients,122890.18,Wholesale market purchase 6
+2024-10-19,expense,Marketing,53955.17,Social media campaign 1
+2024-10-21,revenue,Catering,200161.62,Festive catering order 1
+2024-10-23,revenue,Dine-in,130459.88,POS settlement week 2
+2024-10-23,revenue,Dine-in,242083.31,POS settlement week 5
+2024-10-26,expense,Ingredients,178845.89,Wholesale market purchase 2
+2024-10-26,revenue,Dine-in,202079.90,POS settlement week 8
+2024-10-27,expense,Ingredients,137003.86,Wholesale market purchase 5
+2024-10-27,revenue,Dine-in,164814.34,POS settlement week 1
+2024-10-30,expense,Staff wages,539022.33,Payroll - kitchen and floor
+2024-11-01,expense,Equipment & repairs,18023.38,Kitchen maintenance
+2024-11-01,expense,Rent,260000.00,Outlet leases
+2024-11-01,revenue,Dine-in,146660.21,POS settlement week 8
+2024-11-02,revenue,Dine-in,168069.79,POS settlement week 7
+2024-11-02,revenue,Merchandise,35049.75,Sauces and spice-box sales
+2024-11-03,expense,Marketing,31261.16,Social media campaign 1
+2024-11-03,revenue,Delivery apps,189334.96,Delivery app payout 1
+2024-11-03,revenue,Delivery apps,170663.10,Delivery app payout 4
+2024-11-04,expense,Utilities,91729.90,"Gas, power and water"
+2024-11-05,expense,Delivery commissions,144808.54,Platform commission at 22%
+2024-11-08,revenue,Catering,73813.66,Catering order 2
+2024-11-08,revenue,Dine-in,196964.89,POS settlement week 5
+2024-11-10,revenue,Delivery apps,168842.70,Delivery app payout 3
+2024-11-11,expense,Ingredients,119386.54,Wholesale market purchase 4
+2024-11-13,expense,Ingredients,115034.01,Wholesale market purchase 1
+2024-11-13,expense,Ingredients,138181.90,Wholesale market purchase 2
+2024-11-14,expense,Ingredients,157508.86,Wholesale market purchase 6
+2024-11-14,expense,Marketing,35367.76,Social media campaign 2
+2024-11-14,revenue,Dine-in,172087.14,POS settlement week 6
+2024-11-17,revenue,Dine-in,234779.11,POS settlement week 2
+2024-11-17,revenue,Dine-in,198672.62,POS settlement week 3
+2024-11-22,revenue,Delivery apps,119298.54,Delivery app payout 2
+2024-11-22,revenue,Dine-in,199287.95,POS settlement week 1
+2024-11-23,expense,Ingredients,98824.95,Wholesale market purchase 3
+2024-11-24,expense,Ingredients,100062.26,Wholesale market purchase 5
+2024-11-24,revenue,Catering,70242.33,Catering order 1
+2024-11-26,revenue,Dine-in,205215.67,POS settlement week 4
+2024-11-30,expense,Staff wages,541178.42,Payroll - kitchen and floor
+2024-12-01,expense,Rent,260000.00,Outlet leases
+2024-12-03,expense,Ingredients,90526.74,Wholesale market purchase 6
+2024-12-03,revenue,Dine-in,222097.36,POS settlement week 3
+2024-12-05,expense,Delivery commissions,145677.39,Platform commission at 22%
+2024-12-05,expense,Ingredients,118719.92,Wholesale market purchase 3
+2024-12-05,expense,Utilities,96745.82,"Gas, power and water"
+2024-12-06,revenue,Catering,74190.94,Catering order 1
+2024-12-06,revenue,Dine-in,235718.02,POS settlement week 4
+2024-12-07,expense,Ingredients,137269.12,Wholesale market purchase 2
+2024-12-07,expense,Ingredients,126845.87,Wholesale market purchase 4
+2024-12-10,revenue,Dine-in,153774.04,POS settlement week 6
+2024-12-11,expense,Marketing,38761.25,Social media campaign 2
+2024-12-11,revenue,Dine-in,175453.19,POS settlement week 7
+2024-12-12,revenue,Catering,70026.20,Catering order 2
+2024-12-15,revenue,Dine-in,141969.82,POS settlement week 2
+2024-12-16,expense,Ingredients,149686.78,Wholesale market purchase 5
+2024-12-18,expense,Ingredients,117506.47,Wholesale market purchase 1
+2024-12-20,expense,Marketing,30166.77,Social media campaign 1
+2024-12-20,revenue,Delivery apps,202325.87,Delivery app payout 1
+2024-12-23,revenue,Delivery apps,182667.16,Delivery app payout 3
+2024-12-24,revenue,Delivery apps,126073.66,Delivery app payout 2
+2024-12-24,revenue,Merchandise,43310.75,Sauces and spice-box sales
+2024-12-28,expense,Equipment & repairs,26010.35,Kitchen maintenance
+2024-12-28,revenue,Delivery apps,176542.88,Delivery app payout 4
+2024-12-28,revenue,Dine-in,150394.64,POS settlement week 1
+2024-12-28,revenue,Dine-in,199514.10,POS settlement week 5
+2024-12-28,revenue,Dine-in,235674.04,POS settlement week 8
+2024-12-30,expense,Staff wages,543343.14,Payroll - kitchen and floor
+2025-01-01,expense,Rent,260000.00,Outlet leases
+2025-01-02,revenue,Merchandise,33242.60,Sauces and spice-box sales
+2025-01-03,expense,Ingredients,144729.27,Wholesale market purchase 6
+2025-01-04,revenue,Dine-in,220167.36,POS settlement week 6
+2025-01-04,revenue,Dine-in,230632.69,POS settlement week 8
+2025-01-05,expense,Delivery commissions,146551.46,Platform commission at 22%
+2025-01-06,expense,Marketing,34308.01,Social media campaign 1
+2025-01-06,revenue,Dine-in,159640.10,POS settlement week 7
+2025-01-08,revenue,Catering,75631.05,Catering order 1
+2025-01-09,expense,Marketing,31185.83,Social media campaign 2
+2025-01-10,expense,Utilities,158169.85,"Gas, power and water"
+2025-01-12,expense,Ingredients,125172.79,Wholesale market purchase 4
+2025-01-15,revenue,Dine-in,219134.95,POS settlement week 4
+2025-01-16,revenue,Catering,79961.74,Catering order 2
+2025-01-17,revenue,Dine-in,152422.91,POS settlement week 1
+2025-01-18,revenue,Dine-in,158586.22,POS settlement week 3
+2025-01-19,revenue,Dine-in,144023.12,POS settlement week 2
+2025-01-20,revenue,Delivery apps,196639.06,Delivery app payout 4
+2025-01-21,revenue,Delivery apps,162065.83,Delivery app payout 3
+2025-01-23,expense,Ingredients,131208.34,Wholesale market purchase 2
+2025-01-23,revenue,Dine-in,220728.54,POS settlement week 5
+2025-01-24,revenue,Delivery apps,159212.38,Delivery app payout 2
+2025-01-25,expense,Ingredients,92914.06,Wholesale market purchase 5
+2025-01-26,expense,Equipment & repairs,23327.14,Kitchen maintenance
+2025-01-26,revenue,Delivery apps,157273.07,Delivery app payout 1
+2025-01-28,expense,Ingredients,129113.62,Wholesale market purchase 1
+2025-01-28,expense,Ingredients,120590.59,Wholesale market purchase 3
+2025-01-30,expense,Staff wages,545516.51,Payroll - kitchen and floor
+2025-02-01,expense,Rent,260000.00,Outlet leases
+2025-02-02,revenue,Dine-in,147670.45,POS settlement week 4
+2025-02-02,revenue,Dine-in,234620.66,POS settlement week 8
+2025-02-04,expense,Marketing,40117.25,Social media campaign 2
+2025-02-04,revenue,Delivery apps,177142.33,Delivery app payout 3
+2025-02-05,expense,Delivery commissions,147430.77,Platform commission at 22%
+2025-02-06,expense,Utilities,97150.03,"Gas, power and water"
+2025-02-07,expense,Ingredients,147450.08,Wholesale market purchase 5
+2025-02-08,expense,Ingredients,123056.44,Wholesale market purchase 4
+2025-02-09,expense,Equipment & repairs,26114.19,Kitchen maintenance
+2025-02-10,expense,Marketing,29124.84,Social media campaign 1
+2025-02-10,revenue,Dine-in,212113.97,POS settlement week 2
+2025-02-15,revenue,Catering,74679.92,Catering order 2
+2025-02-18,expense,Ingredients,114980.92,Wholesale market purchase 1
+2025-02-21,expense,Ingredients,101615.45,Wholesale market purchase 2
+2025-02-21,revenue,Dine-in,140058.76,POS settlement week 3
+2025-02-21,revenue,Dine-in,202645.38,POS settlement week 5
+2025-02-24,revenue,Merchandise,38887.91,Sauces and spice-box sales
+2025-02-25,revenue,Delivery apps,137976.02,Delivery app payout 1
+2025-02-25,revenue,Delivery apps,192666.10,Delivery app payout 4
+2025-02-25,revenue,Dine-in,220855.91,POS settlement week 7
+2025-02-26,expense,Ingredients,141355.35,Wholesale market purchase 6
+2025-02-26,revenue,Delivery apps,183524.83,Delivery app payout 2
+2025-02-26,revenue,Dine-in,211829.83,POS settlement week 6
+2025-02-27,expense,Ingredients,138576.32,Wholesale market purchase 3
+2025-02-27,revenue,Catering,76371.85,Catering order 1
+2025-02-27,revenue,Dine-in,136109.31,POS settlement week 1
+2025-02-28,expense,Staff wages,547698.57,Payroll - kitchen and floor
+2025-03-01,expense,Marketing,35714.08,Social media campaign 2
+2025-03-01,expense,Rent,260000.00,Outlet leases
+2025-03-02,revenue,Delivery apps,148568.79,Delivery app payout 4
+2025-03-04,expense,Utilities,91703.68,"Gas, power and water"
+2025-03-04,revenue,Dine-in,184844.49,POS settlement week 1
+2025-03-04,revenue,Merchandise,38220.07,Sauces and spice-box sales
+2025-03-05,expense,Delivery commissions,148315.35,Platform commission at 22%
+2025-03-07,revenue,Catering,79651.55,Catering order 1
+2025-03-08,revenue,Delivery apps,133022.62,Delivery app payout 1
+2025-03-10,expense,Ingredients,139340.74,Wholesale market purchase 5
+2025-03-14,revenue,Catering,60883.26,Catering order 2
+2025-03-14,revenue,Dine-in,183736.56,POS settlement week 2
+2025-03-16,expense,Equipment & repairs,17797.27,Kitchen maintenance
+2025-03-17,revenue,Delivery apps,213110.30,Delivery app payout 3
+2025-03-17,revenue,Dine-in,195985.89,POS settlement week 5
+2025-03-18,expense,Ingredients,129658.01,Wholesale market purchase 6
+2025-03-19,expense,Ingredients,102354.58,Wholesale market purchase 2
+2025-03-19,revenue,Dine-in,193463.89,POS settlement week 8
+2025-03-20,revenue,Dine-in,229521.60,POS settlement week 4
+2025-03-22,expense,Ingredients,89453.67,Wholesale market purchase 3
+2025-03-23,revenue,Dine-in,154220.82,POS settlement week 6
+2025-03-24,expense,Marketing,38637.36,Social media campaign 1
+2025-03-25,expense,Ingredients,110086.83,Wholesale market purchase 4
+2025-03-25,revenue,Delivery apps,179542.69,Delivery app payout 2
+2025-03-25,revenue,Dine-in,196370.05,POS settlement week 3
+2025-03-25,revenue,Dine-in,220191.70,POS settlement week 7
+2025-03-26,expense,Ingredients,159185.14,Wholesale market purchase 1
+2025-03-30,expense,Staff wages,549889.37,Payroll - kitchen and floor
+2025-04-01,expense,Rent,416000.00,Outlet leases
+2025-04-05,expense,Delivery commissions,189490.66,Platform commission at 22%
+2025-04-05,expense,Ingredients,190845.66,Wholesale market purchase 5
+2025-04-05,revenue,Dine-in,269602.98,POS settlement week 3
+2025-04-06,expense,Ingredients,145452.73,Wholesale market purchase 2
+2025-04-06,revenue,Delivery apps,214839.28,Delivery app payout 1
+2025-04-07,revenue,Dine-in,271877.33,POS settlement week 4
+2025-04-09,revenue,Dine-in,298169.89,POS settlement week 5
+2025-04-11,expense,Ingredients,135804.36,Wholesale market purchase 4
+2025-04-13,revenue,Catering,82251.98,Catering order 1
+2025-04-14,revenue,Delivery apps,221463.88,Delivery app payout 2
+2025-04-14,revenue,Dine-in,212808.93,POS settlement week 2
+2025-04-14,revenue,Dine-in,271410.54,POS settlement week 8
+2025-04-16,revenue,Delivery apps,214116.66,Delivery app payout 3
+2025-04-17,revenue,Catering,61426.23,Catering order 2
+2025-04-18,expense,Marketing,33370.20,Social media campaign 1
+2025-04-18,expense,Marketing,40319.43,Social media campaign 2
+2025-04-18,revenue,Dine-in,230944.11,POS settlement week 6
+2025-04-19,expense,Utilities,127638.01,"Gas, power and water"
+2025-04-19,revenue,Dine-in,193797.67,POS settlement week 7
+2025-04-21,revenue,Dine-in,301434.15,POS settlement week 1
+2025-04-22,revenue,Delivery apps,220478.76,Delivery app payout 4
+2025-04-23,expense,Ingredients,127453.71,Wholesale market purchase 1
+2025-04-23,expense,Ingredients,154406.22,Wholesale market purchase 6
+2025-04-26,expense,Ingredients,186587.44,Wholesale market purchase 3
+2025-04-28,expense,Equipment & repairs,27641.66,Kitchen maintenance
+2025-04-28,revenue,Merchandise,37603.45,Sauces and spice-box sales
+2025-04-30,expense,Staff wages,800528.94,Payroll - kitchen and floor
+2025-05-01,expense,Rent,416000.00,Outlet leases
+2025-05-02,expense,Equipment & repairs,25730.15,Kitchen maintenance
+2025-05-03,expense,Ingredients,210627.31,Wholesale market purchase 6
+2025-05-04,expense,Utilities,127710.49,"Gas, power and water"
+2025-05-05,expense,Delivery commissions,208639.66,Platform commission at 22%
+2025-05-08,expense,Marketing,37793.69,Social media campaign 1
+2025-05-08,revenue,Dine-in,299560.85,POS settlement week 1
+2025-05-08,revenue,Dine-in,299249.41,POS settlement week 7
+2025-05-11,expense,Marketing,25290.11,Social media campaign 2
+2025-05-11,revenue,Dine-in,287283.37,POS settlement week 3
+2025-05-12,revenue,Dine-in,334752.63,POS settlement week 2
+2025-05-13,expense,Ingredients,183752.47,Wholesale market purchase 5
+2025-05-13,revenue,Catering,80642.67,Catering order 1
+2025-05-14,revenue,Merchandise,43336.03,Sauces and spice-box sales
+2025-05-15,revenue,Delivery apps,234076.00,Delivery app payout 4
+2025-05-17,expense,Ingredients,162970.36,Wholesale market purchase 4
+2025-05-18,revenue,Delivery apps,298389.76,Delivery app payout 2
+2025-05-20,expense,Ingredients,146237.70,Wholesale market purchase 1
+2025-05-20,revenue,Dine-in,248285.07,POS settlement week 4
+2025-05-22,revenue,Catering,81384.45,Catering order 2
+2025-05-23,expense,Ingredients,184250.32,Wholesale market purchase 2
+2025-05-23,revenue,Delivery apps,234507.16,Delivery app payout 1
+2025-05-24,expense,Ingredients,171134.27,Wholesale market purchase 3
+2025-05-24,revenue,Dine-in,359042.54,POS settlement week 5
+2025-05-25,revenue,Dine-in,286998.83,POS settlement week 8
+2025-05-27,revenue,Delivery apps,207402.99,Delivery app payout 3
+2025-05-28,revenue,Dine-in,351888.91,POS settlement week 6
+2025-05-30,expense,Staff wages,803731.06,Payroll - kitchen and floor
+2025-06-01,expense,Rent,416000.00,Outlet leases
+2025-06-02,revenue,Dine-in,221842.62,POS settlement week 2
+2025-06-02,revenue,Dine-in,371434.29,POS settlement week 7
+2025-06-03,expense,Ingredients,190483.29,Wholesale market purchase 1
+2025-06-04,revenue,Catering,82571.27,Catering order 2
+2025-06-05,expense,Delivery commissions,228011.63,Platform commission at 22%
+2025-06-05,revenue,Delivery apps,257166.32,Delivery app payout 3
+2025-06-05,revenue,Dine-in,325686.26,POS settlement week 3
+2025-06-06,revenue,Catering,73189.70,Catering order 1
+2025-06-08,expense,Ingredients,228800.33,Wholesale market purchase 3
+2025-06-10,expense,Marketing,29753.12,Social media campaign 1
+2025-06-12,revenue,Dine-in,353928.49,POS settlement week 1
+2025-06-14,expense,Ingredients,246062.56,Wholesale market purchase 2
+2025-06-16,expense,Ingredients,181087.28,Wholesale market purchase 5
+2025-06-16,expense,Utilities,124801.08,"Gas, power and water"
+2025-06-16,revenue,Dine-in,290736.39,POS settlement week 8
+2025-06-18,expense,Marketing,39640.03,Social media campaign 2
+2025-06-18,revenue,Dine-in,257001.46,POS settlement week 5
+2025-06-18,revenue,Merchandise,40309.65,Sauces and spice-box sales
+2025-06-19,revenue,Dine-in,386301.64,POS settlement week 4
+2025-06-20,expense,Ingredients,222552.87,Wholesale market purchase 4
+2025-06-20,expense,Ingredients,159905.57,Wholesale market purchase 6
+2025-06-20,revenue,Delivery apps,255592.14,Delivery app payout 4
+2025-06-21,expense,Equipment & repairs,26456.54,Kitchen maintenance
+2025-06-25,revenue,Delivery apps,293466.06,Delivery app payout 1
+2025-06-25,revenue,Dine-in,318016.71,POS settlement week 6
+2025-06-28,revenue,Delivery apps,200847.84,Delivery app payout 2
+2025-06-30,expense,Staff wages,806945.98,Payroll - kitchen and floor
+2025-07-01,expense,Rent,416000.00,Outlet leases
+2025-07-01,revenue,Delivery apps,311659.39,Delivery app payout 3
+2025-07-01,revenue,Dine-in,277867.23,POS settlement week 8
+2025-07-02,expense,Marketing,37592.83,Social media campaign 1
+2025-07-02,revenue,Dine-in,254537.15,POS settlement week 2
+2025-07-03,revenue,Dine-in,280961.79,POS settlement week 5
+2025-07-03,revenue,Dine-in,323923.89,POS settlement week 7
+2025-07-05,expense,Delivery commissions,371205.67,Platform commission at 28%
+2025-07-07,revenue,Catering,80691.80,Catering order 1
+2025-07-08,revenue,Delivery apps,384215.44,Delivery app payout 1
+2025-07-09,revenue,Delivery apps,370486.76,Delivery app payout 2
+2025-07-10,revenue,Delivery apps,303365.68,Delivery app payout 4
+2025-07-12,expense,Equipment & repairs,20058.87,Kitchen maintenance
+2025-07-12,expense,Ingredients,177493.84,Wholesale market purchase 2
+2025-07-14,revenue,Dine-in,349639.89,POS settlement week 1
+2025-07-14,revenue,Dine-in,302388.53,POS settlement week 3
+2025-07-15,revenue,Dine-in,229668.32,POS settlement week 6
+2025-07-16,expense,Ingredients,182971.04,Wholesale market purchase 3
+2025-07-17,expense,Ingredients,217080.20,Wholesale market purchase 1
+2025-07-17,expense,Marketing,34038.80,Social media campaign 2
+2025-07-21,revenue,Dine-in,283322.72,POS settlement week 4
+2025-07-22,expense,Utilities,126873.12,"Gas, power and water"
+2025-07-24,expense,Ingredients,171300.73,Wholesale market purchase 4
+2025-07-25,expense,Ingredients,210702.05,Wholesale market purchase 6
+2025-07-26,expense,Ingredients,199915.26,Wholesale market purchase 5
+2025-07-26,revenue,Catering,68424.84,Catering order 2
+2025-07-26,revenue,Merchandise,42825.97,Sauces and spice-box sales
+2025-07-30,expense,Staff wages,810173.77,Payroll - kitchen and floor
+2025-08-01,expense,Rent,416000.00,Outlet leases
+2025-08-01,revenue,Dine-in,245903.05,POS settlement week 4
+2025-08-04,expense,Ingredients,199932.03,Wholesale market purchase 4
+2025-08-04,revenue,Dine-in,290131.68,POS settlement week 2
+2025-08-05,expense,Delivery commissions,373432.91,Platform commission at 28%
+2025-08-06,revenue,Catering,66514.01,Catering order 2
+2025-08-10,revenue,Dine-in,256958.31,POS settlement week 6
+2025-08-12,revenue,Dine-in,303480.42,POS settlement week 7
+2025-08-14,expense,Marketing,38678.33,Social media campaign 2
+2025-08-15,revenue,Delivery apps,325605.56,Delivery app payout 3
+2025-08-16,revenue,Dine-in,332207.97,POS settlement week 3
+2025-08-19,expense,Ingredients,184876.69,Wholesale market purchase 3
+2025-08-19,revenue,Catering,100542.31,Catering order 1
+2025-08-21,revenue,Dine-in,239782.48,POS settlement week 1
+2025-08-23,expense,Ingredients,259029.12,Wholesale market purchase 1
+2025-08-23,expense,Ingredients,178854.57,Wholesale market purchase 5
+2025-08-23,revenue,Delivery apps,295943.81,Delivery app payout 4
+2025-08-24,expense,Ingredients,218612.36,Wholesale market purchase 6
+2025-08-24,expense,Utilities,119012.21,"Gas, power and water"
+2025-08-24,revenue,Dine-in,351887.03,POS settlement week 8
+2025-08-24,revenue,Merchandise,37394.94,Sauces and spice-box sales
+2025-08-25,expense,Equipment & repairs,26229.56,Kitchen maintenance
+2025-08-27,expense,Ingredients,167789.14,Wholesale market purchase 2
+2025-08-27,revenue,Delivery apps,308813.72,Delivery app payout 1
+2025-08-27,revenue,Delivery apps,390448.53,Delivery app payout 2
+2025-08-28,expense,Marketing,38084.37,Social media campaign 1
+2025-08-28,revenue,Dine-in,318647.33,POS settlement week 5
+2025-08-30,expense,Staff wages,813414.46,Payroll - kitchen and floor
+2025-09-01,expense,Ingredients,248029.75,Wholesale market purchase 2
+2025-09-01,expense,Rent,416000.00,Outlet leases
+2025-09-04,expense,Marketing,41715.04,Social media campaign 2
+2025-09-05,expense,Delivery commissions,313061.25,Platform commission at 28%
+2025-09-05,expense,Ingredients,203478.36,Wholesale market purchase 6
+2025-09-06,revenue,Delivery apps,299602.73,Delivery app payout 3
+2025-09-06,revenue,Dine-in,267891.79,POS settlement week 8
+2025-09-08,expense,Ingredients,212156.36,Wholesale market purchase 5
+2025-09-09,expense,Equipment & repairs,24355.72,Kitchen maintenance
+2025-09-09,expense,Ingredients,204990.60,Wholesale market purchase 4
+2025-09-10,revenue,Merchandise,40168.17,Sauces and spice-box sales
+2025-09-11,revenue,Dine-in,401097.73,POS settlement week 1
+2025-09-11,revenue,Dine-in,320949.20,POS settlement week 5
+2025-09-12,expense,Ingredients,145916.37,Wholesale market purchase 3
+2025-09-13,expense,Ingredients,245837.27,Wholesale market purchase 1
+2025-09-14,revenue,Dine-in,375775.92,POS settlement week 7
+2025-09-17,revenue,Delivery apps,301537.35,Delivery app payout 1
+2025-09-18,expense,Marketing,31749.91,Social media campaign 1
+2025-09-18,expense,Utilities,120498.36,"Gas, power and water"
+2025-09-18,revenue,Dine-in,295175.69,POS settlement week 2
+2025-09-23,revenue,Delivery apps,187614.26,Delivery app payout 2
+2025-09-23,revenue,Dine-in,453476.09,POS settlement week 3
+2025-09-23,revenue,Dine-in,422808.14,POS settlement week 4
+2025-09-24,revenue,Dine-in,299090.24,POS settlement week 6
+2025-09-25,revenue,Delivery apps,291665.75,Delivery app payout 4
+2025-09-26,revenue,Catering,63701.63,Catering order 1
+2025-09-27,revenue,Catering,92319.65,Catering order 2
+2025-09-30,expense,Staff wages,816668.12,Payroll - kitchen and floor
+2025-10-01,expense,Ingredients,285194.14,Wholesale market purchase 3
+2025-10-01,expense,Rent,416000.00,Outlet leases
+2025-10-01,revenue,Delivery apps,290708.87,Delivery app payout 1
+2025-10-02,revenue,Dine-in,401466.02,POS settlement week 8
+2025-10-04,revenue,Catering,183381.38,Festive catering order 3
+2025-10-05,expense,Delivery commissions,314939.62,Platform commission at 28%
+2025-10-09,revenue,Delivery apps,308852.33,Delivery app payout 4
+2025-10-10,expense,Ingredients,286804.16,Wholesale market purchase 4
+2025-10-10,expense,Ingredients,273381.05,Wholesale market purchase 6
+2025-10-10,revenue,Delivery apps,290100.85,Delivery app payout 3
+2025-10-10,revenue,Dine-in,461902.83,POS settlement week 2
+2025-10-11,expense,Ingredients,161563.98,Wholesale market purchase 1
+2025-10-11,expense,Ingredients,252595.62,Wholesale market purchase 2
+2025-10-11,revenue,Delivery apps,229550.66,Delivery app payout 2
+2025-10-12,revenue,Dine-in,270926.73,POS settlement week 3
+2025-10-13,expense,Marketing,81347.41,Social media campaign 1
+2025-10-16,revenue,Dine-in,380931.53,POS settlement week 7
+2025-10-17,revenue,Dine-in,336363.36,POS settlement week 1
+2025-10-17,revenue,Dine-in,327838.53,POS settlement week 5
+2025-10-17,revenue,Merchandise,35904.05,Sauces and spice-box sales
+2025-10-18,expense,Equipment & repairs,20596.15,Kitchen maintenance
+2025-10-18,expense,Marketing,55819.82,Social media campaign 2
+2025-10-18,revenue,Catering,187998.23,Festive catering order 1
+2025-10-21,expense,Utilities,123152.94,"Gas, power and water"
+2025-10-21,revenue,Dine-in,324639.63,POS settlement week 4
+2025-10-23,expense,Ingredients,219109.21,Wholesale market purchase 5
+2025-10-25,revenue,Catering,267451.98,Festive catering order 2
+2025-10-25,revenue,Dine-in,309606.23,POS settlement week 6
+2025-10-30,expense,Staff wages,819934.79,Payroll - kitchen and floor
+2025-11-01,expense,Rent,416000.00,Outlet leases
+2025-11-01,revenue,Dine-in,392677.38,POS settlement week 3
+2025-11-02,expense,Ingredients,163886.03,Wholesale market purchase 5
+2025-11-02,revenue,Delivery apps,269024.91,Delivery app payout 3
+2025-11-04,revenue,Delivery apps,305448.20,Delivery app payout 1
+2025-11-05,expense,Delivery commissions,316829.26,Platform commission at 28%
+2025-11-05,revenue,Dine-in,503671.51,POS settlement week 5
+2025-11-06,expense,Utilities,123184.95,"Gas, power and water"
+2025-11-06,revenue,Dine-in,485603.28,POS settlement week 4
+2025-11-08,revenue,Catering,74339.78,Catering order 1
+2025-11-09,expense,Marketing,40636.35,Social media campaign 2
+2025-11-09,revenue,Delivery apps,229053.15,Delivery app payout 4
+2025-11-11,expense,Ingredients,252533.43,Wholesale market purchase 3
+2025-11-12,revenue,Dine-in,313526.70,POS settlement week 1
+2025-11-13,expense,Ingredients,165530.09,Wholesale market purchase 4
+2025-11-17,revenue,Dine-in,294930.51,POS settlement week 6
+2025-11-18,expense,Ingredients,277128.80,Wholesale market purchase 2
+2025-11-18,expense,Marketing,33810.06,Social media campaign 1
+2025-11-20,revenue,Merchandise,38213.53,Sauces and spice-box sales
+2025-11-23,revenue,Delivery apps,293101.63,Delivery app payout 2
+2025-11-24,expense,Equipment & repairs,22162.82,Kitchen maintenance
+2025-11-24,revenue,Dine-in,290023.38,POS settlement week 7
+2025-11-25,revenue,Dine-in,278854.21,POS settlement week 2
+2025-11-26,expense,Ingredients,266186.55,Wholesale market purchase 1
+2025-11-27,revenue,Catering,81095.62,Catering order 2
+2025-11-28,expense,Ingredients,194669.62,Wholesale market purchase 6
+2025-11-28,revenue,Dine-in,361254.72,POS settlement week 8
+2025-11-30,expense,Staff wages,823214.53,Payroll - kitchen and floor
+2025-12-01,expense,Ingredients,220002.83,Wholesale market purchase 3
+2025-12-01,expense,Rent,416000.00,Outlet leases
+2025-12-03,expense,Marketing,31671.05,Social media campaign 2
+2025-12-05,expense,Delivery commissions,318730.23,Platform commission at 28%
+2025-12-05,expense,Equipment & repairs,25282.46,Kitchen maintenance
+2025-12-06,expense,Ingredients,205203.87,Wholesale market purchase 2
+2025-12-09,expense,Ingredients,171170.94,Wholesale market purchase 6
+2025-12-12,revenue,Dine-in,499280.77,POS settlement week 8
+2025-12-13,revenue,Catering,73445.81,Catering order 2
+2025-12-14,expense,Ingredients,282262.08,Wholesale market purchase 1
+2025-12-14,revenue,Dine-in,311122.45,POS settlement week 6
+2025-12-16,revenue,Dine-in,413936.47,POS settlement week 1
+2025-12-16,revenue,Merchandise,37764.85,Sauces and spice-box sales
+2025-12-17,revenue,Dine-in,323670.32,POS settlement week 4
+2025-12-17,revenue,Dine-in,396381.31,POS settlement week 7
+2025-12-18,expense,Ingredients,176012.19,Wholesale market purchase 4
+2025-12-22,revenue,Delivery apps,331051.96,Delivery app payout 3
+2025-12-24,revenue,Dine-in,317107.01,POS settlement week 2
+2025-12-24,revenue,Dine-in,290239.29,POS settlement week 5
+2025-12-25,expense,Utilities,125450.09,"Gas, power and water"
+2025-12-25,revenue,Catering,80633.02,Catering order 1
+2025-12-25,revenue,Dine-in,459782.87,POS settlement week 3
+2025-12-26,revenue,Delivery apps,256823.17,Delivery app payout 1
+2025-12-26,revenue,Delivery apps,329411.10,Delivery app payout 4
+2025-12-27,expense,Marketing,40929.84,Social media campaign 1
+2025-12-27,revenue,Delivery apps,242123.89,Delivery app payout 2
+2025-12-28,expense,Ingredients,289095.30,Wholesale market purchase 5
+2025-12-30,expense,Staff wages,826507.39,Payroll - kitchen and floor

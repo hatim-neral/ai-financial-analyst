@@ -3,3 +3,49 @@ maxUploadSize = 5          # MB; the app also enforces this in fin_analyst/confi
 
 [browser]
 gatherUsageStats = false
+
+# Achromatic ledger: ink chrome on a blue-grey ledger ground, one chart hue (#1d5fbf) on the main
+# data element of each screen. Light first; dark follows the system or Settings.
+# Keep in sync with ui/theme.py (LIGHT / DARK).
+[theme]
+font = "Geist:https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&display=swap"
+headingFont = "Geist:https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&display=swap"
+codeFont = "Geist Mono:https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap"
+headingFontWeights = [700, 600, 500]
+baseFontSize = 14
+baseRadius = "8px"
+buttonRadius = "6px"
+showWidgetBorder = true
+chartCategoricalColors = ["#1d5fbf", "#141414", "#8a8a8a", "#c4242a"]
+
+[theme.light]
+primaryColor = "#141414"
+backgroundColor = "#f2f4f7"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#0a0a0a"
+linkColor = "#1d5fbf"
+borderColor = "#e3e6eb"
+greenColor = "#2e7d32"
+redColor = "#c4242a"
+dataframeHeaderBackgroundColor = "#ffffff"
+
+[theme.light.sidebar]
+backgroundColor = "#f2f4f7"
+secondaryBackgroundColor = "#ffffff"
+borderColor = "#e3e6eb"
+
+[theme.dark]
+primaryColor = "#f2f2f2"
+backgroundColor = "#000000"
+secondaryBackgroundColor = "#111111"
+textColor = "#ffffff"
+linkColor = "#6ea2ef"
+borderColor = "#262626"
+greenColor = "#3fc07a"
+redColor = "#e5566f"
+dataframeHeaderBackgroundColor = "#111111"
+
+[theme.dark.sidebar]
+backgroundColor = "#000000"
+secondaryBackgroundColor = "#111111"
+borderColor = "#1a1a1a"
