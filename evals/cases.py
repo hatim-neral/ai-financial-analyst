@@ -17,7 +17,7 @@ Expected = Callable[["object"], list[tuple[float, bool]]]  # df -> [(value, is_p
 @dataclass
 class Case:
     id: str
-    category: str                       # demo | normal | edge | adversarial
+    category: str                       # demo | normal | complex | edge | adversarial
     question: str
     dataset: str = "sample_financials.csv"
     expect_numbers: Expected | None = None
@@ -59,6 +59,37 @@ CASES: list[Case] = [
     Case("compare-q1", "normal", "Compare total revenue in Q1 2025 with Q1 2026.",
          expect_numbers=lambda df: (_r(metrics.period_summary(df, "2025-01", "2025-03"), "total_revenue")
                                     + _r(metrics.period_summary(df, "2026-01", "2026-03"), "total_revenue"))),
+
+    # --- complex, multi-step questions (the advanced tools) ------------------------------
+    Case("cx-h1-margins", "complex",
+         "Compare the first half of 2025 with the first half of 2026: did the net margin improve?",
+         expect_numbers=lambda df: [
+             (metrics.compare_periods(df, "2025-01", "2025-06", "2026-01", "2026-06").result["period_a"]["net_margin_pct"], True),
+             (metrics.compare_periods(df, "2025-01", "2025-06", "2026-01", "2026-06").result["period_b"]["net_margin_pct"], True)]),
+    Case("cx-fastest-cost", "complex", "Which expense category grew fastest over the period?",
+         expect_any_terms=[["Cloud Infrastructure"]]),
+    Case("cx-anomalies", "complex", "Were there any unusual months? Name the biggest one-offs.",
+         expect_any_terms=[["Enterprise Licenses"], ["Marketing"]]),
+    Case("cx-best-quarter", "complex", "Which calendar quarter had the highest net revenue?",
+         expect_any_terms=[["2026-Q2", "Q2 2026", "second quarter of 2026", "Apr", "April"]]),
+    Case("cx-what-if", "complex",
+         "If Marketing had been 20% lower over the whole period, what would net revenue have been?",
+         expect_numbers=lambda df: [(metrics.what_if(df, [{"category": "Marketing", "change_pct": -20}])
+                                     .result["scenario"]["net_revenue"], False)]),
+    Case("cx-salary-ratio", "complex", "What share of revenue went to Salaries over the whole period?",
+         expect_numbers=lambda df: [(next(c["ratio_to_revenue_pct"] for c in metrics.expense_ratios(df)
+                                          .result["expense_categories"] if c["category"] == "Salaries"), True)]),
+    Case("cx-projection", "complex",
+         "If the last six months' trend continues, what will net revenue be in September 2026?",
+         expect_numbers=lambda df: [(metrics.project_trend(df, "net", 3, 6).result["projections"][2]["projected_value"], False)]),
+    Case("cx-cafe-rent", "complex", "How much did monthly rent change when the second outlet opened in April 2025?",
+         dataset="samples/masala_street_cafes.csv", expect_any_terms=[["Rent"]]),
+    Case("cx-studio-retainers", "complex", "What happened to retainer revenue after September 2025?",
+         dataset="samples/pixel_and_pine_studio.csv", expect_any_terms=[["Retainer"]]),
+    Case("cx-solar-subsidy", "complex",
+         "When did government subsidy receipts stop, and when did they come back?",
+         dataset="samples/sunrise_solar.csv", expect_any_terms=[["January 2026", "Jan 2026", "2026-01"]],
+         allowed_status={"verified", "no_figures"}),  # a correct answer may name months only
 
     # --- edge cases ---------------------------------------------------------------------
     Case("ambiguous-month", "edge", "Why did revenue drop in March?",

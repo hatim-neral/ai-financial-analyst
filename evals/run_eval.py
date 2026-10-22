@@ -14,6 +14,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import statistics
 import sys
 import time
@@ -61,11 +62,13 @@ def evaluate(case, df, client) -> dict:
         missing = figures_present(text, case.expect_numbers(df))
         if missing:
             reasons.append("missing figures: " + ", ".join(missing))
+    # Models often use narrow/no-break spaces ("January\u202f2026") and hyphens ("2026\u2011Q2").
+    plain = re.sub(r"\s+", " ", re.sub(r"[\u2010-\u2015]", "-", text)).lower()  # and non-breaking hyphens
     for options in case.expect_any_terms:
-        if not any(t.lower() in text.lower() for t in options):
+        if not any(t.lower() in plain for t in options):
             reasons.append(f"missing term: {' / '.join(options)}")
     for t in case.forbid_terms:
-        if t.lower() in text.lower():
+        if t.lower() in plain:
             reasons.append(f"forbidden term present: {t}")
     first = res.first_draft_guard
     return {
