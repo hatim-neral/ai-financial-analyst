@@ -7,7 +7,7 @@ and every figure in the answer is checked against that result before it is shown
 the formula and source rows one click away.
 
 - **Live demo:** https://aifinancialanalysthatim.streamlit.app (free hosting sleeps when idle; opening the link wakes it in under a minute)
-- **Walkthrough video:** `YOUR-VIDEO-LINK` *(add after recording)*
+- **Walkthrough video (4:42):** https://drive.google.com/drive/folders/1rc5rAGixqtXcF_I5wF1t7-zUKgPrW-pn?usp=drive_link · [script](docs/DEMO_SCRIPT.md)
 - **Docs:** [Architecture](docs/ARCHITECTURE.md) · [Testing & evaluation](docs/TESTING.md)
 
 ## What it does
