@@ -42,7 +42,8 @@ _STRIP_PATTERNS = [
 ]
 
 _SUFFIXES = (
-    r"%|(?:percentage\s+points?|per\s?cent|percent|pp|thousand|k|lakhs?|lacs?|crores?|cr|"
+    # "percentage point" also comes hyphenated, often with a Unicode hyphen (U+2010 to U+2015)
+    r"%|(?:percentage[\s\-\u2010-\u2015]+points?|per\s?cent|percent|ppts?|pp|pts?|thousand|k|lakhs?|lacs?|crores?|cr|"
     r"million|mn|m|billion|bn|b)\b"
 )
 _NUMBER = re.compile(
@@ -135,7 +136,7 @@ def extract_numbers(text: str) -> list[FoundNumber]:
         except ValueError:
             continue
         suffix = re.sub(r"\s+", " ", (m.group("suffix") or "").lower())
-        is_pct = suffix == "%" or suffix.startswith(("percent", "per cent", "percentage", "pp"))
+        is_pct = suffix == "%" or suffix in ("pt", "pts") or suffix.startswith(("percent", "per cent", "percentage", "pp"))  # pp, ppt(s)
         mult = 1.0 if is_pct else _MULTIPLIERS.get(suffix, 1.0)
         value = abs(base) * mult
 

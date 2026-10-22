@@ -50,3 +50,15 @@ def month_label(month: str) -> str:
         return f"{calendar.month_abbr[int(mon)]} {year}"
     except (ValueError, IndexError, AttributeError):
         return str(month)
+
+
+def money_words(x) -> str:
+    """Indian reading of a rupee amount: '₹93.7 lakh', '₹3.91 crore'; small amounts stay as they are."""
+    if is_missing(x):
+        return "—"
+    sign, v = ("-" if x < 0 else ""), abs(x)
+    if v >= 1e7:
+        return f"{sign}{CURRENCY}{v / 1e7:.2f} crore"
+    if v >= 1e5:
+        return f"{sign}{CURRENCY}{v / 1e5:.1f} lakh"
+    return f"{sign}{CURRENCY}{v:,.0f}"
